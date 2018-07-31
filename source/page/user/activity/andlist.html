@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>优惠凑单</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/andlist.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="andlist" id="masker">
+		<section class="andlist-header masker masker-150"></section>
+		<section class="andlist-cont video">
+		 	<ul>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		 </section>
+	</div>
+	<div class="andlist root" id="andlist">
+		<section class="andlist-header" id="andlist-header">
+			<div class="andlist-header-active">
+				<a href="javascript:;" v-for="active in active_info">
+					<template v-if="active.type == 1">
+						<span>满减</span>
+						<template v-if="active.rule == ''">
+							<p>{{active.active_desc}}</p>
+						</template>
+						<template v-else>
+							<template v-if="active.count_type == 1">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元减{{active.rule.cut_money}}元，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件减{{active.rule.cut_money}}元，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元</p>
+								</template>
+							</template>
+							<template v-if="active.count_type == 2">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元减{{active.rule.cut_money}}元，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元，满减可累计，买的越多，优惠更多！</p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元，满减可累计，买的越多，优惠更多！</p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件减{{active.rule.cut_money}}元，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元，满减可累计，买的越多，优惠更多！</p>
+								</template>
+								<template v-if="active.unit == 3">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件减{{active.rule.cut_money}}元，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元，满减可累计，买的越多，优惠更多！</p>
+								</template>
+							</template>
+							<template v-if="active.count_type == 3">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元减{{active.rule.cut_money}}元，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元，还差{{active.rule.distance_amount}}元，立减{{active.rule.distance_cut}}元</p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元</p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件减{{active.rule.cut_money}}元，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元，还差{{active.rule.distance_amount}}件，立减{{active.rule.distance_cut}}元</p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元</p>
+								</template>
+							</template>
+						</template>
+					</template>
+					<template v-if="active.type == 2">
+						<span>满赠</span>
+						<template v-if="active.rule == ''">
+							<p>{{active.active_desc}}</p>
+						</template>
+						<template v-else>
+							<template v-if="active.count_type == 1">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+								</template>
+							</template>
+							<template v-if="active.count_type == 2">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，满赠可累计，买的越多，赠送更多！</p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，满赠可累计，买的越多，赠送更多！</p>
+								</template>
+							</template>
+							<template v-if="active.count_type == 3">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+								</template>
+							</template>
+						</template>
+					</template>
+					<template v-if="active.type == 3">
+						<span>任选</span>
+						<template v-if="active.rule == ''">
+							<p>{{active.active_desc}}</p>
+						</template>
+						<template v-else>
+							<p v-if="active.rule.copywriter == 1">还差{{active.rule.distance}}件，立享{{active.rule.full}}元任选{{active.rule.num}}件</p>
+							<p v-if="active.rule.copywriter == 2">已满足{{active.rule.full}}元任选{{active.rule.num}}件 <template v-if="active.rule.distance_full != ''">还差{{active.rule.distance}}件，立享{{active.rule.distance_full}}元任选{{active.rule.distance_amount}}件</template></p>
+							<p v-if="active.rule.copywriter == 3">已满足{{active.rule.full}}元任选{{active.rule.num}}件</p>
+							<p v-if="active.rule.copywriter == 4">已满足<template v-for="rul in active.rule.options">{{rul.full}}元任选{{rul.num}}件<i>，</i></template></p>
+						</template>
+					</template>
+				</a>
+			</div>
+			<div class="andlist-header-nav" id="andlist-header-nav">
+				<div v-if="active_info.length > 1" v-tap.stop="navAll($event)" class="andlist-header-nav-li one select"><em>活动</em> <i class="icon-arrow"></i></div>
+				<div v-else v-tap.stop="navList_one($event)" data-filter="all" class="andlist-header-nav-li one select">活动</div>
+				<div v-tap.stop="navList_two($event)" data-filter="hot" class="andlist-header-nav-li two">畅销</div>
+				<div v-tap.stop="navList_three($event)" data-filter="price" class="andlist-header-nav-li three">价格 <i class="icon-san"></i></div>
+				<div class="andlist-header-nav-li four" v-tap.stop="classAll($event)">分类 <i class="icon-arrow"></i></div>
+			</div>
+		</section>
+		<section class="andlist-cont video" id="andlist-cont">
+		 	<ul v-if="and_list != ''">
+				<li v-for='items in and_list'>
+					<a href="/page/goods.html?product_id={{items.id}}">
+						<div class="video-img">
+							<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{items.thumb}}" alt="{{items.product_name}}">
+							<i v-if="items.error == 6" class="shouqi"></i>
+							<i v-if="items.error == 3" class="xiajia"></i>
+						</div>
+						<span class="video-title">{{items.product_name}}</span>
+						<div class="video-product-price" v-if="items.discount == ''">
+							<span>￥{{items.agency_price}}</span> <em>/ 赚{{parseFloat((items.marketprice - items.agency_price).toFixed(2))}}元</em>
+						</div>
+						<div class="video-product-price" v-else>
+							<span>￥{{items.agency_price}}</span> <label>{{items.discount}}</label>
+						</div>
+					</a>
+					<div :class="{'on': items.error != 0}" v-tap.stop="clickCart(items.id,items.type)" class="andlist-bot">加入购物车</div>
+				</li>
+			</ul>
+			<p class="andlist-cont-no" v-else>暂无满足条件商品！</p>
+		 </section>
+		 <div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+		 <section class="nav-box-one">
+		 	<ul>
+			 	<li class="on" v-tap.stop="nav_List_one($event)" data-filter="all">活动</li>
+			 	<li data-filter="{{active.active_id}}_{{active.type}}" v-tap.stop="nav_List_one($event,$index)" v-for="active in active_info">{{active.active_desc}}</li>
+			</ul>
+		 	<!-- <ul>
+		 		<li class="on" v-tap.stop="nav_List_one($event)" data-filter="all">活动</li>
+		 		<li v-tap.stop="nav_List_one($event)" data-filter="full_cut">满减</li>
+		 		<li v-tap.stop="nav_List_one($event)" data-filter="full_gift">满赠</li>
+		 	</ul> -->
+		 </section>
+		 <section class="nav-box-four">
+		 	<div class="nav-box-four-list">
+		 		<div class="nav-box-four-list-left">
+		 			<ul>
+		 				<li v-tap.stop="classList($event)" v-if="brand.length > 0" class="bind-nav on" >品牌</li>
+		 				<li v-tap.stop="classList($event)" v-if="category.length > 0" class="class-nav" >分类</li>
+		 			</ul>
+		 		</div>
+		 		<div class="nav-box-four-list-right">
+		 			<ul class="bind select">
+		 				<li v-tap.stop="brandList($event,bra.brand_id)" v-for="bra in brand | orderBy 'title'">{{bra.title}}</li>
+		 			</ul>
+		 			<ul class="class">
+		 				<li v-tap.stop="categoryList($event,cat.category_id)" v-for="cat in category" >{{cat.title}}</li>
+		 			</ul>
+		 		</div>
+		 	</div>
+		 	<div class="nav-box-four-bot"><span v-tap.stop="resetList($event)">重置</span><span v-tap.stop="searchList($event)">确定</span></div>
+		 </section>
+		 <!-- 70%透明遮盖层 -->
+        <div class="hideBox" v-tap.stop="closeBottom()"></div>
+        <div class="hideBox_ad" v-tap.stop="closeAd()"></div>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/andlist.js -->
+    <script src="/dist/js/user/andlist.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

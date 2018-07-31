@@ -1,0 +1,19 @@
+.ws-school-info {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden; }
+  .ws-school-info img {
+    width: 100%; }
+  .ws-school-info .left-a, .ws-school-info .right-a {
+    position: fixed;
+    display: block;
+    width: 50%;
+    height: 1.066667rem;
+    top: 4.266667rem;
+    overflow: hidden;
+    z-index: 9999; }
+    .ws-school-info .left-a.left-a, .ws-school-info .right-a.left-a {
+      left: 0; }
+    .ws-school-info .left-a.right-a, .ws-school-info .right-a.right-a {
+      right: 0; }

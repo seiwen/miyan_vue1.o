@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta content="telephone=no,email=no,address=no" name="format-detection">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,  user-scalable=no">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="/dist/css/user/weixinText.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="weixin-text" id="masker">
+		<section class="weixin-cont">
+			<div class="weixin-cont-title"><span class="masker">............................................</span></div>
+			<div class="weixin-cont-meta"><em><span class="masker">.................</span></em><a href="javascript:void(0);"><span class="masker">........................</span></a></div>
+			<div class="text-cont"><span class="masker masker-150"></span></div>
+			<div class="weixin-footer">阅读<span><span class="masker">............</span></span></div>
+		</section>
+	</div>
+	<div class="weixin-text root" id="weixin-text">
+		<section class="reward-tab" v-if="is_reward_txt == 1">
+			<a class="on" href="javascript:;">活动规则</a><a href="/page/user/reward-no.html?article_id={{article_id}}">商品限制</a>
+		</section>
+		<section class="weixin-cont" :class="{'padd-t50': is_reward_txt == 1}">
+			<div class="weixin-cont-title">{{info.title}}</div>
+			<div class="weixin-cont-meta"><em>{{info.addtime}}</em><a href="javascript:void(0);">{{info.editor}}</a></div>
+			<div class="text-cont" id="js_content">{{{info.content}}}</div>
+			<div class="weixin-footer">阅读<span>{{info.read_num}}</span></div>
+		</section>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/weixinText.js -->
+    <script src="/dist/js/user/weixinText.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

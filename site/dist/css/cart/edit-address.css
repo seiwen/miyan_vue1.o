@@ -1,0 +1,41 @@
+html {
+  background-color: #FFF; }
+
+#cart-editAddress {
+  display: none; }
+  #cart-editAddress .address-form {
+    padding: 0.4rem 0.4rem 0.2rem; }
+  #cart-editAddress .form-item {
+    margin-bottom: 0.32rem; }
+    #cart-editAddress .form-item label {
+      display: inline-block;
+      padding-top: 0.2rem;
+      color: #666; }
+  #cart-editAddress .declare {
+    margin-bottom: 0.4rem; }
+    #cart-editAddress .declare p {
+      display: block;
+      color: #ff3574;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding: 0.266667rem 0.4rem;
+      line-height: 1.6; }
+      #cart-editAddress .declare p strong {
+        color: #ff3574;
+        font-weight: normal; }
+  #cart-editAddress #idCard {
+    text-transform: uppercase; }
+  #cart-editAddress .btn-wrap {
+    padding: 0.066667rem 0.4rem; }
+    #cart-editAddress .btn-wrap > .btn {
+      width: 30%;
+      border-radius: 0;
+      padding: 0.28rem 0.29333rem; }
+      #cart-editAddress .btn-wrap > .btn:nth-child(2) {
+        margin: 0 0.346667rem; }
+  #cart-editAddress .btn-oneWrap .btn:first-child {
+    margin-left: 35.5%; }
+  #cart-editAddress .btn-twoWrap .btn:first-child {
+    margin-left: 17.5%; }
+  #cart-editAddress .btn-twoWrap .btn:nth-child(2) {
+    margin-right: 0; }

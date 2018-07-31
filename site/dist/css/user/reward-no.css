@@ -1,0 +1,86 @@
+.user-reward-no {
+  position: relative;
+  width: 100%;
+  padding-top: 1.2rem;
+  overflow: hidden; }
+  .user-reward-no .reward-tab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.2rem;
+    border-bottom: 1px solid #dadada;
+    z-index: 99;
+    background: #fff;
+    overflow: hidden; }
+    .user-reward-no .reward-tab a {
+      display: block;
+      width: 50%;
+      height: 1.2rem;
+      line-height: 1.2rem;
+      text-align: center;
+      font-size: 16px;
+      float: left; }
+      [data-dpr="2"] .user-reward-no .reward-tab a {
+        font-size: 32px; }
+      [data-dpr="3"] .user-reward-no .reward-tab a {
+        font-size: 48px; }
+      .user-reward-no .reward-tab a.on {
+        color: #fff;
+        background: #ff3574; }
+  .user-reward-no .shop-list h4 {
+    padding: 0.2rem 0.266667rem;
+    line-height: 1.2;
+    color: #ff3574; }
+  .user-reward-no .shop-list table {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    background: #fff;
+    max-height: 8.666667rem;
+    overflow-x: hidden;
+    overflow-y: auto; }
+    .user-reward-no .shop-list table th {
+      font-size: 12px;
+      color: #666;
+      font-weight: bolder;
+      height: 0.866667rem;
+      max-height: 0.866667rem;
+      padding: .066667rem;
+      word-wrap: break-word;
+      word-break: break-all; }
+      [data-dpr="2"] .user-reward-no .shop-list table th {
+        font-size: 24px; }
+      [data-dpr="3"] .user-reward-no .shop-list table th {
+        font-size: 36px; }
+    .user-reward-no .shop-list table td {
+      font-size: 12px;
+      color: #666;
+      height: 1.2rem;
+      max-height: 1.2rem;
+      padding: .066667rem;
+      word-wrap: break-word;
+      word-break: break-all; }
+      [data-dpr="2"] .user-reward-no .shop-list table td {
+        font-size: 24px; }
+      [data-dpr="3"] .user-reward-no .shop-list table td {
+        font-size: 36px; }
+    .user-reward-no .shop-list table th {
+      text-align: center;
+      background: #fff; }
+      .user-reward-no .shop-list table th:first-child {
+        width: 25%; }
+      .user-reward-no .shop-list table th:last-child {
+        width: 75%; }
+    .user-reward-no .shop-list table tr td:first-child {
+      padding-left: 0.266667rem; }
+    .user-reward-no .shop-list table tr td:last-child {
+      padding-right: 0.266667rem; }
+    .user-reward-no .shop-list table tr:nth-child(odd) {
+      background: #f5f5f5; }
+  .user-reward-no .shop-list .user-reward-no-brand {
+    padding: 0.266667rem;
+    line-height: 1.5;
+    background: #fff; }
+    .user-reward-no .shop-list .user-reward-no-brand span:last-child i {
+      display: none; }

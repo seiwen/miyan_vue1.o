@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>支付成功</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/cart/cart.css -->
+<link href="/dist/css/cart/cart.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/cart/pay.css" rel="stylesheet" inline>
+</head>
+<body>
+    <div id="cart-pay" class="pay-success root" data-statr='success'>
+        <template v-if="is_open != 'MZSHOP'">
+        	<section class="pay-header row">
+        		<div class="col-2"><i class="icon icon-checkmark"></i></div>
+        		<div class="col-8">
+                <p>{{info.goods_name}}等 {{info.goods_counts}} 件商品付款成功</p>
+                <p>实付金额<span class="text-primary">&yen; <label v-cloak>{{info.payedprices}}</label></span></p>
+                </div>
+        	</section>
+            <template v-if="task_info.is_use == 1">
+                <template v-if="info.is_reward_show != 0">
+                <section class="reward-list" v-if="task_info.is_new_agency == 1" v-tap.stop="gotoReward()" v-cloak>
+                    <h2><i class="icon-reward"></i>新代理成长奖励<span v-if="task_info.new_agency_task.time != ''" v-cloak>（{{task_info.new_agency_task.time}}）</span></h2>
+                    <div class="reward-list-task new">
+                        <div class="reward-list-task-right">
+                            <div class="reward-tips"></div>
+                            <div class="reward-progress">
+                                <template v-if="task_info.new_agency_task.rule.length == 1">
+                                    <span class="one"></span>
+                                    <span class="falg"><i class="icon-falg"></i></span>
+                                </template>
+                                <template v-if="task_info.new_agency_task.rule.length == 2">
+                                    <span class="two"></span>
+                                    <span class="two"></span>
+                                    <span class="falg"><i class="icon-falg"></i></span>
+                                </template>
+                                <template v-if="task_info.new_agency_task.rule.length == 3">
+                                    <span class="three"></span>
+                                    <span class="three"></span>
+                                    <span class="three"></span>
+                                    <span class="falg"><i class="icon-falg"></i></span>
+                                </template>
+                                <template v-if="task_info.new_agency_task.rule.length == 4">
+                                    <span class="four"></span>
+                                    <span class="four"></span>
+                                    <span class="four"></span>
+                                    <span class="four"></span>
+                                    <span class="falg"><i class="icon-falg"></i></span>
+                                </template>
+                                <progress value="0" max="30"></progress>
+                            </div>
+                            <ul v-if="task_info.new_agency_task.rule.length == 1" class="one">
+                                <li v-for="new in task_info.new_agency_task.rule">
+                                    <p>拿货<span v-cloak>{{new.man}}</span>单</p>
+                                    <p>第<span v-cloak>{{$index+1}}</span>周</p>
+                                </li>
+                                <li>
+                                    <p>赚<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+                                </li>
+                            </ul>
+                            <ul v-if="task_info.new_agency_task.rule.length == 2" class="two">
+                                <li v-for="new in task_info.new_agency_task.rule">
+                                    <p>拿货<span v-cloak>{{new.man}}</span>单</p>
+                                    <p>第<span v-cloak>{{$index+1}}</span>周</p>
+                                </li>
+                                <li>
+                                    <p>赚<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+                                </li>
+                            </ul>
+                            <ul v-if="task_info.new_agency_task.rule.length == 3" class="three">
+                                <li v-for="new in task_info.new_agency_task.rule">
+                                    <p>拿货<span v-cloak>{{new.man}}</span>单</p>
+                                    <p>第<span v-cloak>{{$index+1}}</span>周</p>
+                                </li>
+                                <li>
+                                    <p>赚<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+                                </li>
+                            </ul>
+                            <ul v-if="task_info.new_agency_task.rule.length == 4" class="four">
+                                <li v-for="new in task_info.new_agency_task.rule">
+                                    <p>拿货<span v-cloak>{{new.man}}</span>单</p>
+                                    <p>第<span v-cloak>{{$index+1}}</span>周</p>
+                                </li>
+                                <li>
+                                    <p>赚<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h4 v-if="task_info.is_new_agency == 1"><span>TIPS：</span>只要4周内累计完成<label v-cloak>{{task_info.new_agency_task.order_count}}</label>单，也可以赚<label v-cloak>{{task_info.new_agency_task.money}}</label>元喔～</h4>
+                </section>
+                <section class="reward-list" v-if="task_info.is_new_agency == 0" v-tap.stop="gotoReward()" v-cloak>
+                    <h2><i class="icon-reward"></i>订单量达标奖励</h2>
+                    <div class="reward-list-task week">
+                        <div class="reward-list-task-left">
+                            <h5>周任务</h5>
+                            <p><span v-cloak>({{task_info.week_task.time}})</span></p>
+                        </div>
+                        <div class="reward-list-task-right">
+                            <div class="reward-tips"></div>
+                            <div class="reward-progress">
+                                <template v-if="task_info.week_task.rule.length == 1">
+                                    <span class="one"></span>
+                                </template>
+                                <template v-if="task_info.week_task.rule.length == 2">
+                                    <span class="two"></span>
+                                    <span class="two"></span>
+                                </template>
+                                <template v-if="task_info.week_task.rule.length == 3 || task_info.week_task.rule.length > 3">
+                                    <span class="three"></span>
+                                    <span class="three"></span>
+                                    <span class="three"></span>
+                                </template>
+                                <progress value="0" max="30"></progress>
+                            </div>
+                            <ul v-if="task_info.week_task.rule.length == 1" class="one">
+                                <li v-for="week in task_info.week_task.rule">
+                                    <p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+                                </li>
+                            </ul>
+                            <ul v-if="task_info.week_task.rule.length == 2" class="two">
+                                <li v-for="week in task_info.week_task.rule">
+                                    <p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+                                </li>
+                            </ul>
+                            <ul v-if="task_info.week_task.rule.length == 3" class="three">
+                                <li v-for="week in task_info.week_task.rule">
+                                    <p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+                                </li>
+                            </ul>
+                            <ul v-if="task_info.week_task.rule.length > 3" class="three">
+                                <li v-for="week in week_task">
+                                    <p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="reward-list-task month">
+                        <div class="reward-list-task-left">
+                            <h5>月任务</h5>
+                            <p><span v-cloak>({{task_info.month_task.time}})</span></p>
+                        </div>
+                        <div class="reward-list-task-right">
+                            <div class="reward-tips"></div>
+                            <div class="reward-progress">
+                                <template v-if="task_info.month_task.rule.length == 1">
+                                    <span class="one"></span>
+                                </template>
+                                <template v-if="task_info.month_task.rule.length == 2">
+                                    <span class="two"></span>
+                                    <span class="two"></span>
+                                </template>
+                                <template v-if="task_info.month_task.rule.length == 3 || task_info.month_task.rule.length > 3">
+                                    <span class="three"></span>
+                                    <span class="three"></span>
+                                    <span class="three"></span>
+                                </template>
+                                <progress value="0" max="30"></progress>
+                            </div>
+                            <ul v-if="task_info.month_task.rule.length == 1" class="one">
+                                <li v-for="month in  task_info.month_task.rule">
+                                    <p>满<span v-cloak>{{month.man}}</span>单</p>
+                                    <p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+                                </li>
+                            </ul>
+                            <ul v-if="task_info.month_task.rule.length == 2" class="two">
+                                <li v-for="month in  task_info.month_task.rule">
+                                    <p>满<span v-cloak>{{month.man}}</span>单</p>
+                                    <p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+                                </li>
+                            </ul>
+                            <ul v-if="task_info.month_task.rule.length == 3" class="three">
+                                <li v-for="month in  task_info.month_task.rule">
+                                    <p>满<span v-cloak>{{month.man}}</span>单</p>
+                                    <p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+                                </li>
+                            </ul>
+                            <ul v-if="task_info.month_task.rule.length > 3" class="three">
+                                <li v-for="month in month_task">
+                                    <p>满<span v-cloak>{{month.man}}</span>单</p>
+                                    <p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="reward-list one-order-task"  v-tap.stop="gotoReward()" v-cloak>
+                    <h2><i class="icon-reward"></i>APP进货奖励</h2>
+                    <div class="reward-list-task text">
+                        <div class="reward-list-task-right">
+                            <p class="max-task"></p>
+                            <p>可到个人中心-我的钱包查看详情。</p>
+                        </div>
+                    </div>
+                </section>
+                <p class="new-p" v-if="task_info.is_new_agency == 1" v-tap.stop="gotoReward()" v-cloak>完成新代理成长后，还有价值6800元的奖励金等你喔~</p>
+                </template>
+            </template>
+            <section class="btn-wrap">
+                <a href="javascript:;" class="btn btn-primary" v-tap.stop="gotoPage('index')">继续进货</a>
+                <a href="javascript:;" class="btn btn-outline-primary" v-tap.stop="gotoPage('order')">查看订单</a>
+            </section>
+        </template>
+        <template v-else>
+            <section class="pay-header row">
+                <div class="col-2"><i class="icon icon-checkmark"></i></div>
+                <div class="col-8">
+                <p>{{info.goods_name}}付款成功！</p>
+                <p>实付金额<span class="text-primary">&yen; <label v-cloak>{{info.payedprices}}</label></span></p>
+                </div>
+            </section>
+            <section class="open-btn-wrap" v-if="is_app == 'miyan'">
+                <!-- <a href="javascript:;" class="btn btn-outline-primary" v-tap.stop="gotoPage('success')">进入我的店铺</a> -->
+                <p class="new-open-success" v-tap.stop="gotoPage('invite_shop')"></p>
+            </section>
+            <section class="new-open" v-else>
+                <!-- <p class="new-open-header"></p>
+                <p class="new-open-li new-open-one">长按二维码关注<span>蜜妍微信</span>官方公众号，或搜索微 信号“miyan-mz”进行关注</p>
+                <p class="new-open-title"></p>
+                <p class="new-open-ewm"><img src="../../dist/images/img/weixin.png" alt=""></p>
+                <p class="new-open-hao">（微信号：miyan-mz）</p>
+                <p class="new-open-li new-open-two"><span>下载蜜妍APP</span>，立即查看自己的店铺！</p>
+                <p class="new-open-ip"></p> -->
+                <p class="new-open-xin"></p>
+                <p class="new-open-xinb"></p>
+                <div class="download" v-tap.stop="goDownload()">
+                    <span>蜜妍</span>
+                    <div class="text">
+                        <h4>跨境美妆O2O分销平台</h4>
+                        <p>进货1折起，0门槛轻松赚钱</p>
+                    </div>
+                    <button>立即下载</button>
+                </div>
+            </section>
+        </template>
+    </div>
+
+    <!--=include ../../../module/commonJs.html -->
+    <!-- build:js /dist/js/cart/pay-success.js -->
+    <script src="/dist/js/cart/pay-success.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

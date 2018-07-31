@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>免费试用</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/tyz.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-tiyanzhuang" id="user-tiyanzhuang">
+		<section class="tiyanzhuang-header">
+			<a class="tiyanzhuang-header-a" href="javascript:;" >
+				<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{info.bannerImg}}" alt="">
+			</a>
+			<div class="tiyanzhuang-title">
+				<h2><span id="js_tyzNum" v-cloak>{{zz_free_qiandao.tyzCount}} </span>套</h2>
+				<p>我剩余的体验装数量</p>
+			</div>
+			<div class="tiyanzhuang-list" v-if="info.tyz_products != ''">
+				<div class="tiyanzhuang-item" v-for="item in info.tyz_products">
+					<a href="/page/goods.html?product_id={{item.product_id}}">
+						<div class="tiyanzhuang-item-box">
+							<div class="tiyanzhuang-img"><img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{item.imgUrl}}" alt=""></div>
+							<div class="tiyanzhuang-info" v-cloak>
+								<p>{{item.productName}}</p>
+								<p>{{{item.desc}}}</p>
+								<div class="price">
+									<span><i>￥</i>{{item.shopPrice}}</span>
+									<del>￥{{item.marketprice}}</del>
+								</div>
+							</div>
+						</div>
+					</a>
+					<div class="tiyanzhuang-item-bot">
+						<div class="tiyanzhuang-item-num" v-if="zz_free_qiandao.tyzCount > 0 && item.cur_stock > 0">
+							<a href="javascript:;" class="reduce"  v-tap.stop="reduce($event)"></a>
+							<input type="tel" class="js_tiyanzhuang_num" name="{{item.productCode}}" value="1" max="{{zz_free_qiandao.tyzCount}}"  number>
+							<a href="javascript:;" class="plus"  v-tap.stop="plus($event)"></a>
+						</div>
+						<div class="tiyanzhuang-item-num" v-else>
+							<a href="javascript:;" class="reduce disabled"  v-tap.stop="reduce($event)"></a>
+							<input type="tel" class="js_tiyanzhuang_num" name="{{item.productCode}}" disabled="disabled" value="0" max="{{zz_free_qiandao.tyzCount}}"  number>
+							<a href="javascript:;" class="plus disabled"  v-tap.stop="plus($event)"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tyz-submit">
+				<button  v-if="info.tyz_products != ''" id="submit" :class="{'disabled': zz_free_qiandao.tyzCount < 1}" type="submit" v-tap.stop="goSubmit(zz_free_qiandao.availableGetTyz)">免费领取</button>
+				<p v-else>暂无可领取的免费试用装！</p>
+			</div>
+		</section>
+		<section class="tyz-goods" v-if="info.tyz_products != ''">
+			<ul class="nav">
+				<!-- <li class="on">引流教程</li> -->
+				<li>商品详情</li>
+			</ul>
+			<ul class="cont">
+				<!-- <li class="on">
+					<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{info.bannerImg}}" alt="">
+					<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{info.bannerImg}}" alt="">
+					<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{info.bannerImg}}" alt="">
+					<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{info.bannerImg}}" alt="">
+				</li> -->
+				<li>
+					<div class="tyz-goods-nav">
+						<span v-for="nav in info.tyz_products" :class="{'active': $index == 0}">{{nav.productName}}</span>
+					</div>
+					<div class="tyz-goods-cont">
+						<div v-for="cont in info.tyz_products" class="content" :class="{'active': $index == 0}">{{{cont.details}}}</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<button class="submit" type="submit" v-tap.stop="goShare()"><i class="icon-share"></i> 分享给客户领取</button>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/tyz.js -->
+    <script src="/dist/js/user/tyz.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

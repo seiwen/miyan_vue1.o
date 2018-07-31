@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>积分等级</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/ws-school.css" rel="stylesheet" inline>
+</head>
+<body>
+    <div class="jifen-cont" id="js-jifen">
+    	<h2>今日新增积分</h2>
+        <h2 v-cloak>{{info.today_score}}</h2>
+    	<ul>
+    		<li>
+    			<p>累计积分</p>
+    			<p v-cloak>{{info.jifen}}</p>
+    			<p v-cloak>进货抵{{(info.jifen*0.01).toFixed(2)}}元</p>
+    		</li>
+    		<li>
+    			<p>累计进货金额</p>
+    			<p v-cloak>￥{{info.money}}</p>
+    		</li>
+    		<li>
+    			<p>代理商级别</p>
+    			<p v-cloak>{{info.level}}档</p>
+    			<p></p>
+    		</li>
+    	</ul>
+        <a href="/page/user/jifen-info.html" class="next-before jifen-a">积分详情</a>
+        <p class="jifen-p"><a href="/page/user/weixinText.html?article_id=23">积分规则</a></p>
+    </div>
+    <!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/jifen.js -->
+    <script src="/dist/js/user/jifen.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

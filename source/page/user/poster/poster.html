@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>海报列表</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/poster.css" rel="stylesheet" inline>
+
+</head>
+<body>
+    <div id="poster-cont" class="poster-cont" >
+    	<nav class="poster-nav">
+    		<div class="swiper-container">
+			  <div class="swiper-wrapper">
+			    <a href="javascript:;" class="swiper-slide">
+			    	<img src="/dist/images/poster.jpg" class="swiper-lazy">
+			    	<div class="swiper-lazy-preloader"></div>
+			    </a>
+			  </div>
+			  <div class="swiper-pagination"></div>
+			</div>
+    	</nav>
+    	<!--=include ../../../module/masker.html -->
+		<section class="poster-list high-list root">
+			<ul>
+				<li v-for="poster in info" track-by="$index">
+					<div class="">
+						<div class="list-box">
+							<div class="list-img"><img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{poster.shareimg}}" alt="{{poster.sharetitle}}"></div>
+							<div class="wraps">
+								<div class="wrap">
+									<div class="list-cont">
+										<div class="list-title">{{poster.sharetitle}}</div>
+										<div class="list-old">{{poster.sharedesc}}</div>
+										<div class="list-new">
+										已生成次数：{{poster.create_count}}
+										<a href="/page/user/poster-info.html?pid={{poster.id}}">生成海报</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+    </div>
+
+
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/poster.js -->
+    <script src="/dist/js/user/poster.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微店订单</title>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no,email=no,address=no" name="format-detection">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<script>!function(){var e="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",t=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet)t.styleSheet.disabled||(t.styleSheet.cssText=e);else try{t.innerHTML=e}catch(i){t.innerText=e}}(),!function(e,t){function i(){var t=r.getBoundingClientRect().width;t/s>540&&(t=540*s);var i=t/10;r.style.fontSize=i+"px",c.rem=e.rem=i}var n,a=e.document,r=a.documentElement,o=a.querySelector('meta[name="viewport"]'),l=a.querySelector('meta[name="flexible"]'),s=0,d=0,c=t.flexible||(t.flexible={});if(o){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var m=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);m&&(d=parseFloat(m[1]),s=parseInt(1/d))}else if(l){var h=l.getAttribute("content");if(h){var p=h.match(/initial\-dpr=([\d\.]+)/),f=h.match(/maximum\-dpr=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseFloat((1/s).toFixed(2))),f&&(s=parseFloat(f[1]),d=parseFloat((1/s).toFixed(2)))}}if(!s&&!d){var u=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),b=e.devicePixelRatio;s=u?b>=3&&(!s||s>=3)?3:b>=2&&(!s||s>=2)?2:1:1,d=1/s}if(r.setAttribute("data-dpr",s),!o)if(o=a.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(o);else{var g=a.createElement("div");g.appendChild(o),a.write(g.innerHTML)}e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(i,300))},!1),"complete"===a.readyState?a.body.style.fontSize=12*s+"px":a.addEventListener("DOMContentLoaded",function(){a.body.style.fontSize=12*s+"px"},!1),i(),c.dpr=e.dpr=s,c.refreshRem=i,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+	<!-- build:css /dist/css/base.css -->
+	<link rel="stylesheet" href="/dist/css/base.css">
+	<!-- endbuild -->
+<style>body,html{background-color:#fff}.order-list,.order-list .order-list-nav{position:relative;width:100%;overflow:hidden}.order-list .order-list-nav{height:3.2rem;padding-top:1.066667rem;background-color:#fff}.order-list .order-list-nav ul{position:fixed;top:0;left:0;width:100%;height:1.066667rem;border-bottom:1px solid #dadada;background-color:#fff;overflow:hidden;z-index:999}.order-list .order-list-nav ul li{display:block;width:25%;height:1.066667rem;float:left}.order-list .order-list-nav ul li a{position:relative;display:block;width:100%;height:1.066667rem;line-height:1.066667rem;text-align:center;color:#333;font-size:14px}[data-dpr="2"] .order-list .order-list-nav ul li a{font-size:28px}[data-dpr="3"] .order-list .order-list-nav ul li a{font-size:42px}.order-list .order-list-nav ul li.on a::after{position:absolute;display:block;content:'';width:1.2rem;height:.053333rem;background-color:#ff3574;bottom:0;left:50%;margin-left:-.6rem}.order-list .order-list-nav .nav-ad{height:2.133333rem}.order-list .order-list-nav .nav-ad img{width:10rem;height:2.133333rem}.order-list .order-no-list{position:relative;display:none;padding-top:4rem;text-align:center}.order-list .order-no-list p{font-size:14px;line-height:.933333rem}[data-dpr="2"] .order-list .order-no-list p{font-size:28px}[data-dpr="3"] .order-list .order-no-list p{font-size:42px}.order-list .order-no-list a{font-size:12px;line-height:.533333rem;color:#ff3574}[data-dpr="2"] .order-list .order-no-list a{font-size:24px}[data-dpr="3"] .order-list .order-no-list a{font-size:36px}.order-list .order-lists{border-bottom:.26667rem solid #ddd}.order-list .order-lists:last-child{border-bottom:1px solid #ddd}.order-list .order-lists .order-list-header{padding:0 .266667rem;height:1.333333rem;line-height:1.333333rem;overflow:hidden}.order-list .order-lists .order-list-header .left{float:left;font-size:16px;overflow:hidden}[data-dpr="2"] .order-list .order-lists .order-list-header .left{font-size:32px}[data-dpr="3"] .order-list .order-lists .order-list-header .left{font-size:48px}.order-list .order-lists .order-list-header .left i{display:block;float:left;font-size:18px;color:#ff3574;margin-top:.4rem;margin-right:.266667rem}[data-dpr="2"] .order-list .order-lists .order-list-header .left i{font-size:36px}[data-dpr="3"] .order-list .order-lists .order-list-header .left i{font-size:54px}.order-list .order-lists .order-list-header .right{float:right;font-size:12px;color:#ff3574}[data-dpr="2"] .order-list .order-lists .order-list-header .right{font-size:24px}[data-dpr="3"] .order-list .order-lists .order-list-header .right{font-size:36px}.order-list .order-lists .order-list-cont{position:relative;width:100%;overflow:hidden;border-top:1px solid #ddd;border-bottom:1px solid #ddd}.order-list .order-lists .order-list-cont li{padding-left:0;margin-left:.266667rem;width:calc(100% - .266667rem)}.order-list .order-lists .order-list-cont li:last-child{border-bottom:0}.order-list .order-lists .order-list-bottom{position:relative;width:100%;overflow:hidden}.order-list .order-lists .order-list-bottom .masker{display:block;height:.666667rem;width:2rem;float:right!important;margin:.266667rem .266667rem .266667rem 0}.order-list .order-lists .order-list-bottom p{height:1.2rem;line-height:1.2rem;text-align:right;padding-right:.266667rem;font-size:14px;border-bottom:1px solid #ddd}[data-dpr="2"] .order-list .order-lists .order-list-bottom p{font-size:28px}[data-dpr="3"] .order-list .order-lists .order-list-bottom p{font-size:42px}.order-list .order-lists .order-list-bottom p span{color:#ff3574;margin-right:.133333rem}.order-list .order-lists .order-list-bottom .order-list-cont-button{position:relative;width:100%;overflow:hidden}.order-list .order-lists .order-list-bottom .order-list-cont-button a{display:block;width:2.866667rem;height:1.066667rem;line-height:1.066667rem;text-align:center;font-size:16px;margin:.266667rem .266667rem .266667rem 0;border:1px solid #ff3574;background:#ff3574;color:#fff;float:right;border-radius:.133333rem;text-decoration:none}[data-dpr="2"] .order-list .order-lists .order-list-bottom .order-list-cont-button a{font-size:32px}[data-dpr="3"] .order-list .order-lists .order-list-bottom .order-list-cont-button a{font-size:48px}.order-list .order-lists .order-list-bottom .order-list-cont-button a.wuliu,.order-list .order-lists .order-list-bottom .order-list-cont-button a.cancel{background:#fff;color:#ff3574}</style>
+
+</head>
+<body>
+	<div class="order-list" id="masker">
+		<section class="order-lists" >
+			<div class="order-list-header">
+				<span class="masker masker-block"></span>
+			</div>
+			<div class="order-list-cont list">
+				<ul>
+					<li>
+						<div class="list-box">
+							<div class="list-img masker"></div>
+							<div class="list-wraps">
+								<div class="list-wrap">
+									<div class="list-cont">
+										<div class="masker masker-list"></div>
+										<span class="masker masker-block"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="order-list-bottom">
+				<span class="masker"></span>
+			</div>
+		</section>
+		<section class="order-lists" >
+			<div class="order-list-header">
+				<span class="masker masker-block"></span>
+			</div>
+			<div class="order-list-cont list">
+				<ul>
+					<li>
+						<div class="list-box">
+							<div class="list-img masker"></div>
+							<div class="list-wraps">
+								<div class="list-wrap">
+									<div class="list-cont">
+										<div class="masker masker-list"></div>
+										<span class="masker masker-block"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="order-list-bottom">
+				<span class="masker"></span>
+			</div>
+		</section>
+		<section class="order-lists" >
+			<div class="order-list-header">
+				<span class="masker masker-block"></span>
+			</div>
+			<div class="order-list-cont list">
+				<ul>
+					<li>
+						<div class="list-box">
+							<div class="list-img masker"></div>
+							<div class="list-wraps">
+								<div class="list-wrap">
+									<div class="list-cont">
+										<div class="masker masker-list"></div>
+										<span class="masker masker-block"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list-box">
+							<div class="list-img masker"></div>
+							<div class="list-wraps">
+								<div class="list-wrap">
+									<div class="list-cont">
+										<div class="masker masker-list"></div>
+										<span class="masker masker-block"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="order-list-bottom">
+				<span class="masker"></span>
+			</div>
+		</section>
+	</div>
+	<div class="order-list root" id="order-list">
+		<nav class="order-list-nav" id="order-list-nav">
+			<ul>
+				<li><a href="/page/store/order_list_all.html?type=0">全部</a></li>
+				<li><a href="/page/store/order_list_all.html?type=1">待付款</a></li>
+				<li><a href="/page/store/order_list_all.html?type=2">待发货</a></li>
+				<li><a href="/page/store/order_list_all.html?type=3">待收货</a></li>
+			</ul>
+			<a href="/page/user/reward.html" class="nav-ad">
+                <img src="/dist/images/cart_banner.jpg">
+            </a>
+		</nav>
+		<section class="order-lists" v-for="list in info" track-by="$index">
+			<div class="order-list-header">
+				<div class="left" v-if="list.order_option.status == 1"><i class="icon-wallet-outline"></i>待付款</div>
+				<div class="left" v-if="list.order_option.status == 2"><i class="icon-package"></i>待发货</div>
+				<div class="left" v-if="list.order_option.status == 3"><i class="icon-car"></i>待收货</div>
+				<div class="left" v-if="list.order_option.status == 4"><i class="icon-polygon-success"></i>交易成功</div>
+				<div class="left" v-if="list.order_option.status == 5"><i class="icon-sad"></i>已取消</div>
+			</div>
+			<div class="order-list-cont list">
+				<a href="/page/store/order_detail.html?order_id={{list.order_option.order_id}}">
+				<ul>
+					<li v-for="item in list.product_list">
+						<div class="list-box">
+							<div class="list-img">
+								<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{item.img_url}}" alt="{{item.title}}">
+							</div>
+							<div class="list-wraps">
+								<div class="list-wrap">
+									<div class="list-cont">
+										<div class="list-title">{{item.title}}</div>
+										<div class="list-order-list">￥{{item.price}}<span>x {{item.count}}</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				</a>
+			</div>
+			<div class="order-list-bottom">
+				<p>共 {{list.order_option.total_num}} 件商品,合计：<span>￥{{list.order_option.price}}</span><label v-if="list.order_option.post_price > 0">(含运费￥{{list.order_option.post_price}})</label></p>
+				<div class="order-list-cont-button">
+					<a class="wuliu" v-if="list.order_option.status == 3" href="{{list.order_option.wuliu_num}}">查看物流</a>
+				</div>
+			</div>
+		</section>
+		<div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+		<div class="order-no-list">
+			<p>暂无订单数据</p>
+			<a href="/page/user/reward.html">销售订单任务奖励高达6800元！去了解 >></a>
+		</div>
+	</div>
+	<section class="right-fixed"><a class="top-fixed" href="javascript:;">顶部</a></section>
+	<!-- build:js /dist/js/combin.js -->
+	<script src="/dist/js/lib/jquery-2.2.3.min.js"></script>
+	<script src="/dist/js/lib/vue.js"></script>
+	<script src="/dist/js/common.chunk.js"></script>
+	<!-- endbuild -->
+
+    <!-- build:js /dist/js/store/order_list_all.js -->
+    <script src="/dist/js/store/order_list_all.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <title>订单结算</title>
+    <!--=include ../../../module/public_header.html -->
+    <!-- build:css /dist/css/cart/cart.css -->
+    <link href="/dist/css/cart/cart.css" rel="stylesheet">
+    <!-- endbuild -->
+    <link href="/dist/css/cart/checkout.css" rel="stylesheet" inline>
+</head>
+
+<body>
+    <div class="has-nav" id="masker">
+        <section class="address">
+            <div class="cell center"><i class="icon icon-location"></i></div>
+            <div class="info cell">
+                <div>
+                    <span class="masker">............</span>
+                    <span class="masker">.......................</span>
+                </div>
+                <div class="main-address"><span class="masker">.........................................</span></div>
+                <div><span class="masker">.....................................................</span></div>
+            </div>
+            <div class="cell center"><i class="icon icon-arrow"></i></div>
+        </section>
+        <section>
+            <ul class="item-list pay-list">
+                <li class="list-item disabled">
+                    <input type="radio"  value="wechat" disabled="disabled">
+                    <label>
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-wechat"></i></span>
+                        <span class="checkout_size">微信支付</span>
+                    </label>
+                </li>
+                <li class="list-item disabled">
+                    <input type="radio"  value="aliwap" disabled="disabled">
+                    <label >
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-aliwap"></i></span>
+                        <span class="checkout_size">支付宝支付</span>
+                    </label>
+                </li>
+                <li class="list-item disabled">
+                    <input type="radio"   value="yj" disabled="disabled">
+                    <label >
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-yj"></i></span>
+                        <span class="checkout_size">佣金支付</span>
+                        <span class="pull-right yfk checkout_size">可用 <strong class="masker"></strong></span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <!--=include ../../../module/masker.html -->
+    </div>
+    <div id="cart-checkout" class="has-nav root">
+        <section class="address">
+            <div class="cell center"><i class="icon icon-location"></i></div>
+            <div class="info cell" v-tap.stop="goAddress()">
+                <!-- <a href="/page/cart/address.html"> -->
+                    <p class="no_address">请填写收货地址</p>
+                    <div>
+                        <span class="name">{{address.nick_name}}</span>
+                        <span class="phone">{{address.tel}}</span>
+                    </div>
+                    <div class="main-address">{{address.province_name}}{{address.city_name}}{{address.area_name}}{{address.addressline}}</div>
+                    <div v-if="address.sid != ''">身份证号 {{address.sid}}</div>
+                <!-- </a> -->
+            </div>
+            <div class="cell center"><i class="icon icon-arrow"></i></div>
+        </section>
+        <section>
+            <ul class="item-list pay-list">
+                <li class="list-item" v-for="item in info.payment_list" :class="{'disabled': ($key == 'yfk' && info.agency_info.yfk < info.need_pay_price) || item.available == 0}">
+                	<input type="radio" id="{{$key}}" value="{{item.paycode}}" v-model="payment" v-bind="{'disabled': $key == 'yfk' && info.agency_info.yfk < info.need_pay_price}">
+                	<label for="{{$key}}">
+                    	<i class="r-btn icon" :class="{'icon-check-on': payment == item.paycode, 'icon-check-off': payment != item.paycode}"></i>
+                    	<span><i class="icon icon-{{item.paycode}}"></i></span>
+                    	<span class="checkout_size">{{item.payname}}</span>
+                    	<span class="pull-right yfk checkout_size" v-if="$key == 'yfk'">可用 <strong>&yen;{{info.agency_info.yfk}}</strong></span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="warehouse-list">
+                <div class="warehouse item-list" v-for="wh in info.products">
+                    <div class="list-header">
+                        <button class="r-btn check-btn"><i class="color_on" :class="{'icon-bond': wh.warehouse_type == 'bs', 'icon-plane': wh.warehouse_type == 'zy', 'icon-shop': wh.warehouse_type == 'xh'}"></i></button>
+                        <span>{{wh.whname}}</span>
+                        <span class="list-header-right">运费：&yen;{{(wh.warehouse_order_fee * 0.01 * 100).toFixed(2)}}</span>
+                    </div>
+                    <div class="list-item-all">
+                        <div class="list-item list-product" :class="{'hide-box': wh.list.length > 1 && $index != 0}"  v-for="goods in wh.list">
+                            <div class="col-3">
+                                <img class="img-fluid lz" class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{goods.imgurl}}" alt="{{goods.product_name}}">
+                            </div>
+                            <div class="col-7 product-info">
+                                <p class="produt-name">{{goods.product_name}}</p>
+                                <div class="product-tags"></div>
+                                <div class="bottom-wrap">
+                                    <span class="product-price">&yen;{{goods.price}}</span>
+                                    <span class="product-num"> ×{{goods.count}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-extend" v-if="(wh.list.length - 1) > 0">
+                        <span v-tap.stop="showList($event)">
+                            <em class="show-ext">显示剩余{{wh.list.length - 1}}件</em>
+                            <em class="hide-ext">点击收起</em>
+                            <i class="icon-arrow"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-list mar-bot">
+                <div class="list-item">
+                    <span>商品合计</span>
+                    <span class="pull-right">&yen;{{(info.order_money).toFixed(2)}}</span>
+                </div>
+                <div class="list-item">
+                    <span>运费合计</span>
+                    <span class="pull-right" v-if="info.order_fee > 0">&yen;{{(info.order_fee).toFixed(2)}}</span>
+                    <span class="pull-right" v-else>免邮</span>
+                </div>
+                <div class="list-item checkout-active" v-if="info.preferential_money != 0">
+                    <span class="left-act">活动优惠</span>
+                    <em>- &yen;{{(info.preferential_money * 0.01 * 100).toFixed(2)}}</em>
+                    <span class="pull-right">
+                        <label class="active-tag" v-for="tag in info.active_tags">{{tag}}</label>
+                    </span>
+                </div>
+            </div>
+            <div class="item-list mar-bot">
+                <div class="list-item coupon next-before" v-if="coupon.coupon_list != ''" >
+                    <span>优惠券/红包</span>
+                    <span v-if="recommend_coupon.face_value == 0" class="pull-right" id="js_coupon" ><i>{{coupon.coupon_list.length}} 张</i></span>
+                    <span v-else class="pull-right color-3" id="js_coupon" >- &yen;<i>{{recommend_coupon.face_value}}</i></span>
+                </div>
+                <div class="list-item savings">
+                    <span v-tap.stop="clickJifen()">积分 <i class="icon-question"></i></span>
+                    <div class="pull-right" v-if="recommend_coupon.face_value*100 < info.available_point">
+                        <!-- order_money :不包括运费的所有商品价格的总和；preferential_money：优惠抵扣金额 -->
+                        <template v-if="(info.order_money - info.preferential_money - recommend_coupon.face_value) * 50 < info.available_point">
+                            <span>可用 {{parseInt((info.order_money - info.preferential_money - recommend_coupon.face_value) * 50)}}，本次使用</span>
+                            <input type="tel" class="textfield" max="{{parseInt((info.order_money - info.preferential_money - recommend_coupon.face_value) * 50 - savings)}}" placeholder="0" v-model="savings" number>
+                        </template>
+                        <template v-else>
+                            <span>可用 {{info.available_point}}，本次使用</span>
+                            <input type="tel" class="textfield" max="{{info.available_point - savings}}" placeholder="0" v-model="savings" number>
+                        </template>
+                        <span class="text-primary">抵现 &yen;{{(savings * 0.01).toFixed(2)}}</span>
+                    </div>
+                    <div class="pull-right" v-else>
+                        <span>可用 0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-list">
+                <div class="list-item">
+                    <textarea class="textarea_bz" name="bz_kf" id="bz_kf" cols="30" rows="10" maxlength="120" placeholder="在此输入您的留言(选填)"></textarea>
+                </div>
+            </div>
+        </section>
+        <section class="coupon-box">
+            <div class="coupon-close"></div>
+            <h3>优惠券</h3>
+            <h4>一个订单只可使用一个红包,取消订单或退换货均不返还.</h4>
+            <ul>
+                <li v-for="coupons in coupon.coupon_list" :class="{'on': coupons.is_select_coupon == 1}" v-tap.stop="selectCoupon(coupons.id,coupons.face_value,coupons.amount,($index+1))">
+                    <button><i></i></button>
+                    <div class="coupon-box-price" data-val="{{parseInt(coupons.face_value)}}" data-id="{{coupons.id}}">
+                        <div class="coupon-box-prices">
+                            <h2>{{coupons.title}}</h2>
+                            <p v-if="coupons.amount == 0">无门槛限制</p>
+                            <p v-else>订单满{{coupons.amount}}使用（不含运费）</p>
+                            <p>（{{coupons.start_time*1000 | moment}} - {{coupons.useful_time*1000 | moment}}）</p>
+                        </div>
+                    </div>
+                    <div class="coupon-box-button" data-coupon="{{parseInt(coupons.face_value)}}"><span><i>￥</i>{{parseInt(coupons.face_value)}}</span></div>
+                </li>
+                <li class="coupon-botton on" v-tap.stop="lastCoupon()">
+                    <button><i></i></button>
+                    <div class="coupon-box-price" data-val="0" data-id="0" >不使用红包</div>
+                </li>
+            </ul>
+        </section>
+        <div class="coupon-hide"></div>
+        <section class="yfk-pay-form">
+            <!-- 预付款form -->
+        </section>
+
+        <section class="cart-nav">
+            <div class="row">
+                <div class="col-6">实付款
+                    <span class="text-primary" id="js_needPrice" data-coupon="1" data-price="{{info.order_money}}" data-fee="{{info.order_fee}}" v-if="((info.need_pay_price - (savings * 0.01)).toFixed(2) - recommend_coupon.face_value - info.order_fee) > 0" kyjf="{{agency_info.jifeng}}" max="{{info.need_pay_price * 100}}" >&yen; <i>{{(((info.need_pay_price - (savings * 0.01)).toFixed(2) - recommend_coupon.face_value) * 0.01 * 100).toFixed(2)}}</i></span>
+                    <span class="text-primary" id="js_needPrice" data-coupon="1" data-price="{{info.order_money}}" data-fee="{{info.order_fee}}" kyjf="{{agency_info.jifeng}}" max="{{info.need_pay_price * 100}}" v-else>&yen; <i>{{info.order_fee}}</i></span>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary" v-bind="{'disabled': info.products == null}" v-tap.stop="goPay()">去支付</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!--=include ../../../module/commonJs.html -->
+    <!-- build:js /dist/js/cart/checkout.js -->
+    <script src="/dist/js/cart/checkout.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+.about{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .swiper-slide{
+    text-align: center;
+        @include fontsize(18px);
+        background: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+  }
+  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom: 0.266667rem;
+  }
+  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 0.133333rem;
+  }
+  .swiper-pagination-bullet{
+    width: 0.266667rem;
+    height: 0.266667rem;
+  }
+  .swiper-pagination-bullet-active{
+    background: #cd9a4b;
+  }
+  .about-nav{
+    position: relative;
+    width: 100%;
+    min-height: 5.066667rem;
+    overflow: hidden;
+    background: $color-f;
+    .swiper-container{
+      min-height: 3.466667rem;
+      .swiper-pagination{
+        text-align: right;
+      }
+      img{
+        height: 100%;
+      }
+    }
+  }
+  .about-tab{
+    position: relative;
+    display: block;
+    width: 100%;
+    background: $color-f;
+    margin-bottom: 0.133333rem;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
+  }
+  .about-list{
+    position: relative;
+    width: 100%;
+    background: $color-f;
+    ul{
+      display: block;
+      overflow: hidden;
+      li{
+        width: 50%;
+        float: left;
+        a{
+          display: block;
+          width: 100%;
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

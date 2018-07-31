@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>积分详情</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/ws-school.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="jifen-info" id="jifen-info">
+		<table>
+			<thead>
+				<tr>
+					<th>日期</th>
+					<th>项目</th>
+					<th>积分变动</th>
+					<th>累计</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="item in info">
+					<td v-cloak>{{item.addtime}}</td>
+					<td v-cloak>{{item.option}}</td>
+					<td v-cloak>{{item.score}}</td>
+					<td v-cloak>{{item.leiji}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/jifen-info.js -->
+    <script src="/dist/js/user/jifen-info.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

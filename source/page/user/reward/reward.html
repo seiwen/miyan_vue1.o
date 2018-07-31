@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>销售奖励</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/reward.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-reward" id="user-reward">
+		<section class="reward-cont">
+			<a href="/page/user/reward-info.html">
+		 	<div class="reward-cont-top next-before">
+				<p><span v-cloak>{{info.total_money}}</span></p>
+				<p>累计现金奖励（元）</p>
+			</div>
+			</a>
+			<div class="reward-cont-center">
+				<div class="reward-cont-center-li">
+					<p><span v-cloak>{{info.week_order}}</span></p>
+					<p>周订单数</p>
+				</div>
+				<div class="reward-cont-center-li">
+					<p><span v-cloak>{{info.month_order}}</span></p>
+					<p>月订单数</p>
+				</div>
+			</div>
+		</section>
+		<template v-if="task_info.is_use == 1">
+		<section class="reward-list" v-if="task_info.is_new_agency == 1" v-cloak>
+		 	<h2><i class="icon-reward"></i>新代理成长奖励<span v-if="task_info.new_agency_task.time != ''" v-cloak>（{{task_info.new_agency_task.time}}）</span></h2>
+		 	<div class="reward-list-task new">
+		 		<div class="reward-list-task-right">
+		 			<div class="reward-tips"></div>
+		 			<div class="reward-progress">
+		 				<template v-if="task_info.new_agency_task.rule.length == 1">
+		 					<span class="one"></span>
+		 					<span class="falg"><i class="icon-falg"></i></span>
+		 				</template>
+		 				<template v-if="task_info.new_agency_task.rule.length == 2">
+		 					<span class="two"></span>
+		 					<span class="two"></span>
+		 					<span class="falg"><i class="icon-falg"></i></span>
+		 				</template>
+		 				<template v-if="task_info.new_agency_task.rule.length == 3">
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 					<span class="falg"><i class="icon-falg"></i></span>
+		 				</template>
+		 				<template v-if="task_info.new_agency_task.rule.length == 4">
+		 					<span class="four"></span>
+		 					<span class="four"></span>
+		 					<span class="four"></span>
+		 					<span class="four"></span>
+		 					<span class="falg"><i class="icon-falg"></i></span>
+		 				</template>
+		 				<progress value="0" max="30"></progress>
+		 			</div>
+		 			<ul v-if="task_info.new_agency_task.rule.length == 1" class="one">
+		 				<li v-for="new in task_info.new_agency_task.rule">
+		 					<p>拿货<span v-cloak>{{new.man}}</span>单</p>
+		 					<p>第<span v-cloak>{{$index+1}}</span>周</p>
+		 				</li>
+		 				<li>
+		 					<p>赢<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.new_agency_task.rule.length == 2" class="two">
+		 				<li v-for="new in task_info.new_agency_task.rule">
+		 					<p>拿货<span v-cloak>{{new.man}}</span>单</p>
+		 					<p>第<span v-cloak>{{$index+1}}</span>周</p>
+		 				</li>
+		 				<li>
+		 					<p>赢<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.new_agency_task.rule.length == 3" class="three">
+		 				<li v-for="new in task_info.new_agency_task.rule">
+		 					<p>拿货<span v-cloak>{{new.man}}</span>单</p>
+		 					<p>第<span v-cloak>{{$index+1}}</span>周</p>
+		 				</li>
+		 				<li>
+		 					<p>赢<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.new_agency_task.rule.length == 4" class="four">
+		 				<li v-for="new in task_info.new_agency_task.rule">
+		 					<p>拿货<span v-cloak>{{new.man}}</span>单</p>
+		 					<p>第<span v-cloak>{{$index+1}}</span>周</p>
+		 				</li>
+		 				<li>
+		 					<p>赢<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 		</div>
+		 	</div>
+		 	<h4 v-if="task_info.is_new_agency == 1"><span>TIPS：</span>只要4周内累计完成<label v-cloak>{{task_info.new_agency_task.order_count}}</label>单，也可以赢<label v-cloak>{{task_info.new_agency_task.money}}</label>元喔～</h4>
+		</section>
+		<section class="reward-list"  v-if="task_info.is_new_agency == 1  && (parseInt(new_agency_task.order_count) > (parseInt(new_agency_task.current_order_count))+1)" v-cloak>
+		 	<h2><i class="icon-reward"></i>APP进货奖励</h2>
+		 	<div class="reward-list-task text">
+		 		<div class="reward-list-task-right">
+		 			<p v-for="list in task_info.one_order_task">单笔订单满<span v-cloak>{{list.man}}</span>元，<label>奖励<span v-cloak>{{list.jiang}}</span>元现金</label></p>
+		 		</div>
+		 		<div class="reward-list-task-left">
+		 			<a href="javascript:;" v-tap.stop="goIndex()">去拿货</a>
+		 		</div>
+		 	</div>
+		</section>
+		<p class="new-p" v-if="task_info.is_new_agency == 1  && (parseInt(new_agency_task.order_count) > (parseInt(new_agency_task.current_order_count))+1)" v-cloak>完成新代理成长后，还有价值6800元的奖励金等你喔~</p>
+		<section class="reward-list" :class="{'list-on': task_info.is_new_agency == 1}" v-if="task_info.is_new_agency == 0 || (task_info.is_new_agency == 1  && parseInt(new_agency_task.order_count) < (parseInt(new_agency_task.current_order_count))+1)" v-cloak>
+		 	<h2><i class="icon-reward"></i>订单量达标奖励</h2>
+		 	<div class="reward-list-task week">
+		 		<div class="reward-list-task-left">
+		 			<h5>周任务</h5>
+		 			<p><span v-cloak>({{task_info.week_task.time}})</span></p>
+		 		</div>
+		 		<div class="reward-list-task-right">
+		 			<div class="reward-tips"></div>
+		 			<div class="reward-progress">
+		 				<template v-if="task_info.week_task.rule.length == 1">
+		 					<span class="one"></span>
+		 				</template>
+		 				<template v-if="task_info.week_task.rule.length == 2">
+		 					<span class="two"></span>
+		 					<span class="two"></span>
+		 				</template>
+		 				<template v-if="task_info.week_task.rule.length == 3 || task_info.week_task.rule.length > 3">
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 				</template>
+		 				<progress value="0" max="30"></progress>
+		 			</div>
+		 			<ul v-if="task_info.week_task.rule.length == 1" class="one">
+		 				<li v-for="week in task_info.week_task.rule">
+		 					<p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.week_task.rule.length == 2" class="two">
+		 				<li v-for="week in task_info.week_task.rule">
+		 					<p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.week_task.rule.length == 3" class="three">
+		 				<li v-for="week in task_info.week_task.rule">
+		 					<p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.week_task.rule.length > 3" class="three">
+		 				<li v-for="week in week_task">
+		 					<p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 		</div>
+		 	</div>
+		 	<div class="reward-list-task month">
+		 		<div class="reward-list-task-left">
+		 			<h5>月任务</h5>
+		 			<p><span v-cloak>({{task_info.month_task.time}})</span></p>
+		 		</div>
+		 		<div class="reward-list-task-right">
+		 			<div class="reward-tips"></div>
+		 			<div class="reward-progress">
+		 				<template v-if="task_info.month_task.rule.length == 1">
+		 					<span class="one"></span>
+		 				</template>
+		 				<template v-if="task_info.month_task.rule.length == 2">
+		 					<span class="two"></span>
+		 					<span class="two"></span>
+		 				</template>
+		 				<template v-if="task_info.month_task.rule.length == 3 || task_info.month_task.rule.length > 3">
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 				</template>
+		 				<progress value="0" max="30"></progress>
+		 			</div>
+		 			<ul v-if="task_info.month_task.rule.length == 1" class="one">
+		 				<li v-for="month in  task_info.month_task.rule">
+		 					<p>满<span v-cloak>{{month.man}}</span>单</p>
+		 					<p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.month_task.rule.length == 2" class="two">
+		 				<li v-for="month in  task_info.month_task.rule">
+		 					<p>满<span v-cloak>{{month.man}}</span>单</p>
+		 					<p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.month_task.rule.length == 3" class="three">
+		 				<li v-for="month in  task_info.month_task.rule">
+		 					<p>满<span v-cloak>{{month.man}}</span>单</p>
+		 					<p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.month_task.rule.length > 3" class="three">
+		 				<li v-for="month in month_task">
+		 					<p>满<span v-cloak>{{month.man}}</span>单</p>
+		 					<p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 		</div>
+		 	</div>
+		 	<div class="list-open" v-if="task_info.is_new_agency == 1">
+		 		<h5>即将开启</h5>
+		 		<p>新代理成长任务结束后才能开启喔~</p>
+		 	</div>
+		</section>
+		<section class="reward-list" :class="{'list-on': task_info.is_new_agency == 1}" v-if="task_info.is_new_agency == 0 || (task_info.is_new_agency == 1  && parseInt(new_agency_task.order_count) < (parseInt(new_agency_task.current_order_count))+1)" v-cloak>
+		 	<h2><i class="icon-reward"></i>APP进货奖励</h2>
+		 	<div class="reward-list-task text">
+		 		<div class="reward-list-task-right">
+		 			<p v-for="list in task_info.one_order_task">单笔订单满<span v-cloak>{{list.man}}</span>元，<label>奖励<span v-cloak>{{list.jiang}}</span>元现金</label></p>
+		 		</div>
+		 		<div class="reward-list-task-left">
+		 			<a href="javascript:;" v-tap.stop="goIndex()">去拿货</a>
+		 		</div>
+		 	</div>
+		</section>
+		</template>
+		<p class="no-info-p" v-if="task_info.is_use == 0">暂无销售奖励任务，敬请期待...</p>
+		<template v-if="(task_info.is_new_agency == 1 && (parseInt(new_agency_task.order_count) < (parseInt(new_agency_task.current_order_count))+1) && parseInt(task_info.wait_old_status) == 0) || (task_info.is_new_agency == 0 && parseInt(task_info.wait_old_status) == 0)">
+			<section class="reward-box">
+				<i v-tap.stop="subReward()" class="reward-box-close"></i>
+				<p>获得奖励金：<span v-cloak>{{new_agency_task.money}} </span>元</p>
+				<a href="javascript:;" v-tap.stop="subReward()"></a>
+			</section>
+			<div style="display: block;" class="hideBox"></div>
+		</template>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/reward.js -->
+    <script src="/dist/js/user/reward.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

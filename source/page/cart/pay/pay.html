@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>订单支付</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/cart/cart.css -->
+<link href="/dist/css/cart/cart.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/cart/pay.css" rel="stylesheet" inline>
+</head>
+<body>
+    <div id="cart-pay" class="root">
+    	<section class="pay-header row">
+    		<div class="col-2"><i class="icon icon-clock"></i></div>
+    		<div class="col-8">
+    			<p>{{info.goods_name}}<span v-if="info.goods_counts > 1">，等{{info.goods_counts}}件商品</span></p>
+    			<p>付款时间<span class="text-primary">{{day}}天{{hour}}时{{minute}}分{{second}}秒</span></p>
+    		</div>
+    	</section>
+    	<section class="total item-list">
+    		<div class="list-item">实付款<span class="pull-right">&yen; {{info.need_prices}}</span></div>
+    	</section>
+    	<section>
+			<ul class="item-list pay-list">
+                <li class="list-item" v-for="item in info.pay_list" :class="{'disabled': (item.paycode == 'yfk' && info.yfk < info.need_prices) || (item.paycode == 'yfk' && is_open == 'MZSHOP')}">
+                	<input type="radio" id="{{item.paycode}}" value="{{item.paycode}}" v-model="payment" v-bind="{'disabled': (item.paycode == 'yfk' && info.yfk < info.need_prices) || (item.paycode == 'yfk' && is_open == 'MZSHOP')}">
+                	<label for="{{item.paycode}}">
+                    	<i class="r-btn icon" :class="{'icon-check-on': payment == item.paycode, 'icon-check-off': payment != item.paycode}"></i>
+                    	<span><i class="icon icon-{{item.paycode}}"></i></span>
+                    	<span>{{item.payname}}</span>
+                    	<span class="pull-right yfk" v-if="item.paycode == 'yfk'">可用 <strong>&yen;{{info.yfk}}</strong></span>
+                    </label>
+                </li>
+            </ul>
+		</section>
+		<section class="btn-wrap">
+			<button class="btn btn-block btn-primary" :class="{'disabled': end_pay_time == 0 }" v-tap.stop="goPay()">确认支付</button>
+		</section>
+		<section class="yfk-pay-form">
+
+		</section>
+    </div>
+
+    <!--=include ../../../module/commonJs.html -->
+    <!-- build:js /dist/js/cart/pay.js -->
+    <script src="/dist/js/cart/pay.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <title>订单结算</title>
+    	<meta charset="UTF-8">
+    	<meta content="yes" name="apple-mobile-web-app-capable">
+    	<meta content="yes" name="apple-touch-fullscreen">
+    	<meta content="telephone=no,email=no,address=no" name="format-detection">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="description" content="">
+    	<meta name="keywords" content="">
+    	<script>!function(){var e="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",t=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet)t.styleSheet.disabled||(t.styleSheet.cssText=e);else try{t.innerHTML=e}catch(i){t.innerText=e}}(),!function(e,t){function i(){var t=r.getBoundingClientRect().width;t/s>540&&(t=540*s);var i=t/10;r.style.fontSize=i+"px",c.rem=e.rem=i}var n,a=e.document,r=a.documentElement,o=a.querySelector('meta[name="viewport"]'),l=a.querySelector('meta[name="flexible"]'),s=0,d=0,c=t.flexible||(t.flexible={});if(o){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var m=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);m&&(d=parseFloat(m[1]),s=parseInt(1/d))}else if(l){var h=l.getAttribute("content");if(h){var p=h.match(/initial\-dpr=([\d\.]+)/),f=h.match(/maximum\-dpr=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseFloat((1/s).toFixed(2))),f&&(s=parseFloat(f[1]),d=parseFloat((1/s).toFixed(2)))}}if(!s&&!d){var u=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),b=e.devicePixelRatio;s=u?b>=3&&(!s||s>=3)?3:b>=2&&(!s||s>=2)?2:1:1,d=1/s}if(r.setAttribute("data-dpr",s),!o)if(o=a.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(o);else{var g=a.createElement("div");g.appendChild(o),a.write(g.innerHTML)}e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(i,300))},!1),"complete"===a.readyState?a.body.style.fontSize=12*s+"px":a.addEventListener("DOMContentLoaded",function(){a.body.style.fontSize=12*s+"px"},!1),i(),c.dpr=e.dpr=s,c.refreshRem=i,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+    	<!-- build:css /dist/css/base.css -->
+    	<link rel="stylesheet" href="/dist/css/base.css">
+    	<!-- endbuild -->
+    <!-- build:css /dist/css/cart/cart.css -->
+    <link href="/dist/css/cart/cart.css" rel="stylesheet">
+    <!-- endbuild -->
+    <style>#cart-checkout{display:none}#cart-checkout>section:not(:last-child){margin-bottom:.4rem}#cart-checkout .mar-bot{margin-bottom:.4rem}#cart-checkout .savings{line-height:1.066667rem}#cart-checkout .savings .textfield{width:1.333333rem;padding:.133333rem;text-align:center;display:inline-block;margin:0 .2rem}#cart-checkout .cart-nav .col-6{text-align:right;font-size:15px}[data-dpr="2"] #cart-checkout .cart-nav .col-6{font-size:30px}[data-dpr="3"] #cart-checkout .cart-nav .col-6{font-size:45px}#cart-checkout .cart-nav .col-6 span{margin-left:.2rem;margin-right:.266667rem}#cart-checkout .cart-nav .col-6 span i{font-style:normal}#cart-checkout .cart-nav .col-4{padding-left:0}#cart-checkout .warehouse-list .warehouse{margin-bottom:.4rem}#cart-checkout .warehouse-list .warehouse .list-header{line-height:.533333rem;overflow:hidden}#cart-checkout .warehouse-list .warehouse .list-header .list-header-right{float:right;font-size:12px;line-height:.533333rem;color:#999}[data-dpr="2"] #cart-checkout .warehouse-list .warehouse .list-header .list-header-right{font-size:24px}[data-dpr="3"] #cart-checkout .warehouse-list .warehouse .list-header .list-header-right{font-size:36px}#cart-checkout .warehouse-list .warehouse .list-item{border-bottom:none}#cart-checkout .warehouse-list .warehouse .list-item.hide-box{display:none}#cart-checkout .warehouse-list .warehouse .list-extend{position:relative;height:1.133333rem;width:100%;text-align:center}#cart-checkout .warehouse-list .warehouse .list-extend span{display:inline-block;padding:.133333rem .266667rem .133333rem .2rem;line-height:.533333rem;font-size:12px;border:1px solid #666;border-radius:.066667rem}[data-dpr="2"] #cart-checkout .warehouse-list .warehouse .list-extend span{font-size:24px}[data-dpr="3"] #cart-checkout .warehouse-list .warehouse .list-extend span{font-size:36px}#cart-checkout .warehouse-list .warehouse .list-extend span i{position:relative;display:inline-block;margin-left:.066667rem;-ms-transform:rotate(90deg);-webkit-transform:rotate(90deg);transform:rotate(90deg)}#cart-checkout .warehouse-list .warehouse .list-extend span i.clickeDown{color:#333}#cart-checkout .warehouse-list .warehouse .list-extend span.margin-top-10{margin-top:.133333rem}#cart-checkout .warehouse-list .bottom-wrap{overflow:hidden}#cart-checkout .warehouse-list .bottom-wrap .product-num{float:right;font-size:14px}[data-dpr="2"] #cart-checkout .warehouse-list .bottom-wrap .product-num{font-size:28px}[data-dpr="3"] #cart-checkout .warehouse-list .bottom-wrap .product-num{font-size:42px}#cart-checkout .no_address{display:none;font-size:14px;line-height:2.5rem;color:#999}[data-dpr="2"] #cart-checkout .no_address{font-size:28px}[data-dpr="3"] #cart-checkout .no_address{font-size:42px}#cart-checkout .active-tag{padding:.066667rem .133333rem;border:1px solid #ff3574;border-radius:.066667rem;font-size:11px;color:#ff3574;margin-left:.106667rem}[data-dpr="2"] #cart-checkout .active-tag{font-size:22px}[data-dpr="3"] #cart-checkout .active-tag{font-size:33px}#cart-checkout .item-list .list-header>*{vertical-align:middle}#cart-checkout .item-list .list-header>* button{margin-top:-.133333rem}#cart-checkout .checkout_size{font-size:14px}[data-dpr="2"] #cart-checkout .checkout_size{font-size:28px}[data-dpr="3"] #cart-checkout .checkout_size{font-size:42px}#cart-checkout .input-group-addon:disabled{background-color:#666;color:#fff}#cart-checkout .center{text-align:center}#cart-checkout .address{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAFBAMAAAAeWRmUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAqUExURfWauPf09PWgvPfw8fWhvPfh6Pfv8fa0yvbK2Pfj6ffi6PbI1/bJ1/a2ynqz8+QAAAAqSURBVAjXY2DgEIQDUQYU4IyQEUeVOYiQWYAiwZSIkLmAIsONkJBEkQAAsy0GguNwHWEAAAAASUVORK5CYII=") repeat-x,#fff;background-position:bottom left;padding-bottom:.4rem}#cart-checkout .address .center{width:10%;color:#666}#cart-checkout .address .info{width:80%}#cart-checkout .textarea_p{line-height:.666667rem}#cart-checkout .textarea_bz{margin-top:.133333rem;width:100%;height:2.266667rem;border:1px solid #959595;border-radius:.04rem;padding:.133333rem;line-height:.4rem;font-size:12px}[data-dpr="2"] #cart-checkout .textarea_bz{font-size:24px}[data-dpr="3"] #cart-checkout .textarea_bz{font-size:36px}#cart-checkout .coupon{position:relative}#cart-checkout .coupon .pull-right{margin-right:.266667rem}#cart-checkout .coupon .pull-right i{font-style:normal;color:#666}#cart-checkout .coupon .pull-right.color-3,#cart-checkout .coupon .pull-right.color-3 i{color:#ff3574}#cart-checkout .coupon-hide{position:fixed;display:none;content:'';top:0;left:0;width:100%;height:100%;background-color:#000;opacity:0;filter:alpha(opacity=0);z-index:10}#cart-checkout .coupon-box{position:fixed;display:none;left:0;bottom:0;width:100%;padding:.266667rem;max-height:12.666667rem;margin-bottom:0!important;text-align:center;border-top:1px solid #ddd;background:#fff;z-index:11;overflow-x:hidden;overflow-y:auto}#cart-checkout .coupon-box .coupon-close{position:absolute;right:.266667rem;top:.266667rem;width:.666667rem;height:.666667rem;border:1px solid #666;border-radius:100%;cursor:pointer;z-index:12;overflow:hidden}#cart-checkout .coupon-box .coupon-close:before,#cart-checkout .coupon-box .coupon-close:after{content:"";display:block;position:absolute;left:50%;top:50%;margin-left:-.2rem;margin-top:-.026667rem;width:.4rem;border-bottom:.05333rem solid #666}#cart-checkout .coupon-box .coupon-close:before{-webkit-transform:rotate(135deg);-ms-transform:rotate(135deg);transform:rotate(135deg)}#cart-checkout .coupon-box .coupon-close:after{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}#cart-checkout .coupon-box h3{width:100%;height:.666667rem;line-height:.666667rem;font-size:14px}[data-dpr="2"] #cart-checkout .coupon-box h3{font-size:28px}[data-dpr="3"] #cart-checkout .coupon-box h3{font-size:42px}#cart-checkout .coupon-box h4{color:#666;font-size:12px;padding-bottom:.133333rem;border-bottom:1px solid #ddd}[data-dpr="2"] #cart-checkout .coupon-box h4{font-size:24px}[data-dpr="3"] #cart-checkout .coupon-box h4{font-size:36px}#cart-checkout .coupon-box ul,#cart-checkout .coupon-box ul li{position:relative;width:100%;overflow:hidden}#cart-checkout .coupon-box ul li{height:1.933333rem;padding:.133333rem 0;border-bottom:1px solid #ddd}#cart-checkout .coupon-box ul li.coupon-botton .coupon-box-price{line-height:1.666667rem;text-align:center;font-size:14px;color:#666}[data-dpr="2"] #cart-checkout .coupon-box ul li.coupon-botton .coupon-box-price{font-size:28px}[data-dpr="3"] #cart-checkout .coupon-box ul li.coupon-botton .coupon-box-price{font-size:42px}#cart-checkout .coupon-box ul li.coupon-botton .coupon-box-price:after,#cart-checkout .coupon-box ul li.coupon-botton .coupon-box-price:before{display:none}#cart-checkout .coupon-box ul li button{position:relative;display:block;width:1.2rem;float:left;height:1.666667rem;border:0;background:#fff;overflow:hidden}#cart-checkout .coupon-box ul li button i{position:absolute;top:50%;left:0;display:block;width:.533333rem;height:.533333rem;margin-top:-.266667rem;border-radius:100%;border:1px solid #666;background:#fff;overflow:hidden}#cart-checkout .coupon-box ul li button i:after{display:none}#cart-checkout .coupon-box ul li.on button i{border:1px solid #ff3574;background:#ff3574}#cart-checkout .coupon-box ul li.on button i:after{content:"";position:absolute;left:50%;top:50%;margin-top:-.133333rem;margin-left:-.16rem;display:block;width:.266667rem;height:.133333rem;border-left:.05333rem solid #fff;border-bottom:.05333rem solid #fff;-ms-transform:rotate(-55deg);transform:rotate(-55deg);-webkit-transform:rotate(-55deg)}#cart-checkout .coupon-box ul li .coupon-box-price{position:relative;float:left;width:calc(100% - 3.4rem);height:1.666667rem;overflow:hidden}#cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices{position:relative;float:left;width:calc(100% - .333333rem);height:1.666667rem;font-size:14px;color:#666;padding:.133333rem .266667rem .133333rem .4rem;background:#f0f0f0;overflow:hidden}[data-dpr="2"] #cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices{font-size:28px}[data-dpr="3"] #cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices{font-size:42px}#cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices h2{line-height:.533333rem;font-size:14px}[data-dpr="2"] #cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices h2{font-size:28px}[data-dpr="3"] #cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices h2{font-size:42px}#cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p{line-height:.4rem;font-size:12px}[data-dpr="2"] #cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p{font-size:24px}[data-dpr="3"] #cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p{font-size:36px}#cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p:last-child{margin-top:.066667rem;font-size:10px}[data-dpr="2"] #cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p:last-child{font-size:20px}[data-dpr="3"] #cart-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p:last-child{font-size:30px}#cart-checkout .coupon-box ul li .coupon-box-price:before,#cart-checkout .coupon-box ul li .coupon-box-price:after{position:relative;content:'';display:block;float:left;height:1.666667rem}#cart-checkout .coupon-box ul li .coupon-box-price:before{width:.133333rem;margin-right:-.013333rem;background:url(../../dist/images/img/coupon_01.png) center center no-repeat;background-size:.133333rem 1.666667rem}#cart-checkout .coupon-box ul li .coupon-box-price:after{width:.2rem;margin-left:-.013333rem;background:url(../../dist/images/img/coupon_02.png) center center no-repeat;background-size:.2rem 1.666667rem}#cart-checkout .coupon-box ul li .coupon-box-button{position:relative;float:right;width:2.2rem;height:1.666667rem;color:#fff;overflow:hidden}#cart-checkout .coupon-box ul li .coupon-box-button span{position:relative;display:block;float:left;width:calc(100% - .333333rem);height:1.666667rem;line-height:1.666667rem;text-align:center;font-size:20px;background:#ff3574}[data-dpr="2"] #cart-checkout .coupon-box ul li .coupon-box-button span{font-size:40px}[data-dpr="3"] #cart-checkout .coupon-box ul li .coupon-box-button span{font-size:60px}#cart-checkout .coupon-box ul li .coupon-box-button span i{font-size:14px;font-style:normal}[data-dpr="2"] #cart-checkout .coupon-box ul li .coupon-box-button span i{font-size:28px}[data-dpr="3"] #cart-checkout .coupon-box ul li .coupon-box-button span i{font-size:42px}#cart-checkout .coupon-box ul li .coupon-box-button:before,#cart-checkout .coupon-box ul li .coupon-box-button:after{position:relative;content:'';display:block;float:left;height:1.666667rem}#cart-checkout .coupon-box ul li .coupon-box-button:before{width:.133333rem;margin-right:-.013333rem;background:url(../../dist/images/img/coupon_03.png) center center no-repeat;background-size:.133333rem 1.666667rem}#cart-checkout .coupon-box ul li .coupon-box-button:after{width:.2rem;margin-left:-.013333rem;background:url(../../dist/images/img/coupon_04.png) center center no-repeat;background-size:.2rem 1.666667rem}#masker .center{width:10%;color:#666;text-align:center}#masker .info{width:80%}#masker .info div{padding:.16rem 0}.layui-m-layersection{line-height:1.1!important}.layui-m-layersection h3{font-weight:bolder!important}.layui-m-layersection p{text-align:left!important}.layui-m-layersection p.red{color:#ff3574!important}.icon-question{margin-top:.066667rem}.checkout-active{position:relative;overflow:hidden}.checkout-active .left-act{line-height:.653333rem;display:inline-block}.checkout-active .pull-right{width:6.4rem;overflow:hidden}.checkout-active label,.checkout-active em{float:right}.checkout-active label{margin:.053333rem}.checkout-active em{display:inline-block;min-height:.653333rem;line-height:.653333rem;padding-left:.066667rem}.hide-ext{display:none}</style>
+</head>
+
+<body>
+    <div class="has-nav" id="masker">
+        <section class="address">
+            <div class="cell center"><i class="icon icon-location"></i></div>
+            <div class="info cell">
+                <div>
+                    <span class="masker">............</span>
+                    <span class="masker">.......................</span>
+                </div>
+                <div class="main-address"><span class="masker">.........................................</span></div>
+                <div><span class="masker">.....................................................</span></div>
+            </div>
+            <div class="cell center"><i class="icon icon-arrow"></i></div>
+        </section>
+        <section>
+            <ul class="item-list pay-list">
+                <li class="list-item disabled">
+                    <input type="radio"  value="wechat" disabled="disabled">
+                    <label>
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-wechat"></i></span>
+                        <span class="checkout_size">微信支付</span>
+                    </label>
+                </li>
+                <li class="list-item disabled">
+                    <input type="radio"  value="aliwap" disabled="disabled">
+                    <label >
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-aliwap"></i></span>
+                        <span class="checkout_size">支付宝支付</span>
+                    </label>
+                </li>
+                <li class="list-item disabled">
+                    <input type="radio"   value="yj" disabled="disabled">
+                    <label >
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-yj"></i></span>
+                        <span class="checkout_size">佣金支付</span>
+                        <span class="pull-right yfk checkout_size">可用 <strong class="masker"></strong></span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section class="list" id="masker-list">
+        	<ul>
+        		<li>
+        			<div class="list-box">
+        				<div class="list-img masker"></div>
+        				<div class="list-wraps">
+        					<div class="list-wrap">
+        						<div class="list-cont">
+        							<div class="masker masker-list"></div>
+        							<span class="masker masker-block"></span>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</li>
+        		<li>
+        			<div class="list-box">
+        				<div class="list-img masker"></div>
+        				<div class="list-wraps">
+        					<div class="list-wrap">
+        						<div class="list-cont">
+        							<div class="masker masker-list"></div>
+        							<span class="masker masker-block"></span>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</li>
+        		<li>
+        			<div class="list-box">
+        				<div class="list-img masker"></div>
+        				<div class="list-wraps">
+        					<div class="list-wrap">
+        						<div class="list-cont">
+        							<div class="masker masker-list"></div>
+        							<span class="masker masker-block"></span>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</li>
+        	</ul>
+        </section>
+    </div>
+    <div id="cart-checkout" class="has-nav root">
+        <section class="address">
+            <div class="cell center"><i class="icon icon-location"></i></div>
+            <div class="info cell" v-tap.stop="goAddress()">
+                <!-- <a href="/page/cart/address.html"> -->
+                    <p class="no_address">请填写收货地址</p>
+                    <div>
+                        <span class="name">{{address.nick_name}}</span>
+                        <span class="phone">{{address.tel}}</span>
+                    </div>
+                    <div class="main-address">{{address.province_name}}{{address.city_name}}{{address.area_name}}{{address.addressline}}</div>
+                    <div v-if="address.sid != ''">身份证号 {{address.sid}}</div>
+                <!-- </a> -->
+            </div>
+            <div class="cell center"><i class="icon icon-arrow"></i></div>
+        </section>
+        <section>
+            <ul class="item-list pay-list">
+                <li class="list-item" v-for="item in info.payment_list" :class="{'disabled': ($key == 'yfk' && info.agency_info.yfk < info.need_pay_price) || item.available == 0}">
+                	<input type="radio" id="{{$key}}" value="{{item.paycode}}" v-model="payment" v-bind="{'disabled': $key == 'yfk' && info.agency_info.yfk < info.need_pay_price}">
+                	<label for="{{$key}}">
+                    	<i class="r-btn icon" :class="{'icon-check-on': payment == item.paycode, 'icon-check-off': payment != item.paycode}"></i>
+                    	<span><i class="icon icon-{{item.paycode}}"></i></span>
+                    	<span class="checkout_size">{{item.payname}}</span>
+                    	<span class="pull-right yfk checkout_size" v-if="$key == 'yfk'">可用 <strong>&yen;{{info.agency_info.yfk}}</strong></span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="warehouse-list">
+                <div class="warehouse item-list" v-for="wh in info.products">
+                    <div class="list-header">
+                        <button class="r-btn check-btn"><i class="color_on" :class="{'icon-bond': wh.warehouse_type == 'bs', 'icon-plane': wh.warehouse_type == 'zy', 'icon-shop': wh.warehouse_type == 'xh'}"></i></button>
+                        <span>{{wh.whname}}</span>
+                        <span class="list-header-right">运费：&yen;{{(wh.warehouse_order_fee * 0.01 * 100).toFixed(2)}}</span>
+                    </div>
+                    <div class="list-item-all">
+                        <div class="list-item list-product" :class="{'hide-box': wh.list.length > 1 && $index != 0}"  v-for="goods in wh.list">
+                            <div class="col-3">
+                                <img class="img-fluid lz" class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{goods.imgurl}}" alt="{{goods.product_name}}">
+                            </div>
+                            <div class="col-7 product-info">
+                                <p class="produt-name">{{goods.product_name}}</p>
+                                <div class="product-tags"></div>
+                                <div class="bottom-wrap">
+                                    <span class="product-price">&yen;{{goods.price}}</span>
+                                    <span class="product-num"> ×{{goods.count}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-extend" v-if="(wh.list.length - 1) > 0">
+                        <span v-tap.stop="showList($event)">
+                            <em class="show-ext">显示剩余{{wh.list.length - 1}}件</em>
+                            <em class="hide-ext">点击收起</em>
+                            <i class="icon-arrow"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-list mar-bot">
+                <div class="list-item">
+                    <span>商品合计</span>
+                    <span class="pull-right">&yen;{{(info.order_money).toFixed(2)}}</span>
+                </div>
+                <div class="list-item">
+                    <span>运费合计</span>
+                    <span class="pull-right" v-if="info.order_fee > 0">&yen;{{(info.order_fee).toFixed(2)}}</span>
+                    <span class="pull-right" v-else>免邮</span>
+                </div>
+                <div class="list-item checkout-active" v-if="info.preferential_money != 0">
+                    <span class="left-act">活动优惠</span>
+                    <em>- &yen;{{(info.preferential_money * 0.01 * 100).toFixed(2)}}</em>
+                    <span class="pull-right">
+                        <label class="active-tag" v-for="tag in info.active_tags">{{tag}}</label>
+                    </span>
+                </div>
+            </div>
+            <div class="item-list mar-bot">
+                <div class="list-item coupon next-before" v-if="coupon.coupon_list != ''" >
+                    <span>优惠券/红包</span>
+                    <span v-if="recommend_coupon.face_value == 0" class="pull-right" id="js_coupon" ><i>{{coupon.coupon_list.length}} 张</i></span>
+                    <span v-else class="pull-right color-3" id="js_coupon" >- &yen;<i>{{recommend_coupon.face_value}}</i></span>
+                </div>
+                <div class="list-item savings">
+                    <span v-tap.stop="clickJifen()">积分 <i class="icon-question"></i></span>
+                    <div class="pull-right" v-if="recommend_coupon.face_value*100 < info.available_point">
+                        <!-- order_money :不包括运费的所有商品价格的总和；preferential_money：优惠抵扣金额 -->
+                        <template v-if="(info.order_money - info.preferential_money - recommend_coupon.face_value) * 50 < info.available_point">
+                            <span>可用 {{parseInt((info.order_money - info.preferential_money - recommend_coupon.face_value) * 50)}}，本次使用</span>
+                            <input type="tel" class="textfield" max="{{parseInt((info.order_money - info.preferential_money - recommend_coupon.face_value) * 50 - savings)}}" placeholder="0" v-model="savings" number>
+                        </template>
+                        <template v-else>
+                            <span>可用 {{info.available_point}}，本次使用</span>
+                            <input type="tel" class="textfield" max="{{info.available_point - savings}}" placeholder="0" v-model="savings" number>
+                        </template>
+                        <span class="text-primary">抵现 &yen;{{(savings * 0.01).toFixed(2)}}</span>
+                    </div>
+                    <div class="pull-right" v-else>
+                        <span>可用 0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-list">
+                <div class="list-item">
+                    <textarea class="textarea_bz" name="bz_kf" id="bz_kf" cols="30" rows="10" maxlength="120" placeholder="在此输入您的留言(选填)"></textarea>
+                </div>
+            </div>
+        </section>
+        <section class="coupon-box">
+            <div class="coupon-close"></div>
+            <h3>优惠券</h3>
+            <h4>一个订单只可使用一个红包,取消订单或退换货均不返还.</h4>
+            <ul>
+                <li v-for="coupons in coupon.coupon_list" :class="{'on': coupons.is_select_coupon == 1}" v-tap.stop="selectCoupon(coupons.id,coupons.face_value,coupons.amount,($index+1))">
+                    <button><i></i></button>
+                    <div class="coupon-box-price" data-val="{{parseInt(coupons.face_value)}}" data-id="{{coupons.id}}">
+                        <div class="coupon-box-prices">
+                            <h2>{{coupons.title}}</h2>
+                            <p v-if="coupons.amount == 0">无门槛限制</p>
+                            <p v-else>订单满{{coupons.amount}}使用（不含运费）</p>
+                            <p>（{{coupons.start_time*1000 | moment}} - {{coupons.useful_time*1000 | moment}}）</p>
+                        </div>
+                    </div>
+                    <div class="coupon-box-button" data-coupon="{{parseInt(coupons.face_value)}}"><span><i>￥</i>{{parseInt(coupons.face_value)}}</span></div>
+                </li>
+                <li class="coupon-botton on" v-tap.stop="lastCoupon()">
+                    <button><i></i></button>
+                    <div class="coupon-box-price" data-val="0" data-id="0" >不使用红包</div>
+                </li>
+            </ul>
+        </section>
+        <div class="coupon-hide"></div>
+        <section class="yfk-pay-form">
+            <!-- 预付款form -->
+        </section>
+
+        <section class="cart-nav">
+            <div class="row">
+                <div class="col-6">实付款
+                    <span class="text-primary" id="js_needPrice" data-coupon="1" data-price="{{info.order_money}}" data-fee="{{info.order_fee}}" v-if="((info.need_pay_price - (savings * 0.01)).toFixed(2) - recommend_coupon.face_value - info.order_fee) > 0" kyjf="{{agency_info.jifeng}}" max="{{info.need_pay_price * 100}}" >&yen; <i>{{(((info.need_pay_price - (savings * 0.01)).toFixed(2) - recommend_coupon.face_value) * 0.01 * 100).toFixed(2)}}</i></span>
+                    <span class="text-primary" id="js_needPrice" data-coupon="1" data-price="{{info.order_money}}" data-fee="{{info.order_fee}}" kyjf="{{agency_info.jifeng}}" max="{{info.need_pay_price * 100}}" v-else>&yen; <i>{{info.order_fee}}</i></span>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary" v-bind="{'disabled': info.products == null}" v-tap.stop="goPay()">去支付</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <section class="right-fixed"><a class="top-fixed" href="javascript:;">顶部</a></section>
+    <!-- build:js /dist/js/combin.js -->
+    <script src="/dist/js/lib/jquery-2.2.3.min.js"></script>
+    <script src="/dist/js/lib/vue.js"></script>
+    <script src="/dist/js/common.chunk.js"></script>
+    <!-- endbuild -->
+    <!-- build:js /dist/js/cart/checkout.js -->
+    <script src="/dist/js/cart/checkout.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

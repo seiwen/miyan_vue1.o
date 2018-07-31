@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>排行榜</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/ranking.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-ranking" id="user-ranking">
+		 <section class="ranking-cont">
+		 	<nav class="ranking-cont-nav" :class="{'select': type == 2}">
+		 		<div class="ranking-cont-nav-tips">TIPS：快速提升排名，赚更多积分利润的正确姿势！
+			 		<a v-if="type == 1" href="/page/user/ws-school-info.html?page=jfb&level={{agency_ranking.level}}">点击查看</a>
+			 		<a v-if="type == 2" href="/page/user/ws-school-info.html?page=zqb&level={{agency_ranking.level}}">点击查看</a>
+			 		<i v-tap.stop="colse()"></i>
+		 		</div>
+		 		<div class="ranking-cont-nav-cont">
+		 			<div class="ranking-cont-nav-cont-img">
+		 				<span><img class="lazy" src="/dist/images/img/header_pohto.png" data-original="{{agency_ranking.avatar}}"></span>
+		 			</div>
+		 			<div class="ranking-cont-nav-cont-bot">
+		 				<div class="ranking-nav-ban">
+		 					<p><template v-if="time == 1">本</template><template v-if="time == 2">上</template>周排名</p>
+		 					<h3 v-cloak>{{agency_ranking.ranking}}</h3>
+		 				</div>
+		 				<div class="ranking-nav-ban">
+		 					<p v-if="type == 1"><template v-if="time == 1">本</template><template v-if="time == 2">上</template>周积分</p>
+		 					<p v-if="type == 2"><template v-if="time == 1">本</template><template v-if="time == 2">上</template>周累计赚钱（元）</p>
+		 					<h3 v-cloak>{{agency_ranking.amount}}</h3>
+		 				</div>
+		 				<span class="root" :class="{on: type == 2}" v-if="agency_ranking.amount == 0">还没推广哦，等你实力反超！</span>
+		 			</div>
+		 		</div>
+		 		<div class="ranking-cont-nav-bot animated bounceInUp" >
+		 			<label v-if="agency_ranking.amount != 0">{{agency_ranking.ranking}}</label>
+		 			<img :src=agency_ranking.avatar>
+		 			<div class="ranking-cont-nav-bot-span" :class="{none: agency_ranking.amount == 0}">
+			 			<span>{{agency_ranking.nickname}}</span>
+			 			<p v-if="agency_ranking.amount == 0">您还未开始推广，暂无排名</p>
+		 			</div>
+		 			<em v-if="agency_ranking.amount != 0">{{agency_ranking.amount}}</em>
+		 		</div>
+		 	</nav>
+		 	<div class="root">
+		 	<ul class="ranking-cont-ul root" :class="{'on': type == 2}" v-if="ranking_list != ''" >
+		 		<li v-for="list in ranking_list" >
+		 			<label>{{$index+1}}</label>
+		 			<img class="lazy" src="/dist/images/img/header_pohto.png" data-original="{{list.avatar}}">
+		 			<span v-if="list.nickname != ''" v-cloak>{{list.nickname}}</span>
+		 			<span v-else>未知用户</span>
+		 			<em v-cloak>{{list.amount}}</em>
+		 		</li>
+		 	</ul>
+		 	<ul class="ranking-cont-ul" v-else>
+		 		<li class="no-li">暂无排名数据</li>
+		 	</ul>
+		 	<div class="ranking-next" :class="{'next': agency_ranking.amount != 0}">
+		 		<a v-if="time == 1" :class="{'on': type == 2}" href="/page/user/ranking.html?date_type=2&list_type={{type}}" class="next">查看上周排行 ></a>
+		 		<a :class="{'on': type == 2}" href="/page/user/ranking.html?date_type=1&list_type={{type}}" class="next" v-else>查看本周排行 ></a>
+		 	</div>
+		 	</div>
+		 </section>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/ranking.js -->
+    <script src="/dist/js/user/ranking.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

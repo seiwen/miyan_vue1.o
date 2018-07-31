@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>订单详情</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/order-detial.css" rel="stylesheet" inline>
+
+</head>
+<body>
+<div class="order-detial root" id="order-detial">
+<section class="order-detials wx-detials">
+	<div class="order-detial-header">
+		<div class="left" v-if="order_option.status == 1" >待付款</div>
+		<div class="left" v-if="order_option.status == 2" >已付款</div>
+		<div class="left" v-if="order_option.status == 3" >已发货</div>
+		<div class="left" v-if="order_option.status == 4" >交易完成</div>
+		<div class="left" v-if="order_option.status == 5" >已取消</div>
+		<div class="right" v-if="order_option.status == 1">
+			<div class="right-text">剩余支付时间<span class="settime" endTime="{{order_option.time*1000}}"></span></div>
+		</div>
+	</div>
+	<div class="order-detial-address">
+		<i class="icon icon-location"></i>
+		<p><span class="name">{{order_option.nickname}}</span><span class="iphone">{{order_option.mobile}}</span></p>
+		<p v-if="order_option.body_code != ''"><span>身份证号</span><span class="nameNum">{{order_option.body_code}}</span></p>
+		<p>{{order_option.address}}</p>
+	</div>
+	<div class="order-detial-cont list">
+		<ul>
+			<li v-for="item in info.product_list">
+				<a href="/page/goods.html?product_id={{item.product_id}}">
+				<div class="list-box">
+					<div class="list-img">
+						<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{item.img_url}}" alt="{{item.title}}">
+					</div>
+					<div class="list-wraps">
+						<div class="list-wrap">
+							<div class="list-cont">
+								<div class="list-title">{{item.title}}</div>
+								<div class="list-order-list">￥{{item.price}}<span>x {{item.amount}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</a>
+			</li>
+		</ul>
+		<div class="order-detial-price">
+			<p>运费：<span v-if="order_option.fee_price != 0">&yen; {{order_option.fee_price}}</span><span v-if="order_option.fee_price == 0">免邮</span></p>
+			<p v-if="order_option.integral_price > 0">积分抵扣：<span> &yen; {{order_option.integral_price}}</span></p>
+			<p>合计：<span>&yen; {{order_option.price}}</span></p>
+		</div>
+	</div>
+	<div class="order-detial-number">
+		<label v-if="version > 210" class="copy-order" v-tap.stop="copy(order_option.order_sn)">复制</label>
+		<p>订单编号：{{order_option.order_sn}}</p>
+		<p v-if="order_option.status == 3">物流单号：{{order_option.wuliu_num_str}} <span v-if="order_option.fee_code_chinese != null">{{order_option.fee_code_chinese}}</span></p>
+		<p>下单时间：{{order_option.qiandaotime}}</p>
+		<p v-if="order_option.pay_time != ''">付款时间：{{order_option.pay_time}}</p>
+		<p v-if="order_option.payment == 1">支付方式：钱包支付</p>
+		<p v-if="order_option.payment == 2">支付方式：支付宝支付</p>
+		<p v-if="order_option.payment == 3">支付方式：微信支付</p>
+	</div>
+	<div class="order-detial-number order-detial-beizhu" v-if="order_option.order_bz != ''">
+		<p>备注：{{order_option.order_bz}}</p>
+	</div>
+	<div class="order-detial-button" >
+		<a class="wuliu" v-if="order_option.status == 3" href="{{order_option.wuliu_num}}">查看物流</a>
+	</div>
+</section>
+</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/store/order_detial.js -->
+    <script src="/dist/js/store/order_detial.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

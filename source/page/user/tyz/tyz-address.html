@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>免费试用</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/tyz-address.css" rel="stylesheet" inline>
+<!-- <script src="http://beauty.miyanmz.com/static/js/pcasunzip_lf.js"></script>
+ -->
+</head>
+<body>
+	<div class="tyz-address" id="tyz-address">
+		<section class="tyz-address-ul">
+			<div class="address-li">
+				<label for="js_name">收货人：</label>
+				<input class="tyz-name" type="text" id="js_name" >
+			</div>
+			<div class="address-li">
+				<label for="">手机号：</label>
+				<input class="tyz-tel" type="tel" id="js_iphone" maxlength="11">
+			</div>
+			<div class="address-li next-before" v-tap.stop="clickAddress()">
+				<label for="">省市区：</label>
+				<span id="provinceTxt"></span>
+				<span id="cityTxt"></span>
+                <span id="countryTxt"></span>
+				<em>请选择</em>
+			</div>
+			<div class="address-li">
+				<label for="">详细地址：</label>
+				<input class="tyz-add" type="text" id="js_address" placeholder="填写街道、门牌号等；请勿重复填写省市区">
+			</div>
+		</section>
+		<h4><i>!</i>请勿在详细地址内重复填写省、市、区信息喔~</h4>
+		<p>* 体验装默认发圆通快递</p>
+		<p>填写的地址会保存至‘收货地址列表’喔~</p>
+		<button class="submit" type="submit" v-tap.stop="goSubmit()">确认领取</button>
+		<!-- 地址弹框 -->
+		<section class="address addressBox animated bounceInUp" id="address">
+			<div class="address-close" v-tap.stop="closeAddress()"></div>
+			<h3>请选择省市区</h3>
+			<div class="address-nav">
+				<span class="active" id="provinceTxt-nav">请选择</span>
+				<span id="cityTxt-nav">请选择</span>
+				<span id="countryTxt-nav">请选择</span>
+			</div>
+			<div class="address-list">
+				<ul id="province" class="province"></ul>
+	            <ul id="city" class="city"></ul>
+	            <ul id="country" class="country"></ul>
+			</div>
+		</section>
+		<div class="hideBox" v-tap.stop="closeAddress()"></div>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/tyz-address.js -->
+    <script src="/dist/js/user/tyz-address.js"></script>
+    <script src="/dist/js/lib/data_city2.1.0.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

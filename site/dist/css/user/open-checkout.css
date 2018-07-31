@@ -1,0 +1,338 @@
+#open-checkout {
+  display: none; }
+  #open-checkout .savings {
+    line-height: 1.066667rem; }
+    #open-checkout .savings .textfield {
+      width: 1.333333rem;
+      padding: 0.133333rem;
+      text-align: center;
+      display: inline-block;
+      margin: 0 0.2rem; }
+  #open-checkout .cart-nav .col-6 {
+    text-align: right;
+    font-size: 15px; }
+    [data-dpr="2"] #open-checkout .cart-nav .col-6 {
+      font-size: 30px; }
+    [data-dpr="3"] #open-checkout .cart-nav .col-6 {
+      font-size: 45px; }
+    #open-checkout .cart-nav .col-6 span {
+      margin-left: 0.2rem;
+      margin-right: 0.266667rem; }
+      #open-checkout .cart-nav .col-6 span i {
+        font-style: normal; }
+  #open-checkout .cart-nav .col-4 {
+    padding-left: 0; }
+  #open-checkout .warehouse-list .warehouse {
+    margin-bottom: 0.4rem; }
+  #open-checkout .no_address {
+    display: none;
+    font-size: 14px;
+    line-height: 2.5rem;
+    color: #999; }
+    [data-dpr="2"] #open-checkout .no_address {
+      font-size: 28px; }
+    [data-dpr="3"] #open-checkout .no_address {
+      font-size: 42px; }
+  #open-checkout .item-list .list-header > * {
+    vertical-align: middle; }
+    #open-checkout .item-list .list-header > * button {
+      margin-top: -0.133333rem; }
+  #open-checkout .checkout_size {
+    font-size: 14px; }
+    [data-dpr="2"] #open-checkout .checkout_size {
+      font-size: 28px; }
+    [data-dpr="3"] #open-checkout .checkout_size {
+      font-size: 42px; }
+  #open-checkout .input-group-addon:disabled {
+    background-color: #666;
+    color: #fff; }
+  #open-checkout .center {
+    text-align: center; }
+  #open-checkout .address {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAFBAMAAAAeWRmUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAqUExURfWauPf09PWgvPfw8fWhvPfh6Pfv8fa0yvbK2Pfj6ffi6PbI1/bJ1/a2ynqz8+QAAAAqSURBVAjXY2DgEIQDUQYU4IyQEUeVOYiQWYAiwZSIkLmAIsONkJBEkQAAsy0GguNwHWEAAAAASUVORK5CYII=") repeat-x, #fff;
+    background-position: bottom left;
+    padding-bottom: 0.4rem; }
+    #open-checkout .address .center {
+      width: 10%;
+      color: #666; }
+    #open-checkout .address .info {
+      width: 80%; }
+  #open-checkout .textarea_p {
+    line-height: 0.666667rem; }
+  #open-checkout .textarea_bz {
+    margin-top: 0.133333rem;
+    width: 100%;
+    height: 2.266667rem;
+    border: 1px solid #959595;
+    border-radius: 0.04rem;
+    padding: 0.133333rem;
+    line-height: 0.4rem;
+    font-size: 12px; }
+    [data-dpr="2"] #open-checkout .textarea_bz {
+      font-size: 24px; }
+    [data-dpr="3"] #open-checkout .textarea_bz {
+      font-size: 36px; }
+  #open-checkout .coupon {
+    position: relative; }
+    #open-checkout .coupon .pull-right {
+      margin-right: 0.266667rem; }
+      #open-checkout .coupon .pull-right i {
+        font-style: normal; }
+  #open-checkout .coupon-hide {
+    position: fixed;
+    display: none;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 10; }
+  #open-checkout .coupon-box {
+    position: fixed;
+    display: none;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0.266667rem;
+    max-height: 12.666667rem;
+    margin-bottom: 0 !important;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    z-index: 11;
+    overflow-x: hidden;
+    overflow-y: auto; }
+    #open-checkout .coupon-box .coupon-close {
+      position: absolute;
+      right: 0.266667rem;
+      top: 0.266667rem;
+      width: 0.666667rem;
+      height: 0.666667rem;
+      border: 1px solid #666;
+      border-radius: 100%;
+      cursor: pointer;
+      z-index: 12;
+      overflow: hidden; }
+      #open-checkout .coupon-box .coupon-close:before, #open-checkout .coupon-box .coupon-close:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -0.2rem;
+        margin-top: -0.026667rem;
+        width: 0.4rem;
+        border-bottom: 0.05333rem solid #666; }
+      #open-checkout .coupon-box .coupon-close:before {
+        -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        transform: rotate(135deg); }
+      #open-checkout .coupon-box .coupon-close:after {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+    #open-checkout .coupon-box h3 {
+      width: 100%;
+      height: 0.666667rem;
+      line-height: 0.666667rem;
+      font-size: 14px; }
+      [data-dpr="2"] #open-checkout .coupon-box h3 {
+        font-size: 28px; }
+      [data-dpr="3"] #open-checkout .coupon-box h3 {
+        font-size: 42px; }
+    #open-checkout .coupon-box h4 {
+      color: #666;
+      font-size: 12px;
+      padding-bottom: 0.133333rem;
+      border-bottom: 1px solid #ddd; }
+      [data-dpr="2"] #open-checkout .coupon-box h4 {
+        font-size: 24px; }
+      [data-dpr="3"] #open-checkout .coupon-box h4 {
+        font-size: 36px; }
+    #open-checkout .coupon-box ul {
+      position: relative;
+      width: 100%;
+      overflow: hidden; }
+      #open-checkout .coupon-box ul li {
+        position: relative;
+        width: 100%;
+        height: 1.933333rem;
+        padding: 0.133333rem 0;
+        border-bottom: 1px solid #ddd;
+        overflow: hidden; }
+        #open-checkout .coupon-box ul li.coupon-botton .coupon-box-price {
+          line-height: 1.666667rem;
+          text-align: center;
+          font-size: 14px;
+          color: #666; }
+          [data-dpr="2"] #open-checkout .coupon-box ul li.coupon-botton .coupon-box-price {
+            font-size: 28px; }
+          [data-dpr="3"] #open-checkout .coupon-box ul li.coupon-botton .coupon-box-price {
+            font-size: 42px; }
+          #open-checkout .coupon-box ul li.coupon-botton .coupon-box-price:after, #open-checkout .coupon-box ul li.coupon-botton .coupon-box-price:before {
+            display: none; }
+        #open-checkout .coupon-box ul li button {
+          position: relative;
+          display: block;
+          width: 1.2rem;
+          float: left;
+          height: 1.666667rem;
+          border: 0;
+          background: #fff;
+          overflow: hidden; }
+          #open-checkout .coupon-box ul li button i {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: block;
+            width: 0.533333rem;
+            height: 0.533333rem;
+            margin-top: -0.266667rem;
+            border-radius: 100%;
+            border: 1px solid #666;
+            background: #fff;
+            overflow: hidden; }
+            #open-checkout .coupon-box ul li button i:after {
+              display: none; }
+        #open-checkout .coupon-box ul li.on button i {
+          border: 1px solid #ff3574;
+          background: #ff3574; }
+          #open-checkout .coupon-box ul li.on button i:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -0.133333rem;
+            margin-left: -0.16rem;
+            display: block;
+            width: 0.266667rem;
+            height: 0.133333rem;
+            border-left: 0.05333rem solid #fff;
+            border-bottom: 0.05333rem solid #fff;
+            -ms-transform: rotate(-55deg);
+            transform: rotate(-55deg);
+            -webkit-transform: rotate(-55deg); }
+        #open-checkout .coupon-box ul li .coupon-box-price {
+          position: relative;
+          float: left;
+          width: calc(100% - 3.4rem);
+          height: 1.666667rem;
+          overflow: hidden; }
+          #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices {
+            position: relative;
+            float: left;
+            width: calc(100% - 0.333333rem);
+            height: 1.666667rem;
+            font-size: 14px;
+            color: #666;
+            padding: 0.133333rem 0.266667rem 0.133333rem 0.4rem;
+            background: #f0f0f0;
+            overflow: hidden; }
+            [data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices {
+              font-size: 28px; }
+            [data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices {
+              font-size: 42px; }
+            #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices h2 {
+              line-height: 0.533333rem;
+              font-size: 14px; }
+              [data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices h2 {
+                font-size: 28px; }
+              [data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices h2 {
+                font-size: 42px; }
+            #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p {
+              line-height: 0.4rem;
+              font-size: 12px; }
+              [data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p {
+                font-size: 24px; }
+              [data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p {
+                font-size: 36px; }
+            #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p:last-child {
+              margin-top: 0.066667rem;
+              font-size: 10px; }
+              [data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p:last-child {
+                font-size: 20px; }
+              [data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p:last-child {
+                font-size: 30px; }
+          #open-checkout .coupon-box ul li .coupon-box-price:before, #open-checkout .coupon-box ul li .coupon-box-price:after {
+            position: relative;
+            content: '';
+            display: block;
+            float: left;
+            height: 1.666667rem; }
+          #open-checkout .coupon-box ul li .coupon-box-price:before {
+            width: 0.133333rem;
+            margin-right: -0.013333rem;
+            background: url(../../dist/images/img/coupon_01.png) center center no-repeat;
+            background-size: 0.133333rem 1.666667rem; }
+          #open-checkout .coupon-box ul li .coupon-box-price:after {
+            width: 0.2rem;
+            margin-left: -0.013333rem;
+            background: url(../../dist/images/img/coupon_02.png) center center no-repeat;
+            background-size: 0.2rem 1.666667rem; }
+        #open-checkout .coupon-box ul li .coupon-box-button {
+          position: relative;
+          float: right;
+          width: 2.2rem;
+          height: 1.666667rem;
+          color: #fff;
+          overflow: hidden; }
+          #open-checkout .coupon-box ul li .coupon-box-button span {
+            position: relative;
+            display: block;
+            float: left;
+            width: calc(100% - 0.333333rem);
+            height: 1.666667rem;
+            line-height: 1.666667rem;
+            text-align: center;
+            font-size: 20px;
+            background: #ff3574; }
+            [data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-button span {
+              font-size: 40px; }
+            [data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-button span {
+              font-size: 60px; }
+            #open-checkout .coupon-box ul li .coupon-box-button span i {
+              font-size: 14px;
+              font-style: normal; }
+              [data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-button span i {
+                font-size: 28px; }
+              [data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-button span i {
+                font-size: 42px; }
+          #open-checkout .coupon-box ul li .coupon-box-button:before, #open-checkout .coupon-box ul li .coupon-box-button:after {
+            position: relative;
+            content: '';
+            display: block;
+            float: left;
+            height: 1.666667rem; }
+          #open-checkout .coupon-box ul li .coupon-box-button:before {
+            width: 0.133333rem;
+            margin-right: -0.013333rem;
+            background: url(../../dist/images/img/coupon_03.png) center center no-repeat;
+            background-size: 0.133333rem 1.666667rem; }
+          #open-checkout .coupon-box ul li .coupon-box-button:after {
+            width: 0.2rem;
+            margin-left: -0.013333rem;
+            background: url(../../dist/images/img/coupon_04.png) center center no-repeat;
+            background-size: 0.2rem 1.666667rem; }
+
+#masker .center {
+  width: 10%;
+  color: #666;
+  text-align: center; }
+
+#masker .info {
+  width: 80%; }
+  #masker .info div {
+    padding: 0.16rem 0; }
+
+.layermcont {
+  line-height: 1.1 !important; }
+  .layermcont h3 {
+    font-weight: bolder !important; }
+  .layermcont p {
+    text-align: left !important; }
+
+.icon-question {
+  margin-top: 0.066667rem; }

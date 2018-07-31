@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>钱包</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/wallet.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-wallet" id="user-wallet">
+		<section class="wallet-cont">
+		 	<div class="wallet-cont-top next-before" v-tap.stop="goWalletInfo()">
+				<p>钱包余额</p>
+				<p>&yen; <span v-cloak>{{info.balance | zero}}</span></p>
+				<p>钱包余额由预存款和可提现金额组成</p>
+			</div>
+			<div class="wallet-cont-center">
+				<div class="wallet-cont-center-li">
+					<a href="/page/user/reward.html">
+					<p>&yen; <span v-cloak>{{info.incentive_amount | zero}}</span></p>
+					<p class="next-before">销售奖励</p>
+					</a>
+				</div>
+				<div class="wallet-cont-center-li">
+					<a href="/page/user/wallet-info.html">
+					<p>&yen; <span v-cloak>{{info.income_total | zero}}</span></p>
+					<p class="next-before">总收入</p>
+					</a>
+				</div>
+				<div class="wallet-cont-center-li">
+					<a href="javascript:;">
+					<p>&yen; <span v-cloak>{{info.pre_deposit | zero}}</span></p>
+					<p>预存款</p>
+					<!-- <span class="wallet-cont-center-li-span">充值就送！</span> -->
+					</a>
+				</div>
+			</div>
+		 </section>
+		 <section class="wallet-list">
+		 	<ul>
+		 		<li class="next-before" v-tap.stop="goIndex()">
+		 			<strong v-tap.stop="click()">可提现金额 <i class="icon-question"></i></strong>
+		 			<span class="wallet-list-span-two">提现</span>
+		 			<br>
+		 			<span class="wallet-list-span-one" v-cloak>&yen; {{info.withdraw_deposit | zero}}</span>
+		 		</li>
+		 		<li class="next-before" v-tap.stop="goList()">待结算收入<label>进行中的交易</label><span class="margin" v-cloak>&yen; {{info.pending_amount | zero}}</span></li>
+		 		<!-- <li>提现中<span v-cloak>&yen; {{info.tixianzhong | zero}}</span></li> -->
+		 		<li class="next-before" v-tap.stop="goWalletInfo()">收支明细</li>
+		 	</ul>
+		 </section>
+		<p class="lineH120"></p>
+		<a href="/page/user/weixinText.html?&article_id={{info.recharge_id}}" class="wallet-cont-button">充值</a>
+		<!-- <p class="wallet-cont-bot"><i class="icon-question"></i><a href="/page/user/weixinText.html?&article_id={{info.article_id}}" class="wallet-cont-a lineH120">钱包常见问题</a></p> -->
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/wallet.js -->
+    <script src="/dist/js/user/wallet.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

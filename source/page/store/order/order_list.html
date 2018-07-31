@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>全部订单</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/order-list.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<!--=include ../../../module/order_masker.html -->
+	<div class="order-list root" id="order-list">
+		<section class="order-lists" v-for="list in info" track-by="$index">
+			<div class="order-list-header">
+				<div class="left" v-if="list.order_option.status == 1"><i class="icon-wallet-outline"></i>待付款</div>
+				<div class="left" v-if="list.order_option.status == 2"><i class="icon-package"></i>待发货</div>
+				<div class="left" v-if="list.order_option.status == 3"><i class="icon-car"></i>待收货</div>
+				<div class="left" v-if="list.order_option.status == 4"><i class="icon-polygon-success"></i>交易成功</div>
+				<div class="left" v-if="list.order_option.status == 5"><i class="icon-sad"></i>已取消</div>
+			</div>
+			<div class="order-list-cont list">
+				<a href="/page/store/order_detail.html?order_id={{list.order_option.order_id}}">
+				<ul>
+					<li v-for="item in list.product_list">
+						<div class="list-box">
+							<div class="list-img">
+								<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{item.img_url}}" alt="{{item.title}}">
+							</div>
+							<div class="list-wraps">
+								<div class="list-wrap">
+									<div class="list-cont">
+										<div class="list-title">{{item.title}}</div>
+										<div class="list-order-list">￥{{item.price}}<span>x {{item.count}}</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				</a>
+			</div>
+			<div class="order-list-bottom">
+				<p>共 {{list.order_option.total_num}} 件商品,合计：<span>￥{{list.order_option.price}}</span><label v-if="list.order_option.post_price > 0">(含运费￥{{list.order_option.post_price}})</label></p>
+				<div class="order-list-cont-button">
+					<a class="wuliu" v-if="list.order_option.status == 3" href="{{list.order_option.wuliu_num}}">查看物流</a>
+				</div>
+			</div>
+		</section>
+		<div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/store/order_list.js -->
+    <script src="/dist/js/store/order_list.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

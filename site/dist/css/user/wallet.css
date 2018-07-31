@@ -1,0 +1,253 @@
+.wallet-cont {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background: url(../../dist/images/bg20161128.jpg) left top no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+  .wallet-cont .wallet-cont-top {
+    position: relative;
+    height: 3.733333rem;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden; }
+    .wallet-cont .wallet-cont-top p {
+      text-align: center; }
+      .wallet-cont .wallet-cont-top p:nth-child(1), .wallet-cont .wallet-cont-top p:nth-child(3) {
+        font-size: 16px;
+        line-height: 0.666667rem;
+        color: #333; }
+        [data-dpr="2"] .wallet-cont .wallet-cont-top p:nth-child(1), [data-dpr="2"] .wallet-cont .wallet-cont-top p:nth-child(3) {
+          font-size: 32px; }
+        [data-dpr="3"] .wallet-cont .wallet-cont-top p:nth-child(1), [data-dpr="3"] .wallet-cont .wallet-cont-top p:nth-child(3) {
+          font-size: 48px; }
+      .wallet-cont .wallet-cont-top p:nth-child(1) {
+        margin-top: 0.8rem; }
+      .wallet-cont .wallet-cont-top p:nth-child(2) {
+        color: #ff3574;
+        font-size: 28px;
+        margin-bottom: 0.4rem;
+        margin-top: 0.133333rem;
+        line-height: 0.666667rem; }
+        [data-dpr="2"] .wallet-cont .wallet-cont-top p:nth-child(2) {
+          font-size: 56px; }
+        [data-dpr="3"] .wallet-cont .wallet-cont-top p:nth-child(2) {
+          font-size: 84px; }
+      .wallet-cont .wallet-cont-top p:nth-child(3) {
+        font-size: 12px;
+        color: #999; }
+        [data-dpr="2"] .wallet-cont .wallet-cont-top p:nth-child(3) {
+          font-size: 24px; }
+        [data-dpr="3"] .wallet-cont .wallet-cont-top p:nth-child(3) {
+          font-size: 36px; }
+      .wallet-cont .wallet-cont-top p:nth-child(3) span {
+        color: #000; }
+    .wallet-cont .wallet-cont-top::before {
+      right: 0.533333rem;
+      border-width: 2px; }
+  .wallet-cont .wallet-cont-center {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2.933333rem;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden; }
+    .wallet-cont .wallet-cont-center .wallet-cont-center-li {
+      position: relative;
+      float: left;
+      width: 33.33333%;
+      height: 2.933333rem;
+      padding: 0.8rem 0;
+      overflow: hidden; }
+      .wallet-cont .wallet-cont-center .wallet-cont-center-li p {
+        position: relative;
+        text-align: center; }
+        .wallet-cont .wallet-cont-center .wallet-cont-center-li p:nth-child(1) {
+          font-size: 16px;
+          line-height: 0.666667rem;
+          color: #000; }
+          [data-dpr="2"] .wallet-cont .wallet-cont-center .wallet-cont-center-li p:nth-child(1) {
+            font-size: 32px; }
+          [data-dpr="3"] .wallet-cont .wallet-cont-center .wallet-cont-center-li p:nth-child(1) {
+            font-size: 48px; }
+        .wallet-cont .wallet-cont-center .wallet-cont-center-li p:nth-child(2) {
+          font-size: 14px;
+          line-height: 0.666667rem;
+          color: #333; }
+          [data-dpr="2"] .wallet-cont .wallet-cont-center .wallet-cont-center-li p:nth-child(2) {
+            font-size: 28px; }
+          [data-dpr="3"] .wallet-cont .wallet-cont-center .wallet-cont-center-li p:nth-child(2) {
+            font-size: 42px; }
+        .wallet-cont .wallet-cont-center .wallet-cont-center-li p.next-before:before {
+          width: 0.2rem;
+          height: 0.2rem;
+          margin-top: -0.115rem;
+          right: 0.666667rem; }
+      .wallet-cont .wallet-cont-center .wallet-cont-center-li .wallet-cont-center-li-span {
+        position: absolute;
+        display: block;
+        bottom: 0.2rem;
+        left: 50%;
+        margin-left: -0.933333rem;
+        padding: 0 0.106667rem 0 0.16rem;
+        line-height: 0.533333rem;
+        background: #ff3574;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 0.066667rem; }
+        [data-dpr="2"] .wallet-cont .wallet-cont-center .wallet-cont-center-li .wallet-cont-center-li-span {
+          font-size: 24px; }
+        [data-dpr="3"] .wallet-cont .wallet-cont-center .wallet-cont-center-li .wallet-cont-center-li-span {
+          font-size: 36px; }
+        .wallet-cont .wallet-cont-center .wallet-cont-center-li .wallet-cont-center-li-span:after {
+          position: absolute;
+          content: '';
+          display: block;
+          top: -0.2rem;
+          left: 50%;
+          margin-left: -0.1rem;
+          width: 0;
+          height: 0;
+          border-left: 0.15rem solid transparent;
+          border-right: 0.15rem solid transparent;
+          border-bottom: 0.2rem solid #ff3574; }
+      .wallet-cont .wallet-cont-center .wallet-cont-center-li:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        content: '';
+        width: 1px;
+        height: 2.933333rem;
+        background-color: #ddd; }
+      .wallet-cont .wallet-cont-center .wallet-cont-center-li:last-child:after {
+        display: none; }
+
+.wallet-list {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  margin-top: 0.266667rem;
+  overflow: hidden; }
+  .wallet-list ul {
+    position: relative;
+    display: block;
+    width: 100%; }
+    .wallet-list ul li {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0 0.266667rem;
+      height: 1.2rem;
+      line-height: 1.2rem;
+      color: #333;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+      overflow: hidden; }
+      [data-dpr="2"] .wallet-list ul li {
+        font-size: 28px; }
+      [data-dpr="3"] .wallet-list ul li {
+        font-size: 42px; }
+      .wallet-list ul li strong {
+        display: block;
+        float: left;
+        font-weight: normal;
+        line-height: 1.2rem; }
+      .wallet-list ul li label {
+        color: #999;
+        margin-left: 0.2rem;
+        font-size: 12px; }
+        [data-dpr="2"] .wallet-list ul li label {
+          font-size: 24px; }
+        [data-dpr="3"] .wallet-list ul li label {
+          font-size: 36px; }
+      .wallet-list ul li span {
+        color: #666;
+        float: right; }
+        .wallet-list ul li span.margin {
+          margin-right: 0.4rem; }
+      .wallet-list ul li:first-child {
+        height: 2.066667rem; }
+      .wallet-list ul li:first-child.next-before:before {
+        width: .2rem;
+        height: .2rem;
+        margin-top: -.115rem; }
+      .wallet-list ul li:first-child span.wallet-list-span-one {
+        height: 0.866667rem;
+        line-height: 0.466667rem;
+        float: left;
+        font-size: 16px;
+        font-weight: bolder;
+        color: #ff3574; }
+        [data-dpr="2"] .wallet-list ul li:first-child span.wallet-list-span-one {
+          font-size: 32px; }
+        [data-dpr="3"] .wallet-list ul li:first-child span.wallet-list-span-one {
+          font-size: 48px; }
+      .wallet-list ul li:first-child span.wallet-list-span-two {
+        margin-right: 0.4rem;
+        line-height: 2.066667rem;
+        font-size: 13px; }
+        [data-dpr="2"] .wallet-list ul li:first-child span.wallet-list-span-two {
+          font-size: 26px; }
+        [data-dpr="3"] .wallet-list ul li:first-child span.wallet-list-span-two {
+          font-size: 39px; }
+      .wallet-list ul li:last-child {
+        border-bottom: none; }
+
+.lineH120 {
+  line-height: 1.6rem;
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 1.6rem; }
+  [data-dpr="2"] .lineH120 {
+    font-size: 28px; }
+  [data-dpr="3"] .lineH120 {
+    font-size: 42px; }
+
+.wallet-cont-button {
+  display: block;
+  width: -ms-calc(100% - 0.866667rem);
+  width: calc(100% - 0.866667rem);
+  height: 1.333333rem;
+  line-height: 1.333333rem;
+  border-radius: 10px;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #fff;
+  background-color: #ff3574;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden; }
+  [data-dpr="2"] .wallet-cont-button {
+    font-size: 36px; }
+  [data-dpr="3"] .wallet-cont-button {
+    font-size: 54px; }
+
+.wallet-cont-bot {
+  position: relative;
+  text-align: center;
+  overflow: hidden; }
+  .wallet-cont-bot i {
+    font-size: 15px;
+    margin-right: 0.133333rem;
+    color: #999; }
+    [data-dpr="2"] .wallet-cont-bot i {
+      font-size: 30px; }
+    [data-dpr="3"] .wallet-cont-bot i {
+      font-size: 45px; }
+  .wallet-cont-bot .wallet-cont-a {
+    color: #999;
+    text-decoration: underline; }
+
+.layui-m-layersection {
+  line-height: 1.1 !important; }
+  .layui-m-layersection h3 {
+    font-size: 18px;
+    font-weight: bolder !important; }
+    [data-dpr="2"] .layui-m-layersection h3 {
+      font-size: 36px; }
+    [data-dpr="3"] .layui-m-layersection h3 {
+      font-size: 54px; }
+  .layui-m-layersection p {
+    text-align: left; }

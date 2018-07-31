@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>优惠凑单</title>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no,email=no,address=no" name="format-detection">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<script>!function(){var e="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",t=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet)t.styleSheet.disabled||(t.styleSheet.cssText=e);else try{t.innerHTML=e}catch(i){t.innerText=e}}(),!function(e,t){function i(){var t=r.getBoundingClientRect().width;t/s>540&&(t=540*s);var i=t/10;r.style.fontSize=i+"px",c.rem=e.rem=i}var n,a=e.document,r=a.documentElement,o=a.querySelector('meta[name="viewport"]'),l=a.querySelector('meta[name="flexible"]'),s=0,d=0,c=t.flexible||(t.flexible={});if(o){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var m=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);m&&(d=parseFloat(m[1]),s=parseInt(1/d))}else if(l){var h=l.getAttribute("content");if(h){var p=h.match(/initial\-dpr=([\d\.]+)/),f=h.match(/maximum\-dpr=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseFloat((1/s).toFixed(2))),f&&(s=parseFloat(f[1]),d=parseFloat((1/s).toFixed(2)))}}if(!s&&!d){var u=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),b=e.devicePixelRatio;s=u?b>=3&&(!s||s>=3)?3:b>=2&&(!s||s>=2)?2:1:1,d=1/s}if(r.setAttribute("data-dpr",s),!o)if(o=a.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(o);else{var g=a.createElement("div");g.appendChild(o),a.write(g.innerHTML)}e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(i,300))},!1),"complete"===a.readyState?a.body.style.fontSize=12*s+"px":a.addEventListener("DOMContentLoaded",function(){a.body.style.fontSize=12*s+"px"},!1),i(),c.dpr=e.dpr=s,c.refreshRem=i,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+	<!-- build:css /dist/css/base.css -->
+	<link rel="stylesheet" href="/dist/css/base.css">
+	<!-- endbuild -->
+<style>.andlist{position:relative;width:100%;overflow:hidden}.andlist .andlist-header{position:fixed;top:0;left:0;width:100%;background-color:#fff;overflow:hidden;z-index:299}.andlist .andlist-header .andlist-header-active{display:block;position:relative;width:100%;min-height:.466667rem;padding:.4rem .266667rem;background:url(../../dist/images/andlist_bg.jpg) center center no-repeat #f74876;background-size:100%}.andlist .andlist-header .andlist-header-active a{position:relative;display:block;padding-left:1.2rem;min-height:.466667rem;margin-bottom:.266667rem}.andlist .andlist-header .andlist-header-active a:last-child{margin-bottom:0}.andlist .andlist-header .andlist-header-active a span{display:block;position:absolute;left:0;top:0;width:1rem;height:.466667rem;line-height:.466667rem;border:1px solid #fdff3d;color:#fdff3d;font-size:12px;text-align:center}[data-dpr="2"] .andlist .andlist-header .andlist-header-active a span{font-size:24px}[data-dpr="3"] .andlist .andlist-header .andlist-header-active a span{font-size:36px}.andlist .andlist-header .andlist-header-active a p{line-height:.466667rem;word-wrap:break-word;word-break:break-all;font-size:12px;color:#fff}[data-dpr="2"] .andlist .andlist-header .andlist-header-active a p{font-size:24px}[data-dpr="3"] .andlist .andlist-header .andlist-header-active a p{font-size:36px}.andlist .andlist-header .andlist-header-active a p i:last-child{display:none}.andlist .andlist-header .andlist-header-nav{position:relative;width:100%;height:1.08rem;line-height:1.066667rem;border-bottom:1px solid #dadada;background-color:#fff}.andlist .andlist-header .andlist-header-nav:after,.andlist .andlist-header .andlist-header-nav:before{clear:both}.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li{position:relative;width:25%;height:1.066667rem;line-height:1.066667rem;text-align:center;font-size:14px;float:left}[data-dpr="2"] .andlist .andlist-header .andlist-header-nav .andlist-header-nav-li{font-size:28px}[data-dpr="3"] .andlist .andlist-header .andlist-header-nav .andlist-header-nav-li{font-size:42px}.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li i{position:relative;display:inline-block;margin-left:.133333rem}.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li i.icon-san{margin-left:0;padding:0 .133333rem}.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li i.icon-san:after{display:block;content:'';position:absolute;right:0;width:0;height:0}.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li i.icon-san:before{display:block;content:'';position:absolute;right:0;width:0;height:0;top:-.066667rem;border-left:.133333rem solid transparent;border-right:.133333rem solid transparent;border-top:.186667rem solid #999}.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li i.icon-san:after{bottom:.133333rem;border-left:.133333rem solid transparent;border-right:.133333rem solid transparent;border-bottom:.186667rem solid #999}.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li i.three-top:after{border-bottom:.18667rem solid #ff3574}.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li i.three-bot:before{border-top:.18667rem solid #ff3574}.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li.one i,.andlist .andlist-header .andlist-header-nav .andlist-header-nav-li.four i{-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}.andlist .andlist-header .andlist-header-nav .select{color:#ff3574}.andlist .andlist-cont{position:relative;width:100%;overflow:hidden}.andlist .andlist-cont ul li{width:calc(100% * 1/2 - .266667rem);background-color:#fff}.andlist .andlist-cont ul li .video-img:before{display:none}.andlist .andlist-cont ul li .video-img span{position:absolute;display:block;top:0;right:.133333rem;padding:0 .133333rem;height:.533333rem;line-height:.533333rem;font-size:12px;color:#fff;background:#ff3574;z-index:3;overflow:hidden}[data-dpr="2"] .andlist .andlist-cont ul li .video-img span{font-size:24px}[data-dpr="3"] .andlist .andlist-cont ul li .video-img span{font-size:36px}.andlist .andlist-cont ul li .video-img i{position:absolute;display:block;top:50%;left:50%;width:1.76rem;height:1.76rem;margin-top:-.88rem;margin-left:-.88rem;z-index:99;overflow:hidden}.andlist .andlist-cont ul li .video-img i.shouqi{background:url(/dist/images/shouqing.png) center center no-repeat;background-size:100%}.andlist .andlist-cont ul li .video-img i.xiajia{background:url(/dist/images/xiajia.png) center center no-repeat;background-size:100%}.andlist .andlist-cont ul li .video-title{height:1.066667rem;line-height:.466667rem;padding-left:.133333rem;padding-right:.133333rem}.andlist .andlist-cont ul li .video-product-price{position:relative;height:.8rem;line-height:.8rem;padding-left:.133333rem;padding-right:.133333rem;text-align:center;overflow:hidden}.andlist .andlist-cont ul li .video-product-price span{color:#333;font-size:15px}[data-dpr="2"] .andlist .andlist-cont ul li .video-product-price span{font-size:30px}[data-dpr="3"] .andlist .andlist-cont ul li .video-product-price span{font-size:45px}.andlist .andlist-cont ul li .video-product-price em{color:#ff3574;font-style:normal;font-size:12px}[data-dpr="2"] .andlist .andlist-cont ul li .video-product-price em{font-size:24px}[data-dpr="3"] .andlist .andlist-cont ul li .video-product-price em{font-size:36px}.andlist .andlist-cont ul li .video-product-price del{color:#999;font-size:12px}[data-dpr="2"] .andlist .andlist-cont ul li .video-product-price del{font-size:24px}[data-dpr="3"] .andlist .andlist-cont ul li .video-product-price del{font-size:36px}.andlist .andlist-cont ul li .video-product-price label{display:inline-block;padding:0 .106667rem;line-height:.453333rem;margin-top:.1rem;border-radius:.066667rem;background-color:#ff78a0;color:#fff;font-size:12px}[data-dpr="2"] .andlist .andlist-cont ul li .video-product-price label{font-size:24px}[data-dpr="3"] .andlist .andlist-cont ul li .video-product-price label{font-size:36px}.andlist .andlist-cont ul li .andlist-bot{position:relative;width:100%;height:.933333rem;line-height:.933333rem;text-align:center;background-color:#ff3574;color:#fff;font-size:15px}[data-dpr="2"] .andlist .andlist-cont ul li .andlist-bot{font-size:30px}[data-dpr="3"] .andlist .andlist-cont ul li .andlist-bot{font-size:45px}.andlist .andlist-cont ul li .andlist-bot.on{background-color:#999;color:#fff}.andlist .andlist-cont .andlist-cont-no{padding:2.666667rem 0;text-align:center;font-size:12px;color:#999}[data-dpr="2"] .andlist .andlist-cont .andlist-cont-no{font-size:24px}[data-dpr="3"] .andlist .andlist-cont .andlist-cont-no{font-size:36px}.andlist .nav-box-one{position:fixed;display:none;left:0;width:100%;text-align:center;background-color:#fff;overflow:hidden;z-index:299}.andlist .nav-box-one ul{min-height:4.666667rem}.andlist .nav-box-one ul,.andlist .nav-box-one ul li{display:block;width:100%;position:relative;overflow:hidden}.andlist .nav-box-one ul li{padding:0 .266667rem;height:.933333rem;font-size:14px;line-height:.933333rem;text-align:left;display:-webkit-box;display:-moz-box;display:-ms-box;display:box;word-wrap:break-word;word-break:break-all;-webkit-line-clamp:1;-moz-line-clamp:1;-ms-line-clamp:1;-o-line-clamp:1;-webkit-box-orient:vertical;-moz-box-orient:vertical;-ms-box-orient:vertical;-o-box-orient:vertical}[data-dpr="2"] .andlist .nav-box-one ul li{font-size:28px}[data-dpr="3"] .andlist .nav-box-one ul li{font-size:42px}.andlist .nav-box-one ul li.on{color:#ff3574;background-color:#f9e4ea}.andlist .nav-box-four{position:fixed;display:none;left:0;width:100%;background-color:#fff;overflow:hidden;z-index:299}.andlist .nav-box-four .nav-box-four-list{position:relative;width:100%;height:4rem;background-color:#f5f5f5;padding-left:2.666667rem;overflow:hidden}.andlist .nav-box-four .nav-box-four-list .nav-box-four-list-left{position:absolute;top:0;left:0;width:2.666667rem;height:4rem;overflow-x:hidden;overflow-y:auto}.andlist .nav-box-four .nav-box-four-list .nav-box-four-list-left li{display:block;width:100%;height:.8rem;line-height:.8rem;padding:0 .266667rem;color:#333;word-wrap:break-word;word-break:break-all;text-overflow:ellipsis;overflow:hidden}.andlist .nav-box-four .nav-box-four-list .nav-box-four-list-left li.on{color:#ff3574;background-color:#fff}.andlist .nav-box-four .nav-box-four-list .nav-box-four-list-right{position:relative;width:100%;height:4rem;overflow-x:hidden;overflow-y:auto;font-size:14px}[data-dpr="2"] .andlist .nav-box-four .nav-box-four-list .nav-box-four-list-right{font-size:28px}[data-dpr="3"] .andlist .nav-box-four .nav-box-four-list .nav-box-four-list-right{font-size:42px}.andlist .nav-box-four .nav-box-four-list .nav-box-four-list-right ul{display:none;height:100%;background-color:#fff}.andlist .nav-box-four .nav-box-four-list .nav-box-four-list-right ul li{display:block;width:100%;padding:0 .666667rem 0 .133333rem;height:.8rem;line-height:.8rem;word-wrap:break-word;word-break:break-all;text-overflow:ellipsis;background-color:#fff;color:#333;overflow:hidden}.andlist .nav-box-four .nav-box-four-list .nav-box-four-list-right ul li.on{color:#ff3574;background-color:#f9e4ea}.andlist .nav-box-four .nav-box-four-list .nav-box-four-list-right ul.select{display:block}.andlist .nav-box-four .nav-box-four-bot{position:relative;width:100%;height:1.066667rem;overflow:hidden}.andlist .nav-box-four .nav-box-four-bot span{width:50%;height:1.066667rem;line-height:1.066667rem;float:left;background-color:#fff;color:#333;text-align:center;font-size:15px}[data-dpr="2"] .andlist .nav-box-four .nav-box-four-bot span{font-size:30px}[data-dpr="3"] .andlist .nav-box-four .nav-box-four-bot span{font-size:45px}.andlist .nav-box-four .nav-box-four-bot span:last-child{background-color:#ff3574;color:#fff}</style>
+
+</head>
+<body>
+	<div class="andlist" id="masker">
+		<section class="andlist-header masker masker-150"></section>
+		<section class="andlist-cont video">
+		 	<ul>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		 </section>
+	</div>
+	<div class="andlist root" id="andlist">
+		<section class="andlist-header" id="andlist-header">
+			<div class="andlist-header-active">
+				<a href="javascript:;" v-for="active in active_info">
+					<template v-if="active.type == 1">
+						<span>满减</span>
+						<template v-if="active.rule == ''">
+							<p>{{active.active_desc}}</p>
+						</template>
+						<template v-else>
+							<template v-if="active.count_type == 1">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元减{{active.rule.cut_money}}元，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件减{{active.rule.cut_money}}元，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元</p>
+								</template>
+							</template>
+							<template v-if="active.count_type == 2">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元减{{active.rule.cut_money}}元，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元，满减可累计，买的越多，优惠更多！</p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元，满减可累计，买的越多，优惠更多！</p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件减{{active.rule.cut_money}}元，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元，满减可累计，买的越多，优惠更多！</p>
+								</template>
+								<template v-if="active.unit == 3">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件减{{active.rule.cut_money}}元，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元，满减可累计，买的越多，优惠更多！</p>
+								</template>
+							</template>
+							<template v-if="active.count_type == 3">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元减{{active.rule.cut_money}}元，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元，还差{{active.rule.distance_amount}}元，立减{{active.rule.distance_cut}}元</p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}元，已减{{active.rule.cut_money}}元</p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件减{{active.rule.cut_money}}元，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元，还差{{active.rule.distance_amount}}件，立减{{active.rule.distance_cut}}元</p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}件，已减{{active.rule.cut_money}}元</p>
+								</template>
+							</template>
+						</template>
+					</template>
+					<template v-if="active.type == 2">
+						<span>满赠</span>
+						<template v-if="active.rule == ''">
+							<p>{{active.active_desc}}</p>
+						</template>
+						<template v-else>
+							<template v-if="active.count_type == 1">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+								</template>
+							</template>
+							<template v-if="active.count_type == 2">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，满赠可累计，买的越多，赠送更多！</p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，满赠可累计，买的越多，赠送更多！</p>
+								</template>
+							</template>
+							<template v-if="active.count_type == 3">
+								<template v-if="active.unit == 1">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}元</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}元，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+								</template>
+								<template v-if="active.unit == 2">
+									<p v-if="active.rule.copywriter == 1">购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template>，还差{{active.rule.distance}}件</p>
+									<p v-if="active.rule.copywriter == 2">已购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+									<p v-if="active.rule.copywriter == 3">已购满{{active.rule.full}}件，赠送<template v-for="list in active.rule.gifts">{{list.gift_name}}{{list.gift_num}}{{list.gift_unit}}</template></p>
+								</template>
+							</template>
+						</template>
+					</template>
+					<template v-if="active.type == 3">
+						<span>任选</span>
+						<template v-if="active.rule == ''">
+							<p>{{active.active_desc}}</p>
+						</template>
+						<template v-else>
+							<p v-if="active.rule.copywriter == 1">还差{{active.rule.distance}}件，立享{{active.rule.full}}元任选{{active.rule.num}}件</p>
+							<p v-if="active.rule.copywriter == 2">已满足{{active.rule.full}}元任选{{active.rule.num}}件 <template v-if="active.rule.distance_full != ''">还差{{active.rule.distance}}件，立享{{active.rule.distance_full}}元任选{{active.rule.distance_amount}}件</template></p>
+							<p v-if="active.rule.copywriter == 3">已满足{{active.rule.full}}元任选{{active.rule.num}}件</p>
+							<p v-if="active.rule.copywriter == 4">已满足<template v-for="rul in active.rule.options">{{rul.full}}元任选{{rul.num}}件<i>，</i></template></p>
+						</template>
+					</template>
+				</a>
+			</div>
+			<div class="andlist-header-nav" id="andlist-header-nav">
+				<div v-if="active_info.length > 1" v-tap.stop="navAll($event)" class="andlist-header-nav-li one select"><em>活动</em> <i class="icon-arrow"></i></div>
+				<div v-else v-tap.stop="navList_one($event)" data-filter="all" class="andlist-header-nav-li one select">活动</div>
+				<div v-tap.stop="navList_two($event)" data-filter="hot" class="andlist-header-nav-li two">畅销</div>
+				<div v-tap.stop="navList_three($event)" data-filter="price" class="andlist-header-nav-li three">价格 <i class="icon-san"></i></div>
+				<div class="andlist-header-nav-li four" v-tap.stop="classAll($event)">分类 <i class="icon-arrow"></i></div>
+			</div>
+		</section>
+		<section class="andlist-cont video" id="andlist-cont">
+		 	<ul v-if="and_list != ''">
+				<li v-for='items in and_list'>
+					<a href="/page/goods.html?product_id={{items.id}}">
+						<div class="video-img">
+							<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{items.thumb}}" alt="{{items.product_name}}">
+							<i v-if="items.error == 6" class="shouqi"></i>
+							<i v-if="items.error == 3" class="xiajia"></i>
+						</div>
+						<span class="video-title">{{items.product_name}}</span>
+						<div class="video-product-price" v-if="items.discount == ''">
+							<span>￥{{items.agency_price}}</span> <em>/ 赚{{parseFloat((items.marketprice - items.agency_price).toFixed(2))}}元</em>
+						</div>
+						<div class="video-product-price" v-else>
+							<span>￥{{items.agency_price}}</span> <label>{{items.discount}}</label>
+						</div>
+					</a>
+					<div :class="{'on': items.error != 0}" v-tap.stop="clickCart(items.id,items.type)" class="andlist-bot">加入购物车</div>
+				</li>
+			</ul>
+			<p class="andlist-cont-no" v-else>暂无满足条件商品！</p>
+		 </section>
+		 <div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+		 <section class="nav-box-one">
+		 	<ul>
+			 	<li class="on" v-tap.stop="nav_List_one($event)" data-filter="all">活动</li>
+			 	<li data-filter="{{active.active_id}}_{{active.type}}" v-tap.stop="nav_List_one($event,$index)" v-for="active in active_info">{{active.active_desc}}</li>
+			</ul>
+		 	<!-- <ul>
+		 		<li class="on" v-tap.stop="nav_List_one($event)" data-filter="all">活动</li>
+		 		<li v-tap.stop="nav_List_one($event)" data-filter="full_cut">满减</li>
+		 		<li v-tap.stop="nav_List_one($event)" data-filter="full_gift">满赠</li>
+		 	</ul> -->
+		 </section>
+		 <section class="nav-box-four">
+		 	<div class="nav-box-four-list">
+		 		<div class="nav-box-four-list-left">
+		 			<ul>
+		 				<li v-tap.stop="classList($event)" v-if="brand.length > 0" class="bind-nav on" >品牌</li>
+		 				<li v-tap.stop="classList($event)" v-if="category.length > 0" class="class-nav" >分类</li>
+		 			</ul>
+		 		</div>
+		 		<div class="nav-box-four-list-right">
+		 			<ul class="bind select">
+		 				<li v-tap.stop="brandList($event,bra.brand_id)" v-for="bra in brand | orderBy 'title'">{{bra.title}}</li>
+		 			</ul>
+		 			<ul class="class">
+		 				<li v-tap.stop="categoryList($event,cat.category_id)" v-for="cat in category" >{{cat.title}}</li>
+		 			</ul>
+		 		</div>
+		 	</div>
+		 	<div class="nav-box-four-bot"><span v-tap.stop="resetList($event)">重置</span><span v-tap.stop="searchList($event)">确定</span></div>
+		 </section>
+		 <!-- 70%透明遮盖层 -->
+        <div class="hideBox" v-tap.stop="closeBottom()"></div>
+        <div class="hideBox_ad" v-tap.stop="closeAd()"></div>
+	</div>
+	<section class="right-fixed"><a class="top-fixed" href="javascript:;">顶部</a></section>
+	<!-- build:js /dist/js/combin.js -->
+	<script src="/dist/js/lib/jquery-2.2.3.min.js"></script>
+	<script src="/dist/js/lib/vue.js"></script>
+	<script src="/dist/js/common.chunk.js"></script>
+	<!-- endbuild -->
+
+    <!-- build:js /dist/js/user/andlist.js -->
+    <script src="/dist/js/user/andlist.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

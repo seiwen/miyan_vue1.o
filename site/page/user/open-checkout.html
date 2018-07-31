@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <title>订单结算</title>
+    	<meta charset="UTF-8">
+    	<meta content="yes" name="apple-mobile-web-app-capable">
+    	<meta content="yes" name="apple-touch-fullscreen">
+    	<meta content="telephone=no,email=no,address=no" name="format-detection">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="description" content="">
+    	<meta name="keywords" content="">
+    	<script>!function(){var e="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",t=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet)t.styleSheet.disabled||(t.styleSheet.cssText=e);else try{t.innerHTML=e}catch(i){t.innerText=e}}(),!function(e,t){function i(){var t=r.getBoundingClientRect().width;t/s>540&&(t=540*s);var i=t/10;r.style.fontSize=i+"px",c.rem=e.rem=i}var n,a=e.document,r=a.documentElement,o=a.querySelector('meta[name="viewport"]'),l=a.querySelector('meta[name="flexible"]'),s=0,d=0,c=t.flexible||(t.flexible={});if(o){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var m=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);m&&(d=parseFloat(m[1]),s=parseInt(1/d))}else if(l){var h=l.getAttribute("content");if(h){var p=h.match(/initial\-dpr=([\d\.]+)/),f=h.match(/maximum\-dpr=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseFloat((1/s).toFixed(2))),f&&(s=parseFloat(f[1]),d=parseFloat((1/s).toFixed(2)))}}if(!s&&!d){var u=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),b=e.devicePixelRatio;s=u?b>=3&&(!s||s>=3)?3:b>=2&&(!s||s>=2)?2:1:1,d=1/s}if(r.setAttribute("data-dpr",s),!o)if(o=a.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(o);else{var g=a.createElement("div");g.appendChild(o),a.write(g.innerHTML)}e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(i,300))},!1),"complete"===a.readyState?a.body.style.fontSize=12*s+"px":a.addEventListener("DOMContentLoaded",function(){a.body.style.fontSize=12*s+"px"},!1),i(),c.dpr=e.dpr=s,c.refreshRem=i,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+    	<!-- build:css /dist/css/base.css -->
+    	<link rel="stylesheet" href="/dist/css/base.css">
+    	<!-- endbuild -->
+    <!-- build:css /dist/css/cart/cart.css -->
+    <link href="/dist/css/cart/cart.css" rel="stylesheet">
+    <!-- endbuild -->
+    <style>#open-checkout{display:none}#open-checkout .savings{line-height:1.066667rem}#open-checkout .savings .textfield{width:1.333333rem;padding:.133333rem;text-align:center;display:inline-block;margin:0 .2rem}#open-checkout .cart-nav .col-6{text-align:right;font-size:15px}[data-dpr="2"] #open-checkout .cart-nav .col-6{font-size:30px}[data-dpr="3"] #open-checkout .cart-nav .col-6{font-size:45px}#open-checkout .cart-nav .col-6 span{margin-left:.2rem;margin-right:.266667rem}#open-checkout .cart-nav .col-6 span i{font-style:normal}#open-checkout .cart-nav .col-4{padding-left:0}#open-checkout .warehouse-list .warehouse{margin-bottom:.4rem}#open-checkout .no_address{display:none;font-size:14px;line-height:2.5rem;color:#999}[data-dpr="2"] #open-checkout .no_address{font-size:28px}[data-dpr="3"] #open-checkout .no_address{font-size:42px}#open-checkout .item-list .list-header>*{vertical-align:middle}#open-checkout .item-list .list-header>* button{margin-top:-.133333rem}#open-checkout .checkout_size{font-size:14px}[data-dpr="2"] #open-checkout .checkout_size{font-size:28px}[data-dpr="3"] #open-checkout .checkout_size{font-size:42px}#open-checkout .input-group-addon:disabled{background-color:#666;color:#fff}#open-checkout .center{text-align:center}#open-checkout .address{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAFBAMAAAAeWRmUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAqUExURfWauPf09PWgvPfw8fWhvPfh6Pfv8fa0yvbK2Pfj6ffi6PbI1/bJ1/a2ynqz8+QAAAAqSURBVAjXY2DgEIQDUQYU4IyQEUeVOYiQWYAiwZSIkLmAIsONkJBEkQAAsy0GguNwHWEAAAAASUVORK5CYII=") repeat-x,#fff;background-position:bottom left;padding-bottom:.4rem}#open-checkout .address .center{width:10%;color:#666}#open-checkout .address .info{width:80%}#open-checkout .textarea_p{line-height:.666667rem}#open-checkout .textarea_bz{margin-top:.133333rem;width:100%;height:2.266667rem;border:1px solid #959595;border-radius:.04rem;padding:.133333rem;line-height:.4rem;font-size:12px}[data-dpr="2"] #open-checkout .textarea_bz{font-size:24px}[data-dpr="3"] #open-checkout .textarea_bz{font-size:36px}#open-checkout .coupon{position:relative}#open-checkout .coupon .pull-right{margin-right:.266667rem}#open-checkout .coupon .pull-right i{font-style:normal}#open-checkout .coupon-hide{position:fixed;display:none;content:'';top:0;left:0;width:100%;height:100%;background-color:#000;opacity:0;filter:alpha(opacity=0);z-index:10}#open-checkout .coupon-box{position:fixed;display:none;left:0;bottom:0;width:100%;padding:.266667rem;max-height:12.666667rem;margin-bottom:0!important;text-align:center;border-top:1px solid #ddd;background:#fff;z-index:11;overflow-x:hidden;overflow-y:auto}#open-checkout .coupon-box .coupon-close{position:absolute;right:.266667rem;top:.266667rem;width:.666667rem;height:.666667rem;border:1px solid #666;border-radius:100%;cursor:pointer;z-index:12;overflow:hidden}#open-checkout .coupon-box .coupon-close:before,#open-checkout .coupon-box .coupon-close:after{content:"";display:block;position:absolute;left:50%;top:50%;margin-left:-.2rem;margin-top:-.026667rem;width:.4rem;border-bottom:.05333rem solid #666}#open-checkout .coupon-box .coupon-close:before{-webkit-transform:rotate(135deg);-ms-transform:rotate(135deg);transform:rotate(135deg)}#open-checkout .coupon-box .coupon-close:after{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}#open-checkout .coupon-box h3{width:100%;height:.666667rem;line-height:.666667rem;font-size:14px}[data-dpr="2"] #open-checkout .coupon-box h3{font-size:28px}[data-dpr="3"] #open-checkout .coupon-box h3{font-size:42px}#open-checkout .coupon-box h4{color:#666;font-size:12px;padding-bottom:.133333rem;border-bottom:1px solid #ddd}[data-dpr="2"] #open-checkout .coupon-box h4{font-size:24px}[data-dpr="3"] #open-checkout .coupon-box h4{font-size:36px}#open-checkout .coupon-box ul,#open-checkout .coupon-box ul li{position:relative;width:100%;overflow:hidden}#open-checkout .coupon-box ul li{height:1.933333rem;padding:.133333rem 0;border-bottom:1px solid #ddd}#open-checkout .coupon-box ul li.coupon-botton .coupon-box-price{line-height:1.666667rem;text-align:center;font-size:14px;color:#666}[data-dpr="2"] #open-checkout .coupon-box ul li.coupon-botton .coupon-box-price{font-size:28px}[data-dpr="3"] #open-checkout .coupon-box ul li.coupon-botton .coupon-box-price{font-size:42px}#open-checkout .coupon-box ul li.coupon-botton .coupon-box-price:after,#open-checkout .coupon-box ul li.coupon-botton .coupon-box-price:before{display:none}#open-checkout .coupon-box ul li button{position:relative;display:block;width:1.2rem;float:left;height:1.666667rem;border:0;background:#fff;overflow:hidden}#open-checkout .coupon-box ul li button i{position:absolute;top:50%;left:0;display:block;width:.533333rem;height:.533333rem;margin-top:-.266667rem;border-radius:100%;border:1px solid #666;background:#fff;overflow:hidden}#open-checkout .coupon-box ul li button i:after{display:none}#open-checkout .coupon-box ul li.on button i{border:1px solid #ff3574;background:#ff3574}#open-checkout .coupon-box ul li.on button i:after{content:"";position:absolute;left:50%;top:50%;margin-top:-.133333rem;margin-left:-.16rem;display:block;width:.266667rem;height:.133333rem;border-left:.05333rem solid #fff;border-bottom:.05333rem solid #fff;-ms-transform:rotate(-55deg);transform:rotate(-55deg);-webkit-transform:rotate(-55deg)}#open-checkout .coupon-box ul li .coupon-box-price{position:relative;float:left;width:calc(100% - 3.4rem);height:1.666667rem;overflow:hidden}#open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices{position:relative;float:left;width:calc(100% - .333333rem);height:1.666667rem;font-size:14px;color:#666;padding:.133333rem .266667rem .133333rem .4rem;background:#f0f0f0;overflow:hidden}[data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices{font-size:28px}[data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices{font-size:42px}#open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices h2{line-height:.533333rem;font-size:14px}[data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices h2{font-size:28px}[data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices h2{font-size:42px}#open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p{line-height:.4rem;font-size:12px}[data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p{font-size:24px}[data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p{font-size:36px}#open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p:last-child{margin-top:.066667rem;font-size:10px}[data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p:last-child{font-size:20px}[data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-price .coupon-box-prices p:last-child{font-size:30px}#open-checkout .coupon-box ul li .coupon-box-price:before,#open-checkout .coupon-box ul li .coupon-box-price:after{position:relative;content:'';display:block;float:left;height:1.666667rem}#open-checkout .coupon-box ul li .coupon-box-price:before{width:.133333rem;margin-right:-.013333rem;background:url(../../dist/images/img/coupon_01.png) center center no-repeat;background-size:.133333rem 1.666667rem}#open-checkout .coupon-box ul li .coupon-box-price:after{width:.2rem;margin-left:-.013333rem;background:url(../../dist/images/img/coupon_02.png) center center no-repeat;background-size:.2rem 1.666667rem}#open-checkout .coupon-box ul li .coupon-box-button{position:relative;float:right;width:2.2rem;height:1.666667rem;color:#fff;overflow:hidden}#open-checkout .coupon-box ul li .coupon-box-button span{position:relative;display:block;float:left;width:calc(100% - .333333rem);height:1.666667rem;line-height:1.666667rem;text-align:center;font-size:20px;background:#ff3574}[data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-button span{font-size:40px}[data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-button span{font-size:60px}#open-checkout .coupon-box ul li .coupon-box-button span i{font-size:14px;font-style:normal}[data-dpr="2"] #open-checkout .coupon-box ul li .coupon-box-button span i{font-size:28px}[data-dpr="3"] #open-checkout .coupon-box ul li .coupon-box-button span i{font-size:42px}#open-checkout .coupon-box ul li .coupon-box-button:before,#open-checkout .coupon-box ul li .coupon-box-button:after{position:relative;content:'';display:block;float:left;height:1.666667rem}#open-checkout .coupon-box ul li .coupon-box-button:before{width:.133333rem;margin-right:-.013333rem;background:url(../../dist/images/img/coupon_03.png) center center no-repeat;background-size:.133333rem 1.666667rem}#open-checkout .coupon-box ul li .coupon-box-button:after{width:.2rem;margin-left:-.013333rem;background:url(../../dist/images/img/coupon_04.png) center center no-repeat;background-size:.2rem 1.666667rem}#masker .center{width:10%;color:#666;text-align:center}#masker .info{width:80%}#masker .info div{padding:.16rem 0}.layermcont{line-height:1.1!important}.layermcont h3{font-weight:bolder!important}.layermcont p{text-align:left!important}.icon-question{margin-top:.066667rem}</style>
+</head>
+
+<body>
+    <div class="has-nav" id="masker">
+        <section>
+            <ul class="item-list pay-list">
+                <li class="list-item disabled">
+                    <input type="radio"  value="wechat" disabled="disabled">
+                    <label>
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-wechat"></i></span>
+                        <span class="checkout_size">微信支付</span>
+                    </label>
+                </li>
+                <li class="list-item disabled">
+                    <input type="radio"  value="aliwap" disabled="disabled">
+                    <label >
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-aliwap"></i></span>
+                        <span class="checkout_size">支付宝支付</span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section class="list" id="masker-list">
+        	<ul>
+        		<li>
+        			<div class="list-box">
+        				<div class="list-img masker"></div>
+        				<div class="list-wraps">
+        					<div class="list-wrap">
+        						<div class="list-cont">
+        							<div class="masker masker-list"></div>
+        							<span class="masker masker-block"></span>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</li>
+        		<li>
+        			<div class="list-box">
+        				<div class="list-img masker"></div>
+        				<div class="list-wraps">
+        					<div class="list-wrap">
+        						<div class="list-cont">
+        							<div class="masker masker-list"></div>
+        							<span class="masker masker-block"></span>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</li>
+        		<li>
+        			<div class="list-box">
+        				<div class="list-img masker"></div>
+        				<div class="list-wraps">
+        					<div class="list-wrap">
+        						<div class="list-cont">
+        							<div class="masker masker-list"></div>
+        							<span class="masker masker-block"></span>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</li>
+        	</ul>
+        </section>
+    </div>
+    <div id="open-checkout" class="has-nav root">
+        <section>
+            <ul class="item-list pay-list">
+                <li class="list-item" v-for="item in info.payment_list" :class="{'disabled': item.available == 0}">
+                	<input type="radio" id="{{$key}}" value="{{item.paycode}}" v-model="payment" >
+                	<label for="{{$key}}">
+                    	<i class="r-btn icon" :class="{'icon-check-on': payment == item.paycode, 'icon-check-off': payment != item.paycode}"></i>
+                    	<span><i class="icon icon-{{item.paycode}}"></i></span>
+                    	<span class="checkout_size">{{item.payname}}</span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="warehouse-list">
+                <div class="warehouse item-list">
+                    <div class="list-header">
+                        <button class="r-btn check-btn"><i class="color_on icon-shop"></i></button>
+                        <span>{{virtual_goods.title}}</span>
+                    </div>
+                    <div class="list-item list-product">
+                        <div class="col-3">
+                            <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{virtual_goods.image}}" alt="{{virtual_goods.title}}">
+                        </div>
+                        <div class="col-7 product-info">
+                            <p class="produt-name">{{virtual_goods.desc}}</p>
+                            <div class="product-tags"></div>
+                            <div class="bottom-wrap">
+                                <span class="product-price">&yen;{{info.open_pay_amount}}</span>
+                                <span> ×{{virtual_goods.quantity}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <span>运费</span>
+                        <span class="pull-right">&yen;{{info.shipping_fee}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-list">
+                <div class="list-item">
+                    <span>合计</span>
+                    <span class="pull-right">&yen;{{info.open_pay_amount}}</span>
+                </div>
+            </div>
+        </section>
+        <section class="cart-nav">
+            <div class="row">
+                <div class="col-6">实付款
+                    <span class="text-primary" id="js_needPrice" >&yen; <i>{{info.open_pay_amount}}</i></span>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary" v-bind="{'disabled': info.virtual_goods == null}" v-tap.stop="goPay()">去支付</button>
+                </div>
+            </div>
+        </section>
+        <section id="go-aliwap"></section>
+    </div>
+    <section class="right-fixed"><a class="top-fixed" href="javascript:;">顶部</a></section>
+    <!-- build:js /dist/js/combin.js -->
+    <script src="/dist/js/lib/jquery-2.2.3.min.js"></script>
+    <script src="/dist/js/lib/vue.js"></script>
+    <script src="/dist/js/common.chunk.js"></script>
+    <!-- endbuild -->
+    <!-- build:js /dist/js/user/open-checkout.js -->
+    <script src="/dist/js/user/open-checkout.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+.textfield {
+    display: block;
+    width: 100%;
+    padding: $input-padding-y $input-padding-x;
+    @include fontsize($font-size-base);
+    line-height: $input-line-height;
+    color: $input-color;
+    background-color: $input-bg;
+    background-image: none;
+    background-clip: padding-box;
+    border: $input-btn-border-width solid $input-border-color;
+    @include border-radius($input-border-radius);
+    // @include box-shadow($input-box-shadow);
+    @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+    &::-ms-expand {
+        background-color: transparent;
+        border: 0;
+    }
+    @include form-control-focus();
+    &::placeholder {
+        color: $input-color-placeholder;
+        // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+        opacity: 1;
+    }
+    &:disabled,
+    &[readonly] {
+        background-color: $input-bg-disabled;
+        opacity: 1;
+    }
+    &:disabled {
+        cursor: $cursor-disabled;
+    }
+}
+select.textfield {
+  &:not([size]):not([multiple]) {
+    height: $input-height;
+  }
+
+  &:focus::-ms-value {
+    // Suppress the nested default white text on blue background highlight given to
+    // the selected option text when the (still closed) <select> receives focus
+    // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
+    // match the appearance of the native widget.
+    // See https://github.com/twbs/bootstrap/issues/19398.
+    color: $input-color;
+    background-color: $input-bg;
+  }
+}
+
+//input group
+.input-group {
+    position: relative;
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    .textfield {
+        position: relative;
+        z-index: 2;
+        @include hover-focus-active {
+            z-index: 3;
+        }
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+.input-group-addon,
+.input-group .textfield {
+    display: table-cell;
+
+    &:not(:first-child):not(:last-child) {
+        @include border-radius(0);
+    }
+}
+
+.input-group .textfield:not(:last-child),
+.input-group-addon:not(:last-child){
+    @include border-right-radius(0);
+}
+.input-group-addon:not(:last-child) {
+    border-right: 0;
+}
+.input-group .textfield:not(:first-child),
+.input-group-addon:not(:first-child){
+    @include border-left-radius(0);
+}
+
+.textfield + .input-group-addon:not(:first-child) {
+    border-left: 0;
+}
+.input-group-addon,
+.input-group .textfield {
+    display: table-cell;
+    &:not(:first-child):not(:last-child) {
+        @include border-radius(0);
+    }
+}
+
+.input-group-addon {
+    width: auto;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-group-addon {
+    padding: $input-padding-y $input-padding-x;
+    margin-bottom: 0;
+    @include fontsize($font-size-base);
+    font-weight: normal;
+    line-height: $input-line-height;
+    color: $input-color;
+    text-align: center;
+    background-color: $input-group-addon-bg;
+    border: $input-btn-border-width solid $input-group-addon-border-color;
+    @include border-radius($border-radius);
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>关于蜜妍</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/about-list.css" rel="stylesheet" inline>
+</head>
+<body>
+    <div class="about-list root" id="about-list">
+        <ul>
+            <li v-for="item in info"><a href="{{item.url}}"><img class="img-fluid lz" src="/dist/images/indexImg/bannerBg.jpg" data-original="{{item.img_url}}" alt="{{item.title}}"></a></li>
+        </ul>
+    </div>
+    <!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/about-list.js -->
+    <script src="/dist/js/user/about-list.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>销售奖励说明</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/reward-no.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-reward-no root" id="user-reward-no">
+		<section class="reward-tab">
+			<a href="/page/user/weixinText.html?article_id={{article_id}}&is_reward_txt=1">活动规则</a><a class="on" href="javascript:;">商品限制</a>
+		</section>
+		<section class="shop-list">
+			<h4>以下商品不能参加新代理成长任务、周任务、月任务：</h4>
+			<table>
+				<thead>
+					<tr>
+						<th>商品编号</th>
+						<th>商品名称</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="item in info.exclude_products">
+						<td v-cloak>{{item.product_code}}</td>
+						<td v-cloak>{{item.product_name}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<h4>以下品牌不能参加单笔拿货任务：</h4>
+			<div class="user-reward-no-brand"><span v-for="list in info.exclude_brand_products">{{list.typeName}}<i>,</i></span></div>
+		</section>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/reward-no.js -->
+    <script src="/dist/js/user/reward-no.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

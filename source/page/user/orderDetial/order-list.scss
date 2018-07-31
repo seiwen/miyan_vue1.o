@@ -1,0 +1,171 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+body,html{
+	background-color: $color-f;
+}
+.order-list{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	.order-list-nav{
+		position: relative;
+		width: 100%;
+		height: 3.2rem;
+		padding-top: 1.066667rem;
+		background-color: $color-f;
+		overflow: hidden;
+		ul{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 1.066667rem;
+			border-bottom: 1px solid #dadada;
+			background-color: $color-f;
+			overflow: hidden;
+			z-index: 999;
+			li{
+				display: block;
+				width: 25%;
+				height: 1.066667rem;
+				float: left;
+				a{
+					position: relative;
+					display: block;
+					width: 100%;
+					height: 1.066667rem;
+					line-height: 1.066667rem;
+					text-align: center;
+					color: #333;
+					@include fontsize(14px);
+				}
+				&.on a::after {
+					position: absolute;
+					display: block;
+					content: '';
+					width: 1.2rem;
+					height: 0.053333rem;
+					background-color: $color-3;
+					bottom: 0;
+					left: 50%;
+					margin-left: -0.6rem;
+				}
+			}
+		}
+		.nav-ad{
+			height: 2.133333rem;
+			img{
+	            width: 10.0rem;
+	            height: 2.133333rem;
+	        }
+		}
+	}
+	.order-no-list{
+		position: relative;
+		display: none;
+		padding-top: 4.0rem;
+		text-align: center;
+		p{
+			@include fontsize(14px);
+			line-height: 0.933333rem;
+		}
+		a{
+			@include fontsize(12px);
+			line-height: 0.533333rem;
+			color: $color-3;
+		}
+	}
+	.order-lists{
+		border-bottom: 0.266667rem solid $border-color;
+		&:last-child{
+			border-bottom: $border-width solid $border-color;
+		}
+		.order-list-header{
+			padding: 0 0.266667rem;
+		    height: 1.333333rem;
+		    line-height: 1.333333rem;
+		    overflow: hidden;
+		    .left{
+		    	float: left;
+		    	@include fontsize(16px);
+		    	overflow: hidden;
+		    	i{
+		    		display: block;
+		    		float: left;
+		    		@include fontsize(18px);
+		    		color: #ff3574;
+		    		margin-top: 0.4rem;
+		    		margin-right: 0.266667rem;
+		    	}
+		    }
+		    .right{
+		    	float: right;
+		    	@include fontsize(12px);
+		    	color: $color-3;
+		    }
+		}
+		.order-list-cont{
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			border-top: $border-width solid $border-color;
+			border-bottom: $border-width solid $border-color;
+			li{
+				padding-left: 0;
+				margin-left: 0.266667rem;
+				width: calc(100% - 0.266667rem);
+				&:last-child{
+					border-bottom: 0;
+				}
+			}
+		}
+		.order-list-bottom{
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			.masker{
+				display: block;
+			    height: 0.666667rem;
+			    width: 2.0rem;
+				float: right !important;
+				margin: 0.266667rem 0.266667rem 0.266667rem 0;
+			}
+			p{
+				height: 1.2rem;
+				line-height: 1.2rem;
+				text-align: right;
+				padding-right: 0.266667rem;
+				@include fontsize(14px);
+				border-bottom: $border-width solid $border-color;
+				span{
+					color: $color-3;
+					margin-right: 0.133333rem;
+				}
+			}
+			.order-list-cont-button{
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+				a{
+					display: block;
+					width: 2.866667rem;
+				    height: 1.066667rem;
+				    line-height: 1.066667rem;
+				    text-align: center;
+				    @include fontsize(16px);
+				    margin: 0.266667rem 0.266667rem 0.266667rem 0;
+				    border: $border-width solid $color-3;
+				    background: $color-3;
+				    color: $color-f;
+				    float: right;
+				    border-radius: 0.133333rem;
+				    text-decoration: none;
+				    &.wuliu,&.cancel{
+				    	background: $color-f;
+				    	color: $color-3;
+				    }
+				}
+			}
+		}
+	}
+}

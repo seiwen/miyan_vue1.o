@@ -1,0 +1,12 @@
+.row {
+	@include make-row();
+}
+
+@for $i from 1 through $grid-columns {
+	.col-#{$i} {
+		@include make-col($i, $grid-columns, $grid-gutter-width);
+	}
+	.col-offset-#{$i} {
+		@include make-col($i);
+	}
+}

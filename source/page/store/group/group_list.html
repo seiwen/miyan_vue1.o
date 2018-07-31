@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <title>全部拼团</title>
+    <!--=include ../../../module/public_header.html -->
+    <link href="/dist/css/store/group_list.css" rel="stylesheet" inline>
+</head>
+<body>
+<!--=include ../../../module/order_masker.html -->
+<div class="contents root" id="js_groupList">
+    <div class="order-wrap" id="js_groupLists"></div>
+    <div class="pane mb20" v-for="item in info" track-by="$index">
+        <div class="pane-header fbox spb f14">
+            <span v-if="item.product.status == 1" class="tit"><i class="icon-person-work"></i><em>待成团</em></span>
+            <span v-if="item.product.status == 2" class="tit"><i class="icon-polygon-success"></i><em>拼团成功</em></span>
+            <span v-if="item.product.status == 3" class="tit"><i class="icon-sad"></i><em>拼团失败</em></span>
+        </div>
+        <div class="pane-body">
+            <ul class="pro-list">
+                <li>
+                    <a href="/page/goods.html?product_id={{item.product.product_id}}" class="pro-item fbox">
+                        <div class="pro-img fbox">
+                            <img class="img-fluid lz" data-original="{{item.product.img_url}}/dist/images/indexImg/shopBg.jpg" src="/dist/images/indexImg/shopBg.jpg" alt="{{item.product.title}}">
+                        </div>
+                        <div class="pro-info f12">
+                            <p class="pro-title">{{item.product.title}}</p>
+                            <div class="pro-shop-price mt10">
+                                <strong class="f14 font-weight-normal">¥ {{item.product.price}}</strong>
+                                <span class="text-light"> {{item.product.group_people}}人团</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a v-for="list in info[$index].people_data" href="/page/store/order_detail.html?order_id={{list.order_id}}" class="pro-item p15 fbox spb f12">
+                        <span> {{list.time *1000 | moment}} 参团</span>
+                        <span>订单详情<i class="icon-arrow"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div v-if="item.product.status == 1" class="pane-bottom fbox spb f14">
+            <span>还差<strong class="text-primary font-weight-normal">{{item.product.amount - item.product.group_people}}</strong>人成团</span>
+            <a href="javascript:;" class="btn btn-primary js_invitation">邀请好友入团</a></div>
+    </div>
+    <div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+</div>
+    <!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/store/group_list.js -->
+    <script src="/dist/js/store/group_list.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

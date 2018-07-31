@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>邀请开店</title>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no,email=no,address=no" name="format-detection">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<script>!function(){var e="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",t=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet)t.styleSheet.disabled||(t.styleSheet.cssText=e);else try{t.innerHTML=e}catch(i){t.innerText=e}}(),!function(e,t){function i(){var t=r.getBoundingClientRect().width;t/s>540&&(t=540*s);var i=t/10;r.style.fontSize=i+"px",c.rem=e.rem=i}var n,a=e.document,r=a.documentElement,o=a.querySelector('meta[name="viewport"]'),l=a.querySelector('meta[name="flexible"]'),s=0,d=0,c=t.flexible||(t.flexible={});if(o){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var m=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);m&&(d=parseFloat(m[1]),s=parseInt(1/d))}else if(l){var h=l.getAttribute("content");if(h){var p=h.match(/initial\-dpr=([\d\.]+)/),f=h.match(/maximum\-dpr=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseFloat((1/s).toFixed(2))),f&&(s=parseFloat(f[1]),d=parseFloat((1/s).toFixed(2)))}}if(!s&&!d){var u=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),b=e.devicePixelRatio;s=u?b>=3&&(!s||s>=3)?3:b>=2&&(!s||s>=2)?2:1:1,d=1/s}if(r.setAttribute("data-dpr",s),!o)if(o=a.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(o);else{var g=a.createElement("div");g.appendChild(o),a.write(g.innerHTML)}e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(i,300))},!1),"complete"===a.readyState?a.body.style.fontSize=12*s+"px":a.addEventListener("DOMContentLoaded",function(){a.body.style.fontSize=12*s+"px"},!1),i(),c.dpr=e.dpr=s,c.refreshRem=i,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+	<!-- build:css /dist/css/base.css -->
+	<link rel="stylesheet" href="/dist/css/base.css">
+	<!-- endbuild -->
+<!-- build:css /dist/css/swiper/swiper.min.css -->
+<link href="/dist/css/swiper/swiper.min.css" rel="stylesheet">
+<!-- endbuild -->
+<style>.swiper-slide{text-align:center;font-size:18px;background:#fff;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center}[data-dpr="2"] .swiper-slide{font-size:36px}[data-dpr="3"] .swiper-slide{font-size:54px}.swiper-container-horizontal>.swiper-pagination-bullets,.swiper-pagination-custom,.swiper-pagination-fraction{bottom:.133333rem}.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{margin:0 .133333rem}.swiper-pagination-bullet{width:.186667rem;height:.186667rem}.swiper-pagination-bullet-active{background:#d8235e}.invite-header{position:relative;width:100%;padding:.266667rem;display:-webkit-box;display:-ms-box;display:-moz-box;display:-o-box;display:box;background-color:#fff;margin-bottom:.266667rem;overflow:hidden}.invite-header .header-img{position:relative;width:1.706667rem;height:1.706667rem;margin-right:.266667rem;overflow:hidden}.invite-header .header-img img{width:100%;height:100%}.invite-header .header-info{box-flex:1;-webkit-box-flex:1;-ms-box-flex:1}.invite-header .header-info .header-info-wrap{display:table;height:1.706667rem;width:100%}.invite-header .header-info .header-info-wrap .header-info-cont{position:relative;-webkit-box-flex:1;box-flex:1;-ms-box-flex:1;-ms-flex:1;display:table-cell;vertical-align:middle;overflow:hidden}.invite-header .header-info .header-info-wrap .header-info-cont h2{position:relative;display:-webkit-box;display:-ms-box;display:-moz-box;display:-o-box;display:box;word-wrap:break-word;word-break:break-all;height:.933333rem;-webkit-line-clamp:2;-moz-line-clamp:2;-ms-line-clamp:2;-o-line-clamp:2;-webkit-box-orient:vertical;-moz-box-orient:vertical;-ms-box-orient:vertical;-o-box-orient:vertical;line-height:.466667rem;font-size:16px;color:#333;margin-bottom:.133333rem;overflow:hidden}[data-dpr="2"] .invite-header .header-info .header-info-wrap .header-info-cont h2{font-size:32px}[data-dpr="3"] .invite-header .header-info .header-info-wrap .header-info-cont h2{font-size:48px}.invite-header .header-info .header-info-wrap .header-info-cont ul{position:relative;width:100%;height:.4rem;overflow:hidden}.invite-header .header-info .header-info-wrap .header-info-cont ul li{position:relative;float:left;width:100%;height:.4rem;line-height:.4rem;color:#666;overflow:hidden}.invite-header .header-info .header-info-wrap .header-info-cont ul li span{font-weight:bolder;color:#ff3574;font-size:14px}[data-dpr="2"] .invite-header .header-info .header-info-wrap .header-info-cont ul li span{font-size:28px}[data-dpr="3"] .invite-header .header-info .header-info-wrap .header-info-cont ul li span{font-size:42px}.invite-header .header-info .header-info-wrap .header-info-cont ul li span em{font-style:normal;color:#333}.invite-header .header-info .header-info-wrap .header-info-cont ul li span del{color:#ccc;font-size:12px}[data-dpr="2"] .invite-header .header-info .header-info-wrap .header-info-cont ul li span del{font-size:24px}[data-dpr="3"] .invite-header .header-info .header-info-wrap .header-info-cont ul li span del{font-size:36px}.invite-lei nav,.invite-privilege nav,.invite-open nav,.invite-list nav{height:1.2rem;line-height:1.2rem;text-align:center;font-size:16px;border-bottom:1px solid #ddd;background-color:#fff}[data-dpr="2"] .invite-lei nav,[data-dpr="2"] .invite-privilege nav,[data-dpr="2"] .invite-open nav,[data-dpr="2"] .invite-list nav{font-size:32px}[data-dpr="3"] .invite-lei nav,[data-dpr="3"] .invite-privilege nav,[data-dpr="3"] .invite-open nav,[data-dpr="3"] .invite-list nav{font-size:48px}.invite-lei{position:relative;width:100%;border-bottom:1px solid #e6e6e6;margin-bottom:.266667rem;background-color:#fff;overflow:hidden}.invite-lei ul.invite-lei-header{position:relative;width:100%;background-color:#fbfbfb;overflow:hidden}.invite-lei ul.invite-lei-header li{position:relative;width:50%;padding:.533333rem;float:left}.invite-lei ul.invite-lei-header li.no{width:100%}.invite-lei ul.invite-lei-header li.no:first-child:after{display:none}.invite-lei ul.invite-lei-header li p{height:.666667rem;line-height:.666667rem;text-align:center}.invite-lei ul.invite-lei-header li p:first-child{color:#333;font-size:13px}[data-dpr="2"] .invite-lei ul.invite-lei-header li p:first-child{font-size:26px}[data-dpr="3"] .invite-lei ul.invite-lei-header li p:first-child{font-size:39px}.invite-lei ul.invite-lei-header li p:last-child{font-size:16px}[data-dpr="2"] .invite-lei ul.invite-lei-header li p:last-child{font-size:32px}[data-dpr="3"] .invite-lei ul.invite-lei-header li p:last-child{font-size:48px}.invite-lei .invite-task{position:relative;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;padding:.133333rem .8rem;height:2.666667rem;border-top:1px dashed #e6e6e6;overflow-y:hidden}.invite-lei .invite-task,.invite-lei .invite-task .invite-task-box{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex}.invite-lei .invite-task .invite-task-box{min-width:0;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-flex:1;-ms-flex:1 1 0;-webkit-flex:1 1 0;flex:1 1 0}.invite-lei .invite-task .invite-task-box .invite-tips{position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;height:.506667rem}.invite-lei .invite-task .invite-task-box .invite-tips span{position:relative;display:none;padding:0 .16rem;height:.506667rem;line-height:.48rem;border:1px solid #ff3574;font-size:10px;color:#666;border-radius:.106667rem;-webkit-border-radius:.106667rem}[data-dpr="2"] .invite-lei .invite-task .invite-task-box .invite-tips span{font-size:20px}[data-dpr="3"] .invite-lei .invite-task .invite-task-box .invite-tips span{font-size:30px}.invite-lei .invite-task .invite-task-box .invite-tips span em{position:absolute;width:.186667rem;height:.186667rem;border-width:0 0 1px 1px;border-style:solid;border-color:#ff3574;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);bottom:-.1rem;left:8%;background-color:#fff}.invite-lei .invite-task .invite-task-box .invite-tips span b{color:#ff3574}.invite-lei .invite-task .invite-task-box .invite-progress{position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;height:.4rem;margin-top:.156667rem}.invite-lei .invite-task .invite-task-box .invite-progress span{position:absolute;display:block;top:50%;margin-top:-.12rem;margin-left:-.12rem;width:.24rem;height:.24rem;border:2px solid #9c9c9c;border-radius:50%;-webkit-border-radius:50%;background-color:#fff}.invite-lei .invite-task .invite-task-box .invite-progress span.one{left:50%}.invite-lei .invite-task .invite-task-box .invite-progress span.two:first-child{left:33.333%}.invite-lei .invite-task .invite-task-box .invite-progress span.two:nth-child(2){left:66.666%}.invite-lei .invite-task .invite-task-box .invite-progress span.three:nth-child(1){left:25%}.invite-lei .invite-task .invite-task-box .invite-progress span.three:nth-child(2){left:50%}.invite-lei .invite-task .invite-task-box .invite-progress span.three:nth-child(3){left:75%}.invite-lei .invite-task .invite-task-box .invite-progress span.active{border-color:#fff;background-color:#ff3574}.invite-lei .invite-task .invite-task-box .invite-progress progress,.invite-lei .invite-task .invite-task-box .invite-progress progress::-webkit-progress-bar{height:.133333rem;display:block;background-color:#d6d6d6;width:100%;border-radius:.066667rem;overflow:hidden}.invite-lei .invite-task .invite-task-box .invite-progress progress::-moz-progress-bar{height:.133333rem;display:block;background-color:#d6d6d6;width:100%;border-radius:.066667rem;overflow:hidden}.invite-lei .invite-task .invite-task-box .invite-progress progress::-webkit-progress-value{background-color:transparent;background-image:-webkit-linear-gradient(left,#ff739f,#fbac6e);background-image:linear-gradient(left,#ff739f,#fbac6e)}.invite-lei .invite-task .invite-task-box .invite-progress progress::-moz-progress-value{background-image:-webkit-linear-gradient(left,#ff739f,#fbac6e);background-image:linear-gradient(left,#ff739f,#fbac6e)}.invite-lei .invite-task .invite-task-box ul{position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;overflow:hidden}.invite-lei .invite-task .invite-task-box ul.one li{width:100%}.invite-lei .invite-task .invite-task-box ul.two li{width:50%}.invite-lei .invite-task .invite-task-box ul.three li{width:33.3333%}.invite-lei .invite-task .invite-task-box ul li{position:relative;display:block;float:left;color:#999;font-size:11px;text-align:center}[data-dpr="2"] .invite-lei .invite-task .invite-task-box ul li{font-size:22px}[data-dpr="3"] .invite-lei .invite-task .invite-task-box ul li{font-size:33px}.invite-lei .invite-task .invite-task-box ul li.active{color:#ff3574}.invite-lei .invite-task .invite-task-box ul li p:last-child span{color:#ff3574}.invite-lei .invite-task .invite-task-dan{position:relative;width:100%}.invite-lei .invite-task .invite-task-dan p{line-height:.666667rem;text-align:center}.invite-lei .invite-task .invite-task-dan p:first-child{font-size:12px}[data-dpr="2"] .invite-lei .invite-task .invite-task-dan p:first-child{font-size:24px}[data-dpr="3"] .invite-lei .invite-task .invite-task-dan p:first-child{font-size:36px}.invite-lei .invite-task .invite-task-dan p:last-child{font-size:16px;color:#ff3574}[data-dpr="2"] .invite-lei .invite-task .invite-task-dan p:last-child{font-size:32px}[data-dpr="3"] .invite-lei .invite-task .invite-task-dan p:last-child{font-size:48px}.invite-privilege{position:relative;width:100%;margin-bottom:.266667rem;background-color:#fff;overflow:hidden}.invite-privilege .invite-privilege-info{padding:.666667rem .266667rem}.invite-privilege .invite-privilege-info .swiper-slide{width:2.133333rem}.invite-privilege .invite-privilege-info .swiper-slide a{display:block;width:100%;text-align:center}.invite-privilege .invite-privilege-info .swiper-slide a img{width:1.333333rem;height:1.333333rem;margin:0 auto}.invite-privilege .invite-privilege-info .swiper-slide a p{line-height:.466667rem;font-size:14px;text-align:center;padding:0 .133333rem;margin-top:.266667rem;color:#999}[data-dpr="2"] .invite-privilege .invite-privilege-info .swiper-slide a p{font-size:28px}[data-dpr="3"] .invite-privilege .invite-privilege-info .swiper-slide a p{font-size:42px}.invite-why{position:relative;width:100%;background-color:#fff;overflow:hidden}.invite-why h2{height:1.066667rem;line-height:1.066667rem;text-align:center;color:#fff;font-size:13px;background-color:#ff97b8}[data-dpr="2"] .invite-why h2{font-size:26px}[data-dpr="3"] .invite-why h2{font-size:39px}.invite-why .invite-why-cont{position:relative;padding:.44rem .266667rem;overflow:hidden}.invite-why .invite-why-cont li{position:relative;width:100%;display:-webkit-box;display:-ms-box;display:-moz-box;display:-o-box;display:box;overflow:hidden;margin-bottom:.266667rem}.invite-why .invite-why-cont li:last-child{margin-bottom:0}.invite-why .invite-why-cont li label{display:block;width:.4rem;height:100%;line-height:1.45;font-size:13px}[data-dpr="2"] .invite-why .invite-why-cont li label{font-size:26px}[data-dpr="3"] .invite-why .invite-why-cont li label{font-size:39px}.invite-why .invite-why-cont li p{box-flex:1;-webkit-box-flex:1;-ms-box-flex:1;line-height:1.45;font-size:13px;word-wrap:break-word;word-break:break-all}[data-dpr="2"] .invite-why .invite-why-cont li p{font-size:26px}[data-dpr="3"] .invite-why .invite-why-cont li p{font-size:39px}.invite-why .invite-why-cont li p span{color:#ff3574}.invite-why .invite-why-cont li p i{font-style:normal}.invite-open{position:relative;width:100%;margin-bottom:.266667rem;background-color:#fff;overflow:hidden}.invite-open h2{height:1.066667rem;line-height:1.066667rem;text-align:center;color:#fff;font-size:13px;background-color:#92dbfc}[data-dpr="2"] .invite-open h2{font-size:26px}[data-dpr="3"] .invite-open h2{font-size:39px}.invite-open ul{position:relative;padding:.4rem .066667rem .533333rem;overflow:hidden}.invite-open ul li{position:relative;width:50%;float:left;padding:0 .2rem;overflow:hidden}.invite-open ul li h3{line-height:.733333rem;font-size:15px;font-weight:bolder}[data-dpr="2"] .invite-open ul li h3{font-size:30px}[data-dpr="3"] .invite-open ul li h3{font-size:45px}.invite-open ul li .invite-open-cont{width:100%;min-height:3.066667rem;border:1px solid #e6e6e6;padding:.466667rem 0;text-align:center;overflow:hidden}.invite-open ul li .invite-open-cont p,.invite-open ul li .invite-open-cont span{display:block;width:100%;font-size:13px}[data-dpr="2"] .invite-open ul li .invite-open-cont p,[data-dpr="2"] .invite-open ul li .invite-open-cont span{font-size:26px}[data-dpr="3"] .invite-open ul li .invite-open-cont p,[data-dpr="3"] .invite-open ul li .invite-open-cont span{font-size:39px}.invite-open ul li .invite-open-cont p i,.invite-open ul li .invite-open-cont span i{font-style:normal}.invite-open ul li .invite-open-cont p{height:.4rem;line-height:.4rem}.invite-open ul li .invite-open-cont span{height:.666667rem;line-height:.666667rem;color:#ff3574;font-weight:bolder}.invite-open ul li .invite-open-cont span.zanwu{margin-top:.4rem}.invite-open ul li .invite-open-cont a{display:block;width:2.893333rem;height:.626667rem;line-height:.6rem;border:1px solid #ff3574;color:#ff3574;border-radius:.066667rem;margin:.066667rem auto 0;font-size:13px}[data-dpr="2"] .invite-open ul li .invite-open-cont a{font-size:26px}[data-dpr="3"] .invite-open ul li .invite-open-cont a{font-size:39px}.invite-open ul li p{margin-top:.333333rem;line-height:1.4;font-size:13px;word-wrap:break-word;word-break:break-all}[data-dpr="2"] .invite-open ul li p{font-size:26px}[data-dpr="3"] .invite-open ul li p{font-size:39px}.invite-open ul li p span{color:#ff3574}.invite-list{position:relative;width:100%;overflow:hidden}.invite-list.padding{padding-top:2.24rem}.invite-list .invite-list-fiexd{position:relative;width:100%;overflow:hidden}.invite-list .invite-list-fiexd h2{height:1.066667rem;line-height:1.066667rem;text-align:center;color:#fff;font-size:13px;background-color:#bedd99}[data-dpr="2"] .invite-list .invite-list-fiexd h2{font-size:26px}[data-dpr="3"] .invite-list .invite-list-fiexd h2{font-size:39px}.invite-list .invite-list-fiexd .invite-list-nav{position:relative;display:block;width:100%;height:1.173333rem;border-bottom:1px solid #e6e6e6;background-color:#fff;overflow:hidden}.invite-list .invite-list-fiexd .invite-list-nav span{position:relative;display:block;width:50%;float:left;height:1.173333rem;line-height:1.173333rem;text-align:center;font-size:13px;color:#333}[data-dpr="2"] .invite-list .invite-list-fiexd .invite-list-nav span{font-size:26px}[data-dpr="3"] .invite-list .invite-list-fiexd .invite-list-nav span{font-size:39px}.invite-list .invite-list-fiexd .invite-list-nav span:first-child:after{position:absolute;content:'';display:block;top:0;right:0;width:1px;height:100%;background-color:#e6e6e6}.invite-list ul{position:relative;width:100%;background-color:#fff;overflow:hidden}.invite-list ul li{width:100%;border-bottom:1px solid #e6e6e6}.invite-list ul li,.invite-list ul li span{position:relative;height:1.066667rem;overflow:hidden}.invite-list ul li span{display:block;width:50%;float:left;line-height:1.066667rem;text-align:center;font-size:12px;color:#333;padding:0 .266667rem;word-wrap:break-word;word-break:break-all}[data-dpr="2"] .invite-list ul li span{font-size:24px}[data-dpr="3"] .invite-list ul li span{font-size:36px}.invite-list ul li span:first-child:after{position:absolute;content:'';display:block;top:0;right:0;width:1px;height:100%;background-color:#e6e6e6}.invite-list .invite-list-no{position:relative;width:100%;min-height:3.733333rem;text-align:center;overflow:hidden}.invite-list .invite-list-no p{line-height:.4rem;color:#666;font-size:12px;margin:1.066667rem auto .4rem}[data-dpr="2"] .invite-list .invite-list-no p{font-size:24px}[data-dpr="3"] .invite-list .invite-list-no p{font-size:36px}.invite-list .invite-list-no a{display:block;width:2.933333rem;height:.8rem;line-height:.8rem;border:1px solid #ff3574;color:#ff3574;text-align:center;font-size:14px;margin:0 auto}[data-dpr="2"] .invite-list .invite-list-no a{font-size:28px}[data-dpr="3"] .invite-list .invite-list-no a{font-size:42px}.invite-botsub{position:fixed;bottom:0;left:0;padding:.266667rem;height:1.6rem;width:100%;background:rgba(255,53,116,.8);overflow:hidden}.invite-botsub p{display:inline;line-height:1.066667rem;font-size:15px;color:#fff}[data-dpr="2"] .invite-botsub p{font-size:30px}[data-dpr="3"] .invite-botsub p{font-size:45px}.invite-botsub span{display:block;float:right;width:2.133333rem;height:.8rem;line-height:.533333rem;border-radius:.133333rem;text-align:center;font-size:15px;margin-top:.133333rem;padding:.133333rem .266667rem;background-color:#ffc635;color:#333}[data-dpr="2"] .invite-botsub span{font-size:30px}[data-dpr="3"] .invite-botsub span{font-size:45px}.layui-m-layersection{line-height:1.1!important}.layui-m-layersection h3{font-size:18px;font-weight:bolder!important}[data-dpr="2"] .layui-m-layersection h3{font-size:36px}[data-dpr="3"] .layui-m-layersection h3{font-size:54px}.layui-m-layersection p{text-align:left}</style>
+</head>
+<body>
+    <div id="invite-shop" class="root">
+        <section class="invite-header">
+            <div class="header-img">
+                <img :src=shopInfo.image >
+            </div>
+            <div class="header-info">
+                <div class="header-info-wrap">
+                    <div class="header-info-cont">
+                        <h2 v-cloak>{{shopInfo.desc}}</h2>
+                        <ul>
+                            <li v-if="isWeShopPayment == 0">开店价格： <span v-cloak><em>限时 </em>￥{{shopInfo.promotion_price}}/年 <del>￥{{shopInfo.original_price}}</del></span></li>
+                            <li v-else>友情价：<span v-cloak>￥{{shopInfo.promotion_price}}/年 <del>￥{{shopInfo.original_price}}</del></span></li>
+                            <!-- <li>邀请奖励：<span v-if="shopInfo.promotion_price == 1" v-cloak>￥{{shopInfo.reward}}/人</span><span v-else v-cloak>提成高达30%</span></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="invite-lei">
+            <nav><i class="icon-yq_cj"><span class="path1"></span><span class="path2"></span></i> 邀请成绩</nav>
+            <ul class="invite-lei-header">
+                <li>
+                    <p>累计邀请人数</p>
+                    <p><span v-cloak>{{shopInfo.yq_total}}</span></p>
+                </li>
+                <li>
+                    <p>累计获得奖励</p>
+                    <p>￥<span v-cloak>{{shopInfo.reward_total}}</span></p>
+                </li>
+            </ul>
+            <div class="invite-task">
+                <div class="invite-task-box" v-if="shopInfo.is_grads == 1">
+                    <div class="invite-tips"></div>
+                    <div class="invite-progress">
+                        <template v-if="rule_length == 1">
+                            <span class="one"></span>
+                        </template>
+                        <template v-if="rule_length == 2">
+                            <span class="two"></span>
+                            <span class="two"></span>
+                        </template>
+                        <template v-if="rule_length == 3 || rule_length > 3">
+                            <span class="three"></span>
+                            <span class="three"></span>
+                            <span class="three"></span>
+                        </template>
+                        <progress value="0" max="30"></progress>
+                    </div>
+                    <ul v-if="rule_length == 1" class="one">
+                        <li v-for="yq_list in shopInfo.yq_rule">
+                            <p><template v-if="$index == rule_length-1">≥ </template><span v-cloak>{{yq_list.man}}</span>人</p>
+                            <p>返现<span v-cloak>{{yq_list.reward}}</span>/人</p>
+                        </li>
+                    </ul>
+                    <ul v-if="rule_length == 2" class="two">
+                        <li v-for="yq_list in shopInfo.yq_rule">
+                            <p><template v-if="$index == rule_length-1">≥ </template><span v-cloak>{{yq_list.man}}</span>人</p>
+                            <p>返现<span v-cloak>{{yq_list.reward}}</span>/人</p>
+                        </li>
+                    </ul>
+                    <ul v-if="rule_length == 3" class="three">
+                        <li v-for="yq_list in shopInfo.yq_rule">
+                            <p><template v-if="$index == rule_length-1">≥ </template><span v-cloak>{{yq_list.man}}</span>人</p>
+                            <p>返现<span v-cloak>{{yq_list.reward}}</span>/人</p>
+                        </li>
+                    </ul>
+                    <ul v-if="rule_length > 3" class="three">
+                        <li v-for="yq_list in yq_rule_arr">
+                            <p><template v-if="$index == rule_length-1">≥ </template><span v-cloak>{{yq_list.man}}</span>人</p>
+                            <p>返现<span v-cloak>{{yq_list.reward}}</span>/人</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="invite-task-dan" v-else>
+                    <p>邀请返现</p>
+                    <p>￥{{shopInfo.reward}}/人</p>
+                </div>
+            </div>
+        </section>
+        <section class="invite-privilege">
+            <nav><i class="icon-open_tq"><span class="path1"></span><span class="path2"></span></i> 开店特权</nav>
+            <div class="invite-privilege-info swiper-container" id="invite-privilege-info">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide" v-for="privi in powerBase">
+                        <a href="javascript:;" v-on:click="clickDesc($event,privi.title,privi.desc)">
+                            <img :src=privi.cronImage  alt="">
+                            <p>{{privi.title}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- <section class="invite-why">
+            <h2>为什么要邀请朋友开店</h2>
+            <ul v-if="shopInfo.promotion_price == 1" class="invite-why-cont">
+                <li>
+                    <label for="">1. </label>
+                    <p><span>【<i v-cloak>{{shopInfo.reward}}</i>元/人邀请奖励】</span>成功邀请好友开店后，您会获得<i v-cloak>{{shopInfo.reward}}</i>元/人的邀请奖励，好友自动成为您的二级代理。邀请无限制，所有多多益善。</p>
+                </li>
+                <li>
+                    <label for="">2. </label>
+                    <p><span>【提成拿双份】 </span>自己微店的销售提成和二级代理的销售抽成
+                    （抽成含二级代理APP拿货、微店销售）。</p>
+                </li>
+            </ul>
+            <ul v-else class="invite-why-cont">
+                <li>
+                    <label for="">1. </label>
+                    <p><span>【一起开店赚钱】</span>成功邀请好友开店后，好友自动成为您的二级代理。邀请无限制，多多益善。</p>
+                </li>
+                <li>
+                    <label for="">2. </label>
+                    <p><span>【提成拿双份】 </span>自己微店的销售提成和二级代理的销售抽成
+                    （抽成含二级代理APP拿货、微店销售）。</p>
+                </li>
+            </ul>
+        </section> -->
+        <section class="invite-open">
+            <nav><i class="icon-yq_fs"><span class="path1"></span><span class="path2"></span></i> 邀请方式</nav>
+            <ul>
+                <li>
+                    <h3>方式1：</h3>
+                    <div class="invite-open-cont">
+                        <p>我的邀请码</p>
+                        <template v-if="shopInfo.yq_code != ''">
+                        <span><i v-cloak>{{shopInfo.yq_code}}</i></span>
+                        <a v-tap.stop="clickYqm()" href="javascript:;">复制我的邀请码</a>
+                        </template>
+                        <span class="zanwu" v-else>暂无</span>
+                    </div>
+                    <p>点击<span>复制</span> → 邀请好友下载App → 注册时输入邀请码 → 付费开通微店 → 返现 </p>
+                </li>
+                <li>
+                    <h3>方式2：</h3>
+                    <div class="invite-open-cont">
+                        <p>朋友开店后，我获得</p>
+                        <span v-if="shopInfo.agency_level == 1">现金返现，高达30%提成</span>
+                        <span v-else><i v-cloak>{{shopInfo.reward}}</i>元返现</span>
+                        <a hr ef="javascript:;" v-tap.stop="open()" >立即邀请开店</a>
+                    </div>
+                    <p>点击<span>邀请开店</span> → 分享页面→ 好友注册 →  成功开通微店 →  返现</p>
+                </li>
+            </ul>
+        </section>
+        <section class="invite-list">
+            <div class="invite-list-fiexd">
+                <nav><i class="icon icon-yq_name"><span class="path1"></span><span class="path2"></span></i> 邀请名单</nav>
+                <div class="invite-list-nav"><span>手机号</span><span>店铺名称</span></div>
+            </div>
+            <div class="invite-list-no" v-if="info == ''" >
+                <p>还没有邀请开店的卖家！</p>
+                <a href="javascript:;" v-tap.stop="open()" >立即邀请</a>
+            </div>
+            <template v-else>
+                <ul>
+                    <li v-for="item in info" track-by="$index">
+                        <span>{{item.mobile}}</span>
+                        <span v-if="item.shop_name != ''">{{item.shop_name}}</span>
+                        <span v-else>此用户很懒没有取名字</span>
+                    </li>
+                </ul>
+                <div class="invite-list-no">
+                    <p>邀请更多好友</p>
+                    <a href="javascript:;" v-tap.stop="open()" >立即邀请</a>
+                </div>
+                <div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+            </template>
+        </section>
+        <section class="invite-botsub" v-if="isWeShopPayment == 0">
+            <p>您还未付费开店，暂不能邀请</p>
+            <span v-tap.stop="open()">去开店</span>
+        </section>
+    </div>
+    <section class="right-fixed"><a class="top-fixed" href="javascript:;">顶部</a></section>
+    <!-- build:js /dist/js/combin.js -->
+    <script src="/dist/js/lib/jquery-2.2.3.min.js"></script>
+    <script src="/dist/js/lib/vue.js"></script>
+    <script src="/dist/js/common.chunk.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js /dist/js/user/invite-shop.js -->
+    <script src="/dist/js/user/invite-shop.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

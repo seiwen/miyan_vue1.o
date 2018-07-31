@@ -1,0 +1,382 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+body,html{
+    width: 100%;
+    background: $color-f;
+}
+
+.user-tiyanzhuang{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	.tiyanzhuang-header{
+		position: relative;
+		width: 100%;
+		border-bottom: 0.266667rem solid #e9e9e9;
+		.tiyanzhuang-header-a img{
+			width: 100%;
+			max-height: 5.333333rem;
+		}
+		.tiyanzhuang-title{
+			text-align: center;
+			padding: 0.4rem 0;
+			border-bottom: 0.266667rem solid #e9e9e9;
+			span{
+				color: $color-3;
+				@include fontsize(35px);
+			}
+			h2{
+				line-height: 1.333333rem;
+				@include fontsize(16px);
+			}
+			p{
+				line-height: 0.4rem;
+				@include fontsize(14px);
+				color: #999;
+			}
+		}
+		.tiyanzhuang-list{
+			position: relative;
+			width: 100%;
+			min-height: 5.333333rem;
+			padding: 0.4rem 0.266667rem;
+			overflow: hidden;
+			h2{
+				line-height: 0.8rem;
+				margin-bottom: 0.266667rem;
+				@include fontsize(16px);
+			}
+			.tiyanzhuang-item{
+				border-bottom: 1px dotted #dadada;
+				margin-top: 0.266667rem;
+				overflow: hidden;
+				&:first-child{
+					margin-top: 0;
+				}
+				&:last-child{
+					border-bottom: none;
+				}
+				.tiyanzhuang-item-box{
+					display: -webkit-box;
+				    display: -ms-box;
+				    display: -moz-box;
+				    display: -o-box;
+				    display: box;
+				    .tiyanzhuang-img{
+				    	width: 3.6rem;
+				    	height: 3.6rem;
+				    	margin-right: 0.266667rem;
+				    	overflow: hidden;
+				    	img{
+				    		width: 100%;
+				    		height: 100%;
+				    	}
+				    }
+				    .tiyanzhuang-info{
+				    	-webkit-box-flex: 1;
+					    -moz-box-flex: 1;
+					    -ms-flex: 1;
+					    box-flex: 1;
+					    p{
+					    	display: -webkit-box;
+						    display: -ms-flexbox;
+						    word-wrap: break-word;
+						    word-break: break-all;
+						    -webkit-line-clamp: 4;
+						    -moz-line-clamp: 4;
+						    -ms-line-clamp: 4;
+						    -o-line-clamp: 4;
+						    -webkit-box-orient: vertical;
+						    -moz-box-orient: vertical;
+						    -ms-box-orient: vertical;
+						    -o-box-orient: vertical;
+						    overflow-y: hidden;
+					    	color: $gray-lighter;
+					    	@include fontsize(14px);
+					    	&:first-child{
+					    		@include fontsize(16px);
+					    		color: #333;
+					    		line-clamp: 1;
+					    		-webkit-line-clamp: 1;
+					    		margin-bottom: 0.133333rem;
+					    	}
+					    	&:last-child{
+								line-clamp: 4;
+					    		-webkit-line-clamp: 4;
+					    	}
+					    }
+					    .price{
+					    	height: 0.8rem;
+					    	line-height: 0.8rem;
+					    	span{
+					    		color: $color-3;
+					    		margin-right: 0.266667rem;
+					    		@include fontsize(16px);
+					    		i{
+					    			@include fontsize(14px);
+					    			font-style: normal;
+					    		}
+					    	}
+					    	del{
+					    		@include fontsize(14px);
+					    		color: #d7d7d7;
+					    	}
+					    }
+				    }
+				}
+				.tiyanzhuang-item-bot{
+					position: relative;
+					height: 1.066667rem;
+					line-height: 1.066667rem;
+					margin-top: 0.133333rem;
+					@include fontsize(14px);
+					overflow: hidden;
+					.tiyanzhuang-item-num{
+						float: right;
+						overflow: hidden;
+						a,input{
+							position: relative;
+						    display: block;
+						    float: left;
+						}
+						a{
+							width: .8rem;
+						    height: .8rem;
+						    line-height: .8rem;
+						    margin-top: .133333rem;
+						    background: #e8e8e8;
+						    &.reduce:after,&.plus:before,&.plus:after{
+						    	content: "";
+							    display: block;
+							    position: absolute;
+							    left: 50%;
+							    top: 50%;
+							    margin-left: -.2rem;
+							    margin-top: -.026667rem;
+							    width: .4rem;
+							    border-bottom: .05333rem solid #666;
+						    }
+						    &.disabled:before,&.disabled:after{
+						    	border-bottom: .05333rem solid $gray-lighter;
+						    }
+						    &.plus:before{
+						    	-webkit-transform: rotate(90deg);
+							    -ms-transform: rotate(90deg);
+							    transform: rotate(90deg);
+							    top: .4rem;
+						    }
+						}
+						input{
+							width: 1.733333rem;
+						    height: .8rem;
+						    padding: .133333rem;
+						    line-height: .4rem;
+						    @include fontsize(14px);
+						    margin: .133333rem .026667rem 0;
+						    border: 0;
+						    text-align: center;
+						    background: #f4f4f4;
+						}
+					}
+				}
+			}
+		}
+		.tyz-submit{
+			position: relative;
+			width: 100%;
+			height: 1.733333rem;
+			border-top: 1px dashed #999;
+			background-color: #fffdf7;
+			overflow: hidden;
+			button{
+				position: relative;
+				display: block;
+				border: 0;
+				border-radius: 0.106667rem;
+				width: 3.0rem;
+				height: 0.866667rem;
+				line-height: 0.866667rem;
+				text-align: center;
+				@include fontsize(14px);
+				color: $color-f;
+				background-color: $color-3;
+				margin: 0.433333rem auto 0;
+				&.disabled{
+					background-color: #999;
+				}
+			}
+			p{
+				text-align: center;
+				@include fontsize(12px);
+				color: #999;
+				line-height: 1.733333rem;
+			}
+		}
+	}
+	.tiyanzhuang-bottom{
+		position: relative;
+		width: 100%;
+		padding: 0.266667rem;
+		margin-bottom: 1.2rem;
+		overflow: hidden;
+		h3{
+			margin: 0.266667rem 0;
+			@include fontsize(16px);
+		}
+		input,.city{
+			height: 1.066667rem;
+			padding: 0 0.266667rem;
+		}
+		input,textarea,.city{
+			width: 100%;
+			line-height: normal;
+			@include fontsize(14px);
+			border-radius: 0;
+			margin-bottom: 0.2rem;
+		}
+		.city{
+			position: relative;
+			padding-right: 0;
+			padding-left: 0;
+			line-height: 1.066667rem;
+			cursor: pointer;
+			overflow: hidden;
+			select{
+				width: 100%;
+				padding-left: 0.266667rem;
+			    -moz-appearance: none;
+			    -webkit-appearance: none;
+			    background: $color-f;
+			    @include fontsize(14px);
+			}
+			i{
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 1.0rem;
+				height: 1.0rem;
+				border-left: $border-width solid $border-color;
+				&:after{
+					position: absolute;
+				    left: 50%;
+				    top: 50%;
+				    margin-top: -0.133333rem;
+				    margin-left: -0.213333rem;
+				    display: block;
+				    content: '';
+				    width: 0;
+				    height: 0;
+				    border-left: 0.213333rem solid transparent;
+				    border-right: 0.213333rem solid transparent;
+				    border-top: 0.266667rem solid #c9c9c9;
+				}
+			}
+		}
+		textarea{
+			height: 2.0rem;
+			padding: 0.133333rem 0.266667rem;
+			line-height: 0.533333rem;
+		}
+		p{
+			color: $gray-lighter;
+			@include fontsize(12px);
+		}
+	}
+	.tyz-goods{
+		position: relative;
+		width: 100%;
+		margin-bottom: 1.333333rem;
+		overflow: hidden;
+		.nav{
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 1.2rem;
+			z-index: 8;
+			background-color: $color-f;
+			overflow: hidden;
+			li{
+				position: relative;
+				width: 100%;
+				height: 1.2rem;
+				line-height: 1.2rem;
+				text-align: center;
+				@include fontsize(14px);
+				color: #999;
+				float: left;
+				&.on{
+					color: $color-3;
+					&::after{
+						position: absolute;
+						content: '';
+						display: block;
+						width: 2.0rem;
+						height: 2px;
+						background-color: $color-3;
+						bottom: 0;
+						left: 50%;
+						margin-left: -1.0rem;
+					}
+				}
+			}
+		}
+		.cont{
+			position: relative;
+			width: 100%;
+			li{
+				.tyz-goods-nav{
+					position: relative;
+					width: 100%;
+					height: 1.066667rem;
+					display: -webkit-box;
+					display: -moz-box;
+					display: box;
+					-webkit-box-orient: horizontal;
+					-moz-box-orient: horizontal;
+					box-orient: horizontal;
+					overflow: hidden;
+					span{
+						display: block;
+						-webkit-box-flex: 1;
+						-moz-box-flex: 1;
+						box-flex: 1;
+						line-height: 1.066667rem;
+						text-align: center;
+						color: #999;
+						&.active{
+							color: $color-3;
+						}
+					}
+				}
+				.tyz-goods-cont{
+					position: relative;
+					width: 100%;
+					.content{
+						display: none;
+						&.active{
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+	.submit{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1.2rem;
+		line-height: 1.2rem;
+		text-align: center;
+		border: 0;
+		color: $color-f;
+		@include fontsize(16px);
+		background: $color-3;
+		overflow: hidden;
+		z-index: 9;
+		&:disabled{
+			background: $gray-lighter;
+		}
+	}
+}

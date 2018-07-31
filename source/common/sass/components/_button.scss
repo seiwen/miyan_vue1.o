@@ -1,0 +1,89 @@
+.btn {
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    line-height: $btn-line-height;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: $input-btn-border-width solid transparent;
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
+    @include transition(all .2s ease-in-out);
+    &,
+    &:active,
+    &.active {
+        &:focus,
+        &.focus {
+            @include tab-focus();
+        }
+    }
+    @include hover-focus {
+        text-decoration: none;
+    }
+    &.focus {
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        background-image: none;
+        outline: 0;
+        @include box-shadow($btn-active-box-shadow);
+    }
+    &.disabled,
+    &:disabled {
+        cursor: $cursor-disabled;
+        // opacity: .65;
+        background-color: $gray-lighter;
+        color: lighter($gray-lighter, 15%);
+        @include box-shadow(none);
+        border-color: transparent;
+    }
+}
+
+// common button
+.btn-primary {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+// outline button
+.btn-outline-primary {
+    @include button-outline-variant($btn-primary-bg);
+}
+
+.btn-link {
+    font-weight: normal;
+    color: $link-color;
+    border-radius: 0;
+    &,
+    &:active,
+    &.active,
+    &:disabled {
+        background-color: transparent;
+        @include box-shadow(none);
+    }
+    &,
+    &:focus,
+    &:active {
+        border-color: transparent;
+    }
+    @include hover {
+        border-color: transparent;
+    }
+    @include hover-focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+        background-color: transparent;
+    }
+    &:disabled {
+        @include hover-focus {
+            color: $btn-link-disabled-color;
+            text-decoration: none;
+        }
+    }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>注册</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/login.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="login" id="login">
+		<section class="login-form">
+			<h2><span>请填写您的手机号注册</span></h2>
+			<div class="login-cont">
+				<form @submit.prevent autofocus autocomplete="off" novalidate="novalidate">
+					<div class="login-input login-iphone">
+						<i class="icon-iphone"></i>
+						<input id="js_iphone" class="textfield" maxlength="11" type="tel" placeholder="手机号">
+					</div>
+					<div class="login-input login-password">
+						<i class="icon-lock"></i>
+						<input id="js_smscode" class="textfield"  type="tel" @keyup.13="login()" placeholder="请输入短信验证码">
+						<input type="button" class="yzm send-code" v-tap.stop="code()" value="获取验证码">
+					</div>
+					<div class="login-submit">
+						<a href="javascript:;" v-tap.stop="login()">下一步</a>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/login.js -->
+    <script src="/dist/js/user/login.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

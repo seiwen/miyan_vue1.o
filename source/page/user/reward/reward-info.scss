@@ -1,0 +1,240 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+
+.reward-info-nav{
+	position: relative;
+	width: 100%;
+	background: $color-f;
+	overflow: hidden;
+	ul{
+		position: relative;
+		display: block;
+		width: 100%;
+		li{
+			position: relative;
+			display: block;
+			width: 100%;
+			padding: 0 0.266667rem;
+			height: 1.2rem;
+			line-height: 1.2rem;
+			color: #333;
+			@include fontsize(14px);
+			border-bottom: $border-width solid #d8d9d8;
+			overflow: hidden;
+			label{
+				color: #999;
+				margin-left: 0.2rem;
+				@include fontsize(12px);
+			}
+			span{
+				color: #666;
+				float: right;
+			}
+			&:first-child span,&:nth-child(2) span{
+				color: $color-3;
+			}
+			&:last-child{
+				border-bottom: none;
+			}
+		}
+	}
+}
+.reward-cont{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	background: url(../../dist/images/bg20161128.jpg) left top no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	.reward-cont-top{
+		position: relative;
+		height: 3.733333rem;
+		border-bottom: $border-width solid $border-color;
+		overflow: hidden;
+		p{
+			display: block;
+			text-align: center;
+			height: 0.666667rem;
+			line-height: 0.666667rem;
+			&:nth-child(1){
+				margin-top: 1.066667rem;
+				color: $color-3;
+				@include fontsize(26px);
+			}
+			&:nth-child(2){
+				margin-top: 0.266667rem;
+				color: #333;
+				@include fontsize(14px);
+			}
+		}
+	}
+	.reward-cont-center{
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 1.6rem;
+		background: rgba(#ddd, 0.3);
+		overflow: hidden;
+		.reward-cont-center-li{
+			position: relative;
+			float: left;
+			width: 50%;
+			height: 1.6rem;
+			padding: 0.266667rem 0;
+			overflow: hidden;
+			p{
+				position: relative;
+				text-align: center;
+				line-height: 0.466667rem;
+				i{
+					margin-left: 0.106667rem
+				}
+				&:nth-child(1){
+					height: 0.533333rem;
+					line-height: 0.533333rem;
+					@include fontsize(15px);
+					color: $gray-black;
+				}
+				&:nth-child(2){
+					@include fontsize(12px);
+					color: #666;
+				}
+			}
+			&:after{
+				position: absolute;
+				content: '';
+				display: block;
+				right: 0;
+				top: 0;
+				width: 1px;
+				height: 1.6rem;
+				background: #d8d9d8;
+				overflow: hidden;
+			}
+			&:last-child:after{
+				display: none;
+			}
+		}
+	}
+}
+.reward-info-list{
+	position: relative;
+	width: 100%;
+	margin-top: 0.266667rem;
+	overflow: hidden;
+	h2{
+		padding: 0 0.266667rem;
+		height: 1.2rem;
+		line-height: 1.2rem;
+		@include fontsize(15px);
+		background: $color-f;
+		overflow: hidden;
+	}
+	.reward-info-list-no{
+		display: none;
+		padding: 1.6rem 0;
+		text-align: center;
+		p{
+			@include fontsize(12px);
+			line-height: 0.533333rem;
+			color: #999;
+		}
+		a{
+			display: block;
+			width: 2.933333rem;
+			height: 0.773333rem;
+			line-height: 0.773333rem;
+			margin: 0.133333rem auto;
+			color: $color-3;
+			border: $border-width solid $color-3;
+			border-radius: 0.133333rem;
+			@include fontsize(14px);
+			overflow: hidden;
+		}
+	}
+	ul{
+		position: relative;
+		width: 100%;
+		padding: 0 0.266667rem;
+		background: $color-f;
+		overflow: hidden;
+		li{
+			display: -webkit-box;
+		    display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+		    -webkit-box-align: center;
+		    -ms-flex-align: center;
+		    -webkit-align-items: center;
+		    align-items: center;
+		    border-top: $border-width solid $border-color;
+		    min-height: 1.866667rem;
+		    background: $color-f;
+		    overflow: hidden;
+		    .left{
+		    	display: -webkit-box;
+			    display: -ms-flexbox;
+			    display: -webkit-flex;
+			    display: flex;
+			    min-width: 0;
+			    -webkit-box-orient: vertical;
+			    -webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			    -webkit-flex-direction: column;
+			    flex-direction: column;
+			    -webkit-box-pack: center;
+			    -ms-flex-pack: center;
+			    -webkit-justify-content: center;
+			    justify-content: center;
+			    -webkit-box-flex: 1;
+			    -ms-flex: 1 1 0;
+			    -webkit-flex: 1 1 0;
+			    flex: 1 1 0;
+			    padding: 0.133333rem 0;
+			    p{
+			    	display: -webkit-box;
+				    display: -ms-flexbox;
+				    word-wrap: break-word;
+				    word-break: break-all;
+			    	line-height: 0.533333rem;
+					@include fontsize(14px);
+					color: #666;
+					overflow: hidden;
+			    }
+			    label{
+			    	display: -webkit-box;
+				    display: -ms-flexbox;
+				    display: -webkit-flex;
+				    display: flex;
+			    	line-height: 0.533333rem;
+			    	@include fontsize(12px);
+			    	color: #b8b8b8;
+			    }
+		    }
+		    .right{
+		    	-webkit-box-flex: 0;
+			    -ms-flex: 0 0 auto;
+			    -webkit-flex: 0 0 auto;
+			    flex: 0 0 auto;
+			    width: 2.666667rem;
+			    height: 1.866667rem;
+			    line-height: 1.866667rem;
+			    text-align: center;
+			    @include fontsize(16px);
+			    color: $color-3;
+			    &.active{
+			    	color: #2dc41d;
+			    }
+		    }
+		}
+	}
+}
+.layui-m-layersection{
+	line-height: 1.1 !important;
+	h3{
+		font-weight: bolder!important;
+	}
+	p{
+		text-align: left;
+	}
+}

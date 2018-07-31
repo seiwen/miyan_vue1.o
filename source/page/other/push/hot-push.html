@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>必推品牌</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/other/push.css -->
+<link href="/dist/css/other/push.css" rel="stylesheet">
+<!-- endbuild -->
+
+</head>
+<body>
+    <div id="push-cont" class="push-cont" >
+    	<nav class="push-nav">
+    		<ul>
+    			<li><a href="/page/other/high-push.html"><span class="high-push">高利润品牌</span></a></li>
+    			<li class="on"><a href="javascript:;"><span class="hot-push">热门品牌</span></a></li>
+    		</ul>
+    	</nav>
+    	<div class="masker-updata"></div>
+    	<!--=include ../../../module/masker.html -->
+		<section class="push-list high-list root" id="high-list">
+			<p class="list-p">海外热门品牌，非常适合引流销售</p>
+			<ul>
+				<li v-for="push in highList" track-by="$index">
+					<a href="/page/goods.html?&product_id={{push.product_id}}">
+						<div class="list-box">
+							<div class="list-img"><img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{push.img_url}}" alt="{{push.title}}"></div>
+							<div class="wraps">
+								<div class="wrap">
+									<div class="list-cont">
+										<div class="list-title">{{push.title}}</div>
+										<div class="list-old">零售价&nbsp;￥<span class="list-old-money">{{push.market_price}}</span>&nbsp;&nbsp;&nbsp;盈利&nbsp;<span class="list-old-bf">{{push.pay_percent}}</span> </div>
+										<div class="list-new">￥{{push.agency_price}}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+    </div>
+
+
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/other/hot-push.js -->
+    <script src="/dist/js/other/hot-push.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

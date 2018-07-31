@@ -1,0 +1,51 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+body,html{
+    background-color: #fff;
+}
+.wechat-vip{
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    table{
+        position: relative;
+        width: 100%;
+        th,td{
+            width: 30%;
+            max-width: 30%;
+            height: 1.2rem;
+            max-height: 1.2rem;
+            padding: 0.066667rem;
+            text-align: center;
+            &:nth-child(2),&:nth-child(3){
+               width: 35%;
+               max-width: 35%;
+        }
+    }
+    tr{
+        border-bottom: $border-width solid #dadada;
+        &:nth-child(odd){
+            background-color: #eee;
+        }
+    }
+    th{
+        @include fontsize(14px);
+        background: #fff;
+        border-right: $border-width solid #dadada;
+        &:last-child{
+          border-right: 0;
+        }
+    }
+    td{
+        @include fontsize(14px);
+        color: $gray-light;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow: hidden;
+        border-right: $border-width solid #dadada;
+        &:last-child{
+          border-right: 0;
+        }
+    }
+  }
+}

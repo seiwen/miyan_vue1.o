@@ -1,0 +1,57 @@
+// 向外边距
+@for $i from 1 to 16{
+    .mt#{$i*5} {
+    	margin-top: 0.125rem * $i;
+    }
+    .mb#{$i*5} {
+    	margin-bottom: 0.125rem * $i;
+    }
+    .ml#{$i*5} {
+    	margin-left: 0.125rem * $i;
+    }
+    .mr#{$i*5} {
+    	margin-right: 0.125rem * $i;
+    }
+    .m#{$i*5} {
+    	margin: 0.125rem * $i;
+    }
+
+    .p#{$i*5} {
+    	padding: 0.125rem * $i;
+    }
+    .pt#{$i*5} {
+    	padding-top: 0.125rem * $i;
+    }
+    .pb#{$i*5} {
+    	padding-bottom: 0.125rem * $i;
+    }
+    .pl#{$i*5} {
+    	padding-left: 0.125rem * $i;
+    }
+    .pr#{$i*5} {
+    	padding-right: 0.125rem * $i;
+    }
+}
+
+// 字号
+@for $i from 1 to 6{
+	$i:$i*2-2;
+	.f#{$i+8}{
+		font-size: $i+8px;
+	}
+	[data-dpr="2"] .f#{$i+8}{
+		font-size: ($i+8px)*2 ;
+	}
+	[data-dpr="3"] .f#{$i+8}{
+		font-size: ($i+8px)*3 ;
+	}
+}
+
+
+.fbox{
+    // display: box;
+    display: flex;
+}
+.spb{
+	justify-content:space-between;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>编辑收货地址</title>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no,email=no,address=no" name="format-detection">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<script>!function(){var e="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",t=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet)t.styleSheet.disabled||(t.styleSheet.cssText=e);else try{t.innerHTML=e}catch(i){t.innerText=e}}(),!function(e,t){function i(){var t=r.getBoundingClientRect().width;t/s>540&&(t=540*s);var i=t/10;r.style.fontSize=i+"px",c.rem=e.rem=i}var n,a=e.document,r=a.documentElement,o=a.querySelector('meta[name="viewport"]'),l=a.querySelector('meta[name="flexible"]'),s=0,d=0,c=t.flexible||(t.flexible={});if(o){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var m=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);m&&(d=parseFloat(m[1]),s=parseInt(1/d))}else if(l){var h=l.getAttribute("content");if(h){var p=h.match(/initial\-dpr=([\d\.]+)/),f=h.match(/maximum\-dpr=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseFloat((1/s).toFixed(2))),f&&(s=parseFloat(f[1]),d=parseFloat((1/s).toFixed(2)))}}if(!s&&!d){var u=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),b=e.devicePixelRatio;s=u?b>=3&&(!s||s>=3)?3:b>=2&&(!s||s>=2)?2:1:1,d=1/s}if(r.setAttribute("data-dpr",s),!o)if(o=a.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(o);else{var g=a.createElement("div");g.appendChild(o),a.write(g.innerHTML)}e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(i,300))},!1),"complete"===a.readyState?a.body.style.fontSize=12*s+"px":a.addEventListener("DOMContentLoaded",function(){a.body.style.fontSize=12*s+"px"},!1),i(),c.dpr=e.dpr=s,c.refreshRem=i,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+	<!-- build:css /dist/css/base.css -->
+	<link rel="stylesheet" href="/dist/css/base.css">
+	<!-- endbuild -->
+<!-- build:css /dist/css/cart/cart.css -->
+<link href="/dist/css/cart/cart.css" rel="stylesheet">
+<!-- endbuild -->
+<style>html{background-color:#FFF}#cart-editAddress{display:none}#cart-editAddress .address-form{padding:.4rem .4rem .2rem}#cart-editAddress .form-item{margin-bottom:.32rem}#cart-editAddress .form-item label{display:inline-block;padding-top:.2rem;color:#666}#cart-editAddress .declare{margin-bottom:.4rem}#cart-editAddress .declare p{display:block;color:#ff3574;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:.266667rem .4rem;line-height:1.6}#cart-editAddress .declare p strong{color:#ff3574;font-weight:400}#cart-editAddress #idCard{text-transform:uppercase}#cart-editAddress .btn-wrap{padding:.066667rem .4rem}#cart-editAddress .btn-wrap>.btn{width:30%;border-radius:0;padding:.28rem .29333rem}#cart-editAddress .btn-wrap>.btn:nth-child(2){margin:0 .346667rem}#cart-editAddress .btn-oneWrap .btn:first-child{margin-left:35.5%}#cart-editAddress .btn-twoWrap .btn:first-child{margin-left:17.5%}#cart-editAddress .btn-twoWrap .btn:nth-child(2){margin-right:0}</style>
+<script src="http://beauty.miyanmz.com/static/js/pcasunzip_lf.js"></script>
+</head>
+<body>
+    <div id="cart-editAddress">
+		<section class="address-form">
+			<div class="form-item row">
+				<div class="col-3"><label for="name">收货人姓名</label></div>
+				<div class="col-7">
+					<input type="text" class="textfield" id="name" value="{{info.nick_name}}">
+				</div>
+			</div>
+			<div class="form-item row">
+				<div class="col-3"><label for="phone">手机号码</label></div>
+				<div class="col-7">
+					<input type="tel" class="textfield" id="phone" value="{{info.tel}}" maxlength="11">
+				</div>
+			</div>
+			<div class="form-item row">
+				<div class="col-3"><label for="city">城市/地区</label></div>
+				<div class="col-7">
+					<select v-model="selected" name="province" id="province" class="textfield">
+					<option v-for="option in options" v-bind:value="option.value">{{ option.text }}</option>
+					</select>
+
+					<select name="city" id="city" class="textfield">
+					</select>
+
+					<select name="area" id="area" class="textfield">
+					</select>
+				</div>
+			</div>
+			<div class="form-item row">
+				<div class="col-3"><label for="address">详细地址</label></div>
+				<div class="col-7">
+					<input type="text" class="textfield" id="address" value="{{info.addressline}}">
+				</div>
+			</div>
+			<div class="form-item row">
+				<div class="col-3">
+					<label for="idCard">收货人身份证号</label>
+				</div>
+				<div class="col-7">
+					<input type="text" class="textfield" id="idCard" value="{{info.sid}}" maxlength="18">
+				</div>
+			</div>
+
+		</section>
+		<section class="declare">
+			<p>须知：根据海关规定，身份证信息用于商品入境申报，请务必上传真实的姓名和身份证信息。蜜妍仅负责提交信息，承诺对您的身份信息保密，请放心填写。</p>
+		</section>
+		<section class="btn-wrap btn-oneWrap" v-if="is_showSave == 1">
+			<button class="btn btn-outline-primary focus" v-tap.stop="saveAdd(true)">保存并应用</button>
+		</section>
+		<template v-else>
+			<template v-if="is_my == 1">
+				<section class="btn-wrap btn-twoWrap" v-if="address_id">
+					<button class="btn btn-outline-primary focus" v-tap.stop="savesAdd()">保存</button>
+					<button class="btn btn-outline-primary" v-tap.stop="delAdd()">删除</button>
+				</section>
+				<section class="btn-wrap btn-oneWrap" v-else>
+					<button class="btn btn-outline-primary focus" v-tap.stop="savesAdd()">保存</button>
+				</section>
+			</template>
+			<template v-else>
+				<!-- <section class="btn-wrap" v-if="address_id">
+					<button class="btn btn-outline-primary focus" v-tap.stop="saveAdd(true)">保存并应用</button>
+					<button class="btn btn-outline-primary" v-tap.stop="savesAdd()">保存</button>
+					<button class="btn btn-outline-primary" v-tap.stop="delAdd()">删除</button>
+				</section>
+				<section class="btn-wrap btn-twoWrap" v-else>
+					<button class="btn btn-outline-primary focus" v-tap.stop="saveAdd(true)">保存并应用</button>
+					<button class="btn btn-outline-primary" v-tap.stop="savesAdd()">保存</button>
+				</section> -->
+				<section class="btn-wrap btn-oneWrap">
+					<button class="btn btn-outline-primary focus" v-tap.stop="saveAdd(true)">保存并应用</button>
+				</section>
+			</template>
+		</template>
+    </div>
+
+    <section class="right-fixed"><a class="top-fixed" href="javascript:;">顶部</a></section>
+
+    <!-- build:js /dist/js/combin.js -->
+
+    <script src="/dist/js/lib/jquery-2.2.3.min.js"></script>
+
+    <script src="/dist/js/lib/vue.js"></script>
+
+    <script src="/dist/js/common.chunk.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- build:js /dist/js/cart/edit-address.js -->
+    <script src="/dist/js/cart/edit-address.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

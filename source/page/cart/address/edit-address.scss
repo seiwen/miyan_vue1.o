@@ -1,0 +1,70 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+
+html {
+	background-color: #FFF;
+}
+#cart-editAddress {
+	display: none;
+	.address-form {
+		padding: 0.4rem 0.4rem 0.2rem;
+	}
+	.form-item {
+		margin-bottom: 0.32rem;
+
+		label {
+			display: inline-block;
+			padding-top: $input-padding-y;
+			color: $gray-light;
+		}
+	}
+	.declare {
+		margin-bottom: 0.4rem;
+		p {
+			display: block;
+			color: $color-3;
+			border-top: $list-border;
+			border-bottom: $list-border;
+			padding: 0.266667rem 0.4rem;
+			line-height: $line-height-lg * 1.2;
+
+			strong {
+				color: $color-3;
+				font-weight: normal;
+			}
+		}
+	}
+	#idCard {
+		text-transform: uppercase;
+	}
+	.btn-wrap {
+		padding: 0.066667rem 0.4rem;
+		// display: -webkit-box;
+	 //    display: -ms-box;
+	 //    display: -moz-box;
+	 //    display: -o-box;
+	 //    display: box;
+		> .btn {
+			width: 30%;
+			border-radius: 0;
+			padding: $btn-padding-y * 1.5 $btn-padding-x;
+			// -webkit-box-flex: 1;
+		 //    -moz-box-flex: 1;
+		 //    -ms-flex: 1;
+		 //    box-flex: 1;
+
+			&:nth-child(2) {
+				margin: 0 0.346667rem;
+			}
+		}
+	}
+	.btn-oneWrap .btn:first-child{
+		margin-left: 35.5%;
+	}
+	.btn-twoWrap .btn:first-child{
+		margin-left: 17.5%;
+	}
+	.btn-twoWrap .btn:nth-child(2){
+		margin-right: 0;
+	}
+}

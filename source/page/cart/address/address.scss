@@ -1,0 +1,60 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+
+#cart-address {
+	// padding-top: 1.08rem;
+	.address-list {
+		.address {
+			@include clearfix();
+		}
+		.btn.js-edit-address {
+			margin-top: -$btn-padding-y;
+			margin-right: 0.133333rem;
+			color: $color-3;
+			&:hover,&:active{
+				color: $color-f;
+				background-color: $color-3;
+			}
+		}
+		.no{
+			@include fontsize(14px);
+			text-align: center;
+			padding-top: 5.333333rem;
+			color: #999;
+		}
+	}
+	.input-wrap {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		input {
+			height: 1.066667rem;
+			line-height: 1.066667rem;
+		}
+	}
+	.getmore-wrap {
+		width: 100%;
+		text-align: center;
+		margin: 0.4rem 0;
+	}
+	.btn-wrap {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		a:hover,a:active{
+			color: $color-f;
+		}
+	}
+	.btn.js-add-address {
+		border-radius: 0;
+		padding: 0.4rem 0;
+	}
+	.center {
+		text-align: center;
+	}
+	.icon {
+		@include fontsize(26px);
+		padding: 0 0.2rem;
+	}
+}

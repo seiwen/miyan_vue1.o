@@ -1,0 +1,47 @@
+body, html {
+  background-color: #fff; }
+
+.wechat-vip {
+  position: relative;
+  width: 100%;
+  background-color: #fff; }
+  .wechat-vip table {
+    position: relative;
+    width: 100%; }
+    .wechat-vip table th, .wechat-vip table td {
+      width: 30%;
+      max-width: 30%;
+      height: 1.2rem;
+      max-height: 1.2rem;
+      padding: 0.066667rem;
+      text-align: center; }
+      .wechat-vip table th:nth-child(2), .wechat-vip table th:nth-child(3), .wechat-vip table td:nth-child(2), .wechat-vip table td:nth-child(3) {
+        width: 35%;
+        max-width: 35%; }
+    .wechat-vip table tr {
+      border-bottom: 1px solid #dadada; }
+      .wechat-vip table tr:nth-child(odd) {
+        background-color: #eee; }
+    .wechat-vip table th {
+      font-size: 14px;
+      background: #fff;
+      border-right: 1px solid #dadada; }
+      [data-dpr="2"] .wechat-vip table th {
+        font-size: 28px; }
+      [data-dpr="3"] .wechat-vip table th {
+        font-size: 42px; }
+      .wechat-vip table th:last-child {
+        border-right: 0; }
+    .wechat-vip table td {
+      font-size: 14px;
+      color: #666;
+      word-wrap: break-word;
+      word-break: break-all;
+      overflow: hidden;
+      border-right: 1px solid #dadada; }
+      [data-dpr="2"] .wechat-vip table td {
+        font-size: 28px; }
+      [data-dpr="3"] .wechat-vip table td {
+        font-size: 42px; }
+      .wechat-vip table td:last-child {
+        border-right: 0; }

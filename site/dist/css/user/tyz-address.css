@@ -1,0 +1,243 @@
+.tyz-address {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+  .tyz-address .tyz-address-ul {
+    position: relative;
+    width: 100%;
+    padding: 0 0.266667rem;
+    background-color: #fff;
+    overflow: hidden; }
+    .tyz-address .tyz-address-ul .address-li {
+      position: relative;
+      width: 100%;
+      height: 1.2rem;
+      border-bottom: 1px solid #e8e8e8;
+      line-height: 1.2rem;
+      overflow-y: hidden; }
+      .tyz-address .tyz-address-ul .address-li label, .tyz-address .tyz-address-ul .address-li input, .tyz-address .tyz-address-ul .address-li span {
+        display: block;
+        float: left; }
+      .tyz-address .tyz-address-ul .address-li label {
+        font-size: 16px; }
+        [data-dpr="2"] .tyz-address .tyz-address-ul .address-li label {
+          font-size: 32px; }
+        [data-dpr="3"] .tyz-address .tyz-address-ul .address-li label {
+          font-size: 48px; }
+      .tyz-address .tyz-address-ul .address-li input {
+        width: 7.466667rem;
+        padding: 0.36rem 0.106667rem;
+        font-size: 14px;
+        line-height: 1.25;
+        border: 0;
+        color: #333;
+        background-color: #fff; }
+        [data-dpr="2"] .tyz-address .tyz-address-ul .address-li input {
+          font-size: 28px; }
+        [data-dpr="3"] .tyz-address .tyz-address-ul .address-li input {
+          font-size: 42px; }
+      .tyz-address .tyz-address-ul .address-li span {
+        line-height: 1.186667rem;
+        font-size: 14px;
+        color: #333;
+        margin-right: 0.066667rem; }
+        [data-dpr="2"] .tyz-address .tyz-address-ul .address-li span {
+          font-size: 28px; }
+        [data-dpr="3"] .tyz-address .tyz-address-ul .address-li span {
+          font-size: 42px; }
+      .tyz-address .tyz-address-ul .address-li em {
+        position: absolute;
+        right: 0.666667rem;
+        width: 1.333333rem;
+        height: 1.2rem;
+        top: 0;
+        text-align: right;
+        font-size: 14px;
+        color: #999; }
+        [data-dpr="2"] .tyz-address .tyz-address-ul .address-li em {
+          font-size: 28px; }
+        [data-dpr="3"] .tyz-address .tyz-address-ul .address-li em {
+          font-size: 42px; }
+      .tyz-address .tyz-address-ul .address-li .tyz-add {
+        width: calc(100% - 2.666667rem); }
+  .tyz-address h4 {
+    line-height: 0.6rem;
+    padding: 0.2rem 0.266667rem 0.066667rem;
+    font-size: 12px;
+    color: #ff3574; }
+    [data-dpr="2"] .tyz-address h4 {
+      font-size: 24px; }
+    [data-dpr="3"] .tyz-address h4 {
+      font-size: 36px; }
+    .tyz-address h4 i {
+      display: inline-block;
+      width: 0.4rem;
+      height: 0.4rem;
+      line-height: 0.4rem;
+      border: 1px solid #ff3574;
+      text-align: center;
+      border-radius: 50%;
+      font-style: normal;
+      font-size: 10px;
+      margin-right: 0.106667rem; }
+      [data-dpr="2"] .tyz-address h4 i {
+        font-size: 20px; }
+      [data-dpr="3"] .tyz-address h4 i {
+        font-size: 30px; }
+  .tyz-address p {
+    line-height: 1.5;
+    font-size: 12px;
+    color: #666;
+    padding: 0 0.266667rem; }
+    [data-dpr="2"] .tyz-address p {
+      font-size: 24px; }
+    [data-dpr="3"] .tyz-address p {
+      font-size: 36px; }
+  .tyz-address .submit {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+    background: #ff3574;
+    overflow: hidden; }
+    [data-dpr="2"] .tyz-address .submit {
+      font-size: 32px; }
+    [data-dpr="3"] .tyz-address .submit {
+      font-size: 48px; }
+    .tyz-address .submit:disabled {
+      background: #999; }
+  .tyz-address .addressBox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+    width: 100%;
+    max-height: 12.0rem;
+    background: #fff;
+    overflow: hidden; }
+    .tyz-address .addressBox h3 {
+      display: block;
+      width: 100%;
+      height: 1.2rem;
+      line-height: 1.2rem;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #999; }
+      [data-dpr="2"] .tyz-address .addressBox h3 {
+        font-size: 28px; }
+      [data-dpr="3"] .tyz-address .addressBox h3 {
+        font-size: 42px; }
+    .tyz-address .addressBox .address-close {
+      position: absolute;
+      right: .266667rem;
+      top: .4rem;
+      width: .533333rem;
+      height: .533333rem;
+      border-radius: 50%;
+      border: 1px solid #333;
+      z-index: 201; }
+      .tyz-address .addressBox .address-close::before, .tyz-address .addressBox .address-close::after {
+        content: '';
+        position: absolute;
+        top: .106667rem;
+        left: 50%;
+        display: block;
+        width: 1px;
+        height: .32rem;
+        background-color: #333; }
+      .tyz-address .addressBox .address-close:before {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+      .tyz-address .addressBox .address-close::after {
+        -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        transform: rotate(135deg); }
+    .tyz-address .addressBox .address-nav {
+      position: relative;
+      width: 100%;
+      height: 0.933333rem;
+      line-height: 0.933333rem;
+      padding: 0 0.066667rem;
+      border-bottom: 1px solid #dadada;
+      overflow: hidden; }
+      .tyz-address .addressBox .address-nav span {
+        display: none;
+        float: left;
+        padding: 0 0.133333rem;
+        line-height: 0.933333rem;
+        margin-right: 0.133333rem;
+        color: #333;
+        font-size: 12px; }
+        [data-dpr="2"] .tyz-address .addressBox .address-nav span {
+          font-size: 24px; }
+        [data-dpr="3"] .tyz-address .addressBox .address-nav span {
+          font-size: 36px; }
+        .tyz-address .addressBox .address-nav span:first-child {
+          display: block; }
+        .tyz-address .addressBox .address-nav span:last-child {
+          max-height: 2.666667rem; }
+        .tyz-address .addressBox .address-nav span.active {
+          color: #ff3574;
+          line-height: 0.906667rem;
+          border-bottom: 2px solid #ff3574; }
+    .tyz-address .addressBox .address-list {
+      position: relative;
+      width: 100%;
+      height: 8.0rem;
+      overflow: hidden; }
+      .tyz-address .addressBox .address-list ul {
+        position: relative;
+        display: block;
+        width: 100%;
+        max-height: 8.0rem;
+        overflow-x: hidden;
+        overflow-y: auto; }
+        .tyz-address .addressBox .address-list ul li {
+          position: relative;
+          width: 100%;
+          height: 0.866667rem;
+          line-height: 0.866667rem;
+          padding: 0 0.266667rem;
+          font-size: 12px;
+          color: #333;
+          border-bottom: 1px dashed #dadada; }
+          [data-dpr="2"] .tyz-address .addressBox .address-list ul li {
+            font-size: 24px; }
+          [data-dpr="3"] .tyz-address .addressBox .address-list ul li {
+            font-size: 36px; }
+          .tyz-address .addressBox .address-list ul li.on {
+            color: #ff3574; }
+            .tyz-address .addressBox .address-list ul li.on:after {
+              content: "";
+              position: absolute;
+              right: 0.266667rem;
+              top: 50%;
+              display: block;
+              width: .22rem;
+              height: .1rem;
+              border-left: 1px solid #ff3574;
+              border-bottom: 1px solid #ff3574;
+              -ms-transform: rotate(-55deg);
+              transform: rotate(-55deg);
+              -webkit-transform: rotate(-55deg); }
+
+.layui-m-layersection {
+  line-height: 1.1 !important; }
+  .layui-m-layersection h3 {
+    font-size: 18px;
+    font-weight: bolder !important; }
+    [data-dpr="2"] .layui-m-layersection h3 {
+      font-size: 36px; }
+    [data-dpr="3"] .layui-m-layersection h3 {
+      font-size: 54px; }
+  .layui-m-layersection p {
+    text-align: left; }

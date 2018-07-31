@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>独立生活：开一间属于自己的店</title>
+<!--=include ../module/public_header.html -->
+<!-- build:css /dist/css/swiper/swiper.min.css -->
+<link href="/dist/css/swiper/swiper.min.css" rel="stylesheet">
+<!-- endbuild -->
+<!-- build:css /dist/css/swiper/animate.min.css -->
+<link href="/dist/css/swiper/animate.min.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/user/open.css" rel="stylesheet" inline>
+</head>
+<body id="open">
+    <div class="loading_bg" id="loading">
+        <div class="loading_wrp">
+            <div class="loading">
+                <div class="loading_bar"></div>
+            </div>
+            <b id="loading_text">0%</b>
+        </div>
+    </div>
+    <div class="lock_wrp" id="lock">
+        <div class="lock">
+            <i></i><br />
+            为了更好的体验，请使用竖屏浏览
+        </div>
+    </div>
+    <div class="swiper-container" id="swiper-container-v">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="s1">
+                <template v-if="is_app == 'miyan'">
+                    <template v-if="is_pay == 1">
+                        <!-- 299 -->
+                        <img class="abs w100 ani" src="/dist/images/opens/1_02.png?201407271030" alt="" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                    </template>
+                    <template v-else>
+                        <!-- 299 -->
+                        <img class="abs w100 ani" v-if="info.come_from == 7" src="/dist/images/opens/1_02.png?201407271030" alt="" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                        <!-- 399 -->
+                        <img class="abs w100 ani" v-else src="/dist/images/opens/1_01.png?201407271030" alt="" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                    </template>
+                </template>
+                <template v-else>
+                    <!-- 299 -->
+                    <img class="abs w100 ani" v-if="info.come_from == 7" src="/dist/images/opens/1_02.png?201407271030" alt="" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                    <!-- 399 -->
+                    <img class="abs w100 ani" v-else src="/dist/images/opens/1_01.png?201407271030" alt="" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s">
+                </template>
+            </div>
+            <div class="swiper-slide" id="s2">
+                <img class="abs w100" src="/dist/images/opens/2_01.png?201407271030">
+                <img class="abs w100 ani" src="/dist/images/opens/2_02.png?201407271030" alt="" swiper-animate-effect="pulse" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+            </div>
+            <div class="swiper-slide" id="s3">
+                <img class="abs w100 ani" src="/dist/images/opens/3_01.png?201407271030" alt="" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0s">
+                <img class="abs w100 ani" src="/dist/images/opens/3_02.png?201407271030" alt="" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0.2s">
+                <img class="abs w100 ani" src="/dist/images/opens/3_03.png?201407271030" alt="" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0.4s">
+            </div>
+            <div class="swiper-slide" id="s4">
+                <img class="abs w100 ani" src="/dist/images/opens/4_01.png?201407271030" alt="" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0s">
+                <img class="abs w100 ani" src="/dist/images/opens/4_02.png?201407271030" alt="" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0.2s">
+                <img class="abs w100 ani" src="/dist/images/opens/4_03.png?201407271030" alt="" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0.4s">
+            </div>
+            <div class="swiper-slide" id="s5"></div>
+            <div class="swiper-slide" id="s6">
+                <div class="swiper-container" id="swiper-container-h">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="/dist/images/opens/6_01.jpg?201407271030" alt=""></div>
+                        <div class="swiper-slide"><img src="/dist/images/opens/6_02.jpg?201407271030" alt=""></div>
+                        <div class="swiper-slide"><img src="/dist/images/opens/6_03.jpg?201407271030" alt=""></div>
+                        <div class="swiper-slide"><img src="/dist/images/opens/6_04.jpg?201407271030" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination" id="swiper-pagination-h"></div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination" id="swiper-pagination-v"></div>
+        <img src="/dist/images/opens/arrow.png?201407271030" id="array" class="resize">
+        <div class="open-bottom">
+            <div  class="open-bottom-label" :class="{'yqj': info.come_from == 7, 'zxj': info.come_from != 7}">
+                ￥<span>{{info.promotion_price}}</span>元/年
+                <del>￥{{info.original_price}}</del>
+            </div>
+            <a href="javascript:;" v-tap.stop="open()" >立即开店</a>
+        </div>
+    </div>
+    <!--=include ../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/open.js -->
+    <script src="/dist/js/user/open.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

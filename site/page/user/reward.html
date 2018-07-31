@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>销售奖励</title>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no,email=no,address=no" name="format-detection">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<script>!function(){var e="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",t=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet)t.styleSheet.disabled||(t.styleSheet.cssText=e);else try{t.innerHTML=e}catch(i){t.innerText=e}}(),!function(e,t){function i(){var t=r.getBoundingClientRect().width;t/s>540&&(t=540*s);var i=t/10;r.style.fontSize=i+"px",c.rem=e.rem=i}var n,a=e.document,r=a.documentElement,o=a.querySelector('meta[name="viewport"]'),l=a.querySelector('meta[name="flexible"]'),s=0,d=0,c=t.flexible||(t.flexible={});if(o){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var m=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);m&&(d=parseFloat(m[1]),s=parseInt(1/d))}else if(l){var h=l.getAttribute("content");if(h){var p=h.match(/initial\-dpr=([\d\.]+)/),f=h.match(/maximum\-dpr=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseFloat((1/s).toFixed(2))),f&&(s=parseFloat(f[1]),d=parseFloat((1/s).toFixed(2)))}}if(!s&&!d){var u=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),b=e.devicePixelRatio;s=u?b>=3&&(!s||s>=3)?3:b>=2&&(!s||s>=2)?2:1:1,d=1/s}if(r.setAttribute("data-dpr",s),!o)if(o=a.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(o);else{var g=a.createElement("div");g.appendChild(o),a.write(g.innerHTML)}e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(i,300))},!1),"complete"===a.readyState?a.body.style.fontSize=12*s+"px":a.addEventListener("DOMContentLoaded",function(){a.body.style.fontSize=12*s+"px"},!1),i(),c.dpr=e.dpr=s,c.refreshRem=i,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+	<!-- build:css /dist/css/base.css -->
+	<link rel="stylesheet" href="/dist/css/base.css">
+	<!-- endbuild -->
+<style>#user-reward .reward-cont .reward-cont-top{border-bottom:0}.reward-cont{position:relative;width:100%;text-align:center;background:url(../../dist/images/bg20161128.jpg) left top no-repeat;background-size:cover;overflow:hidden}.reward-cont .reward-cont-top{position:relative;height:3.4rem;border-bottom:1px solid #ddd;overflow:hidden}.reward-cont .reward-cont-top p{display:block;text-align:center;height:.666667rem;line-height:.666667rem}.reward-cont .reward-cont-top p:nth-child(1){margin-top:1.066667rem;color:#ff3574;font-size:26px}[data-dpr="2"] .reward-cont .reward-cont-top p:nth-child(1){font-size:52px}[data-dpr="3"] .reward-cont .reward-cont-top p:nth-child(1){font-size:78px}.reward-cont .reward-cont-top p:nth-child(2){margin-top:.266667rem;color:#333;font-size:14px}[data-dpr="2"] .reward-cont .reward-cont-top p:nth-child(2){font-size:28px}[data-dpr="3"] .reward-cont .reward-cont-top p:nth-child(2){font-size:42px}.reward-cont .reward-cont-top::before{right:.533333rem;border-width:2px}.reward-cont .reward-cont-center{position:relative;display:block;width:100%;height:1.2rem;background:rgba(221,221,221,.2);overflow:hidden}.reward-cont .reward-cont-center .reward-cont-center-li{position:relative;float:left;width:50%;height:1.2rem;padding:.133333rem 0;overflow:hidden}.reward-cont .reward-cont-center .reward-cont-center-li p{position:relative;text-align:center;height:.466667rem;line-height:.466667rem}.reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(1){font-size:14px;color:#000}[data-dpr="2"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(1){font-size:28px}[data-dpr="3"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(1){font-size:42px}.reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(2){font-size:12px;color:#999}[data-dpr="2"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(2){font-size:24px}[data-dpr="3"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(2){font-size:36px}.reward-list{position:relative;width:100%;background:#fff;margin-top:.266667rem;overflow:hidden}.reward-list h2{position:relative;display:block;width:100%;padding:0 .266667rem;height:.933333rem;line-height:.933333rem;font-size:13px}[data-dpr="2"] .reward-list h2{font-size:26px}[data-dpr="3"] .reward-list h2{font-size:39px}.reward-list h2 i{font-size:14px;margin-right:.133333rem}[data-dpr="2"] .reward-list h2 i{font-size:28px}[data-dpr="3"] .reward-list h2 i{font-size:42px}.reward-list h4{position:relative;width:100%;height:.666667rem;line-height:.666667rem;font-size:12px;text-align:center;margin-bottom:.533333rem}[data-dpr="2"] .reward-list h4{font-size:24px}[data-dpr="3"] .reward-list h4{font-size:36px}.reward-list h4 span{color:#ff3574}.reward-list .reward-list-task{position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;padding:0 .266667rem;height:2rem;border-top:1px solid #ddd;overflow:hidden}.reward-list .reward-list-task .reward-list-task-left{-webkit-box-flex:0;-ms-flex:0 0 auto;-webkit-flex:0 0 auto;flex:0 0 auto;width:2rem;height:2rem;margin-right:.266667rem}.reward-list .reward-list-task .reward-list-task-left h5{position:relative;margin-top:.866667rem;height:.4rem;line-height:.4rem;text-align:center;font-size:12px}[data-dpr="2"] .reward-list .reward-list-task .reward-list-task-left h5{font-size:24px}[data-dpr="3"] .reward-list .reward-list-task .reward-list-task-left h5{font-size:36px}.reward-list .reward-list-task .reward-list-task-left h5:after{position:absolute;content:'';display:block;width:1px;height:.4rem;top:0;right:.093333rem;background-color:#999}.reward-list .reward-list-task .reward-list-task-left p{margin-top:.133333rem;font-size:10px;text-align:center}[data-dpr="2"] .reward-list .reward-list-task .reward-list-task-left p{font-size:20px}[data-dpr="3"] .reward-list .reward-list-task .reward-list-task-left p{font-size:30px}.reward-list .reward-list-task .reward-list-task-right{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;min-width:0;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-flex:1;-ms-flex:1 1 0;-webkit-flex:1 1 0;flex:1 1 0}.reward-list .reward-list-task .reward-list-task-right .reward-tips{position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;height:.506667rem}.reward-list .reward-list-task .reward-list-task-right .reward-tips span{position:relative;display:none;padding:0 .16rem;height:.506667rem;line-height:.48rem;border:1px solid #ff3574;font-size:10px;color:#666;border-radius:.106667rem;-webkit-border-radius:.106667rem}[data-dpr="2"] .reward-list .reward-list-task .reward-list-task-right .reward-tips span{font-size:20px}[data-dpr="3"] .reward-list .reward-list-task .reward-list-task-right .reward-tips span{font-size:30px}.reward-list .reward-list-task .reward-list-task-right .reward-tips span b{color:#ff3574}.reward-list .reward-list-task .reward-list-task-right .reward-tips span em{position:absolute;width:.186667rem;height:.186667rem;border-width:0 0 1px 1px;border-style:solid;border-color:#ff3574;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);bottom:-.1rem;left:8%;background-color:#fff}.reward-list .reward-list-task .reward-list-task-right .reward-progress{position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;height:.4rem;margin-top:.156667rem}.reward-list .reward-list-task .reward-list-task-right .reward-progress progress,.reward-list .reward-list-task .reward-list-task-right .reward-progress progress::-webkit-progress-bar{height:.133333rem;display:block;background-color:#d6d6d6;width:100%;border-radius:.066667rem;overflow:hidden}.reward-list .reward-list-task .reward-list-task-right .reward-progress progress::-moz-progress-bar{height:.133333rem;display:block;background-color:#d6d6d6;width:100%;border-radius:.066667rem;overflow:hidden}.reward-list .reward-list-task .reward-list-task-right .reward-progress progress::-webkit-progress-value{background-color:transparent;background-image:-webkit-linear-gradient(left,#ff739f,#fbac6e);background-image:linear-gradient(left,#ff739f,#fbac6e)}.reward-list .reward-list-task .reward-list-task-right .reward-progress progress::-moz-progress-value{background-image:-webkit-linear-gradient(left,#ff739f,#fbac6e);background-image:linear-gradient(left,#ff739f,#fbac6e)}.reward-list .reward-list-task .reward-list-task-right .reward-progress span{position:absolute;display:block;top:50%;margin-top:-.12rem;margin-left:-.12rem;width:.24rem;height:.24rem;border:2px solid #9c9c9c;border-radius:50%;-webkit-border-radius:50%;background-color:#fff}.reward-list .reward-list-task .reward-list-task-right .reward-progress span.active{border-color:#fff;background-color:#ff3574}.reward-list .reward-list-task .reward-list-task-right ul{position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;padding:0 15%;overflow:hidden}.reward-list .reward-list-task .reward-list-task-right ul.three{padding:0}.reward-list .reward-list-task .reward-list-task-right ul li{position:relative;display:block;float:left;color:#999;font-size:11px;text-align:center}[data-dpr="2"] .reward-list .reward-list-task .reward-list-task-right ul li{font-size:22px}[data-dpr="3"] .reward-list .reward-list-task .reward-list-task-right ul li{font-size:33px}.reward-list .reward-list-task .reward-list-task-right ul li.active{color:#ff3574}.reward-list .week .reward-list-task-right .reward-progress span.one:first-child{left:50%}.reward-list .week .reward-list-task-right .reward-progress span.two:first-child{left:33.333%}.reward-list .week .reward-list-task-right .reward-progress span.two:nth-child(2){left:66.666%}.reward-list .week .reward-list-task-right .reward-progress span.three:first-child{left:25%}.reward-list .week .reward-list-task-right .reward-progress span.three:nth-child(2){left:50%}.reward-list .week .reward-list-task-right .reward-progress span.three:nth-child(3){left:75%}.reward-list .week .reward-list-task-right .reward-progress span.four:first-child{left:20%}.reward-list .week .reward-list-task-right .reward-progress span.four:nth-child(2){left:40%}.reward-list .week .reward-list-task-right .reward-progress span.four:nth-child(3){left:60%}.reward-list .week .reward-list-task-right .reward-progress span.four:nth-child(4){left:80%}.reward-list .week .reward-list-task-right ul li{overflow:hidden}.reward-list .week .reward-list-task-right ul.one li{width:100%;text-align:center}.reward-list .week .reward-list-task-right ul.two li{width:calc((100% - 20px)/2)}.reward-list .week .reward-list-task-right ul.three li{width:calc((100% - 20px)/3)}.reward-list .month{height:2.266667rem}.reward-list .month h5{margin-top:.7rem!important}.reward-list .month .reward-list-task-right .reward-progress span.one:first-child{left:50%}.reward-list .month .reward-list-task-right .reward-progress span.two:first-child{left:33.333%}.reward-list .month .reward-list-task-right .reward-progress span.two:nth-child(2){left:66.666%}.reward-list .month .reward-list-task-right .reward-progress span.three:first-child{left:25%}.reward-list .month .reward-list-task-right .reward-progress span.three:nth-child(2){left:50%}.reward-list .month .reward-list-task-right .reward-progress span.three:nth-child(3){left:75%}.reward-list .month .reward-list-task-right .reward-progress span.four:first-child{left:20%}.reward-list .month .reward-list-task-right .reward-progress span.four:nth-child(2){left:40%}.reward-list .month .reward-list-task-right .reward-progress span.four:nth-child(3){left:60%}.reward-list .month .reward-list-task-right .reward-progress span.four:nth-child(4){left:80%}.reward-list .month .reward-list-task-right .reward-progress span.active:nth-child(3){border-color:#fff;background-color:#ff739f}.reward-list .month .reward-list-task-right ul{width:100%;padding:0}.reward-list .month .reward-list-task-right ul li{position:relative;display:block;height:.85rem}.reward-list .month .reward-list-task-right ul li p{position:absolute}.reward-list .month .reward-list-task-right ul li p:first-child{top:0}.reward-list .month .reward-list-task-right ul li p:nth-child(2){top:.4rem}.reward-list .month .reward-list-task-right ul li:nth-child(4) p{position:relative;right:0}.reward-list .month .reward-list-task-right ul li:nth-child(4) p:nth-child(2){top:0}.reward-list .month .reward-list-task-right ul.one li{width:100%;text-align:center}.reward-list .month .reward-list-task-right ul.one li p{right:8rem}.reward-list .month .reward-list-task-right ul.two li{width:50%;text-align:center}.reward-list .month .reward-list-task-right ul.two li:first-child p{right:.533333rem}.reward-list .month .reward-list-task-right ul.two li:last-child p{right:1.533333rem}.reward-list .month .reward-list-task-right ul.three li{width:33.333%;text-align:right}.reward-list .month .reward-list-task-right ul.three li:first-child p{right:0}.reward-list .month .reward-list-task-right ul.three li:nth-child(2) p{right:.45rem}.reward-list .month .reward-list-task-right ul.three li:last-child p{right:1rem}.reward-list .text{height:auto;padding:.133333rem .266667rem}.reward-list .text .reward-list-task-left{margin-right:0;margin-left:.266667rem}.reward-list .text .reward-list-task-left a{position:relative;display:block;width:2rem;height:.8rem;line-height:.8rem;text-align:center;color:#ff3574;border:1px solid #ff3574;border-radius:.133333rem;font-size:15px;margin-top:.5rem;overflow:hidden}[data-dpr="2"] .reward-list .text .reward-list-task-left a{font-size:30px}[data-dpr="3"] .reward-list .text .reward-list-task-left a{font-size:45px}.reward-list .text .reward-list-task-right p{line-height:.45rem;color:#666;font-size:12px}[data-dpr="2"] .reward-list .text .reward-list-task-right p{font-size:24px}[data-dpr="3"] .reward-list .text .reward-list-task-right p{font-size:36px}.reward-list .text .reward-list-task-right p label{color:#ff3574}.reward-list .new{padding:.133333rem .8rem;height:2.666667rem}.reward-list .new .reward-list-task-right .reward-progress span.one:first-child{left:50%}.reward-list .new .reward-list-task-right .reward-progress span.two:first-child{left:33.333%}.reward-list .new .reward-list-task-right .reward-progress span.two:nth-child(2){left:66.666%}.reward-list .new .reward-list-task-right .reward-progress span.three:first-child{left:25%}.reward-list .new .reward-list-task-right .reward-progress span.three:nth-child(2){left:50%}.reward-list .new .reward-list-task-right .reward-progress span.three:nth-child(3){left:75%}.reward-list .new .reward-list-task-right .reward-progress span.four:first-child{left:20%}.reward-list .new .reward-list-task-right .reward-progress span.four:nth-child(2){left:40%}.reward-list .new .reward-list-task-right .reward-progress span.four:nth-child(3){left:60%}.reward-list .new .reward-list-task-right .reward-progress span.four:nth-child(4){left:80%}.reward-list .new .reward-list-task-right .reward-progress span.falg{left:101%;width:.6rem;height:.6rem;border:none;margin-top:-.5rem;color:#d6d6d6;font-size:20px}[data-dpr="2"] .reward-list .new .reward-list-task-right .reward-progress span.falg{font-size:40px}[data-dpr="3"] .reward-list .new .reward-list-task-right .reward-progress span.falg{font-size:60px}.reward-list .new .reward-list-task-right .reward-progress span.active.falg{background-color:#fff;color:#ff3574}.reward-list .new .reward-list-task-right ul{width:100%;padding:0}.reward-list .new .reward-list-task-right ul li{text-align:right}.reward-list .new .reward-list-task-right ul.one li{width:100%}.reward-list .new .reward-list-task-right ul.two li{width:50%}.reward-list .new .reward-list-task-right ul.three li{width:33.333%}.reward-list .new .reward-list-task-right ul.four li{width:20%}.new-p{position:relative;width:100%;height:.666667rem;line-height:.666667rem;margin:1.6rem 0 1.066667rem;font-size:12px;color:#666;text-align:center}[data-dpr="2"] .new-p{font-size:24px}[data-dpr="3"] .new-p{font-size:36px}.list-on{background-color:#e7e5e5}.list-on span em{background-color:#e7e5e5!important}.list-open{position:absolute;left:50%;bottom:.666667rem;margin-left:-3.333333rem;width:6.666667rem;height:2rem;border-radius:.266667rem;background-color:rgba(255,255,255,.8)}.list-open h5{width:100%;height:.666667rem;line-height:.666667rem;margin-top:.333333rem;font-size:15px;font-weight:bolder;text-align:center;color:#333}[data-dpr="2"] .list-open h5{font-size:30px}[data-dpr="3"] .list-open h5{font-size:45px}.list-open p{height:.666667rem;line-height:.666667rem;font-size:12px;text-align:center;color:#666}[data-dpr="2"] .list-open p{font-size:24px}[data-dpr="3"] .list-open p{font-size:36px}.no-info-p{padding-top:2.666667rem;text-align:center;font-size:12px;color:#999}[data-dpr="2"] .no-info-p{font-size:24px}[data-dpr="3"] .no-info-p{font-size:36px}.reward-box{position:fixed;display:block;width:8rem;height:8.8rem;top:50%;left:50%;margin-top:-4.4rem;margin-left:-4rem;background:url("/dist/images/img/reward_tk.png") center center no-repeat;background-size:8rem 8.8rem;z-index:999}.reward-box i{position:absolute;right:.266667rem;top:.266667rem;width:.533333rem;height:.533333rem;background:url("/dist/images/img/close.png") center center no-repeat;background-size:.533333rem;z-index:99}.reward-box p{margin-top:4.533333rem;margin-left:.266667rem;line-height:.933333rem;text-align:center;font-size:15px}[data-dpr="2"] .reward-box p{font-size:30px}[data-dpr="3"] .reward-box p{font-size:45px}.reward-box p span{font-size:20px;color:#ff3574}[data-dpr="2"] .reward-box p span{font-size:40px}[data-dpr="3"] .reward-box p span{font-size:60px}.reward-box a{display:block;margin-top:1.533333rem;margin-left:1.026667rem;width:6.066667rem;height:.866667rem}</style>
+
+</head>
+<body>
+	<div class="user-reward" id="user-reward">
+		<section class="reward-cont">
+			<a href="/page/user/reward-info.html">
+		 	<div class="reward-cont-top next-before">
+				<p><span v-cloak>{{info.total_money}}</span></p>
+				<p>累计现金奖励（元）</p>
+			</div>
+			</a>
+			<div class="reward-cont-center">
+				<div class="reward-cont-center-li">
+					<p><span v-cloak>{{info.week_order}}</span></p>
+					<p>周订单数</p>
+				</div>
+				<div class="reward-cont-center-li">
+					<p><span v-cloak>{{info.month_order}}</span></p>
+					<p>月订单数</p>
+				</div>
+			</div>
+		</section>
+		<template v-if="task_info.is_use == 1">
+		<section class="reward-list" v-if="task_info.is_new_agency == 1" v-cloak>
+		 	<h2><i class="icon-reward"></i>新代理成长奖励<span v-if="task_info.new_agency_task.time != ''" v-cloak>（{{task_info.new_agency_task.time}}）</span></h2>
+		 	<div class="reward-list-task new">
+		 		<div class="reward-list-task-right">
+		 			<div class="reward-tips"></div>
+		 			<div class="reward-progress">
+		 				<template v-if="task_info.new_agency_task.rule.length == 1">
+		 					<span class="one"></span>
+		 					<span class="falg"><i class="icon-falg"></i></span>
+		 				</template>
+		 				<template v-if="task_info.new_agency_task.rule.length == 2">
+		 					<span class="two"></span>
+		 					<span class="two"></span>
+		 					<span class="falg"><i class="icon-falg"></i></span>
+		 				</template>
+		 				<template v-if="task_info.new_agency_task.rule.length == 3">
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 					<span class="falg"><i class="icon-falg"></i></span>
+		 				</template>
+		 				<template v-if="task_info.new_agency_task.rule.length == 4">
+		 					<span class="four"></span>
+		 					<span class="four"></span>
+		 					<span class="four"></span>
+		 					<span class="four"></span>
+		 					<span class="falg"><i class="icon-falg"></i></span>
+		 				</template>
+		 				<progress value="0" max="30"></progress>
+		 			</div>
+		 			<ul v-if="task_info.new_agency_task.rule.length == 1" class="one">
+		 				<li v-for="new in task_info.new_agency_task.rule">
+		 					<p>拿货<span v-cloak>{{new.man}}</span>单</p>
+		 					<p>第<span v-cloak>{{$index+1}}</span>周</p>
+		 				</li>
+		 				<li>
+		 					<p>赢<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.new_agency_task.rule.length == 2" class="two">
+		 				<li v-for="new in task_info.new_agency_task.rule">
+		 					<p>拿货<span v-cloak>{{new.man}}</span>单</p>
+		 					<p>第<span v-cloak>{{$index+1}}</span>周</p>
+		 				</li>
+		 				<li>
+		 					<p>赢<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.new_agency_task.rule.length == 3" class="three">
+		 				<li v-for="new in task_info.new_agency_task.rule">
+		 					<p>拿货<span v-cloak>{{new.man}}</span>单</p>
+		 					<p>第<span v-cloak>{{$index+1}}</span>周</p>
+		 				</li>
+		 				<li>
+		 					<p>赢<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.new_agency_task.rule.length == 4" class="four">
+		 				<li v-for="new in task_info.new_agency_task.rule">
+		 					<p>拿货<span v-cloak>{{new.man}}</span>单</p>
+		 					<p>第<span v-cloak>{{$index+1}}</span>周</p>
+		 				</li>
+		 				<li>
+		 					<p>赢<span v-cloak>{{task_info.new_agency_task.money}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 		</div>
+		 	</div>
+		 	<h4 v-if="task_info.is_new_agency == 1"><span>TIPS：</span>只要4周内累计完成<label v-cloak>{{task_info.new_agency_task.order_count}}</label>单，也可以赢<label v-cloak>{{task_info.new_agency_task.money}}</label>元喔～</h4>
+		</section>
+		<section class="reward-list"  v-if="task_info.is_new_agency == 1  && (parseInt(new_agency_task.order_count) > (parseInt(new_agency_task.current_order_count))+1)" v-cloak>
+		 	<h2><i class="icon-reward"></i>APP进货奖励</h2>
+		 	<div class="reward-list-task text">
+		 		<div class="reward-list-task-right">
+		 			<p v-for="list in task_info.one_order_task">单笔订单满<span v-cloak>{{list.man}}</span>元，<label>奖励<span v-cloak>{{list.jiang}}</span>元现金</label></p>
+		 		</div>
+		 		<div class="reward-list-task-left">
+		 			<a href="javascript:;" v-tap.stop="goIndex()">去拿货</a>
+		 		</div>
+		 	</div>
+		</section>
+		<p class="new-p" v-if="task_info.is_new_agency == 1  && (parseInt(new_agency_task.order_count) > (parseInt(new_agency_task.current_order_count))+1)" v-cloak>完成新代理成长后，还有价值6800元的奖励金等你喔~</p>
+		<section class="reward-list" :class="{'list-on': task_info.is_new_agency == 1}" v-if="task_info.is_new_agency == 0 || (task_info.is_new_agency == 1  && parseInt(new_agency_task.order_count) < (parseInt(new_agency_task.current_order_count))+1)" v-cloak>
+		 	<h2><i class="icon-reward"></i>订单量达标奖励</h2>
+		 	<div class="reward-list-task week">
+		 		<div class="reward-list-task-left">
+		 			<h5>周任务</h5>
+		 			<p><span v-cloak>({{task_info.week_task.time}})</span></p>
+		 		</div>
+		 		<div class="reward-list-task-right">
+		 			<div class="reward-tips"></div>
+		 			<div class="reward-progress">
+		 				<template v-if="task_info.week_task.rule.length == 1">
+		 					<span class="one"></span>
+		 				</template>
+		 				<template v-if="task_info.week_task.rule.length == 2">
+		 					<span class="two"></span>
+		 					<span class="two"></span>
+		 				</template>
+		 				<template v-if="task_info.week_task.rule.length == 3 || task_info.week_task.rule.length > 3">
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 				</template>
+		 				<progress value="0" max="30"></progress>
+		 			</div>
+		 			<ul v-if="task_info.week_task.rule.length == 1" class="one">
+		 				<li v-for="week in task_info.week_task.rule">
+		 					<p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.week_task.rule.length == 2" class="two">
+		 				<li v-for="week in task_info.week_task.rule">
+		 					<p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.week_task.rule.length == 3" class="three">
+		 				<li v-for="week in task_info.week_task.rule">
+		 					<p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.week_task.rule.length > 3" class="three">
+		 				<li v-for="week in week_task">
+		 					<p>满<span v-cloak>{{week.man}}</span>单奖<span v-cloak>{{week.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 		</div>
+		 	</div>
+		 	<div class="reward-list-task month">
+		 		<div class="reward-list-task-left">
+		 			<h5>月任务</h5>
+		 			<p><span v-cloak>({{task_info.month_task.time}})</span></p>
+		 		</div>
+		 		<div class="reward-list-task-right">
+		 			<div class="reward-tips"></div>
+		 			<div class="reward-progress">
+		 				<template v-if="task_info.month_task.rule.length == 1">
+		 					<span class="one"></span>
+		 				</template>
+		 				<template v-if="task_info.month_task.rule.length == 2">
+		 					<span class="two"></span>
+		 					<span class="two"></span>
+		 				</template>
+		 				<template v-if="task_info.month_task.rule.length == 3 || task_info.month_task.rule.length > 3">
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 					<span class="three"></span>
+		 				</template>
+		 				<progress value="0" max="30"></progress>
+		 			</div>
+		 			<ul v-if="task_info.month_task.rule.length == 1" class="one">
+		 				<li v-for="month in  task_info.month_task.rule">
+		 					<p>满<span v-cloak>{{month.man}}</span>单</p>
+		 					<p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.month_task.rule.length == 2" class="two">
+		 				<li v-for="month in  task_info.month_task.rule">
+		 					<p>满<span v-cloak>{{month.man}}</span>单</p>
+		 					<p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.month_task.rule.length == 3" class="three">
+		 				<li v-for="month in  task_info.month_task.rule">
+		 					<p>满<span v-cloak>{{month.man}}</span>单</p>
+		 					<p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 			<ul v-if="task_info.month_task.rule.length > 3" class="three">
+		 				<li v-for="month in month_task">
+		 					<p>满<span v-cloak>{{month.man}}</span>单</p>
+		 					<p>奖<span v-cloak>{{month.jiang}}</span>元</p>
+		 				</li>
+		 			</ul>
+		 		</div>
+		 	</div>
+		 	<div class="list-open" v-if="task_info.is_new_agency == 1">
+		 		<h5>即将开启</h5>
+		 		<p>新代理成长任务结束后才能开启喔~</p>
+		 	</div>
+		</section>
+		<section class="reward-list" :class="{'list-on': task_info.is_new_agency == 1}" v-if="task_info.is_new_agency == 0 || (task_info.is_new_agency == 1  && parseInt(new_agency_task.order_count) < (parseInt(new_agency_task.current_order_count))+1)" v-cloak>
+		 	<h2><i class="icon-reward"></i>APP进货奖励</h2>
+		 	<div class="reward-list-task text">
+		 		<div class="reward-list-task-right">
+		 			<p v-for="list in task_info.one_order_task">单笔订单满<span v-cloak>{{list.man}}</span>元，<label>奖励<span v-cloak>{{list.jiang}}</span>元现金</label></p>
+		 		</div>
+		 		<div class="reward-list-task-left">
+		 			<a href="javascript:;" v-tap.stop="goIndex()">去拿货</a>
+		 		</div>
+		 	</div>
+		</section>
+		</template>
+		<p class="no-info-p" v-if="task_info.is_use == 0">暂无销售奖励任务，敬请期待...</p>
+		<template v-if="(task_info.is_new_agency == 1 && (parseInt(new_agency_task.order_count) < (parseInt(new_agency_task.current_order_count))+1) && parseInt(task_info.wait_old_status) == 0) || (task_info.is_new_agency == 0 && parseInt(task_info.wait_old_status) == 0)">
+			<section class="reward-box">
+				<i v-tap.stop="subReward()" class="reward-box-close"></i>
+				<p>获得奖励金：<span v-cloak>{{new_agency_task.money}} </span>元</p>
+				<a href="javascript:;" v-tap.stop="subReward()"></a>
+			</section>
+			<div style="display: block;" class="hideBox"></div>
+		</template>
+	</div>
+	<section class="right-fixed"><a class="top-fixed" href="javascript:;">顶部</a></section>
+	<!-- build:js /dist/js/combin.js -->
+	<script src="/dist/js/lib/jquery-2.2.3.min.js"></script>
+	<script src="/dist/js/lib/vue.js"></script>
+	<script src="/dist/js/common.chunk.js"></script>
+	<!-- endbuild -->
+
+    <!-- build:js /dist/js/user/reward.js -->
+    <script src="/dist/js/user/reward.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

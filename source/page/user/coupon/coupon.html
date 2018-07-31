@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>我的红包</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/swiper/swiper.min.css -->
+<link href="/dist/css/swiper/swiper.min.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/user/coupon.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<!--=include ../../../module/masker.html -->
+	<div class="wechat-coupon root" id="wechat-coupon">
+		<section class="coupon-list">
+			<div class="swiper-container">
+				<div class="swiper-pagination"></div>
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<ul>
+							<li v-for="wei in info.no_use_no_expire">
+								<a href="javascript:;">
+									<span v-if="(wei.useful_time - wei.start_time) <86400">即将过期</span>
+									<h2>{{wei.couponName}}</h2>
+									<h3>￥{{wei.money}}</h3>
+									<p v-if="wei.ordermoney != 0">订单满{{wei.ordermoney}}元（不含运费）使用</p>
+									<p v-else>无门槛限制</p>
+									<p>有效期：{{wei.start_time*1000 | moment}} 至 {{wei.useful_time*1000 | moment}}</p>
+								</a>
+							</li>
+							<p class="coupon-no" v-if="info.no_use_no_expire_num == 0" >没有未使用的红包哦~</p>
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul>
+							<li v-for="yi in info.haved_use">
+								<a href="javascript:;">
+									<h2>{{yi.couponName}}</h2>
+									<h3>￥{{yi.money}}</h3>
+									<p v-if="yi.ordermoney != 0">订单满{{yi.ordermoney}}元（不含运费）使用</p>
+									<p v-else>无门槛限制</p>
+									<p>有效期：{{yi.start_time*1000 | moment}} 至 {{yi.useful_time*1000 | moment}}</p>
+								</a>
+							</li>
+							<p class="coupon-no" v-if="info.haved_use_num == 0">没有已使用的红包哦~</p>
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul>
+							<li v-for="guo in info.haved_expire">
+								<a href="javascript:;">
+									<h2>{{guo.couponName}}</h2>
+									<h3>￥{{guo.money}}</h3>
+									<p v-if="guo.ordermoney != 0">订单满{{guo.ordermoney}}元（不含运费）使用</p>
+									<p v-else>无门槛限制</p>
+									<p>有效期：{{guo.start_time*1000 | moment}} 至 {{guo.useful_time*1000 | moment}}</p>
+								</a>
+							</li>
+							<p class="coupon-no" v-if="info.haved_expire_num == 0" >没有已过期的红包哦~</p>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+    <!-- build:js /dist/js/user/coupon.js -->
+    <script src="/dist/js/user/coupon.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

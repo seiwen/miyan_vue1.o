@@ -1,0 +1,18 @@
+.about-list {
+  position: relative;
+  background: #fff;
+  width: 100%; }
+  .about-list ul {
+    display: block;
+    overflow: hidden; }
+    .about-list ul li {
+      width: 100%;
+      padding: 0.266667rem;
+      float: left; }
+      .about-list ul li a {
+        display: block;
+        width: 100%;
+        border-radius: 0.2rem;
+        overflow: hidden; }
+        .about-list ul li a img {
+          width: 100%; }

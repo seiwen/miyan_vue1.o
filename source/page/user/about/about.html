@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>关于蜜妍</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/swiper/swiper.min.css -->
+<link href="/dist/css/swiper/swiper.min.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/user/about.css" rel="stylesheet" inline>
+</head>
+<body>
+    <div class="about root" id="about">
+        <section class="about-nav">
+            <div class="swiper-container" id="about-banner">
+              <div class="swiper-wrapper">
+                <a href="{{item.link_value}}" class="swiper-slide" v-for="item in banners" >
+                    <img :src=item.image class="swiper-lazy" alt="{{item.title}}}">
+                    <div class="swiper-lazy-preloader"></div>
+                </a>
+              </div>
+              <div class="swiper-pagination" v-if="banners.length > 1"></div>
+            </div>
+        </section>
+        <p class="about-tab"><img src="/dist/images/about_01.png" alt=""></p>
+        <section class="about-list">
+            <ul>
+                <li v-for="items in list"><a href="{{items.url}}"><img class="img-fluid lz" src="/dist/images/indexImg/bannerBg.jpg" data-original="{{items.image}}" alt="{{items.title}}"></a></li>
+            </ul>
+        </section>
+    </div>
+    <!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/about.js -->
+    <script src="/dist/js/user/about.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>我的地址</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/cart/cart.css -->
+<link href="/dist/css/cart/cart.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/cart/address.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<!--=include ../../../module/masker.html -->
+    <div id="cart-address" class="has-nav" >
+    	<!-- <section class="input-wrap"><input type="text" class="textfield center" placeholder="输入 姓名/电话 筛选地址" v-model="searchText"></section> -->
+		<section class="address-list root">
+			<div class="address" v-for="address in addressList | filterBy searchText in 'nick_name' 'tel'">
+				<div class="cell center check-wrap">
+					<button class="r-btn check-btn" v-tap.stop="setDefault(address.address_id)">
+                        <i class="icon" :class="{'icon-check-off': address.isdefault == '0', 'icon-check-on': address.isdefault == '1'}"></i>
+                    </button>
+				</div>
+				<div class="cell info" v-tap.stop="setDefault(address.address_id)">
+					<div>
+						<span class="name">{{address.nick_name}}</span>
+						<span class="phone">{{address.tel}}</span>
+					</div>
+					<div class="main-address">
+						{{address.province_name}}{{address.city_name}}{{address.area_name}}{{address.addressline}}
+					</div>
+					<div v-if="address.sid != ''">身份证号 {{address.sid}}</div>
+				</div>
+				<div class="cell center edit-wrap">
+					<a href="javascript:;" class="btn btn-outline-primary js-edit-address" v-tap.stop="editAdd(address.address_id)">编辑</a>
+				</div>
+			</div>
+			<p class="no" v-if="info.total == 0">暂无收货地址</p>
+		</section>
+		<section class="btn-wrap">
+			<a v-tap.stop="newAdd()" href="javascript:;" class="btn btn-primary btn-block js-add-address">新建收货地址</a>
+		</section>
+
+    </div>
+
+
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/cart/address.js -->
+    <script src="/dist/js/cart/address.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

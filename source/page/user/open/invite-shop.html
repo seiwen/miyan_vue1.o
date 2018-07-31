@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>邀请开店</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/swiper/swiper.min.css -->
+<link href="/dist/css/swiper/swiper.min.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/user/invite-shop.css" rel="stylesheet" inline>
+</head>
+<body>
+    <div id="invite-shop" class="root">
+        <section class="invite-header">
+            <div class="header-img">
+                <img :src=shopInfo.image >
+            </div>
+            <div class="header-info">
+                <div class="header-info-wrap">
+                    <div class="header-info-cont">
+                        <h2 v-cloak>{{shopInfo.desc}}</h2>
+                        <ul>
+                            <li v-if="isWeShopPayment == 0">开店价格： <span v-cloak><em>限时 </em>￥{{shopInfo.promotion_price}}/年 <del>￥{{shopInfo.original_price}}</del></span></li>
+                            <li v-else>友情价：<span v-cloak>￥{{shopInfo.promotion_price}}/年 <del>￥{{shopInfo.original_price}}</del></span></li>
+                            <!-- <li>邀请奖励：<span v-if="shopInfo.promotion_price == 1" v-cloak>￥{{shopInfo.reward}}/人</span><span v-else v-cloak>提成高达30%</span></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="invite-lei">
+            <nav><i class="icon-yq_cj"><span class="path1"></span><span class="path2"></span></i> 邀请成绩</nav>
+            <ul class="invite-lei-header">
+                <li>
+                    <p>累计邀请人数</p>
+                    <p><span v-cloak>{{shopInfo.yq_total}}</span></p>
+                </li>
+                <li>
+                    <p>累计获得奖励</p>
+                    <p>￥<span v-cloak>{{shopInfo.reward_total}}</span></p>
+                </li>
+            </ul>
+            <div class="invite-task">
+                <div class="invite-task-box" v-if="shopInfo.is_grads == 1">
+                    <div class="invite-tips"></div>
+                    <div class="invite-progress">
+                        <template v-if="rule_length == 1">
+                            <span class="one"></span>
+                        </template>
+                        <template v-if="rule_length == 2">
+                            <span class="two"></span>
+                            <span class="two"></span>
+                        </template>
+                        <template v-if="rule_length == 3 || rule_length > 3">
+                            <span class="three"></span>
+                            <span class="three"></span>
+                            <span class="three"></span>
+                        </template>
+                        <progress value="0" max="30"></progress>
+                    </div>
+                    <ul v-if="rule_length == 1" class="one">
+                        <li v-for="yq_list in shopInfo.yq_rule">
+                            <p><template v-if="$index == rule_length-1">≥ </template><span v-cloak>{{yq_list.man}}</span>人</p>
+                            <p>返现<span v-cloak>{{yq_list.reward}}</span>/人</p>
+                        </li>
+                    </ul>
+                    <ul v-if="rule_length == 2" class="two">
+                        <li v-for="yq_list in shopInfo.yq_rule">
+                            <p><template v-if="$index == rule_length-1">≥ </template><span v-cloak>{{yq_list.man}}</span>人</p>
+                            <p>返现<span v-cloak>{{yq_list.reward}}</span>/人</p>
+                        </li>
+                    </ul>
+                    <ul v-if="rule_length == 3" class="three">
+                        <li v-for="yq_list in shopInfo.yq_rule">
+                            <p><template v-if="$index == rule_length-1">≥ </template><span v-cloak>{{yq_list.man}}</span>人</p>
+                            <p>返现<span v-cloak>{{yq_list.reward}}</span>/人</p>
+                        </li>
+                    </ul>
+                    <ul v-if="rule_length > 3" class="three">
+                        <li v-for="yq_list in yq_rule_arr">
+                            <p><template v-if="$index == rule_length-1">≥ </template><span v-cloak>{{yq_list.man}}</span>人</p>
+                            <p>返现<span v-cloak>{{yq_list.reward}}</span>/人</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="invite-task-dan" v-else>
+                    <p>邀请返现</p>
+                    <p>￥{{shopInfo.reward}}/人</p>
+                </div>
+            </div>
+        </section>
+        <section class="invite-privilege">
+            <nav><i class="icon-open_tq"><span class="path1"></span><span class="path2"></span></i> 开店特权</nav>
+            <div class="invite-privilege-info swiper-container" id="invite-privilege-info">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide" v-for="privi in powerBase">
+                        <a href="javascript:;" v-on:click="clickDesc($event,privi.title,privi.desc)">
+                            <img :src=privi.cronImage  alt="">
+                            <p>{{privi.title}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- <section class="invite-why">
+            <h2>为什么要邀请朋友开店</h2>
+            <ul v-if="shopInfo.promotion_price == 1" class="invite-why-cont">
+                <li>
+                    <label for="">1. </label>
+                    <p><span>【<i v-cloak>{{shopInfo.reward}}</i>元/人邀请奖励】</span>成功邀请好友开店后，您会获得<i v-cloak>{{shopInfo.reward}}</i>元/人的邀请奖励，好友自动成为您的二级代理。邀请无限制，所有多多益善。</p>
+                </li>
+                <li>
+                    <label for="">2. </label>
+                    <p><span>【提成拿双份】 </span>自己微店的销售提成和二级代理的销售抽成
+                    （抽成含二级代理APP拿货、微店销售）。</p>
+                </li>
+            </ul>
+            <ul v-else class="invite-why-cont">
+                <li>
+                    <label for="">1. </label>
+                    <p><span>【一起开店赚钱】</span>成功邀请好友开店后，好友自动成为您的二级代理。邀请无限制，多多益善。</p>
+                </li>
+                <li>
+                    <label for="">2. </label>
+                    <p><span>【提成拿双份】 </span>自己微店的销售提成和二级代理的销售抽成
+                    （抽成含二级代理APP拿货、微店销售）。</p>
+                </li>
+            </ul>
+        </section> -->
+        <section class="invite-open">
+            <nav><i class="icon-yq_fs"><span class="path1"></span><span class="path2"></span></i> 邀请方式</nav>
+            <ul>
+                <li>
+                    <h3>方式1：</h3>
+                    <div class="invite-open-cont">
+                        <p>我的邀请码</p>
+                        <template v-if="shopInfo.yq_code != ''">
+                        <span><i v-cloak>{{shopInfo.yq_code}}</i></span>
+                        <a v-tap.stop="clickYqm()" href="javascript:;">复制我的邀请码</a>
+                        </template>
+                        <span class="zanwu" v-else>暂无</span>
+                    </div>
+                    <p>点击<span>复制</span> → 邀请好友下载App → 注册时输入邀请码 → 付费开通微店 → 返现 </p>
+                </li>
+                <li>
+                    <h3>方式2：</h3>
+                    <div class="invite-open-cont">
+                        <p>朋友开店后，我获得</p>
+                        <span v-if="shopInfo.agency_level == 1">现金返现，高达30%提成</span>
+                        <span v-else><i v-cloak>{{shopInfo.reward}}</i>元返现</span>
+                        <a hr ef="javascript:;" v-tap.stop="open()" >立即邀请开店</a>
+                    </div>
+                    <p>点击<span>邀请开店</span> → 分享页面→ 好友注册 →  成功开通微店 →  返现</p>
+                </li>
+            </ul>
+        </section>
+        <section class="invite-list">
+            <div class="invite-list-fiexd">
+                <nav><i class="icon icon-yq_name"><span class="path1"></span><span class="path2"></span></i> 邀请名单</nav>
+                <div class="invite-list-nav"><span>手机号</span><span>店铺名称</span></div>
+            </div>
+            <div class="invite-list-no" v-if="info == ''" >
+                <p>还没有邀请开店的卖家！</p>
+                <a href="javascript:;" v-tap.stop="open()" >立即邀请</a>
+            </div>
+            <template v-else>
+                <ul>
+                    <li v-for="item in info" track-by="$index">
+                        <span>{{item.mobile}}</span>
+                        <span v-if="item.shop_name != ''">{{item.shop_name}}</span>
+                        <span v-else>此用户很懒没有取名字</span>
+                    </li>
+                </ul>
+                <div class="invite-list-no">
+                    <p>邀请更多好友</p>
+                    <a href="javascript:;" v-tap.stop="open()" >立即邀请</a>
+                </div>
+                <div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+            </template>
+        </section>
+        <section class="invite-botsub" v-if="isWeShopPayment == 0">
+            <p>您还未付费开店，暂不能邀请</p>
+            <span v-tap.stop="open()">去开店</span>
+        </section>
+    </div>
+    <!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/invite-shop.js -->
+    <script src="/dist/js/user/invite-shop.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

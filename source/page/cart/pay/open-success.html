@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>成功开通</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/cart/cart.css -->
+<link href="/dist/css/cart/cart.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/cart/pay.css" rel="stylesheet" inline>
+</head>
+<body>
+    <div id="cart-pay" class="pay-success">
+        <section class="pay-header row">
+            <div class="col-2"><i class="icon icon-checkmark"></i></div>
+            <div class="col-8">
+            <p>【恭喜您，已成功开通！】</p>
+            <p>独立生活，开一间属于自己的店</p>
+            </div>
+        </section>
+        <section class="open-btn-wrap" v-if="is_app == 'miyan'">
+           <!--  <a href="javascript:;" class="btn btn-outline-primary" v-tap.stop="gotoPage('success')">进入我的店铺</a> -->
+           <p class="new-open-success" v-tap.stop="gotoPage('invite_shop')"></p>
+        </section>
+        <section class="new-open" v-else>
+            <!-- <p class="new-open-header"></p>
+            <p class="new-open-li new-open-one">长按二维码关注<span>蜜妍微信</span>官方公众号，或搜索微 信号“miyan-mz”进行关注</p>
+            <p class="new-open-title"></p>
+            <p class="new-open-ewm"><img src="../../dist/images/img/weixin.png" alt=""></p>
+            <p class="new-open-hao">（微信号：miyan-mz）</p>
+            <p class="new-open-li new-open-two"><span>下载蜜妍APP</span>，立即查看自己的店铺！</p>
+            <p class="new-open-ip"></p> -->
+            <p class="new-open-xin"></p>
+            <p class="new-open-xinb"></p>
+            <div class="download" v-tap.stop="goDownload()">
+                <span>蜜妍</span>
+                <div class="text">
+                    <h4>跨境美妆O2O分销平台</h4>
+                    <p>进货1折起，0门槛轻松赚钱</p>
+                </div>
+                <button>立即下载</button>
+            </div>
+        </section>
+    </div>
+
+    <!--=include ../../../module/commonJs.html -->
+    <!-- build:js /dist/js/cart/open-success.js -->
+    <script src="/dist/js/cart/open-success.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

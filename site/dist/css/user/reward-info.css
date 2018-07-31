@@ -1,0 +1,253 @@
+.reward-info-nav {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  overflow: hidden; }
+  .reward-info-nav ul {
+    position: relative;
+    display: block;
+    width: 100%; }
+    .reward-info-nav ul li {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0 0.266667rem;
+      height: 1.2rem;
+      line-height: 1.2rem;
+      color: #333;
+      font-size: 14px;
+      border-bottom: 1px solid #d8d9d8;
+      overflow: hidden; }
+      [data-dpr="2"] .reward-info-nav ul li {
+        font-size: 28px; }
+      [data-dpr="3"] .reward-info-nav ul li {
+        font-size: 42px; }
+      .reward-info-nav ul li label {
+        color: #999;
+        margin-left: 0.2rem;
+        font-size: 12px; }
+        [data-dpr="2"] .reward-info-nav ul li label {
+          font-size: 24px; }
+        [data-dpr="3"] .reward-info-nav ul li label {
+          font-size: 36px; }
+      .reward-info-nav ul li span {
+        color: #666;
+        float: right; }
+      .reward-info-nav ul li:first-child span, .reward-info-nav ul li:nth-child(2) span {
+        color: #ff3574; }
+      .reward-info-nav ul li:last-child {
+        border-bottom: none; }
+
+.reward-cont {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background: url(../../dist/images/bg20161128.jpg) left top no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+  .reward-cont .reward-cont-top {
+    position: relative;
+    height: 3.733333rem;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden; }
+    .reward-cont .reward-cont-top p {
+      display: block;
+      text-align: center;
+      height: 0.666667rem;
+      line-height: 0.666667rem; }
+      .reward-cont .reward-cont-top p:nth-child(1) {
+        margin-top: 1.066667rem;
+        color: #ff3574;
+        font-size: 26px; }
+        [data-dpr="2"] .reward-cont .reward-cont-top p:nth-child(1) {
+          font-size: 52px; }
+        [data-dpr="3"] .reward-cont .reward-cont-top p:nth-child(1) {
+          font-size: 78px; }
+      .reward-cont .reward-cont-top p:nth-child(2) {
+        margin-top: 0.266667rem;
+        color: #333;
+        font-size: 14px; }
+        [data-dpr="2"] .reward-cont .reward-cont-top p:nth-child(2) {
+          font-size: 28px; }
+        [data-dpr="3"] .reward-cont .reward-cont-top p:nth-child(2) {
+          font-size: 42px; }
+  .reward-cont .reward-cont-center {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1.6rem;
+    background: rgba(221, 221, 221, 0.3);
+    overflow: hidden; }
+    .reward-cont .reward-cont-center .reward-cont-center-li {
+      position: relative;
+      float: left;
+      width: 50%;
+      height: 1.6rem;
+      padding: 0.266667rem 0;
+      overflow: hidden; }
+      .reward-cont .reward-cont-center .reward-cont-center-li p {
+        position: relative;
+        text-align: center;
+        line-height: 0.466667rem; }
+        .reward-cont .reward-cont-center .reward-cont-center-li p i {
+          margin-left: 0.106667rem; }
+        .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(1) {
+          height: 0.533333rem;
+          line-height: 0.533333rem;
+          font-size: 15px;
+          color: #000; }
+          [data-dpr="2"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(1) {
+            font-size: 30px; }
+          [data-dpr="3"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(1) {
+            font-size: 45px; }
+        .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(2) {
+          font-size: 12px;
+          color: #666; }
+          [data-dpr="2"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(2) {
+            font-size: 24px; }
+          [data-dpr="3"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(2) {
+            font-size: 36px; }
+      .reward-cont .reward-cont-center .reward-cont-center-li:after {
+        position: absolute;
+        content: '';
+        display: block;
+        right: 0;
+        top: 0;
+        width: 1px;
+        height: 1.6rem;
+        background: #d8d9d8;
+        overflow: hidden; }
+      .reward-cont .reward-cont-center .reward-cont-center-li:last-child:after {
+        display: none; }
+
+.reward-info-list {
+  position: relative;
+  width: 100%;
+  margin-top: 0.266667rem;
+  overflow: hidden; }
+  .reward-info-list h2 {
+    padding: 0 0.266667rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 15px;
+    background: #fff;
+    overflow: hidden; }
+    [data-dpr="2"] .reward-info-list h2 {
+      font-size: 30px; }
+    [data-dpr="3"] .reward-info-list h2 {
+      font-size: 45px; }
+  .reward-info-list .reward-info-list-no {
+    display: none;
+    padding: 1.6rem 0;
+    text-align: center; }
+    .reward-info-list .reward-info-list-no p {
+      font-size: 12px;
+      line-height: 0.533333rem;
+      color: #999; }
+      [data-dpr="2"] .reward-info-list .reward-info-list-no p {
+        font-size: 24px; }
+      [data-dpr="3"] .reward-info-list .reward-info-list-no p {
+        font-size: 36px; }
+    .reward-info-list .reward-info-list-no a {
+      display: block;
+      width: 2.933333rem;
+      height: 0.773333rem;
+      line-height: 0.773333rem;
+      margin: 0.133333rem auto;
+      color: #ff3574;
+      border: 1px solid #ff3574;
+      border-radius: 0.133333rem;
+      font-size: 14px;
+      overflow: hidden; }
+      [data-dpr="2"] .reward-info-list .reward-info-list-no a {
+        font-size: 28px; }
+      [data-dpr="3"] .reward-info-list .reward-info-list-no a {
+        font-size: 42px; }
+  .reward-info-list ul {
+    position: relative;
+    width: 100%;
+    padding: 0 0.266667rem;
+    background: #fff;
+    overflow: hidden; }
+    .reward-info-list ul li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      border-top: 1px solid #ddd;
+      min-height: 1.866667rem;
+      background: #fff;
+      overflow: hidden; }
+      .reward-info-list ul li .left {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        min-width: 0;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 0;
+        -webkit-flex: 1 1 0;
+        flex: 1 1 0;
+        padding: 0.133333rem 0; }
+        .reward-info-list ul li .left p {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          word-wrap: break-word;
+          word-break: break-all;
+          line-height: 0.533333rem;
+          font-size: 14px;
+          color: #666;
+          overflow: hidden; }
+          [data-dpr="2"] .reward-info-list ul li .left p {
+            font-size: 28px; }
+          [data-dpr="3"] .reward-info-list ul li .left p {
+            font-size: 42px; }
+        .reward-info-list ul li .left label {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          line-height: 0.533333rem;
+          font-size: 12px;
+          color: #b8b8b8; }
+          [data-dpr="2"] .reward-info-list ul li .left label {
+            font-size: 24px; }
+          [data-dpr="3"] .reward-info-list ul li .left label {
+            font-size: 36px; }
+      .reward-info-list ul li .right {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        -webkit-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 2.666667rem;
+        height: 1.866667rem;
+        line-height: 1.866667rem;
+        text-align: center;
+        font-size: 16px;
+        color: #ff3574; }
+        [data-dpr="2"] .reward-info-list ul li .right {
+          font-size: 32px; }
+        [data-dpr="3"] .reward-info-list ul li .right {
+          font-size: 48px; }
+        .reward-info-list ul li .right.active {
+          color: #2dc41d; }
+
+.layui-m-layersection {
+  line-height: 1.1 !important; }
+  .layui-m-layersection h3 {
+    font-weight: bolder !important; }
+  .layui-m-layersection p {
+    text-align: left; }

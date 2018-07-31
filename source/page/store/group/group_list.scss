@@ -1,0 +1,126 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+.pane{
+    background-color:#fff;
+    border:solid $border-color;
+    border-width:1px 0;
+    .pane-header{
+        padding:0.33333333rem 0.29333333rem;
+        border-top:none;
+        border-bottom:1px solid $border-color;
+        i{
+            margin-right: 0.133333rem;
+            vertical-align: middle;
+            color: #ff3574;
+            @include fontsize(18px);
+        }
+        .text-light{
+            color: #666;
+        }
+    }
+    .pane-bottom{
+        padding:0.33333333rem 0.29333333rem;
+        border-top:1px solid $border-color;
+        border-bottom:none;
+        text-align: right;
+    }
+}
+
+
+
+// 订单商品列表
+.pro-list{
+    padding-left:0.26666667rem;
+    span{
+        max-width: 75%;
+    }
+    i{
+        margin-left: 0.2rem;
+    }
+    li a,li a:hover,li a:active{
+        text-decoration: none;
+        color: #333;
+    }
+    li:not(:last-child){
+        border-bottom:1px solid $border-color;
+    }
+}
+// 订单商品项
+.pro-item{
+    padding-top:0.4rem;
+    padding-bottom:0.4rem;
+    width:100%;
+    color: $gray-base;
+    .pro-img{
+        width:2.33333333rem;
+        height:2.33333333rem;
+        overflow:hidden;
+    }
+    .pro-info{
+        padding: 0.275rem 0;
+        margin-left:0.26666667rem;
+        width:7.06666667rem;
+        .pro-title{
+            display: -webkit-box;
+            display: -ms-box;
+            display: -moz-box;
+            display: -o-box;
+            display: box;
+            width:100%;
+            word-wrap: break-word;
+            word-break: break-all;
+            -webkit-line-clamp: 2;
+            -moz-line-clamp: 2;
+            -ms-line-clamp: 2;
+            -o-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-box-orient: vertical;
+            -o-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+}
+
+
+
+
+
+// 行高
+.lh{
+    &-s{
+        line-height: 145%;
+    }
+    &-m{
+        line-height: 165%;
+    }
+    &-l{
+        line-height: 185%;
+    }
+}
+.order-lists{
+    background: $color-f;
+    margin-bottom: 0.5rem;
+    .order-list-header{
+        height: 1.2rem;
+        padding-left: 0.266667rem;
+        padding-top: 0.266667rem;
+        border-bottom: 1px solid #ddd;
+        .masker{
+            margin-top: 0;
+        }
+    }
+}
+.order-list-bottom{
+    position: relative;
+    width: 100%;
+    background: $color-f;
+    overflow: hidden;
+    .masker{
+        display: block;
+        height: 0.666667rem;
+        width: 2.0rem;
+        float: right !important;
+        margin: 0.266667rem 0.266667rem 0.266667rem 0;
+    }
+}

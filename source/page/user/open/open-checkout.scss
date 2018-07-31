@@ -1,0 +1,356 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+
+#open-checkout {
+	display: none;
+	.savings {
+		line-height: 1.066667rem;
+		.textfield {
+			width: 1.333333rem;
+			padding: 0.133333rem;
+			text-align: center;
+			display: inline-block;
+			margin: 0 0.2rem;
+		}
+	}
+	.cart-nav {
+		.col-6 {
+			text-align: right;
+			@include fontsize(15px);
+
+			span {
+				margin-left: 0.2rem;
+				margin-right: 0.266667rem;
+				i{
+					font-style: normal;
+				}
+			}
+		}
+		.col-4{
+			padding-left: 0 ;
+		}
+	}
+
+	.warehouse-list {
+		.warehouse {
+			margin-bottom: 0.4rem;
+		}
+	}
+
+	.no_address{
+		display: none;
+		@include fontsize(14px);
+		line-height: 2.5rem;
+		color: #999;
+	}
+
+	.item-list .list-header>*{
+		button{
+			margin-top: -0.133333rem;
+		}
+		vertical-align: middle;
+	}
+	.checkout_size{
+		@include fontsize(14px);
+	}
+
+	.input-group-addon:disabled{
+		background-color:#666;
+		color: #fff;
+	}
+	.center {
+		text-align: center;
+	}
+	.address {
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAFBAMAAAAeWRmUAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAqUExURfWauPf09PWgvPfw8fWhvPfh6Pfv8fa0yvbK2Pfj6ffi6PbI1/bJ1/a2ynqz8+QAAAAqSURBVAjXY2DgEIQDUQYU4IyQEUeVOYiQWYAiwZSIkLmAIsONkJBEkQAAsy0GguNwHWEAAAAASUVORK5CYII=') repeat-x, #fff;
+		background-position: bottom left;
+		padding-bottom: 0.4rem;
+		.center {
+			width: 10%;
+			color: #666;
+		}
+		.info {
+			width: 80%;
+		}
+	}
+	.textarea_p{
+		line-height: 0.666667rem;
+	}
+	.textarea_bz{
+		margin-top: 0.133333rem;
+		width: 100%;
+		height: 2.266667rem;
+		border: 1px solid #959595;
+		border-radius: 0.04rem;
+		padding: 0.133333rem;
+		line-height: 0.4rem;
+		@include fontsize(12px);
+	}
+	.coupon{
+		position: relative;
+		.pull-right{
+			margin-right: 0.266667rem;
+			i{
+				font-style: normal;
+			}
+		}
+	}
+	.coupon-hide{
+		position: fixed;
+		display: none;
+		content: '';
+		top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background-color: #000;
+	    opacity: 0;
+	    filter: alpha(opacity=0);
+	    z-index: 10;
+	}
+	.coupon-box{
+		position: fixed;
+		display: none;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 0.266667rem;
+		max-height: 12.666667rem;
+		margin-bottom: 0 !important;
+		text-align: center;
+		border-top: $border-width solid $border-color;
+		background: $color-f;
+		z-index: 11;
+		overflow-x: hidden;
+		overflow-y: auto;
+		.coupon-close{
+			position: absolute;
+			right: 0.266667rem;
+			top: 0.266667rem;
+			width: 0.666667rem;
+			height: 0.666667rem;
+			border: $border-width solid $gray-light;
+			border-radius: 100%;
+			cursor: pointer;
+			z-index: 12;
+			overflow: hidden;
+			&:before,&:after{
+				content: "";
+			    display: block;
+			    position: absolute;
+			    left: 50%;
+			    top: 50%;
+			    margin-left: -0.2rem;
+			    margin-top: -0.026667rem;
+			    width: 0.4rem;
+			    border-bottom: 0.05333rem solid $gray-light;
+			}
+			&:before{
+				-webkit-transform: rotate(135deg);
+			    -ms-transform: rotate(135deg);
+			    transform: rotate(135deg);
+			}
+			&:after{
+				-webkit-transform: rotate(45deg);
+			    -ms-transform: rotate(45deg);
+			    transform: rotate(45deg);
+			}
+		}
+		h3{
+			width: 100%;
+			height: 0.666667rem;
+			line-height: 0.666667rem;
+			@include fontsize(14px);
+		}
+		h4{
+			color: $gray-light;
+			@include fontsize(12px);
+			padding-bottom: 0.133333rem;
+			border-bottom: $border-width solid $border-color;
+		}
+		ul{
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			li{
+				position: relative;
+				width: 100%;
+				height: 1.933333rem;
+				padding: 0.133333rem 0;
+				border-bottom: $border-width solid $border-color;
+				overflow: hidden;
+				&.coupon-botton .coupon-box-price{
+					line-height: 1.666667rem;
+					text-align: center;
+					@include fontsize(14px);
+					color: $gray-light;
+					&:after,&:before{
+						display: none;
+					}
+				}
+				button{
+					position: relative;
+					display: block;
+					width: 1.2rem;
+					float: left;
+					height: 1.666667rem;
+					border: 0;
+					background: $color-f;
+					overflow: hidden;
+					i{
+						position: absolute;
+						top: 50%;
+						left: 0;
+						display: block;
+						width: 0.533333rem;
+						height: 0.533333rem;
+						margin-top: -0.266667rem;
+						border-radius: 100%;
+						border: $border-width solid $gray-light;
+						background: $color-f;
+						overflow: hidden;
+						&:after{
+							display: none;
+						}
+					}
+				}
+				&.on button i{
+					border: $border-width solid $color-3;
+					background: $color-3;
+					&:after{
+						content: "";
+					    position: absolute;
+					    left: 50%;
+					    top: 50%;
+					    margin-top: -0.133333rem;
+					    margin-left: -0.16rem;
+					    display: block;
+					    width: 0.266667rem;
+					    height: 0.133333rem;
+					    border-left: 0.053333rem solid $color-f;
+					    border-bottom: 0.053333rem solid $color-f;
+					    -ms-transform: rotate(-55deg);
+					    transform: rotate(-55deg);
+					    -webkit-transform: rotate(-55deg);
+					}
+				}
+				.coupon-box-price{
+					position: relative;
+					float: left;
+					width: calc(100% - 3.4rem);
+					height: 1.666667rem;
+					overflow: hidden;
+					.coupon-box-prices{
+						position: relative;
+						float: left;
+						width: calc(100% - 0.333333rem);
+						height: 1.666667rem;
+						@include fontsize(14px);
+						color: $gray-light;
+						padding: 0.133333rem 0.266667rem 0.133333rem 0.4rem;
+						background: #f0f0f0;
+						overflow: hidden;
+						h2{
+							line-height: 0.533333rem;
+							@include fontsize(14px);
+						}
+						p{
+							line-height: 0.4rem;
+							@include fontsize(12px);
+						}
+						p:last-child{
+							margin-top: 0.066667rem;
+							@include fontsize(10px);
+						}
+					}
+					&:before,&:after{
+						position: relative;
+						content: '';
+						display: block;
+						float: left;
+						height: 1.666667rem;
+					}
+					&:before{
+						width: 0.133333rem;
+						margin-right: -0.013333rem;
+						background: url(../../dist/images/img/coupon_01.png) center center no-repeat;
+						background-size: 0.133333rem 1.666667rem;
+					}
+					&:after{
+						width: 0.2rem;
+						margin-left: -0.013333rem;
+						background: url(../../dist/images/img/coupon_02.png) center center no-repeat;
+						background-size: 0.2rem 1.666667rem;
+					}
+				}
+				.coupon-box-button{
+					position: relative;
+					float: right;
+					width: 2.2rem;
+					height: 1.666667rem;
+					color: $color-f;
+					overflow: hidden;
+					span{
+						position: relative;
+						display: block;
+						float: left;
+						width: calc(100% - 0.333333rem);
+						height: 1.666667rem;
+						line-height: 1.666667rem;
+						text-align: center;
+						@include fontsize(20px);
+						background: $color-3;
+						i{
+							@include fontsize(14px);
+							font-style: normal;
+						}
+					}
+					&:before,&:after{
+						position: relative;
+						content: '';
+						display: block;
+						float: left;
+						height: 1.666667rem;
+					}
+					&:before{
+						width: 0.133333rem;
+						margin-right: -0.013333rem;
+						background: url(../../dist/images/img/coupon_03.png) center center no-repeat;
+						background-size: 0.133333rem 1.666667rem;
+					}
+					&:after{
+						width: 0.2rem;
+						margin-left: -0.013333rem;
+						background: url(../../dist/images/img/coupon_04.png) center center no-repeat;
+						background-size: 0.2rem 1.666667rem;
+					}
+				}
+			}
+		}
+	}
+}
+#masker{
+	.center {
+		width: 10%;
+		color: #666;
+		text-align: center;
+	}
+	.info {
+		width: 80%;
+		div{
+			padding: 0.16rem 0;
+		}
+	}
+}
+.layermcont{
+	line-height: 1.1 !important;
+	h3{
+		font-weight: bolder !important;
+	}
+	p{
+		text-align: left !important;
+	}
+}
+.icon-question{
+	margin-top: 0.066667rem;
+}

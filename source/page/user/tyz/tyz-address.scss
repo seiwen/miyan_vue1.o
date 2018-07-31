@@ -1,0 +1,229 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+.tyz-address{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	.tyz-address-ul{
+		position: relative;
+		width: 100%;
+		padding: 0 0.266667rem;
+		background-color: $color-f;
+		overflow: hidden;
+		.address-li{
+			position: relative;
+			width: 100%;
+			height: 1.2rem;
+			border-bottom: 1px solid #e8e8e8;
+			line-height: 1.2rem;
+			overflow-y: hidden;
+			label,input,span{
+				display: block;
+				float: left;
+			}
+			label{
+				@include fontsize(16px);
+			}
+			input{
+				width: 7.466667rem;
+                padding: 0.36rem 0.106667rem;
+                @include fontsize(14px);
+                line-height: 1.25;
+                border: 0;
+                color: #333;
+                background-color: #fff;
+			}
+			span{
+				line-height: 1.186667rem;
+				@include fontsize(14px);
+				color: #333;
+				margin-right: 0.066667rem;
+			}
+			em{
+				position: absolute;
+				right: 0.666667rem;
+				width: 1.333333rem;
+				height: 1.2rem;
+				top: 0;
+				text-align: right;
+				@include fontsize(14px);
+				color: #999;
+			}
+			.tyz-add{
+				width: calc(100% - 2.666667rem);
+			}
+		}
+	}
+	h4{
+		line-height: 0.6rem;
+		padding: 0.2rem 0.266667rem 0.066667rem;
+		@include fontsize(12px);
+		color: $color-3;
+		i{
+			display: inline-block;
+			width: 0.4rem;
+			height: 0.4rem;
+			line-height: 0.4rem;
+			border: 1px solid $color-3;
+			text-align: center;
+			border-radius: 50%;
+			font-style: normal;
+			@include fontsize(10px);
+			margin-right: 0.106667rem;
+		}
+	}
+	p{
+		line-height: 1.5;
+		@include fontsize(12px);
+		color: #666;
+		padding: 0 0.266667rem;
+	}
+	.submit{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1.2rem;
+		line-height: 1.2rem;
+		text-align: center;
+		border: 0;
+		color: $color-f;
+		@include fontsize(16px);
+		background: $color-3;
+		overflow: hidden;
+		&:disabled{
+			background: $gray-lighter;
+		}
+	}
+	.addressBox{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 999;
+		display: none;
+		width: 100%;
+		max-height: 12.0rem;
+		background: $color-f;
+		overflow: hidden;
+		h3{
+			display: block;
+			width: 100%;
+			height: 1.2rem;
+			line-height: 1.2rem;
+			text-align: center;
+			@include fontsize(14px);
+			color: #333;
+			border-bottom: 1px solid #999;
+		}
+		.address-close{
+			position: absolute;
+		    right: .266667rem;
+		    top: .4rem;
+		    width: .533333rem;
+		    height: .533333rem;
+		    border-radius: 50%;
+		    border: 1px solid #333;
+		    z-index: 201;
+		    &::before,&::after {
+		    	content: '';
+		    	position: absolute;
+            	top: .106667rem;
+            	left: 50%;
+				display: block;
+				width: 1px;
+				height: .32rem;
+				background-color: #333;
+		    }
+		    &:before{
+		    	-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+		    }
+		    &::after{
+		    	-webkit-transform: rotate(135deg);
+				-ms-transform: rotate(135deg);
+				transform: rotate(135deg);
+		    }
+		}
+		.address-nav{
+			position: relative;
+			width: 100%;
+			height: 0.933333rem;
+			line-height: 0.933333rem;
+			padding: 0 0.066667rem;
+			border-bottom: 1px solid #dadada;
+			overflow: hidden;
+			span{
+				display: none;
+				float: left;
+				padding: 0 0.133333rem;
+				line-height: 0.933333rem;
+				margin-right: 0.133333rem;
+				color: #333;
+				@include fontsize(12px);
+				&:first-child{
+					display: block;
+				}
+				&:last-child{
+					max-height: 2.666667rem;
+				}
+				&.active{
+					color: $color-3;
+					line-height: 0.906667rem;
+					border-bottom: 2px solid $color-3;
+				}
+			}
+		}
+		.address-list{
+			position: relative;
+			width: 100%;
+			height: 8.0rem;
+			overflow: hidden;
+			ul{
+				position: relative;
+				display: block;
+				width: 100%;
+				max-height: 8.0rem;
+				overflow-x: hidden;
+				overflow-y: auto;
+				li{
+					position: relative;
+					width: 100%;
+					height: 0.866667rem;
+					line-height: 0.866667rem;
+					padding: 0 0.266667rem;
+					@include fontsize(12px);
+					color: #333;
+					border-bottom: 1px dashed #dadada;
+					&.on{
+						color: $color-3;
+						&:after{
+							content: "";
+						    position: absolute;
+						    right: 0.266667rem;
+						    top: 50%;
+						    display: block;
+						    width: .22rem;
+						    height: .1rem;
+						    border-left: 1px solid #ff3574;
+						    border-bottom: 1px solid #ff3574;
+						    -ms-transform: rotate(-55deg);
+						    transform: rotate(-55deg);
+						    -webkit-transform: rotate(-55deg);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.layui-m-layersection{
+	line-height: 1.1 !important;
+	h3{
+		@include fontsize(18px);
+		font-weight: bolder!important;
+	}
+	p{
+		text-align: left;
+	}
+}

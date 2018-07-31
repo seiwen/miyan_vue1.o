@@ -1,0 +1,336 @@
+@import "../../common/sass/mixins";
+@import "../../common/sass/variables";
+body,
+html {
+    overflow-x: hidden;
+}
+
+.has-nav {
+    padding-bottom: 1.6rem;
+}
+.root {
+    display: none;
+}
+.minFont{
+    @include fontsize(14px);
+}
+
+// 产品列表
+//
+.list-product {
+    .produt-name {
+        display: -webkit-box;
+        display: -ms-box;
+        display: -moz-box;
+        display: -o-box;
+        display: box;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        box-flex: 1;
+        overflow: hidden;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        box-orient: vertical;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+        height: 0.88rem;
+        line-height: 0.453rem;
+        @include fontsize(12px);
+    }
+    .check-btn {
+        margin-top: 0.933333rem;
+    }
+    .del-btn {
+        margin: 0.053333rem 0 0 0.533333rem;
+    }
+    .product-tags {
+        min-height: 0.8rem;
+    }
+    .product-price {
+        color: $brand-primary;
+        @include fontsize(14px);
+        padding-top: $input-padding-y;
+    }
+    .product-edit {
+        .input-group-addon {
+            padding: 0.133333rem 0.2rem;
+            background-color: #FFF;
+            position: relative;
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                position: relative;
+                width: 0.266667rem;
+                border-bottom: 0.053333rem solid $gray-light;
+            }
+            &.plus {
+                &:after {
+                    transform: rotate(90deg);
+                    top: -0.04rem;
+                }
+            }
+            &.minus {
+                &:before {
+                    display: none;
+                }
+            }
+            &.disabled {
+                &:before,
+                &:after {
+                    border-color: $gray-lighter;
+                }
+            }
+        }
+        .textfield {
+            padding: 0.133333rem 0.2rem;
+            width: 0.933333rem;
+            text-align: center;
+        }
+    }
+}
+
+
+// 购物车底部
+//
+
+.cart-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 1.573333rem;
+    background-color: #fbfbfb;
+    z-index: 9;
+
+    > .row > div {
+        height: 1.573333rem;
+        line-height: 1.573333rem;
+
+        &:not(:last-child) {
+            border-top: $list-border;
+            border-bottom: $list-border;
+        }
+    }
+    .btn {
+        display: block;
+        border-radius: 0;
+        width: 100%;
+        height: inherit;
+        @include fontsize(18px);
+        span{
+            margin-left: 0.066667rem;
+            @include fontsize(14px);
+        }
+    }
+    .check-btn {
+        margin-top: -0.106667rem;
+    }
+    .total {
+        padding-left: 0.266667rem;
+        @include fontsize(15px);
+        color: $brand-primary;
+        p{
+            height: 0.786667rem;
+            line-height: 0.986667rem;
+        }
+    }
+    .freight {
+        text-align: left;
+        color: $gray-lighter;
+        @include fontsize(12px);
+        line-height: 0.586667rem !important;
+    }
+}
+
+
+
+//地址列表
+//
+.address {
+    background-color: #FFF;
+    padding: 0.2rem 0;
+    border-bottom: $list-border;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    .cell {
+        display: table-cell;
+        vertical-align: middle;
+        &.center {
+            width: 18%;
+        }
+    }
+    .main-address {
+        display: -webkit-box;
+        display: -ms-box;
+        display: -moz-box;
+        display: -o-box;
+        display: box;
+        word-wrap: break-word;
+        word-break: break-all;
+        -webkit-line-clamp: 2;
+        -moz-line-clamp: 2;
+        -ms-line-clamp: 2;
+        -o-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -ms-box-orient: vertical;
+        -o-box-orient: vertical;
+        overflow: hidden;
+
+    }
+    .info {
+        width: 64%;
+        >div {
+            padding: 0.16rem 0;
+            @include fontsize(14px);
+            color: $gray-light;
+        }
+        >a {
+            text-decoration: none;
+            color: $gray-light;
+            &:hover,
+            &:active,
+            &:visited {
+                color: $gray-light;
+            }
+
+            div {
+                padding: 0.16rem 0;
+                @include fontsize(14px);
+                color: $gray-light;
+            }
+        }
+        .name,
+        .phone {
+            @include fontsize(15px);
+            color: $gray-base;
+            font-weight: 500;
+        }
+        .name {
+            margin-right: 0.533333rem;
+        }
+    }
+
+}
+
+// 支付列表
+//
+.pay-list {
+    .list-item {
+        input[type="radio"] {
+            display: none;
+        }
+        > label {
+            display: block;
+            > * {
+                display: inline-block;
+                vertical-align: middle;
+                &.r-btn {
+                    margin-top: -0.066667rem;
+                    margin-right: 0.133333rem;
+                }
+            }
+        }
+        &.disabled {
+            * {
+                color: lighten($gray-lighter, 15%) !important;
+            }
+        }
+    }
+    .yfk {
+        margin-top: 0.106667rem;
+        strong {
+            font-weight: normal;
+            color: $brand-primary;
+        }
+    }
+    span {
+        > .icon {
+            margin-right: 0.266667rem;
+        }
+    }
+}
+
+// 预付款付款页面
+//
+.yfk-pay-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 99;
+    padding: 0.8rem;
+    transition: .25s;
+    transform: translate3d(100%, 0, 0);
+    display: none;
+    &.active {
+        transform: translate3d(0, 0, 0);
+    }
+    @include fontsize(14px);
+
+    >div {
+        margin-bottom: 0.8rem;
+        line-height: 1.8;
+    }
+
+    .input-group {
+        margin-bottom: 0.666667rem;
+        input {
+            padding: $input-padding-y * 1.5 $input-padding-x;
+        }
+    }
+    .textfield {
+        width: 60%;
+    }
+    .input-group-addon {
+        width: 40%;
+        color: $brand-primary;
+        background-color: #ffe7ef;
+        @include fontsize(12px);
+        line-height: 1.55;
+        border:none;
+    }
+    .btn-primary{
+        height: 1.133333rem;
+        @include fontsize(16px);
+    }
+}
+
+// 图标
+//
+.icon {
+    @include fontsize(22px);
+}
+
+.r-btn {
+    background-color: transparent;
+    border: none;
+    line-height: 0;
+    color: $gray-light;
+}
+
+.icon-check-off{
+    color: #ddd;
+}
+
+.icon-check-on, .color_on {
+    color: $brand-primary !important;
+}
+.no_btnTop{
+    margin-top: 0 !important;
+}
+.color_on{
+    @include fontsize(18px);
+}
+.icon-wechat {
+    color: #00c800;
+}
+.icon-aliwap {
+    color: #0498e0;
+}
+.icon-yfk,.icon-wallet {
+    color: $brand-primary;
+}

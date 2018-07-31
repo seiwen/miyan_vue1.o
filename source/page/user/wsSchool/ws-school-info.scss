@@ -1,0 +1,26 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+.ws-school-info{
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  img{
+    width: 100%;
+  }
+  .left-a,.right-a{
+  	position: fixed;
+  	display: block;
+  	width: 50%;
+  	height: 1.066667rem;
+  	top: 4.266667rem;
+  	overflow: hidden;
+  	z-index: 9999;
+  	&.left-a{
+  		left: 0;
+  	}
+  	&.right-a{
+  		right: 0;
+  	}
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>编辑收货地址</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/cart/cart.css -->
+<link href="/dist/css/cart/cart.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/cart/edit-address.css" rel="stylesheet" inline>
+<script src="http://beauty.miyanmz.com/static/js/pcasunzip_lf.js"></script>
+</head>
+<body>
+    <div id="cart-editAddress">
+		<section class="address-form">
+			<div class="form-item row">
+				<div class="col-3"><label for="name">收货人姓名</label></div>
+				<div class="col-7">
+					<input type="text" class="textfield" id="name" value="{{info.nick_name}}">
+				</div>
+			</div>
+			<div class="form-item row">
+				<div class="col-3"><label for="phone">手机号码</label></div>
+				<div class="col-7">
+					<input type="tel" class="textfield" id="phone" value="{{info.tel}}" maxlength="11">
+				</div>
+			</div>
+			<div class="form-item row">
+				<div class="col-3"><label for="city">城市/地区</label></div>
+				<div class="col-7">
+					<select v-model="selected" name="province" id="province" class="textfield">
+					<option v-for="option in options" v-bind:value="option.value">{{ option.text }}</option>
+					</select>
+
+					<select name="city" id="city" class="textfield">
+					</select>
+
+					<select name="area" id="area" class="textfield">
+					</select>
+				</div>
+			</div>
+			<div class="form-item row">
+				<div class="col-3"><label for="address">详细地址</label></div>
+				<div class="col-7">
+					<input type="text" class="textfield" id="address" value="{{info.addressline}}">
+				</div>
+			</div>
+			<div class="form-item row">
+				<div class="col-3">
+					<label for="idCard">收货人身份证号</label>
+				</div>
+				<div class="col-7">
+					<input type="text" class="textfield" id="idCard" value="{{info.sid}}" maxlength="18">
+				</div>
+			</div>
+
+		</section>
+		<section class="declare">
+			<p>须知：根据海关规定，身份证信息用于商品入境申报，请务必上传真实的姓名和身份证信息。蜜妍仅负责提交信息，承诺对您的身份信息保密，请放心填写。</p>
+		</section>
+		<section class="btn-wrap btn-oneWrap" v-if="is_showSave == 1">
+			<button class="btn btn-outline-primary focus" v-tap.stop="saveAdd(true)">保存并应用</button>
+		</section>
+		<template v-else>
+			<template v-if="is_my == 1">
+				<section class="btn-wrap btn-twoWrap" v-if="address_id">
+					<button class="btn btn-outline-primary focus" v-tap.stop="savesAdd()">保存</button>
+					<button class="btn btn-outline-primary" v-tap.stop="delAdd()">删除</button>
+				</section>
+				<section class="btn-wrap btn-oneWrap" v-else>
+					<button class="btn btn-outline-primary focus" v-tap.stop="savesAdd()">保存</button>
+				</section>
+			</template>
+			<template v-else>
+				<!-- <section class="btn-wrap" v-if="address_id">
+					<button class="btn btn-outline-primary focus" v-tap.stop="saveAdd(true)">保存并应用</button>
+					<button class="btn btn-outline-primary" v-tap.stop="savesAdd()">保存</button>
+					<button class="btn btn-outline-primary" v-tap.stop="delAdd()">删除</button>
+				</section>
+				<section class="btn-wrap btn-twoWrap" v-else>
+					<button class="btn btn-outline-primary focus" v-tap.stop="saveAdd(true)">保存并应用</button>
+					<button class="btn btn-outline-primary" v-tap.stop="savesAdd()">保存</button>
+				</section> -->
+				<section class="btn-wrap btn-oneWrap">
+					<button class="btn btn-outline-primary focus" v-tap.stop="saveAdd(true)">保存并应用</button>
+				</section>
+			</template>
+		</template>
+    </div>
+
+    <!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/cart/edit-address.js -->
+    <script src="/dist/js/cart/edit-address.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

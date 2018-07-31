@@ -1,0 +1,100 @@
+.pane {
+  background-color: #fff;
+  border: solid #ddd;
+  border-width: 1px 0; }
+  .pane .pane-header {
+    padding: 0.33333333rem 0.29333333rem;
+    border-top: none;
+    border-bottom: 1px solid #ddd; }
+    .pane .pane-header i {
+      margin-right: 0.133333rem;
+      vertical-align: middle;
+      color: #ff3574;
+      font-size: 18px; }
+      [data-dpr="2"] .pane .pane-header i {
+        font-size: 36px; }
+      [data-dpr="3"] .pane .pane-header i {
+        font-size: 54px; }
+    .pane .pane-header .text-light {
+      color: #666; }
+  .pane .pane-bottom {
+    padding: 0.33333333rem 0.29333333rem;
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+    text-align: right; }
+
+.pro-list {
+  padding-left: 0.26666667rem; }
+  .pro-list span {
+    max-width: 75%; }
+  .pro-list i {
+    margin-left: 0.2rem; }
+  .pro-list li a, .pro-list li a:hover, .pro-list li a:active {
+    text-decoration: none;
+    color: #333; }
+  .pro-list li:not(:last-child) {
+    border-bottom: 1px solid #ddd; }
+
+.pro-item {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  width: 100%;
+  color: #333; }
+  .pro-item .pro-img {
+    width: 2.33333333rem;
+    height: 2.33333333rem;
+    overflow: hidden; }
+  .pro-item .pro-info {
+    padding: 0.275rem 0;
+    margin-left: 0.26666667rem;
+    width: 7.06666667rem; }
+    .pro-item .pro-info .pro-title {
+      display: -webkit-box;
+      display: -ms-box;
+      display: -moz-box;
+      display: -o-box;
+      display: box;
+      width: 100%;
+      word-wrap: break-word;
+      word-break: break-all;
+      -webkit-line-clamp: 2;
+      -moz-line-clamp: 2;
+      -ms-line-clamp: 2;
+      -o-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -ms-box-orient: vertical;
+      -o-box-orient: vertical;
+      overflow: hidden; }
+
+.lh-s {
+  line-height: 145%; }
+
+.lh-m {
+  line-height: 165%; }
+
+.lh-l {
+  line-height: 185%; }
+
+.order-lists {
+  background: #fff;
+  margin-bottom: 0.5rem; }
+  .order-lists .order-list-header {
+    height: 1.2rem;
+    padding-left: 0.266667rem;
+    padding-top: 0.266667rem;
+    border-bottom: 1px solid #ddd; }
+    .order-lists .order-list-header .masker {
+      margin-top: 0; }
+
+.order-list-bottom {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  overflow: hidden; }
+  .order-list-bottom .masker {
+    display: block;
+    height: 0.666667rem;
+    width: 2.0rem;
+    float: right !important;
+    margin: 0.266667rem 0.266667rem 0.266667rem 0; }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>js和原生app之间的交互文档</title>
+	<style>
+		h2{
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		li{padding:10px 0;}
+		a{color:#ff3574; text-decoration: none;}
+		p{
+			margin: 20px 0;
+		}
+		.a a{color: #4c35ff}
+	</style>
+</head>
+<body>
+	<h2>网页分享遵循《js和原生app之间的交互文档》</h2>
+	<ol>
+		<li><a href="javascript:;">shareMsg:分享标志</a></li>
+		<li><a href="javascript:;">shareTitle：分享的标题</a></li>
+		<li><a href="javascript:;">shareDesc:分享的描述内容</a></li>
+		<li><a href="javascript:;">linkUrl:分享的链接</a></li>
+		<li><a href="javascript:;">firstShow:页面加载完成时是否显示分享的弹出框 0：不展示 1：展示</a></li>
+		<li><a href="javascript:;">isShare:页面是否需要分享功能 0：不需要 1:需要</a></li>
+		<li><a href="javascript:;">isWechat：页面是否有微信朋友圈和微信按钮 0：不需要 1:需要</a></li>
+		<li><a href="javascript:;">shareImg：分享图片，如果存在这个参数就把默认分享图片替换</a></li>
+		<li><a href="javascript:;">cardImg: 名片商品图片地址</a></li>
+		<li><a href="javascript:;">cardTitle: 名片商品标题</a></li>
+		<li><a href="javascript:;">cardPrice: 名片商品价格</a></li>
+		<li><a href="javascript:;">cardName: 名片店铺名称</a></li>
+		<li><a href="javascript:;">scardEwm: 名片店铺二维码</a></li>
+		<li><a href="javascript:;">score：分享得到的积分</a></li>
+		<li><a href="javascript:;">share_content：分享积分内容（只有微店的商品详情、活动页、新人红包页和APP的邀请好友页
+
+、海报页才有）</a></li>
+		<li><a href="javascript:;">makemoney：分享赚的钱-传数字</a></li>
+		<li><a href="javascript:;">share_profit：分享此商品的利润-传90%带百分比符号</a></li>
+		<li><a href="javascript:;">share_score：分享得到的总积分-传数字</a></li>
+		<li><a href="javascript:;">share_shoping_score：分享出去的商品被购买后获得的积分</a></li>
+		<li><a href="javascript:;">is_activity=1：仅对活动页在开店页的分享显示不一样的问题 加一个分享参数来专门判断是否为活动页</a></li>
+		<li><a href="javascript:;">yq_reward：邀请开店后获得的奖励金额</a></li>
+		<li><a href="javascript:;">yq_nopay：当付费功能关闭时才有这个参数，表示邀请开店页提成高达多少，格式（30%）</a></li>
+		<li><a href="javascript:;">partner：判断是否为合伙人联盟页面进行分享弹框显示格式（50%）</a></li>
+		<li><a href="javascript:;">cardprice_old: 名片商品原始价格</a></li>
+		<li><a href="javascript:;">cardsales_num: 名片商品已售件数</a></li>
+		<li><a href="javascript:;">cardshop_avatar: 名片店铺头像</a></li>
+		<li><a href="javascript:;">cardnew_coupon: 名片新人红包额度</a></li>
+	</ol>
+	<p>callAPP列表</p>
+	<ol class="a">
+		<li><a href="javascript:;">callApp://shareMsg?shareTitle='分享标题'&shareDesc='分享描述'&linkUrl='链接地址'&firstShow='0'&isShare='0'&shareImg='分享图片地址'&isWechat='0'&cardImg='名片商品图片地址'&cardTitle='名片商品标题'&cardPrice='名片商品价格'&cardName='名片店铺名称'&cardEwm='名片店铺二维码'&score='分享得到的积分'&share_content='分享积分内容'&makemoney=‘分享赚的钱-传数字’&share_profit='分享此商品的利润-传90%带百分比符号'&share_score='分享得到的总积分-传数字'&share_shoping_score='分享出去的商品被购买后获得的积分'&is_activity=1&cardprice_old='名片商品原始价格'&cardsales_num='名片商品已售件数'&cardshop_avatar='名片店铺头像'&cardnew_coupon='名片新人红包额度'</a></li>
+		<li><a href="javascript:;">callApp://truth_complete 针对IOS加载</a></li>
+		<li><a href="javascript:;">callApp://goIndex   跳APP首页</a></li>
+		<li><a href="javascript:;">callApp://drawCash   跳APP提现页</a></li>
+		<li><a href="javascript:;">callApp://articleUrl?url='说明地址'   显示说明地址</a></li>
+		<li><a href="javascript:;">callApp://goShop   跳转到APP的开店页</a></li>
+		<li><a href="javascript:;">callApp://clickShare  用于调起APP原生右上角的分享功能页</a></li>
+		<li><a href="javascript:;">callApp://inviteShop?shareTitle='分享标题'&shareDesc='分享描述'&linkUrl='链接地址'&shareImg='分享图片地址&yq_code='邀请码' 用于邀请开店调起弹框</a></li>
+		<li><a href="javascript:;">callApp://source?product_id=111&type='1：为图文；2：为专题；3：为视频'  用于调起APP原生素材页，传递商品ID</a></li>
+		<li><a href="javascript:;">callApp://brand?title=品牌名称  用于调起APP原生品牌列表页，传递品牌名称</a></li>
+		<li><a href="javascript:;">callApp://goHref?href=跳转新地址，把之前地址的title去掉</a></li>
+		<li><a href="javascript:;">callApp://goWalletInfo?agency_level='代理等级，1位一级代理，2位二级代理'  用于跳转钱包收支明细列表页</a></li>
+		<li><a href="javascript:;">callApp://showCart  用于判断是否显示右上角的购物车按钮和是否请求接口</a></li>
+		<li><a href="javascript:;">callApp://copy?order_sn='订单号'  用于调起APP内原生复制板，后面加要复制的内容</a></li>
+		<li><a href="javascript:;">callApp://showCart 用于更新原生右上角的购物车数量</a></li>
+		<li><a href="javascript:;">callApp://goStock 用于判断是开店支付成功后进入的邀请开店页，点返回跳转进货首页</a></li>
+		<li><a href="javascript:;">callApp://closeTips?isTips=1 调起原生存入isTips到cookie中</a></li>
+	</ol>
+</body>
+</html>

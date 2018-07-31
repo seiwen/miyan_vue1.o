@@ -1,0 +1,44 @@
+.item-list {
+	background-color: #FFF;
+	border-top: $list-border;
+	border-bottom: $list-border;
+
+	.list-header {
+		padding: $list-padding-y $list-padding-x;
+		@include fontsize(14px);
+		line-height: $list-header-line-height;
+		border-bottom: $list-border;
+
+		a {
+			color: $text-color-base;
+		}
+	}
+
+	.list-wrap {
+		// padding-left: 0.266667rem;
+
+		&.list-item:last-child {
+			border-bottom: none;
+		}
+	}
+
+	.list-item {
+		border-bottom: $list-border;
+		padding: $list-padding-y $list-padding-x;
+		@include fontsize(12px);
+		@include clearfix();
+
+		a {
+			color: $text-color-base;
+		}
+	}
+
+	.list-footer {
+		padding: $list-padding-y $list-padding-x;
+		border-top: $list-border;
+
+		a {
+			color: $text-color-base;
+		}
+	}
+}

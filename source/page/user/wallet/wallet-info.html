@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>收入明细</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/wallet-info.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-wallet-info" id="user-wallet-info">
+		 <section class="wallet-cont">
+		 	<div class="wallet-cont-top">
+				<p><span v-cloak>{{info.income_total}}</span></p>
+				<p>累计总收入（元）</p>
+				<p class="root" v-if="info.agency_level == 1">总收入由<b> 店铺收入 </b><label>、<b>下级提成款 </b>和<b> 邀请返现 </b></label>组成</p>
+			</div>
+			<div class="wallet-cont-center root" :class="{'on': info.agency_level == 2}" >
+				<div class="wallet-cont-center-li">
+					<p><span v-cloak>{{info.month_shop_income}}</span></p>
+					<p>本月我的店铺收入</p>
+				</div>
+				<div class="wallet-cont-center-li" v-if="info.agency_level == 1">
+					<p><span v-cloak>{{info.commission_total}}</span></p>
+					<p>下级代理总提成款</p>
+				</div>
+				<!-- <div class="wallet-cont-center-li" v-tap.stop="click()">
+					<p><span v-cloak>{{info.daijiesuan}}</span></p>
+					<p>待结算<i class="icon-question"></i></p>
+				</div> -->
+				<div class="wallet-cont-center-li">
+					<p><span v-cloak>{{info.return_cash_total}}</span></p>
+					<p>邀请返现</p>
+				</div>
+			</div>
+		 </section>
+		 <section class="wallet-info-list">
+		 	<h2 v-tap.stop="mingxi()">总收入明细 <i class="icon-question"></i></h2>
+		 	<div class="wallet-info-list-no root" v-if="info.list == ''">
+		 		<p>暂无总收入明细</p>
+		 		<a href="javascript:;" v-tap.stop="goIndex()">我要赚收入</a>
+		 	</div>
+		 	<ul class="root" v-else>
+		 		<li v-for="wallet_info in list" track-by="$index">
+		 			<div class="left">
+		 				<p>{{wallet_info.content}}</p>
+		 				<label>{{wallet_info.created_at}}</label>
+		 			</div>
+		 			<div class="right" v-if="wallet_info.is_color == 1">{{wallet_info.money}}</div>
+		 			<div class="right active" v-else>{{wallet_info.money}}</div>
+		 		</li>
+		 	</ul>
+		 	<div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+		 </section>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/wallet-info.js -->
+    <script src="/dist/js/user/wallet-info.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+body, html {
+  background-color: #fff; }
+
+.order-list {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+  .order-list .order-list-nav {
+    position: relative;
+    width: 100%;
+    height: 3.2rem;
+    padding-top: 1.066667rem;
+    background-color: #fff;
+    overflow: hidden; }
+    .order-list .order-list-nav ul {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1.066667rem;
+      border-bottom: 1px solid #dadada;
+      background-color: #fff;
+      overflow: hidden;
+      z-index: 999; }
+      .order-list .order-list-nav ul li {
+        display: block;
+        width: 25%;
+        height: 1.066667rem;
+        float: left; }
+        .order-list .order-list-nav ul li a {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 1.066667rem;
+          line-height: 1.066667rem;
+          text-align: center;
+          color: #333;
+          font-size: 14px; }
+          [data-dpr="2"] .order-list .order-list-nav ul li a {
+            font-size: 28px; }
+          [data-dpr="3"] .order-list .order-list-nav ul li a {
+            font-size: 42px; }
+        .order-list .order-list-nav ul li.on a::after {
+          position: absolute;
+          display: block;
+          content: '';
+          width: 1.2rem;
+          height: 0.053333rem;
+          background-color: #ff3574;
+          bottom: 0;
+          left: 50%;
+          margin-left: -0.6rem; }
+    .order-list .order-list-nav .nav-ad {
+      height: 2.133333rem; }
+      .order-list .order-list-nav .nav-ad img {
+        width: 10.0rem;
+        height: 2.133333rem; }
+  .order-list .order-no-list {
+    position: relative;
+    display: none;
+    padding-top: 4.0rem;
+    text-align: center; }
+    .order-list .order-no-list p {
+      font-size: 14px;
+      line-height: 0.933333rem; }
+      [data-dpr="2"] .order-list .order-no-list p {
+        font-size: 28px; }
+      [data-dpr="3"] .order-list .order-no-list p {
+        font-size: 42px; }
+    .order-list .order-no-list a {
+      font-size: 12px;
+      line-height: 0.533333rem;
+      color: #ff3574; }
+      [data-dpr="2"] .order-list .order-no-list a {
+        font-size: 24px; }
+      [data-dpr="3"] .order-list .order-no-list a {
+        font-size: 36px; }
+  .order-list .order-lists {
+    border-bottom: 0.26667rem solid #ddd; }
+    .order-list .order-lists:last-child {
+      border-bottom: 1px solid #ddd; }
+    .order-list .order-lists .order-list-header {
+      padding: 0 0.266667rem;
+      height: 1.333333rem;
+      line-height: 1.333333rem;
+      overflow: hidden; }
+      .order-list .order-lists .order-list-header .left {
+        float: left;
+        font-size: 16px;
+        overflow: hidden; }
+        [data-dpr="2"] .order-list .order-lists .order-list-header .left {
+          font-size: 32px; }
+        [data-dpr="3"] .order-list .order-lists .order-list-header .left {
+          font-size: 48px; }
+        .order-list .order-lists .order-list-header .left i {
+          display: block;
+          float: left;
+          font-size: 18px;
+          color: #ff3574;
+          margin-top: 0.4rem;
+          margin-right: 0.266667rem; }
+          [data-dpr="2"] .order-list .order-lists .order-list-header .left i {
+            font-size: 36px; }
+          [data-dpr="3"] .order-list .order-lists .order-list-header .left i {
+            font-size: 54px; }
+      .order-list .order-lists .order-list-header .right {
+        float: right;
+        font-size: 12px;
+        color: #ff3574; }
+        [data-dpr="2"] .order-list .order-lists .order-list-header .right {
+          font-size: 24px; }
+        [data-dpr="3"] .order-list .order-lists .order-list-header .right {
+          font-size: 36px; }
+    .order-list .order-lists .order-list-cont {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd; }
+      .order-list .order-lists .order-list-cont li {
+        padding-left: 0;
+        margin-left: 0.266667rem;
+        width: calc(100% - 0.266667rem); }
+        .order-list .order-lists .order-list-cont li:last-child {
+          border-bottom: 0; }
+    .order-list .order-lists .order-list-bottom {
+      position: relative;
+      width: 100%;
+      overflow: hidden; }
+      .order-list .order-lists .order-list-bottom .masker {
+        display: block;
+        height: 0.666667rem;
+        width: 2.0rem;
+        float: right !important;
+        margin: 0.266667rem 0.266667rem 0.266667rem 0; }
+      .order-list .order-lists .order-list-bottom p {
+        height: 1.2rem;
+        line-height: 1.2rem;
+        text-align: right;
+        padding-right: 0.266667rem;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd; }
+        [data-dpr="2"] .order-list .order-lists .order-list-bottom p {
+          font-size: 28px; }
+        [data-dpr="3"] .order-list .order-lists .order-list-bottom p {
+          font-size: 42px; }
+        .order-list .order-lists .order-list-bottom p span {
+          color: #ff3574;
+          margin-right: 0.133333rem; }
+      .order-list .order-lists .order-list-bottom .order-list-cont-button {
+        position: relative;
+        width: 100%;
+        overflow: hidden; }
+        .order-list .order-lists .order-list-bottom .order-list-cont-button a {
+          display: block;
+          width: 2.866667rem;
+          height: 1.066667rem;
+          line-height: 1.066667rem;
+          text-align: center;
+          font-size: 16px;
+          margin: 0.266667rem 0.266667rem 0.266667rem 0;
+          border: 1px solid #ff3574;
+          background: #ff3574;
+          color: #fff;
+          float: right;
+          border-radius: 0.133333rem;
+          text-decoration: none; }
+          [data-dpr="2"] .order-list .order-lists .order-list-bottom .order-list-cont-button a {
+            font-size: 32px; }
+          [data-dpr="3"] .order-list .order-lists .order-list-bottom .order-list-cont-button a {
+            font-size: 48px; }
+          .order-list .order-lists .order-list-bottom .order-list-cont-button a.wuliu, .order-list .order-lists .order-list-bottom .order-list-cont-button a.cancel {
+            background: #fff;
+            color: #ff3574; }

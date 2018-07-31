@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>微店会员</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/wechatVip.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="wechat-vip" id="wechat-vip">
+		<table>
+			<thead>
+				<tr>
+					<th>会员名称</th>
+					<th>注册时间</th>
+					<th>最近登录时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="item in info">
+					<td v-cloak>{{item.user}}</td>
+					<td v-cloak>{{item.register_time}}</td>
+					<td v-cloak>{{item.last_login}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/wechatVip.js -->
+    <script src="/dist/js/user/wechatVip.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

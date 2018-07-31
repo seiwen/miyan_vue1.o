@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>待结算收入</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/settlement-list.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-settlement-list" id="user-settlement-list">
+		 <nav class="settlement-list-nav">
+		 	<ul>
+		 		<!-- <li><a href="/page/user/settlement-list.html?tab_type=0">全部</a></li> -->
+		 		<li class="on"><a href="javascript:;" v-tap.stop="clickList(1)">我的店铺收入</a></li>
+		 		<li><a href="javascript:;" v-tap.stop="clickList(2)">下级代理提成款</a></li>
+		 		<li><a href="javascript:;" v-tap.stop="clickList(3)">销售奖励金</a></li>
+		 	</ul>
+		 </nav>
+		 <section class="settlement-list">
+		 	<div class="settlement-list-no" v-if="list == ''">
+		 		<p>暂无待结算收入明细</p>
+		 		<a href="javascript:;" v-tap.stop="goIndex()">我要赚收入</a>
+		 	</div>
+		 	<ul v-else>
+		 		<li v-for="wallet_info in list" track-by="$index">
+		 			<div class="left">
+		 				<p v-cloak>{{wallet_info.content}}</p>
+		 				<label v-cloak>{{wallet_info.created_at}}</label>
+		 			</div>
+		 			<div class="right" v-if="wallet_info.is_color == 1" v-cloak>{{wallet_info.money}}</div>
+		 			<div class="right active" v-else v-cloak>{{wallet_info.money}}</div>
+		 		</li>
+		 	</ul>
+		 	<div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+		 </section>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/settlement-list.js -->
+    <script src="/dist/js/user/settlement-list.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

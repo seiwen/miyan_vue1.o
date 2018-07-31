@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>订单详情</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/order-detial.css" rel="stylesheet" inline>
+
+</head>
+<body>
+<div class="order-detial root" id="order-detial">
+<section class="order-detials">
+	<div class="order-detial-header">
+		<div class="left" v-if="order_option.status == 1" >待付款</div>
+		<div class="left" v-if="order_option.status == 2" >已付款</div>
+		<div class="left" v-if="order_option.status == 3" >已发货</div>
+		<div class="left" v-if="order_option.status == 4" >交易完成</div>
+		<div class="left" v-if="order_option.status == 5" >已取消</div>
+		<div class="right" v-if="order_option.status == 1">
+			<svg width="32" height="32" viewBox="0 0 32 32" version="1.1"><g><g transform="scale(0.03125, 0.03125)"><path d="M506.88 737.28c-123.904 0-225.28-101.376-225.28-225.28s101.376-225.28 225.28-225.28 225.28 101.376 225.28 225.28S631.808 737.28 506.88 737.28zM506.88 307.2c-112.64 0-204.8 92.16-204.8 204.8 0 112.64 92.16 204.8 204.8 204.8 112.64 0 204.8-92.16 204.8-204.8C711.68 399.36 620.544 307.2 506.88 307.2zM476.16 381.952l20.48 0 0 163.84-20.48 0 0-163.84ZM476.16 535.552l133.12 0 0 20.48-133.12 0 0-20.48Z" fill="#ff3574"></path></g></g></svg>
+			<div class="right-text">剩余支付时间<span class="settime" endTime="{{order_option.time*1000}}"></span></div>
+		</div>
+	</div>
+	<div class="order-detial-address">
+		<i class="icon icon-location"></i>
+		<p><span class="name">{{order_option.nickname}}</span><span class="iphone">{{order_option.mobile}}</span></p>
+		<p v-if="order_option.body_code != ''"><span>身份证号</span><span class="nameNum">{{order_option.body_code}}</span></p>
+		<p>{{order_option.address}}</p>
+	</div>
+	<div class="order-detial-cont list">
+		<ul>
+			<li v-for="item in info.product_list">
+				<a href="/page/goods.html?product_id={{item.product_id}}">
+				<div class="list-box">
+					<div class="list-img">
+						<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{item.img_url}}" alt="{{item.title}}">
+					</div>
+					<div class="list-wraps">
+						<div class="list-wrap">
+							<div class="list-cont">
+								<div class="list-title">{{item.title}}</div>
+								<div class="list-order-list">￥{{item.price}}<span>x {{item.amount}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</a>
+			</li>
+		</ul>
+		<div class="order-detial-price">
+			<p>运费：<span v-if="order_option.fee_price != 0">&yen; {{order_option.fee_price}}</span><span v-if="order_option.fee_price == 0">免邮</span></p>
+			<p v-if="order_option.integral_price > 0">积分抵扣：<span> &yen; {{order_option.integral_price}}</span></p>
+			<p v-if="order_option.deratemoney > 0">优惠金额减免：<span> &yen; {{order_option.deratemoney}}</span></p>
+			<p v-if="order_option.coupon_price > 0">优惠券抵扣：<span> &yen; {{order_option.coupon_price}}</span></p>
+			<p>合计：<span>&yen; {{order_option.price | currency ''}}</span></p>
+		</div>
+	</div>
+	<div class="order-detial-number">
+		<label v-if="version > 210" class="copy-order" v-tap.stop="copy(order_option.order_sn)">复制</label>
+		<p>订单编号：{{order_option.order_sn}}</p>
+		<p v-if="order_option.status == 3">物流单号：{{order_option.wuliu_num_str}} <span v-if="order_option.fee_code_chinese != null">{{order_option.fee_code_chinese}}</span></p>
+		<p>下单时间：{{order_option.qiandaotime}}</p>
+		<p v-if="order_option.pay_time != ''">付款时间：{{order_option.pay_time}}</p>
+		<p v-if="order_option.payment == 1">支付方式：钱包支付</p>
+		<p v-if="order_option.payment == 2">支付方式：支付宝支付</p>
+		<p v-if="order_option.payment == 3">支付方式：微信支付</p>
+	</div>
+	<div class="order-detial-number order-detial-beizhu" v-if="order_option.order_bz != ''">
+		<p>备注：{{order_option.order_bz}}</p>
+	</div>
+	<div class="order-detial-button" >
+		<a v-if="order_option.status == 1" href="/page/cart/pay.html?oid={{order_option.order_sn_main}}">去支付</a>
+		<a v-if="order_option.status == 1" href="javascript:;" v-tap.stop="cancelPay()" class="cancel">取消订单</a>
+		<a class="sure" v-if="order_option.status == 3" v-tap.stop="surePay()" href="javascript:;">确认收货</a>
+		<a class="wuliu" v-if="order_option.status == 3" href="{{order_option.wuliu_num}}">查看物流</a>
+	</div>
+</section>
+</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/order-detial.js -->
+    <script src="/dist/js/user/order-detial.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

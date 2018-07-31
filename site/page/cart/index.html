@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>购物车</title>
+    	<meta charset="UTF-8">
+    	<meta content="yes" name="apple-mobile-web-app-capable">
+    	<meta content="yes" name="apple-touch-fullscreen">
+    	<meta content="telephone=no,email=no,address=no" name="format-detection">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="description" content="">
+    	<meta name="keywords" content="">
+    	<script>!function(){var e="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",t=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet)t.styleSheet.disabled||(t.styleSheet.cssText=e);else try{t.innerHTML=e}catch(i){t.innerText=e}}(),!function(e,t){function i(){var t=r.getBoundingClientRect().width;t/s>540&&(t=540*s);var i=t/10;r.style.fontSize=i+"px",c.rem=e.rem=i}var n,a=e.document,r=a.documentElement,o=a.querySelector('meta[name="viewport"]'),l=a.querySelector('meta[name="flexible"]'),s=0,d=0,c=t.flexible||(t.flexible={});if(o){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var m=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);m&&(d=parseFloat(m[1]),s=parseInt(1/d))}else if(l){var h=l.getAttribute("content");if(h){var p=h.match(/initial\-dpr=([\d\.]+)/),f=h.match(/maximum\-dpr=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseFloat((1/s).toFixed(2))),f&&(s=parseFloat(f[1]),d=parseFloat((1/s).toFixed(2)))}}if(!s&&!d){var u=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),b=e.devicePixelRatio;s=u?b>=3&&(!s||s>=3)?3:b>=2&&(!s||s>=2)?2:1:1,d=1/s}if(r.setAttribute("data-dpr",s),!o)if(o=a.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(o);else{var g=a.createElement("div");g.appendChild(o),a.write(g.innerHTML)}e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(i,300))},!1),"complete"===a.readyState?a.body.style.fontSize=12*s+"px":a.addEventListener("DOMContentLoaded",function(){a.body.style.fontSize=12*s+"px"},!1),i(),c.dpr=e.dpr=s,c.refreshRem=i,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+    	<!-- build:css /dist/css/base.css -->
+    	<link rel="stylesheet" href="/dist/css/base.css">
+    	<!-- endbuild -->
+    <!-- build:css /dist/css/cart/cart.css -->
+    <link href="/dist/css/cart/cart.css" rel="stylesheet">
+    <!-- endbuild -->
+    <style>#cart-index{position:relative;width:100%;display:none}#cart-index .cart-header{position:relative;width:100%;height:2.133333rem;margin-bottom:.4rem;overflow:hidden}#cart-index .cart-header img{width:10rem;height:2.133333rem}#cart-index .item-list{border-bottom:none}#cart-index .item-list .list-header{background-color:#fbfbfb}#cart-index .item-list .list-header>*{vertical-align:middle}#cart-index .item-list .list-header .r-btn{margin-right:.133333rem;margin-top:-.133333rem}#cart-index .item-list .input-group{width:2.3rem}#cart-index .item-list .input-group::after{content:"";display:table;clear:both}#cart-index .freight span{margin-right:.106667rem}#cart-index .dsc-list{color:#999;padding:0 1.333333rem;margin:.333333rem auto}#cart-index .dsc-list li{padding:.266667rem 0;position:relative}#cart-index .dsc-list li:after{content:"";display:block;width:.08rem;height:.08rem;border-radius:50%;background-color:#999;position:absolute;top:50%;margin-top:-.04rem;left:-.25rem}#cart-index .cart-nav .check-wrap{padding-left:.4rem;padding-right:0}#cart-index .cart-nav .check-wrap>*{vertical-align:middle}#cart-index .cart-nav .check-wrap span{margin-left:-.066667rem}#cart-index .cart-nav .col-4:last-child{padding-left:0}#cart-index .cart-empty{text-align:center;padding:1rem 0;font-size:16px;color:#999}[data-dpr="2"] #cart-index .cart-empty{font-size:32px}[data-dpr="3"] #cart-index .cart-empty{font-size:48px}#cart-index .cart-empty a.btn{font-size:16px;margin-top:.533333rem;padding:.293333rem .666667rem}[data-dpr="2"] #cart-index .cart-empty a.btn{font-size:32px}[data-dpr="3"] #cart-index .cart-empty a.btn{font-size:48px}#cart-index .cart-empty .icon-cart{display:inline-block;font-size:2.4rem;color:#b3b3b3;margin-bottom:.4rem;position:relative;margin-left:-.4rem;z-index:2}#cart-index .cart-empty .icon-cart:after{content:"";display:block;position:absolute;width:2rem;height:.666667rem;background-color:#d9d9d9;bottom:-.266667rem;left:50%;margin-left:-.85rem;border-radius:50%;z-index:-1}#cart-index .product-tags span{display:inline-block;padding:0 .133333rem;line-height:.533333rem;color:#fff;background-color:#ff3574;margin-top:.133333rem;text-align:center;border-radius:.106667rem}#cart-index .cart-list-nav{position:relative;display:block;padding:.4rem .666667rem 0 .266667rem;font-size:12px;line-height:.533333rem;overflow:hidden}[data-dpr="2"] #cart-index .cart-list-nav{font-size:24px}[data-dpr="3"] #cart-index .cart-list-nav{font-size:36px}#cart-index .cart-list-nav .cart-list-nav-a,#cart-index .cart-list-nav .cart-list-nav-b{width:calc(100% - 1.333333rem);width:-webkit-calc(100% - 1.333333rem);margin-top:.133333rem;overflow:hidden}#cart-index .cart-list-nav .cart-list-nav-a:first-child,#cart-index .cart-list-nav .cart-list-nav-b:first-child{margin-top:0}#cart-index .cart-list-nav .cart-list-nav-a span,#cart-index .cart-list-nav .cart-list-nav-b span{display:block;padding:0 .066667rem;line-height:.44rem;height:.466667rem;color:#ff3574;border:1px solid #ff3574;border-radius:.066667rem;margin-right:.133333rem;margin-top:.013333rem;font-size:12px}[data-dpr="2"] #cart-index .cart-list-nav .cart-list-nav-a span,[data-dpr="2"] #cart-index .cart-list-nav .cart-list-nav-b span{font-size:24px}[data-dpr="3"] #cart-index .cart-list-nav .cart-list-nav-a span,[data-dpr="3"] #cart-index .cart-list-nav .cart-list-nav-b span{font-size:36px}#cart-index .cart-list-nav .cart-list-nav-a label,#cart-index .cart-list-nav .cart-list-nav-b label{height:.533333rem;word-wrap:break-word;word-break:break-all;font-size:12px;-webkit-line-clamp:1;-moz-line-clamp:1;-ms-line-clamp:1;-o-line-clamp:1;-webkit-box-orient:vertical;-moz-box-orient:vertical;-ms-box-orient:vertical;-o-box-orient:vertical;overflow:hidden}[data-dpr="2"] #cart-index .cart-list-nav .cart-list-nav-a label,[data-dpr="2"] #cart-index .cart-list-nav .cart-list-nav-b label{font-size:24px}[data-dpr="3"] #cart-index .cart-list-nav .cart-list-nav-a label,[data-dpr="3"] #cart-index .cart-list-nav .cart-list-nav-b label{font-size:36px}#cart-index .cart-list-nav em{position:absolute;right:.666667rem;top:50%;margin-top:-.066667rem;display:block;width:1.333333rem;height:.533333rem;line-height:.533333rem;text-align:right;color:#ff3574}#cart-index .cart-list-nav.next-before:before{margin-top:.066667rem}#cart-index .icon-check-off,#cart-index .icon-check-on{font-size:25px}[data-dpr="2"] #cart-index .icon-check-off,[data-dpr="2"] #cart-index .icon-check-on{font-size:50px}[data-dpr="3"] #cart-index .icon-check-off,[data-dpr="3"] #cart-index .icon-check-on{font-size:75px}#cart-index .icon-trash{font-size:23px}[data-dpr="2"] #cart-index .icon-trash{font-size:46px}[data-dpr="3"] #cart-index .icon-trash{font-size:69px}#cart-index .warehouse{margin-bottom:.4rem}#cart-index .no_cartData{position:absolute;top:19%;left:15%;width:62%;height:70%;text-align:center}#cart-index .no_cartData span{position:absolute;display:-moz-box;-moz-box-pack:center;-moz-box-align:center;display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;display:box;box-pack:center;box-align:center;top:0;left:0;width:100%;height:100%;line-height:100%;z-index:3;color:#fff;text-indent:-99999px}#cart-index .no_cartData .shouqing{background:url(/dist/images/shouqing.png) center center no-repeat;background-size:100%}#cart-index .no_cartData .xiajia{background:url(/dist/images/xiajia.png) center center no-repeat;background-size:100%}#cart-index .no_cartData i{position:absolute;display:block;top:0;left:0;width:100%;height:100%;border-radius:9999px;background-color:#000;opacity:.7;filter:alpha(opacity=70);z-index:2}.active-list{position:relative}.active-list li{border-bottom:none!important}.cart-gift{position:relative;display:block;padding:.4rem 0;background-color:rgba(251,196,196,.1);overflow:hidden}.cart-gift .cart-gift-left{padding-left:1.133333rem;width:2.466667rem;float:left;overflow:hidden}.cart-gift .cart-gift-left span{padding:.04rem .106667rem;border:1px solid #666;border-radius:.066667rem;float:left;margin-right:.133333rem}.cart-gift .cart-gift-right{position:relative;overflow:hidden;width:calc(100% - 2.466667rem);float:right}.cart-gift .cart-gift-right a{display:block;width:100%;height:.533333rem;line-height:.533333rem;font-size:12px;overflow:hidden}[data-dpr="2"] .cart-gift .cart-gift-right a{font-size:24px}[data-dpr="3"] .cart-gift .cart-gift-right a{font-size:36px}.cart-gift .cart-gift-right a i{display:block;height:.533333rem;font-style:normal;color:#ff3574;float:left}.cart-gift .cart-gift-right a label{width:calc(100% - 2.666667rem);height:.533333rem;float:left;word-wrap:break-word;word-break:break-all;-webkit-line-clamp:1;-moz-line-clamp:1;-ms-line-clamp:1;-o-line-clamp:1;-webkit-box-orient:vertical;-moz-box-orient:vertical;-ms-box-orient:vertical;-o-box-orient:vertical;overflow:hidden}.cart-gift .cart-gift-right a label.qiao{width:calc(100% - 1.333333rem)}.cart-gift .cart-gift-right a span{text-align:right;float:right;padding-right:.266667rem}.put-product{position:relative;border-bottom:none!important}.put-product:before{content:'';display:block;position:absolute;top:0;right:0;width:90%;height:1px;background-color:#dadada}.put-product:first-child:before{width:100%}.put-product-top{position:relative;border-bottom:none!important}.put-product-top:before{content:'';display:block;position:absolute;top:0;right:0;width:90%;height:1px;background-color:#dadada}.put-product-top:first-child:before{display:none}.put-bot{position:relative}.put-bot:before{content:'';display:block;position:absolute;bottom:0;right:0;width:100%;height:1px;background-color:#dadada}.back-1{padding-top:.466667rem!important;padding-right:.266667rem!important;background:rgba(251,196,196,.1)}.back-1 .cart-list-nav-b{width:100%!important}.backg{padding-bottom:.2rem;background:rgba(251,196,196,.1)}</style>
+</head>
+
+<body>
+    <div class="has-nav" id="masker">
+        <section class="cart-list">
+            <div class="warehouse item-list">
+                <div class="list-header">
+                    <span class="masker masker-block masker-top-none"></span>
+                </div>
+                <ul class="list-wrap">
+                    <li class="list-item list-product row">
+                        <div class="col-1">
+                            <button class="r-btn check-btn">
+                                <i class="masker masker-width-50"></i>
+                            </button>
+                        </div>
+                        <div class="col-3">
+                            <div class="masker masker-200"></div>
+                        </div>
+                        <div class="col-6 product-info">
+                            <p class="produt-name masker masker-top-10"></p>
+                            <div class="product-tags"></div>
+                            <div class="bottom-wrap masker masker-block masker-top-none"></div>
+                        </div>
+                    </li>
+                    <li class="list-item list-product row">
+                        <div class="col-1">
+                            <button class="r-btn check-btn">
+                                <i class="masker masker-width-50"></i>
+                            </button>
+                        </div>
+                        <div class="col-3">
+                            <div class="masker masker-200"></div>
+                        </div>
+                        <div class="col-6 product-info">
+                            <p class="produt-name masker masker-top-10"></p>
+                            <div class="product-tags"></div>
+                            <div class="bottom-wrap masker masker-block masker-top-none"></div>
+                        </div>
+                    </li>
+                    <li class="list-item list-product row">
+                        <div class="col-1">
+                            <button class="r-btn check-btn">
+                                <i class="masker masker-width-50"></i>
+                            </button>
+                        </div>
+                        <div class="col-3">
+                            <div class="masker masker-200"></div>
+                        </div>
+                        <div class="col-6 product-info">
+                            <p class="produt-name masker masker-top-10"></p>
+                            <div class="product-tags"></div>
+                            <div class="bottom-wrap masker masker-block masker-top-none"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div id="cart-index" class="has-nav">
+        <nav class="cart-header">
+            <a href="/page/user/reward.html" class="swiper-slide">
+                <img src="/dist/images/cart_banner.jpg" >
+            </a>
+        </nav>
+        <section class="cart-list root">
+            <div class="warehouse item-list" v-for="wh in warehouse">
+                <div class="list-header">
+                    <button class="r-btn check-btn" v-tap.stop="selectMethod({cart_id: wh.productList, isCheck: !wh.cart_warehouse_isselect})"><i :class="{'icon-check-off': wh.cart_warehouse_isselect == '0', 'icon-check-on': wh.cart_warehouse_isselect == '1'}"></i></button>
+                    <button class="r-btn check-btn no_btnTop"><i class="color_on" :class="{'icon-bond': wh.warehouse_type == 'bs', 'icon-plane': wh.warehouse_type == 'zy', 'icon-shop': wh.warehouse_type == 'xh'}"></i></button>
+                    <span>{{wh.whname}}</span>
+                </div>
+                <!-- active_first用于活动商品和正常商品的排序 1为活动在前，0为正常商品在前 -->
+                <template v-if="wh.active_first == 1">
+                    <!-- 活动商品 -->
+                    <template v-for="active in wh.acitve_info">
+                        <!-- 不混合活动 -->
+                        <template v-if="active.ismix == 0">
+                            <a href="javascript:;" v-tap.stop="clickActive($event,wh.warehouse_id,active.ismix)" class="cart-list-nav next-before">
+                                <div data-cut="{{tag.full_cut_id}}" data-gift="{{tag.full_gift_id}}" data-optional="{{tag.optional_id}}" class="cart-list-nav-a box" v-for="tag in active.tag">
+                                    <span>{{tag.type}}</span>
+                                    <label class="box flex">{{tag.desc}}</label>
+                                </div>
+                                <em>去凑单</em>
+                            </a>
+                            <ul class="list-wrap active-list">
+                                <li class="list-item list-product row" v-for="active_list in active.active_list">
+                                    <div class="col-1">
+                                        <button class="r-btn check-btn" v-tap.stop="selectMethod({cart_id: [active_list.cart_id], isCheck: !active_list.isselect})">
+                                            <i v-if="active_list.error == '0'" :class="{'icon-check-off': active_list.isselect == '0', 'icon-check-on': active_list.isselect == '1'}"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-3" error='{{active_list.error}}'>
+                                        <a href="/page/goods.html?product_id={{active_list.productid}}">
+                                            <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{active_list.imgurl}}" alt="{{active_list.product_name}}">
+                                            <div class="no_cartData" v-if="active_list.error != '0'">
+                                                <span class="shouqing" v-if="active_list.error == '6'">已售罄</span>
+                                                <span class="xiajia" v-if="active_list.error == '3'">已下架</span>
+                                                <!-- <i></i> -->
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 product-info">
+                                        <a href="/page/goods.html?product_id={{active_list.productid}}">
+                                            <p class="produt-name">{{active_list.product_name}}</p>
+                                            <div class="product-tags"><span v-if="active_list.discount != ''">{{active_list.discount}}</span></div>
+                                        </a>
+                                        <div class="bottom-wrap">
+                                            <div class="product-price pull-left">&yen;{{active_list.price}}</div>
+                                            <div class="product-edit pull-right">
+                                                <div class="input-group pull-left" v-if="active_list.error == '0'">
+                                                    <a href="javascript:;" class="input-group-addon minus" :class="{'disabled': active_list.count == 1}" v-tap.stop="updateCart('Cart.UpdateCartById', active_list.cart_id, (active_list.count - 1))"></a>
+
+                                                    <input type="tel" class="textfield js-changeNum" value="{{active_list.count}}" cartid="{{active_list.cart_id}}" v-bind="{max: active_list.available_buy_count, oval: active_list.count}">
+
+                                                    <a href="javascript:;" class="input-group-addon plus" :class="{'disabled': active_list.count == active_list.available_buy_count}" v-tap.stop="updateCart('Cart.UpdateCartById', active_list.cart_id, parseInt(active_list.count) + 1)"></a>
+                                                </div>
+                                                <button class="pull-left r-btn del-btn"><i class="icon-trash" v-tap.stop.prevent="delProduct( active_list.cart_id)"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </template>
+                        <!-- 混合活动 -->
+                        <template v-else>
+                            <!-- <a href="javascript:;" class="cart-list-nav back-1">
+                                <div data-cut="{{tag.full_cut_id}}" data-gift="{{tag.full_gift_id}}" data-optional="{{tag.optional_id}}" class="cart-list-nav-b box" v-for="tag in active.tag">
+                                    <span>{{tag.type}}</span>
+                                    <label class="box flex">{{tag.desc}}</label>
+                                </div>
+                            </a> -->
+                            <div class="backg">
+                            <a href="/page/user/andlist.html?warehouse_id={{wh.warehouse_id}}&full_cut_id={{tag.full_cut_id}}&full_gift_id={{tag.full_gift_id}}&optional_id={{tag.optional_id}}&filter=all&cate_id=0&brand_id=0" v-for="tag in active.tag" class="cart-list-nav next-before">
+                                <div data-cut="{{tag.full_cut_id}}" data-gift="{{tag.full_gift_id}}" data-optional="{{tag.optional_id}}" class="cart-list-nav-b box">
+                                    <span>{{tag.type}}</span>
+                                    <label class="box flex">{{tag.desc}}</label>
+                                </div>
+                                <em>去凑单</em>
+                            </a>
+                            </div>
+                            <template v-for="mix_actives in active.mix_actives">
+                                <a v-if="mix_actives.is_gift == 0" href="javascript:;" v-tap.stop="clickActive($event,wh.warehouse_id,active.ismix)" class="cart-list-nav next-before">
+                                    <div data-cut="{{mix_actives.active_title.full_cut_id}}" data-gift="{{mix_actives.active_title.full_gift_id}}" data-optional="{{mix_actives.active_title.optional_id}}" class="cart-list-nav-a box">
+                                        <span>{{mix_actives.active_title.type}}</span>
+                                        <label class="box flex">{{mix_actives.active_title.desc}}</label>
+                                    </div>
+                                    <em>去凑单</em>
+                                </a>
+                                <ul class="list-wrap active-list" :class="{'put-product': mix_actives.is_gift == 1}">
+                                    <li class="list-item list-product row" v-for="min_list in mix_actives.mix_active_list">
+                                        <div class="col-1">
+                                            <button class="r-btn check-btn" v-tap.stop="selectMethod({cart_id: [min_list.cart_id], isCheck: !min_list.isselect})">
+                                                <i v-if="min_list.error == '0'" :class="{'icon-check-off': min_list.isselect == '0', 'icon-check-on': min_list.isselect == '1'}"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col-3" error='{{min_list.error}}'>
+                                            <a href="/page/goods.html?product_id={{min_list.productid}}">
+                                                <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{min_list.imgurl}}" alt="{{min_list.product_name}}">
+                                                <div class="no_cartData" v-if="min_list.error != '0'">
+                                                    <span class="shouqing" v-if="min_list.error == '6'">已售罄</span>
+                                                    <span class="xiajia" v-if="min_list.error == '3'">已下架</span>
+                                                    <!-- <i></i> -->
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 product-info">
+                                            <a href="/page/goods.html?product_id={{min_list.productid}}">
+                                                <p class="produt-name">{{min_list.product_name}}</p>
+                                                <div class="product-tags"><span v-if="min_list.discount != ''">{{min_list.discount}}</span></div>
+                                            </a>
+                                            <div class="bottom-wrap">
+                                                <div class="product-price pull-left">&yen;{{min_list.price}}</div>
+                                                <div class="product-edit pull-right">
+                                                    <div class="input-group pull-left" v-if="min_list.error == '0'">
+                                                        <a href="javascript:;" class="input-group-addon minus" :class="{'disabled': min_list.count == 1}" v-tap.stop="updateCart('Cart.UpdateCartById', min_list.cart_id, (min_list.count - 1))"></a>
+
+                                                        <input type="tel" class="textfield js-changeNum" value="{{min_list.count}}" cartid="{{min_list.cart_id}}" v-bind="{max: min_list.available_buy_count, oval: min_list.count}">
+
+                                                        <a href="javascript:;" class="input-group-addon plus" :class="{'disabled': min_list.count == min_list.available_buy_count}" v-tap.stop="updateCart('Cart.UpdateCartById', min_list.cart_id, parseInt(min_list.count) + 1)"></a>
+                                                    </div>
+                                                    <button class="pull-left r-btn del-btn"><i class="icon-trash" v-tap.stop.prevent="delProduct( min_list.cart_id)"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </template>
+                        </template>
+                        <div class="cart-gift" v-if="active.gifts != ''">
+                            <div class="cart-gift-left"><span>赠品</span></div>
+                            <div class="cart-gift-right">
+                                <a href="javascript:;" v-for="gift in active.gifts"><i v-if="gift.tmp_stock == 0">已抢光！</i><label class="box flex" :class="{'qiao': gift.tmp_stock > 0}">{{gift.gift_name}}</label>
+                                <span>× {{gift.gift_num}}</span></a>
+                            </div>
+                        </div>
+                    </template>
+                    <!-- 正常商品 -->
+                    <ul class="list-wrap">
+                        <li class="list-item list-product row" :class="{'put-product': wh.acitve_info != ''}" v-for="goods in wh.list">
+                            <div class="col-1">
+                                <button class="r-btn check-btn" v-tap.stop="selectMethod({cart_id: [goods.cart_id], isCheck: !goods.isselect})">
+                                    <i v-if="goods.error == '0'" :class="{'icon-check-off': goods.isselect == '0', 'icon-check-on': goods.isselect == '1'}"></i>
+                                </button>
+                            </div>
+                            <div class="col-3" error='{{goods.error}}'>
+                                <a href="/page/goods.html?product_id={{goods.productid}}">
+                                    <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{goods.imgurl}}" alt="{{goods.product_name}}">
+                                    <div class="no_cartData" v-if="goods.error != '0'">
+                                        <span class="shouqing" v-if="goods.error == '6'">已售罄</span>
+                                        <span class="xiajia" v-if="goods.error == '3'">已下架</span>
+                                        <!-- <i></i> -->
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 product-info">
+                                <a href="/page/goods.html?product_id={{goods.productid}}">
+                                    <p class="produt-name">{{goods.product_name}} {{goods.attr}}</p>
+                                    <div class="product-tags"><span v-if="goods.discount != ''">{{goods.discount}}</span></div>
+                                </a>
+                                <div class="bottom-wrap">
+                                    <div class="product-price pull-left">&yen;{{goods.price}}</div>
+                                    <div class="product-edit pull-right">
+                                        <div class="input-group pull-left" v-if="goods.error == '0'">
+                                            <a href="javascript:;" class="input-group-addon minus" :class="{'disabled': goods.count == 1}" v-tap.stop="updateCart('Cart.UpdateCartById', goods.cart_id, (goods.count - 1))"></a>
+
+                                            <input type="tel" class="textfield js-changeNum" value="{{goods.count}}" cartid="{{goods.cart_id}}" v-bind="{max: goods.available_buy_count, oval: goods.count}">
+
+                                            <a href="javascript:;" class="input-group-addon plus" :class="{'disabled': goods.count == goods.available_buy_count}" v-tap.stop="updateCart('Cart.UpdateCartById', goods.cart_id, parseInt(goods.count) + 1)"></a>
+                                        </div>
+                                        <button class="pull-left r-btn del-btn"><i class="icon-trash" v-tap.stop.prevent="delProduct( goods.cart_id)"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- 售罄商品 -->
+                    <ul class="list-wrap">
+                        <li class="list-item list-product row" :class="{'put-product': wh.acitve_info != ''}" v-for="sales in wh.salesout_list">
+                            <div class="col-1">
+                                <button class="r-btn check-btn" v-tap.stop="selectMethod({cart_id: [sales.cart_id], isCheck: !sales.isselect})">
+                                    <i v-if="sales.error == '0'" :class="{'icon-check-off': sales.isselect == '0', 'icon-check-on': sales.isselect == '1'}"></i>
+                                </button>
+                            </div>
+                            <div class="col-3" error='{{sales.error}}'>
+                                <a href="/page/goods.html?product_id={{sales.productid}}">
+                                    <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{sales.imgurl}}" alt="{{sales.product_name}}">
+                                    <div class="no_cartData" v-if="sales.error != '0'">
+                                        <span class="shouqing" v-if="sales.error == '6'">已售罄</span>
+                                        <span class="xiajia" v-if="sales.error == '3'">已下架</span>
+                                        <!-- <i></i> -->
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 product-info">
+                                <a href="/page/goods.html?product_id={{sales.productid}}">
+                                    <p class="produt-name">{{sales.product_name}} {{sales.attr}}</p>
+                                    <div class="product-tags"><span v-if="sales.discount != ''">{{sales.discount}}</span></div>
+                                </a>
+                                <div class="bottom-wrap">
+                                    <div class="product-price pull-left">&yen;{{sales.price}}</div>
+                                    <div class="product-edit pull-right">
+                                        <div class="input-group pull-left" v-if="sales.error == '0'">
+                                            <a href="javascript:;" class="input-group-addon minus" :class="{'disabled': sales.count == 1}" v-tap.stop="updateCart('Cart.UpdateCartById', sales.cart_id, (sales.count - 1))"></a>
+
+                                            <input type="tel" class="textfield js-changeNum" value="{{sales.count}}" cartid="{{sales.cart_id}}" v-bind="{max: sales.available_buy_count, oval: sales.count}">
+
+                                            <a href="javascript:;" class="input-group-addon plus" :class="{'disabled': sales.count == sales.available_buy_count}" v-tap.stop="updateCart('Cart.UpdateCartById', sales.cart_id, parseInt(sales.count) + 1)"></a>
+                                        </div>
+                                        <button class="pull-left r-btn del-btn"><i class="icon-trash" v-tap.stop.prevent="delProduct( sales.cart_id)"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </template>
+                <template v-if="wh.active_first == 0">
+                    <!-- 正常商品 -->
+                    <ul class="list-wrap put-bot">
+                        <li class="list-item list-product row" :class="{'put-product-top': wh.acitve_info != ''}" v-for="goods in wh.list">
+                            <div class="col-1">
+                                <button class="r-btn check-btn" v-tap.stop="selectMethod({cart_id: [goods.cart_id], isCheck: !goods.isselect})">
+                                    <i v-if="goods.error == '0'" :class="{'icon-check-off': goods.isselect == '0', 'icon-check-on': goods.isselect == '1'}"></i>
+                                </button>
+                            </div>
+                            <div class="col-3" error='{{goods.error}}'>
+                                <a href="/page/goods.html?product_id={{goods.productid}}">
+                                    <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{goods.imgurl}}" alt="{{goods.product_name}}">
+                                    <div class="no_cartData" v-if="goods.error != '0'">
+                                        <span class="shouqing" v-if="goods.error == '6'">已售罄</span>
+                                        <span class="xiajia" v-if="goods.error == '3'">已下架</span>
+                                        <!-- <i></i> -->
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 product-info">
+                                <a href="/page/goods.html?product_id={{goods.productid}}">
+                                    <p class="produt-name">{{goods.product_name}} {{goods.attr}}</p>
+                                    <div class="product-tags"><span v-if="goods.discount != ''">{{goods.discount}}</span></div>
+                                </a>
+                                <div class="bottom-wrap">
+                                    <div class="product-price pull-left">&yen;{{goods.price}}</div>
+                                    <div class="product-edit pull-right">
+                                        <div class="input-group pull-left" v-if="goods.error == '0'">
+                                            <a href="javascript:;" class="input-group-addon minus" :class="{'disabled': goods.count == 1}" v-tap.stop="updateCart('Cart.UpdateCartById', goods.cart_id, (goods.count - 1))"></a>
+
+                                            <input type="tel" class="textfield js-changeNum" value="{{goods.count}}" cartid="{{goods.cart_id}}" v-bind="{max: goods.available_buy_count, oval: goods.count}">
+
+                                            <a href="javascript:;" class="input-group-addon plus" :class="{'disabled': goods.count == goods.available_buy_count}" v-tap.stop="updateCart('Cart.UpdateCartById', goods.cart_id, parseInt(goods.count) + 1)"></a>
+                                        </div>
+                                        <button class="pull-left r-btn del-btn"><i class="icon-trash" v-tap.stop.prevent="delProduct( goods.cart_id)"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- 活动商品 -->
+                    <template v-for="active in wh.acitve_info">
+                        <!-- 不混合活动 -->
+                        <template v-if="active.ismix == 0">
+                            <a href="javascript:;" v-tap.stop="clickActive($event,wh.warehouse_id,active.ismix)" class="cart-list-nav next-before">
+                                <div data-cut="{{tag.full_cut_id}}" data-gift="{{tag.full_gift_id}}" data-optional="{{tag.optional_id}}" class="cart-list-nav-a box" v-for="tag in active.tag">
+                                    <span>{{tag.type}}</span>
+                                    <label class="box flex">{{tag.desc}}</label>
+                                </div>
+                                <em>去凑单</em>
+                            </a>
+                            <ul class="list-wrap active-list">
+                                <li class="list-item list-product row" v-for="active_list in active.active_list">
+                                    <div class="col-1">
+                                        <button class="r-btn check-btn" v-tap.stop="selectMethod({cart_id: [active_list.cart_id], isCheck: !active_list.isselect})">
+                                            <i v-if="active_list.error == '0'" :class="{'icon-check-off': active_list.isselect == '0', 'icon-check-on': active_list.isselect == '1'}"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-3" error='{{active_list.error}}'>
+                                        <a href="/page/goods.html?product_id={{active_list.productid}}">
+                                            <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{active_list.imgurl}}" alt="{{active_list.product_name}}">
+                                            <div class="no_cartData" v-if="active_list.error != '0'">
+                                                <span class="shouqing" v-if="active_list.error == '6'">已售罄</span>
+                                                <span class="xiajia" v-if="active_list.error == '3'">已下架</span>
+                                                <!-- <i></i> -->
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 product-info">
+                                        <a href="/page/goods.html?product_id={{active_list.productid}}">
+                                            <p class="produt-name">{{active_list.product_name}}</p>
+                                            <div class="product-tags"><span v-if="active_list.discount != ''">{{active_list.discount}}</span></div>
+                                        </a>
+                                        <div class="bottom-wrap">
+                                            <div class="product-price pull-left">&yen;{{active_list.price}}</div>
+                                            <div class="product-edit pull-right">
+                                                <div class="input-group pull-left" v-if="active_list.error == '0'">
+                                                    <a href="javascript:;" class="input-group-addon minus" :class="{'disabled': active_list.count == 1}" v-tap.stop="updateCart('Cart.UpdateCartById', active_list.cart_id, (active_list.count - 1))"></a>
+
+                                                    <input type="tel" class="textfield js-changeNum" value="{{active_list.count}}" cartid="{{active_list.cart_id}}" v-bind="{max: active_list.available_buy_count, oval: active_list.count}">
+
+                                                    <a href="javascript:;" class="input-group-addon plus" :class="{'disabled': active_list.count == active_list.available_buy_count}" v-tap.stop="updateCart('Cart.UpdateCartById', active_list.cart_id, parseInt(active_list.count) + 1)"></a>
+                                                </div>
+                                                <button class="pull-left r-btn del-btn"><i class="icon-trash" v-tap.stop.prevent="delProduct( active_list.cart_id)"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </template>
+                        <!-- 混合活动 -->
+                        <template v-else>
+                            <!-- <a href="javascript:;" class="cart-list-nav back-1">
+                                <div data-cut="{{tag.full_cut_id}}" data-gift="{{tag.full_gift_id}}" data-optional="{{tag.optional_id}}" class="cart-list-nav-b box" v-for="tag in active.tag">
+                                    <span>{{tag.type}}</span>
+                                    <label class="box flex">{{tag.desc}}</label>
+                                </div>
+                            </a> -->
+                            <div class="backg">
+                            <a href="/page/user/andlist.html?warehouse_id={{wh.warehouse_id}}&full_cut_id={{tag.full_cut_id}}&full_gift_id={{tag.full_gift_id}}&optional_id={{tag.optional_id}}&filter=all&cate_id=0&brand_id=0" v-for="tag in active.tag" class="cart-list-nav next-before">
+                                <div data-cut="{{tag.full_cut_id}}" data-gift="{{tag.full_gift_id}}" data-optional="{{tag.optional_id}}" class="cart-list-nav-b box">
+                                    <span>{{tag.type}}</span>
+                                    <label class="box flex">{{tag.desc}}</label>
+                                </div>
+                                <em>去凑单</em>
+                            </a>
+                            </div>
+                            <template v-for="mix_actives in active.mix_actives">
+                                <a v-if="mix_actives.is_gift == 0" href="javascript:;" v-tap.stop="clickActive($event,wh.warehouse_id,active.ismix)" class="cart-list-nav next-before">
+                                    <div data-cut="{{mix_actives.active_title.full_cut_id}}" data-gift="{{mix_actives.active_title.full_gift_id}}" data-optional="{{mix_actives.active_title.optional_id}}" class="cart-list-nav-a box">
+                                        <span>{{mix_actives.active_title.type}}</span>
+                                        <label class="box flex">{{mix_actives.active_title.desc}}</label>
+                                    </div>
+                                    <em>去凑单</em>
+                                </a>
+                                <ul class="list-wrap active-list" :class="{'put-product': mix_actives.is_gift == 1}">
+                                    <li class="list-item list-product row" v-for="min_list in mix_actives.mix_active_list">
+                                        <div class="col-1">
+                                            <button class="r-btn check-btn" v-tap.stop="selectMethod({cart_id: [min_list.cart_id], isCheck: !min_list.isselect})">
+                                                <i v-if="min_list.error == '0'" :class="{'icon-check-off': min_list.isselect == '0', 'icon-check-on': min_list.isselect == '1'}"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col-3" error='{{min_list.error}}'>
+                                            <a href="/page/goods.html?product_id={{min_list.productid}}">
+                                                <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{min_list.imgurl}}" alt="{{min_list.product_name}}">
+                                                <div class="no_cartData" v-if="min_list.error != '0'">
+                                                    <span class="shouqing" v-if="min_list.error == '6'">已售罄</span>
+                                                    <span class="xiajia" v-if="min_list.error == '3'">已下架</span>
+                                                    <!-- <i></i> -->
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6 product-info">
+                                            <a href="/page/goods.html?product_id={{min_list.productid}}">
+                                                <p class="produt-name">{{min_list.product_name}}</p>
+                                                <div class="product-tags"><span v-if="min_list.discount != ''">{{min_list.discount}}</span></div>
+                                            </a>
+                                            <div class="bottom-wrap">
+                                                <div class="product-price pull-left">&yen;{{min_list.price}}</div>
+                                                <div class="product-edit pull-right">
+                                                    <div class="input-group pull-left" v-if="min_list.error == '0'">
+                                                        <a href="javascript:;" class="input-group-addon minus" :class="{'disabled': min_list.count == 1}" v-tap.stop="updateCart('Cart.UpdateCartById', min_list.cart_id, (min_list.count - 1))"></a>
+
+                                                        <input type="tel" class="textfield js-changeNum" value="{{min_list.count}}" cartid="{{min_list.cart_id}}" v-bind="{max: min_list.available_buy_count, oval: min_list.count}">
+
+                                                        <a href="javascript:;" class="input-group-addon plus" :class="{'disabled': min_list.count == min_list.available_buy_count}" v-tap.stop="updateCart('Cart.UpdateCartById', min_list.cart_id, parseInt(min_list.count) + 1)"></a>
+                                                    </div>
+                                                    <button class="pull-left r-btn del-btn"><i class="icon-trash" v-tap.stop.prevent="delProduct( min_list.cart_id)"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </template>
+                        </template>
+                        <div class="cart-gift" v-if="active.gifts != ''">
+                            <div class="cart-gift-left"><span>赠品</span></div>
+                            <div class="cart-gift-right">
+                                <a href="javascript:;" v-for="gift in active.gifts"><i v-if="gift.tmp_stock == 0">已抢光！</i><label class="box flex" :class="{'qiao': gift.tmp_stock > 0}">{{gift.gift_name}}</label>
+                                <span>× {{gift.gift_num}}</span></a>
+                            </div>
+                        </div>
+                    </template>
+                    <!-- 售罄商品 -->
+                    <ul class="list-wrap">
+                        <li class="list-item list-product row" :class="{'put-product': wh.acitve_info != ''}" v-for="sales in wh.salesout_list">
+                            <div class="col-1">
+                                <button class="r-btn check-btn" v-tap.stop="selectMethod({cart_id: [sales.cart_id], isCheck: !sales.isselect})">
+                                    <i v-if="sales.error == '0'" :class="{'icon-check-off': sales.isselect == '0', 'icon-check-on': sales.isselect == '1'}"></i>
+                                </button>
+                            </div>
+                            <div class="col-3" error='{{sales.error}}'>
+                                <a href="/page/goods.html?product_id={{sales.productid}}">
+                                    <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{sales.imgurl}}" alt="{{sales.product_name}}">
+                                    <div class="no_cartData" v-if="sales.error != '0'">
+                                        <span class="shouqing" v-if="sales.error == '6'">已售罄</span>
+                                        <span class="xiajia" v-if="sales.error == '3'">已下架</span>
+                                        <!-- <i></i> -->
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 product-info">
+                                <a href="/page/goods.html?product_id={{sales.productid}}">
+                                    <p class="produt-name">{{sales.product_name}} {{sales.attr}}</p>
+                                    <div class="product-tags"><span v-if="sales.discount != ''">{{sales.discount}}</span></div>
+                                </a>
+                                <div class="bottom-wrap">
+                                    <div class="product-price pull-left">&yen;{{sales.price}}</div>
+                                    <div class="product-edit pull-right">
+                                        <div class="input-group pull-left" v-if="sales.error == '0'">
+                                            <a href="javascript:;" class="input-group-addon minus" :class="{'disabled': sales.count == 1}" v-tap.stop="updateCart('Cart.UpdateCartById', sales.cart_id, (sales.count - 1))"></a>
+
+                                            <input type="tel" class="textfield js-changeNum" value="{{sales.count}}" cartid="{{sales.cart_id}}" v-bind="{max: sales.available_buy_count, oval: sales.count}">
+
+                                            <a href="javascript:;" class="input-group-addon plus" :class="{'disabled': sales.count == sales.available_buy_count}" v-tap.stop="updateCart('Cart.UpdateCartById', sales.cart_id, parseInt(sales.count) + 1)"></a>
+                                        </div>
+                                        <button class="pull-left r-btn del-btn"><i class="icon-trash" v-tap.stop.prevent="delProduct( sales.cart_id)"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </template>
+            </div>
+        </section>
+
+        <section class="cart-nav root">
+            <div class="row">
+                <div class="col-2 check-wrap">
+                    <button class="r-btn check-btn"><i :class="{'icon-check-off': info.cart_isselect == '0', 'icon-check-on': info.cart_isselect == '1'}" v-tap.stop="selectMethod({isAllCheck: !info.cart_isselect})"></i></button>
+                    <span>全选</span>
+                </div>
+                <div class="col-45 total">
+                    <p :class="{'minFont' : parseInt(info.select_total_cart_price) > 99999}">合计 &yen; {{info.select_total_cart_price}}</p>
+                    <p class="freight"><span v-if="info.preferential_money > 0">已优惠：&yen; {{parseFloat(info.preferential_money)}}</span>不含运费</p>
+                </div>
+                <div class="col-35">
+                    <button class="btn btn-primary js-next" :class="{'disabled': info.select_count == 0}" v-tap.stop="goCheckout()">结算<span>({{info.select_count}})</span></button>
+                </div>
+            </div>
+        </section>
+        <section class="cart-empty" v-if="warehouse == null">
+            <div><i class="icon-cart"></i></div>
+            <p>购物车空空如也</p>
+            <a href="javascript:;" class="btn btn-primary" v-tap.stop="goIndex()">马上进货</a>
+        </section>
+        <!-- <section>
+            <ul class="dsc-list">
+                li>新用户首单赠送免费体验面膜</li>
+                <li>海外直邮、保税仓商品免邮费，现货商品满￥300免邮费</li>
+                <li>商品如遇质量问题30天内可退款</li>
+            </ul>
+        </section> -->
+    </div>
+    <section class="right-fixed"><a class="top-fixed" href="javascript:;">顶部</a></section>
+    <!-- build:js /dist/js/combin.js -->
+    <script src="/dist/js/lib/jquery-2.2.3.min.js"></script>
+    <script src="/dist/js/lib/vue.js"></script>
+    <script src="/dist/js/common.chunk.js"></script>
+    <!-- endbuild -->
+    <!-- build:js /dist/js/cart/index.js -->
+    <script src="/dist/js/cart/index.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>商学院</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/ws-school-info.css" rel="stylesheet" inline>
+</head>
+<body>
+    <div class="ws-school-info root" id="ws-school-info">
+        <img v-for="item in info" class="img-fluid lz" src="/dist/images/indexImg/bannerBg.jpg" data-original="{{item}}" alt="">
+    </div>
+    <!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/ws-school-info.js -->
+    <script src="/dist/js/user/ws-school-info.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

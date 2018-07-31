@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <title>订单结算</title>
+    <!--=include ../../../module/public_header.html -->
+    <!-- build:css /dist/css/cart/cart.css -->
+    <link href="/dist/css/cart/cart.css" rel="stylesheet">
+    <!-- endbuild -->
+    <link href="/dist/css/user/open-checkout.css" rel="stylesheet" inline>
+</head>
+
+<body>
+    <div class="has-nav" id="masker">
+        <section>
+            <ul class="item-list pay-list">
+                <li class="list-item disabled">
+                    <input type="radio"  value="wechat" disabled="disabled">
+                    <label>
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-wechat"></i></span>
+                        <span class="checkout_size">微信支付</span>
+                    </label>
+                </li>
+                <li class="list-item disabled">
+                    <input type="radio"  value="aliwap" disabled="disabled">
+                    <label >
+                        <i class="r-btn icon icon-check-off" ></i>
+                        <span><i class="icon icon-aliwap"></i></span>
+                        <span class="checkout_size">支付宝支付</span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <!--=include ../../../module/masker.html -->
+    </div>
+    <div id="open-checkout" class="has-nav root">
+        <section>
+            <ul class="item-list pay-list">
+                <li class="list-item" v-for="item in info.payment_list" :class="{'disabled': item.available == 0}">
+                	<input type="radio" id="{{$key}}" value="{{item.paycode}}" v-model="payment" >
+                	<label for="{{$key}}">
+                    	<i class="r-btn icon" :class="{'icon-check-on': payment == item.paycode, 'icon-check-off': payment != item.paycode}"></i>
+                    	<span><i class="icon icon-{{item.paycode}}"></i></span>
+                    	<span class="checkout_size">{{item.payname}}</span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="warehouse-list">
+                <div class="warehouse item-list">
+                    <div class="list-header">
+                        <button class="r-btn check-btn"><i class="color_on icon-shop"></i></button>
+                        <span>{{virtual_goods.title}}</span>
+                    </div>
+                    <div class="list-item list-product">
+                        <div class="col-3">
+                            <img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{virtual_goods.image}}" alt="{{virtual_goods.title}}">
+                        </div>
+                        <div class="col-7 product-info">
+                            <p class="produt-name">{{virtual_goods.desc}}</p>
+                            <div class="product-tags"></div>
+                            <div class="bottom-wrap">
+                                <span class="product-price">&yen;{{info.open_pay_amount}}</span>
+                                <span> ×{{virtual_goods.quantity}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <span>运费</span>
+                        <span class="pull-right">&yen;{{info.shipping_fee}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-list">
+                <div class="list-item">
+                    <span>合计</span>
+                    <span class="pull-right">&yen;{{info.open_pay_amount}}</span>
+                </div>
+            </div>
+        </section>
+        <section class="cart-nav">
+            <div class="row">
+                <div class="col-6">实付款
+                    <span class="text-primary" id="js_needPrice" >&yen; <i>{{info.open_pay_amount}}</i></span>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary" v-bind="{'disabled': info.virtual_goods == null}" v-tap.stop="goPay()">去支付</button>
+                </div>
+            </div>
+        </section>
+        <section id="go-aliwap"></section>
+    </div>
+    <!--=include ../../../module/commonJs.html -->
+    <!-- build:js /dist/js/user/open-checkout.js -->
+    <script src="/dist/js/user/open-checkout.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

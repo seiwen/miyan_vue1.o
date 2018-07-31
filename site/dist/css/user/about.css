@@ -1,0 +1,69 @@
+.about {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+  .about .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    [data-dpr="2"] .about .swiper-slide {
+      font-size: 36px; }
+    [data-dpr="3"] .about .swiper-slide {
+      font-size: 54px; }
+  .about .swiper-container-horizontal > .swiper-pagination-bullets, .about .swiper-pagination-custom, .about .swiper-pagination-fraction {
+    bottom: 0.266667rem; }
+  .about .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 0.133333rem; }
+  .about .swiper-pagination-bullet {
+    width: 0.266667rem;
+    height: 0.266667rem; }
+  .about .swiper-pagination-bullet-active {
+    background: #cd9a4b; }
+  .about .about-nav {
+    position: relative;
+    width: 100%;
+    min-height: 5.066667rem;
+    overflow: hidden;
+    background: #fff; }
+    .about .about-nav .swiper-container {
+      min-height: 3.466667rem; }
+      .about .about-nav .swiper-container .swiper-pagination {
+        text-align: right; }
+      .about .about-nav .swiper-container img {
+        height: 100%; }
+  .about .about-tab {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 0.133333rem;
+    overflow: hidden; }
+    .about .about-tab img {
+      width: 100%; }
+  .about .about-list {
+    position: relative;
+    width: 100%;
+    background: #fff; }
+    .about .about-list ul {
+      display: block;
+      overflow: hidden; }
+      .about .about-list ul li {
+        width: 50%;
+        float: left; }
+        .about .about-list ul li a {
+          display: block;
+          width: 100%; }
+          .about .about-list ul li a img {
+            width: 100%; }

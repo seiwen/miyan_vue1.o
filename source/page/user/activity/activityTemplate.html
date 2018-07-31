@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>活动</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/swiper/swiper.min.css -->
+<link href="/dist/css/swiper/swiper.min.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/user/activityTemplate.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-activity" id="masker">
+		<section class="activity-header masker masker-150"></section>
+		<section class="activity-cont video">
+		 	<ul>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		 </section>
+	</div>
+	<div class="user-activity root" id="user-activity">
+		<!-- 活动主图 -->
+		<!-- <section class="activity-header">
+			<a href="javascript:;"><img class="img-fluid lz" src="/dist/images/indexImg/bannerBg.jpg" data-original="{{info.banner}}" alt=""></a>
+		</section> -->
+		<section class="activity-map" id="activity-map"></section>
+		 <section class="activity-zan">
+		 	<span>阅读 {{info.read}}</span>
+		 	<span>转发 {{info.forward}}</span>
+		 	<label :class="{'on': info.has_fabulous == 1}" v-tap.stop="clickZan()"><i class="icon-zan"></i> <template v-if="fabulous != 0">{{fabulous}}</template><template v-else>点赞</template></label>
+		 </section>
+		 <section class="activity-tuijian" v-if="recommand_products.length > 0">
+		 	<nav><em></em>相关好物推荐<i></i></nav>
+		 	<div class="activity-brand">
+		 		<div class="brand-tuijian swiper-container" id="brand-tuijian">
+		 			<ul class="swiper-wrapper">
+						<li class="swiper-slide" v-for='items in recommand_products' v-if="items.id != undefined">
+							<div class="tuijian-box">
+								<a href="/page/goods.html?product_id={{items.id}}">
+									<div class="video-img">
+										<img :src=items.thumb  alt="{{items.title}}">
+										<em v-if="items.special_tag != ''">{{items.special_tag}}</em>
+										<div class="no_cartData" v-if="items.is_sale_out == '1'">
+			                                <span class="shouqing">已售罄</span>
+			                            </div>
+									</div>
+									<span class="video-title">{{items.product_name}}</span>
+								</a>
+								<div class="video-product-price">
+									<span><i>￥</i>{{items.sales_price}} <em><i>/ 赚</i>{{items.earn_tag}}</em></span>
+								</div>
+								<div class="video-product-tag">
+									<template v-for="tag_s in items.tags">
+										<span :class="{'two': tag_s.type == 'post', 'three': tag_s.type == 'activity'}" v-if="tag_s.type == 'post'">{{tag_s.tag}}</span>
+									</template>
+									<label>已批{{items.salescount}}件</label>
+								</div>
+								<div class="video-product-cart" v-tap.stop="clickCart(items.id)">加入购物车</div>
+							</div>
+						</li>
+					</ul>
+					<div class="swiper-pagination"></div>
+		 		</div>
+		 	</div>
+		 </section>
+		 <section class="activity-zhuanti" v-if="relation_topics.length > 0">
+		 	<nav><em></em>更多专题<i></i></nav>
+		 	<div class="activity-zt">
+		 		<div class="brand-zt swiper-container" id="brand-zt">
+		 			<ul class="swiper-wrapper">
+		 				<li class="swiper-slide" v-for="biao in relation_topics">
+		 					<a href="/page/user/activityTemplate.html?information_id={{biao.id}}"><img :src=biao.banner alt="{{biao.title}}"></a>
+		 				</li>
+		 			</ul>
+		 		</div>
+		 	</div>
+		 </section>
+		 <section class="activity-bottom box">
+		 	<span><a href="/page/cart/"><i class="icon-carts"></i><em v-if="cart_num > 0" v-cloak>{{cart_num}}</em></a></span>
+		 	<label class="activity-clickzan" :class="{'on': info.has_fabulous == 1}" v-tap.stop="clickZan()">
+		 		<i class="icon-zan"></i> <template v-if="fabulous != 0">{{fabulous}}</template><template v-else>点赞</template>
+		 	</label>
+		 	<button class="flex" v-tap.stop="clickShare()">分享赚钱</button>
+		 </section>
+		<!-- 70%透明遮盖层 -->
+        <div class="hideBox" v-tap.stop="closeBottom()"></div>
+        <!-- <div class="activity-hideBox"></div>
+        <div class="activity-tips-box" v-tap.stop="closeTips()">
+        	<div class="activity-tips-box-top"></div>
+        	<div class="activity-tips-box-bot"><span>分享赚钱</span></div>
+        </div> -->
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/activityTemplate.js -->
+    <script src="/dist/js/user/activityTemplate.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

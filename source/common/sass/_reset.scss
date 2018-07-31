@@ -1,0 +1,57 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+    font-family: arial;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+a,
+img {
+    -webkit-touch-callout: none;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+// a:link,a:visited{color:#333; text-decoration: none;}
+a:active {
+    color: #ff3574;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}

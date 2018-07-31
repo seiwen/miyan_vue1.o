@@ -1,0 +1,363 @@
+.user-ranking {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  overflow: hidden; }
+  .user-ranking .ranking-cont {
+    position: relative; }
+    .user-ranking .ranking-cont .ranking-cont-nav {
+      position: relative;
+      height: 5.066667rem;
+      padding-top: 0.8rem;
+      background-color: #fd4e6c; }
+      .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-tips {
+        position: fixed;
+        top: -0.026667rem;
+        left: 0;
+        width: 100%;
+        height: 0.8rem;
+        line-height: 0.666667rem;
+        padding: 0.133333rem 2.4rem 0.133333rem 0.266667rem;
+        font-size: 11px;
+        color: #ff6161;
+        background-color: #f3ec76;
+        z-index: 299;
+        overflow: hidden; }
+        [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-tips {
+          font-size: 22px; }
+        [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-tips {
+          font-size: 33px; }
+        .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-tips i {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          display: block;
+          width: 0.533333rem;
+          height: 0.8rem;
+          margin-top: -0.4rem;
+          overflow: hidden; }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-tips i:after, .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-tips i:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            content: '';
+            width: 1px;
+            height: .32rem;
+            margin-top: -0.16rem;
+            background-color: #ff3574; }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-tips i:after {
+            webkit-transform: rotate(135deg);
+            -ms-transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+                    transform: rotate(135deg); }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-tips i:before {
+            webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg); }
+        .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-tips a {
+          position: absolute;
+          top: 50%;
+          right: 0.533333rem;
+          display: block;
+          width: 1.8rem;
+          text-align: center;
+          height: 0.533333rem;
+          line-height: 0.533333rem;
+          margin-top: -0.266667rem;
+          color: #fff;
+          border-radius: 0.066667rem;
+          background-color: #ff6161; }
+      .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont {
+        height: 4.266667rem; }
+        .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-img {
+          height: 2.533333rem;
+          padding-top: 0.266667rem;
+          width: 100%;
+          overflow: hidden; }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-img span {
+            display: block;
+            width: 1.733333rem;
+            height: 1.733333rem;
+            border: 0.06667rem solid #fff;
+            border-radius: 50%;
+            margin: 0.266667rem auto;
+            overflow: hidden; }
+        .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot {
+          width: 100%;
+          height: 1.733333rem; }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot:after, .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot:before {
+            clear: both; }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot .ranking-nav-ban {
+            position: relative;
+            width: 50%;
+            height: 1.733333rem;
+            float: left;
+            text-align: center;
+            color: #fff;
+            padding-bottom: 0.266667rem; }
+            .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot .ranking-nav-ban:nth-child(2):after {
+              position: absolute;
+              display: block;
+              content: '';
+              left: 0;
+              top: 50%;
+              width: 1px;
+              height: 0.666667rem;
+              margin-top: -0.466667rem;
+              background-color: #fff; }
+            .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot .ranking-nav-ban p {
+              line-height: 0.6rem;
+              font-size: 14px; }
+              [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot .ranking-nav-ban p {
+                font-size: 28px; }
+              [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot .ranking-nav-ban p {
+                font-size: 42px; }
+            .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot .ranking-nav-ban h3 {
+              line-height: 0.866667rem;
+              font-size: 20px; }
+              [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot .ranking-nav-ban h3 {
+                font-size: 40px; }
+              [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot .ranking-nav-ban h3 {
+                font-size: 60px; }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot span {
+            position: absolute;
+            bottom: -0.266667rem;
+            left: 2.066667rem;
+            display: block;
+            padding: 0.066667rem 0.133333rem;
+            font-size: 12px;
+            color: #fff;
+            background-color: #fec344;
+            border-radius: 0.106667rem;
+            z-index: 2; }
+            [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot span {
+              font-size: 24px; }
+            [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot span {
+              font-size: 36px; }
+            .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot span:after {
+              display: block;
+              content: '';
+              position: absolute;
+              left: 0.266667rem;
+              width: 0;
+              height: 0;
+              bottom: 0.52rem;
+              border-left: 0.133333rem solid transparent;
+              border-right: 0.133333rem solid transparent;
+              border-bottom: 0.186667rem solid #fec344; }
+            .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot span.on {
+              background-color: #fd4e6c; }
+              .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-cont .ranking-cont-nav-cont-bot span.on:after {
+                border-bottom-color: #fd4e6c; }
+      .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 1.866667rem;
+        line-height: 1.866667rem;
+        padding: 0 0.333333rem;
+        border-top: 1px solid #fddbe6;
+        background-color: #ffecf2;
+        overflow: hidden;
+        z-index: 299; }
+        .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot label {
+          display: block;
+          width: 1.2rem;
+          height: 1.866667rem;
+          line-height: 1.866667rem;
+          float: left;
+          font-size: 14px;
+          color: #333; }
+          [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot label {
+            font-size: 28px; }
+          [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot label {
+            font-size: 42px; }
+        .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot img {
+          display: block;
+          float: left;
+          width: 1.133333rem;
+          height: 1.133333rem;
+          margin: 0.366667rem 0.2rem 0.366667rem 0.133333rem;
+          border-radius: 50%; }
+        .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot .ranking-cont-nav-bot-span {
+          display: block;
+          float: left;
+          width: 3.533333rem;
+          height: 1.866667rem; }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot .ranking-cont-nav-bot-span span {
+            display: block;
+            width: 100%;
+            line-height: 1.866667rem;
+            word-wrap: break-word;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            font-size: 16px;
+            color: #ff3574; }
+            [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot .ranking-cont-nav-bot-span span {
+              font-size: 32px; }
+            [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot .ranking-cont-nav-bot-span span {
+              font-size: 48px; }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot .ranking-cont-nav-bot-span.none {
+            width: 7.0rem; }
+            .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot .ranking-cont-nav-bot-span.none span {
+              height: 0.933333rem;
+              line-height: 1.333333rem; }
+          .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot .ranking-cont-nav-bot-span p {
+            float: left;
+            width: 8.0rem;
+            line-height: 0.533333rem;
+            color: #999;
+            font-size: 12px; }
+            [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot .ranking-cont-nav-bot-span p {
+              font-size: 24px; }
+            [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot .ranking-cont-nav-bot-span p {
+              font-size: 36px; }
+        .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot em {
+          display: block;
+          float: right;
+          width: 2.8rem;
+          height: 1.866667rem;
+          font-size: 18px; }
+          [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot em {
+            font-size: 36px; }
+          [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-nav .ranking-cont-nav-bot em {
+            font-size: 54px; }
+      .user-ranking .ranking-cont .ranking-cont-nav:after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        margin-left: -0.346667rem;
+        border-left: 0.346667rem solid transparent;
+        border-right: 0.346667rem solid transparent;
+        border-bottom: 0.42667rem solid #fff; }
+      .user-ranking .ranking-cont .ranking-cont-nav.select {
+        background-color: #fc9b5c; }
+        .user-ranking .ranking-cont .ranking-cont-nav.select .ranking-cont-nav-bot {
+          background-color: #feefe1; }
+          .user-ranking .ranking-cont .ranking-cont-nav.select .ranking-cont-nav-bot span {
+            color: #fd9c5c; }
+    .user-ranking .ranking-cont .ranking-cont-ul {
+      position: relative;
+      width: 100%;
+      display: block; }
+      .user-ranking .ranking-cont .ranking-cont-ul li {
+        display: block;
+        width: 100%;
+        height: 1.866667rem;
+        line-height: 1.866667rem;
+        padding: 0 0.333333rem;
+        border-bottom: 1px solid #dadada;
+        overflow: hidden; }
+        .user-ranking .ranking-cont .ranking-cont-ul li.no-li {
+          font-size: 16px;
+          text-align: center;
+          border-bottom: none;
+          margin: 3.333333rem 0; }
+          [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li.no-li {
+            font-size: 32px; }
+          [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li.no-li {
+            font-size: 48px; }
+        .user-ranking .ranking-cont .ranking-cont-ul li label {
+          display: block;
+          width: 1.2rem;
+          height: 1.866667rem;
+          line-height: 1.866667rem;
+          float: left;
+          font-size: 14px;
+          color: #333; }
+          [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li label {
+            font-size: 28px; }
+          [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li label {
+            font-size: 42px; }
+        .user-ranking .ranking-cont .ranking-cont-ul li img {
+          display: block;
+          float: left;
+          width: 1.133333rem;
+          height: 1.133333rem;
+          margin: 0.366667rem 0.2rem 0.366667rem 0.133333rem;
+          border-radius: 50%; }
+        .user-ranking .ranking-cont .ranking-cont-ul li span {
+          display: block;
+          float: left;
+          width: 3.533333rem;
+          height: 1.866667rem;
+          line-height: 1.866667rem;
+          word-wrap: break-word;
+          word-break: break-all;
+          text-overflow: ellipsis;
+          font-size: 16px; }
+          [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li span {
+            font-size: 32px; }
+          [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li span {
+            font-size: 48px; }
+        .user-ranking .ranking-cont .ranking-cont-ul li em {
+          display: block;
+          float: right;
+          width: 2.8rem;
+          height: 1.866667rem;
+          font-size: 18px; }
+          [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li em {
+            font-size: 36px; }
+          [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li em {
+            font-size: 54px; }
+        .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) label, .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) label, .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) label {
+          font-size: 16px;
+          text-indent: -9999px; }
+          [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) label, [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) label, [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) label {
+            font-size: 32px; }
+          [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) label, [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) label, [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) label {
+            font-size: 48px; }
+        .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) span, .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) span, .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) span {
+          font-size: 18px; }
+          [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) span, [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) span, [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) span {
+            font-size: 36px; }
+          [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) span, [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) span, [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) span {
+            font-size: 54px; }
+        .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) em, .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) em, .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) em {
+          font-size: 20px;
+          color: #ff78a0; }
+          [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) em, [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) em, [data-dpr="2"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) em {
+            font-size: 40px; }
+          [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) em, [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) em, [data-dpr="3"] .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) em {
+            font-size: 60px; }
+        .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(1) label {
+          background: url(../../dist/images/img/rank_1.png) left center no-repeat;
+          background-size: 0.533333rem 0.8rem; }
+        .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(2) label {
+          background: url(../../dist/images/img/rank_2.png) left center no-repeat;
+          background-size: 0.533333rem 0.8rem; }
+        .user-ranking .ranking-cont .ranking-cont-ul li:nth-child(3) label {
+          background: url(../../dist/images/img/rank_3.png) left center no-repeat;
+          background-size: 0.533333rem 0.8rem; }
+      .user-ranking .ranking-cont .ranking-cont-ul.on li:nth-child(1) em, .user-ranking .ranking-cont .ranking-cont-ul.on li:nth-child(2) em, .user-ranking .ranking-cont .ranking-cont-ul.on li:nth-child(3) em {
+        color: #fd9c5c; }
+    .user-ranking .ranking-cont .ranking-next {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 1.866667rem; }
+      .user-ranking .ranking-cont .ranking-next a {
+        display: block;
+        width: 100%;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        text-align: center;
+        margin: 0.733333rem auto;
+        color: #ff3574;
+        font-size: 14px; }
+        [data-dpr="2"] .user-ranking .ranking-cont .ranking-next a {
+          font-size: 28px; }
+        [data-dpr="3"] .user-ranking .ranking-cont .ranking-next a {
+          font-size: 42px; }
+        .user-ranking .ranking-cont .ranking-next a.on {
+          color: #fd9c5c; }
+      .user-ranking .ranking-cont .ranking-next.next {
+        padding-bottom: 1.866667rem; }

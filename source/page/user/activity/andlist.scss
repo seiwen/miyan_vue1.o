@@ -1,0 +1,370 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+
+.andlist{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	.andlist-header{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: $color-f;
+		overflow: hidden;
+		z-index: 299;
+		.andlist-header-active{
+			display: block;
+			position: relative;
+			width: 100%;
+			min-height: 0.466667rem;
+			padding: 0.4rem 0.266667rem;
+			background: url(../../dist/images/andlist_bg.jpg) center center no-repeat #f74876;
+			background-size: 100%;
+			a{
+				position: relative;
+				display: block;
+				padding-left: 1.2rem;
+				min-height: 0.466667rem;
+				margin-bottom: 0.266667rem;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				span{
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 1.0rem;
+					height: 0.466667rem;
+					line-height: 0.466667rem;
+					border: 1px solid #fdff3d;
+					color: #fdff3d;
+					@include fontsize(12px);
+					text-align: center;
+				}
+				p{
+					line-height: 0.466667rem;
+					word-wrap: break-word;
+   		 			word-break: break-all;
+   		 			@include fontsize(12px);
+   		 			color: $color-f;
+   		 			i:last-child{
+   		 				display: none;
+   		 			}
+				}
+			}
+		}
+		.andlist-header-nav{
+			position: relative;
+			width: 100%;
+			height: 1.08rem;
+			line-height: 1.066667rem;
+			border-bottom: 1px solid #dadada;
+			background-color: $color-f;
+			&:after,&:before{
+				clear: both;
+			}
+			.andlist-header-nav-li{
+				position: relative;
+				width: 25%;
+				height: 1.066667rem;
+				line-height: 1.066667rem;
+				text-align: center;
+				@include fontsize(14px);
+				float: left;
+				i{
+					position: relative;
+					display: inline-block;
+					margin-left: 0.133333rem;
+					&.icon-san{
+						margin-left: 0;
+						padding: 0 0.133333rem;
+						&:after,&:before{
+							display: block;
+							content: '';
+							position: absolute;
+							right: 0;
+							width: 0;
+						    height: 0;
+						}
+						&:before{
+			           		top: -0.066667rem;
+			           		border-left: 0.133333rem solid transparent;
+						    border-right: 0.133333rem solid transparent;
+						    border-top: 0.186667rem solid #999;
+			           	}
+			           	&:after{
+			           		bottom: 0.133333rem;
+			           		border-left: 0.133333rem solid transparent;
+						    border-right: 0.133333rem solid transparent;
+						    border-bottom: 0.186667rem solid #999;
+			           	}
+					}
+					&.three-top:after{
+						border-bottom: 0.186667rem solid $color-3;
+					}
+					&.three-bot:before{
+						border-top: 0.186667rem solid $color-3;
+					}
+				}
+				&.one i,&.four i{
+					-webkit-transform: rotate(90deg);
+				    -ms-transform: rotate(90deg);
+				    transform: rotate(90deg);
+				}
+			}
+			.select{
+				color: $color-3;
+			}
+		}
+	}
+	.andlist-cont{
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		ul li{
+			width: -webkit-calc(100% * 1 / 2 - 0.266667rem);
+	        width: -moz-calc(100% * 1 / 2 - 0.266667rem);
+	        width: calc(100% * 1 / 2 - 0.266667rem);
+	        background-color: $color-f;
+	        .video-img:before{
+	        	display: none;
+	        }
+	        .video-img span{
+	        	position: absolute;
+	        	display: block;
+	        	top: 0;
+	        	right: 0.133333rem;
+				padding: 0 .133333rem;
+				height: 0.533333rem;
+				line-height: 0.533333rem;
+				@include fontsize(12px);
+				color: $color-f;
+				background: $color-3;
+				z-index: 3;
+				overflow: hidden;
+	        }
+	        .video-img i{
+	        	position: absolute;
+	        	display: block;
+	        	top: 50%;
+	        	left: 50%;
+	        	width: 1.76rem;
+	        	height: 1.76rem;
+	        	margin-top: -0.88rem;
+	        	margin-left: -0.88rem;
+	        	z-index: 99;
+	        	overflow: hidden;
+	        	&.shouqi{
+	        		 background: url(/dist/images/shouqing.png) center center no-repeat;
+            		background-size: 100%;
+	        	}
+	        	&.xiajia{
+	        		background: url(/dist/images/xiajia.png) center center no-repeat;
+            		background-size: 100%;
+	        	}
+	        }
+	        .video-title{
+	        	height: 1.066667rem;
+	        	line-height: 0.466667rem;
+	        	padding-left: 0.133333rem;
+	        	padding-right: 0.133333rem;
+	        }
+	        .video-product-price{
+	        	position: relative;
+	        	height: 0.8rem;
+	        	line-height: 0.8rem;
+	        	padding-left: 0.133333rem;
+	        	padding-right: 0.133333rem;
+	        	text-align: center;
+	        	overflow: hidden;
+	        	span{
+	        		color: #333;
+	        		@include fontsize(15px);
+	        	}
+	        	em{
+	        		color: $color-3;
+	        		font-style: normal;
+	        		@include fontsize(12px);
+	        	}
+	        	del{
+	        		color: #999;
+	        		@include fontsize(12px);
+	        	}
+	        	label{
+	        		display: inline-block;
+	        		padding: 0 0.106667rem;
+	        		line-height: 0.453333rem;
+	        		margin-top: 0.1rem;
+	        		border-radius: 0.066667rem;
+	        		background-color: #ff78a0;
+	        		color: $color-f;
+	        		@include fontsize(12px);
+	        	}
+	        }
+	        .andlist-bot{
+	        	position: relative;
+	        	width: 100%;
+	        	height: 0.933333rem;
+	        	line-height: 0.933333rem;
+	        	text-align: center;
+	        	background-color: $color-3;
+	        	color: $color-f;
+	        	@include fontsize(15px);
+	        	&.on{
+	        		background-color: #999;
+	        		color: #fff;
+	        	}
+	        }
+		}
+		.andlist-cont-no{
+			padding: 2.666667rem 0;
+			text-align: center;
+			@include fontsize(12px);
+			color: #999;
+		}
+	}
+	.nav-box-one{
+		position: fixed;
+		display: none;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		background-color: $color-f;
+		overflow: hidden;
+		z-index: 299;
+		ul{
+			position: relative;
+			width: 100%;
+			min-height: 4.666667rem;
+			display: block;
+			overflow: hidden;
+			li{
+				display: block;
+				width: 100%;
+				padding: 0 0.266667rem;
+				height: 0.933333rem;
+				@include fontsize(14px);
+				line-height: 0.933333rem;
+				text-align: left;
+				position: relative;
+			    display: -webkit-box;
+			    display: -moz-box;
+			    display: -ms-box;
+			    display: box;
+			    word-wrap: break-word;
+			    word-break: break-all;
+			    -webkit-line-clamp: 1;
+			    -moz-line-clamp: 1;
+			    -ms-line-clamp: 1;
+			    -o-line-clamp: 1;
+			    -webkit-box-orient: vertical;
+			    -moz-box-orient: vertical;
+			    -ms-box-orient: vertical;
+			    -o-box-orient: vertical;
+			    overflow: hidden;
+				&.on{
+					color: $color-3;
+					background-color: #f9e4ea;
+				}
+			}
+		}
+	}
+	.nav-box-four{
+		position: fixed;
+		display: none;
+		left: 0;
+		width: 100%;
+		background-color: $color-f;
+		overflow: hidden;
+		z-index: 299;
+		.nav-box-four-list{
+			position: relative;
+			width: 100%;
+			height: 4.0rem;
+			background-color: #f5f5f5;
+			padding-left: 2.666667rem;
+			overflow: hidden;
+			.nav-box-four-list-left{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2.666667rem;
+				height: 4.0rem;
+				overflow-x: hidden;
+				overflow-y: auto;
+				li{
+					display: block;
+					width: 100%;
+					height: 0.8rem;
+					line-height: 0.8rem;
+					padding: 0 0.266667rem;
+					color: #333;
+					word-wrap: break-word;
+    				word-break: break-all;
+    				text-overflow: ellipsis;
+					overflow: hidden;
+					&.on{
+						color: $color-3;
+						background-color: $color-f;
+					}
+				}
+			}
+			.nav-box-four-list-right{
+				position: relative;
+				width: 100%;
+				height: 4.0rem;
+				overflow-x: hidden;
+				overflow-y: auto;
+				@include fontsize(14px);
+				ul{
+					display: none;
+					height: 100%;
+					background-color: $color-f;
+					li{
+						display: block;
+						width: 100%;
+						padding: 0 0.666667rem 0 0.133333rem;
+						height: 0.8rem;
+						line-height: 0.8rem;
+						color: #333;
+						word-wrap: break-word;
+	    				word-break: break-all;
+	    				text-overflow: ellipsis;
+	    				background-color: $color-f;
+	    				color: #333;
+						overflow: hidden;
+						&.on{
+							color: $color-3;
+							background-color: #f9e4ea;
+						}
+					}
+					&.select{
+						display: block;
+					}
+				}
+			}
+		}
+		.nav-box-four-bot{
+			position: relative;
+			width: 100%;
+			height: 1.066667rem;
+			overflow: hidden;
+			span{
+				width: 50%;
+				height: 1.066667rem;
+				line-height: 1.066667rem;
+				float: left;
+				background-color: $color-f;
+				color: #333;
+				text-align: center;
+				@include fontsize(15px);
+				&:last-child{
+					background-color: $color-3;
+					color: $color-f;
+				}
+			}
+		}
+	}
+}

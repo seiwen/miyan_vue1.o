@@ -1,0 +1,583 @@
+#user-reward .reward-cont .reward-cont-top {
+  border-bottom: 0; }
+
+.reward-cont {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background: url(../../dist/images/bg20161128.jpg) left top no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+  .reward-cont .reward-cont-top {
+    position: relative;
+    height: 3.4rem;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden; }
+    .reward-cont .reward-cont-top p {
+      display: block;
+      text-align: center;
+      height: 0.666667rem;
+      line-height: 0.666667rem; }
+      .reward-cont .reward-cont-top p:nth-child(1) {
+        margin-top: 1.066667rem;
+        color: #ff3574;
+        font-size: 26px; }
+        [data-dpr="2"] .reward-cont .reward-cont-top p:nth-child(1) {
+          font-size: 52px; }
+        [data-dpr="3"] .reward-cont .reward-cont-top p:nth-child(1) {
+          font-size: 78px; }
+      .reward-cont .reward-cont-top p:nth-child(2) {
+        margin-top: 0.266667rem;
+        color: #333;
+        font-size: 14px; }
+        [data-dpr="2"] .reward-cont .reward-cont-top p:nth-child(2) {
+          font-size: 28px; }
+        [data-dpr="3"] .reward-cont .reward-cont-top p:nth-child(2) {
+          font-size: 42px; }
+    .reward-cont .reward-cont-top::before {
+      right: 0.533333rem;
+      border-width: 2px; }
+  .reward-cont .reward-cont-center {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1.2rem;
+    background: rgba(221, 221, 221, 0.2);
+    overflow: hidden; }
+    .reward-cont .reward-cont-center .reward-cont-center-li {
+      position: relative;
+      float: left;
+      width: 50%;
+      height: 1.2rem;
+      padding: 0.133333rem 0;
+      overflow: hidden; }
+      .reward-cont .reward-cont-center .reward-cont-center-li p {
+        position: relative;
+        text-align: center;
+        height: 0.466667rem;
+        line-height: 0.466667rem; }
+        .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(1) {
+          font-size: 14px;
+          color: #000; }
+          [data-dpr="2"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(1) {
+            font-size: 28px; }
+          [data-dpr="3"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(1) {
+            font-size: 42px; }
+        .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(2) {
+          font-size: 12px;
+          color: #999; }
+          [data-dpr="2"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(2) {
+            font-size: 24px; }
+          [data-dpr="3"] .reward-cont .reward-cont-center .reward-cont-center-li p:nth-child(2) {
+            font-size: 36px; }
+
+.reward-list {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  margin-top: 0.266667rem;
+  overflow: hidden; }
+  .reward-list h2 {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0 0.266667rem;
+    height: 0.933333rem;
+    line-height: 0.933333rem;
+    font-size: 13px; }
+    [data-dpr="2"] .reward-list h2 {
+      font-size: 26px; }
+    [data-dpr="3"] .reward-list h2 {
+      font-size: 39px; }
+    .reward-list h2 i {
+      font-size: 14px;
+      margin-right: 0.133333rem; }
+      [data-dpr="2"] .reward-list h2 i {
+        font-size: 28px; }
+      [data-dpr="3"] .reward-list h2 i {
+        font-size: 42px; }
+  .reward-list h4 {
+    position: relative;
+    width: 100%;
+    height: 0.666667rem;
+    line-height: 0.666667rem;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 0.533333rem; }
+    [data-dpr="2"] .reward-list h4 {
+      font-size: 24px; }
+    [data-dpr="3"] .reward-list h4 {
+      font-size: 36px; }
+    .reward-list h4 span {
+      color: #ff3574; }
+  .reward-list .reward-list-task {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    padding: 0 0.266667rem;
+    height: 2.0rem;
+    border-top: 1px solid #ddd;
+    overflow: hidden; }
+    .reward-list .reward-list-task .reward-list-task-left {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+      -webkit-flex: 0 0 auto;
+              flex: 0 0 auto;
+      width: 2.0rem;
+      height: 2.0rem;
+      margin-right: 0.266667rem; }
+      .reward-list .reward-list-task .reward-list-task-left h5 {
+        position: relative;
+        margin-top: 0.866667rem;
+        height: 0.4rem;
+        line-height: 0.4rem;
+        text-align: center;
+        font-size: 12px; }
+        [data-dpr="2"] .reward-list .reward-list-task .reward-list-task-left h5 {
+          font-size: 24px; }
+        [data-dpr="3"] .reward-list .reward-list-task .reward-list-task-left h5 {
+          font-size: 36px; }
+        .reward-list .reward-list-task .reward-list-task-left h5:after {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 1px;
+          height: 0.4rem;
+          top: 0;
+          right: 0.093333rem;
+          background-color: #999; }
+      .reward-list .reward-list-task .reward-list-task-left p {
+        margin-top: 0.133333rem;
+        font-size: 10px;
+        text-align: center; }
+        [data-dpr="2"] .reward-list .reward-list-task .reward-list-task-left p {
+          font-size: 20px; }
+        [data-dpr="3"] .reward-list .reward-list-task .reward-list-task-left p {
+          font-size: 30px; }
+    .reward-list .reward-list-task .reward-list-task-right {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      min-width: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      -webkit-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+              justify-content: center;
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 0;
+      -webkit-flex: 1 1 0;
+              flex: 1 1 0; }
+      .reward-list .reward-list-task .reward-list-task-right .reward-tips {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        height: 0.506667rem; }
+        .reward-list .reward-list-task .reward-list-task-right .reward-tips span {
+          position: relative;
+          display: none;
+          padding: 0 0.16rem;
+          height: 0.506667rem;
+          line-height: 0.48rem;
+          border: 1px solid #ff3574;
+          font-size: 10px;
+          color: #666;
+          border-radius: 0.106667rem;
+          -webkit-border-radius: 0.106667rem; }
+          [data-dpr="2"] .reward-list .reward-list-task .reward-list-task-right .reward-tips span {
+            font-size: 20px; }
+          [data-dpr="3"] .reward-list .reward-list-task .reward-list-task-right .reward-tips span {
+            font-size: 30px; }
+          .reward-list .reward-list-task .reward-list-task-right .reward-tips span b {
+            color: #ff3574; }
+          .reward-list .reward-list-task .reward-list-task-right .reward-tips span em {
+            position: absolute;
+            width: 0.186667rem;
+            height: 0.186667rem;
+            border-width: 0 0 1px 1px;
+            border-style: solid;
+            border-color: #ff3574;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            bottom: -0.1rem;
+            left: 8%;
+            background-color: #fff; }
+      .reward-list .reward-list-task .reward-list-task-right .reward-progress {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        height: 0.4rem;
+        margin-top: 0.156667rem; }
+        .reward-list .reward-list-task .reward-list-task-right .reward-progress progress, .reward-list .reward-list-task .reward-list-task-right .reward-progress progress::-webkit-progress-bar {
+          height: 0.133333rem;
+          display: block;
+          background-color: #d6d6d6;
+          width: 100%;
+          border-radius: 0.066667rem;
+          overflow: hidden; }
+        .reward-list .reward-list-task .reward-list-task-right .reward-progress progress::-moz-progress-bar {
+          height: 0.133333rem;
+          display: block;
+          background-color: #d6d6d6;
+          width: 100%;
+          border-radius: 0.066667rem;
+          overflow: hidden; }
+        .reward-list .reward-list-task .reward-list-task-right .reward-progress progress::-webkit-progress-value {
+          background-color: transparent;
+          background-image: -webkit-linear-gradient(left, #ff739f, #fbac6e);
+          background-image: linear-gradient(left, #ff739f, #fbac6e); }
+        .reward-list .reward-list-task .reward-list-task-right .reward-progress progress::-moz-progress-value {
+          background-image: -webkit-linear-gradient(left, #ff739f, #fbac6e);
+          background-image: linear-gradient(left, #ff739f, #fbac6e); }
+        .reward-list .reward-list-task .reward-list-task-right .reward-progress span {
+          position: absolute;
+          display: block;
+          top: 50%;
+          margin-top: -0.12rem;
+          margin-left: -0.12rem;
+          width: 0.24rem;
+          height: 0.24rem;
+          border: 2px solid #9c9c9c;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          background-color: #fff; }
+          .reward-list .reward-list-task .reward-list-task-right .reward-progress span.active {
+            border-color: #fff;
+            background-color: #ff3574; }
+      .reward-list .reward-list-task .reward-list-task-right ul {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        padding: 0 15%;
+        overflow: hidden; }
+        .reward-list .reward-list-task .reward-list-task-right ul.three {
+          padding: 0; }
+        .reward-list .reward-list-task .reward-list-task-right ul li {
+          position: relative;
+          display: block;
+          float: left;
+          color: #999;
+          font-size: 11px;
+          text-align: center; }
+          [data-dpr="2"] .reward-list .reward-list-task .reward-list-task-right ul li {
+            font-size: 22px; }
+          [data-dpr="3"] .reward-list .reward-list-task .reward-list-task-right ul li {
+            font-size: 33px; }
+          .reward-list .reward-list-task .reward-list-task-right ul li.active {
+            color: #ff3574; }
+  .reward-list .week .reward-list-task-right .reward-progress span.one:first-child {
+    left: 50%; }
+  .reward-list .week .reward-list-task-right .reward-progress span.two:first-child {
+    left: 33.333%; }
+  .reward-list .week .reward-list-task-right .reward-progress span.two:nth-child(2) {
+    left: 66.666%; }
+  .reward-list .week .reward-list-task-right .reward-progress span.three:first-child {
+    left: 25%; }
+  .reward-list .week .reward-list-task-right .reward-progress span.three:nth-child(2) {
+    left: 50%; }
+  .reward-list .week .reward-list-task-right .reward-progress span.three:nth-child(3) {
+    left: 75%; }
+  .reward-list .week .reward-list-task-right .reward-progress span.four:first-child {
+    left: 20%; }
+  .reward-list .week .reward-list-task-right .reward-progress span.four:nth-child(2) {
+    left: 40%; }
+  .reward-list .week .reward-list-task-right .reward-progress span.four:nth-child(3) {
+    left: 60%; }
+  .reward-list .week .reward-list-task-right .reward-progress span.four:nth-child(4) {
+    left: 80%; }
+  .reward-list .week .reward-list-task-right ul li {
+    overflow: hidden; }
+  .reward-list .week .reward-list-task-right ul.one li {
+    width: 100%;
+    text-align: center; }
+  .reward-list .week .reward-list-task-right ul.two li {
+    width: calc((100% - 20px) / 2); }
+  .reward-list .week .reward-list-task-right ul.three li {
+    width: calc((100% - 20px) / 3); }
+  .reward-list .month {
+    height: 2.266667rem; }
+    .reward-list .month h5 {
+      margin-top: .7rem !important; }
+  .reward-list .month .reward-list-task-right .reward-progress span.one:first-child {
+    left: 50%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.two:first-child {
+    left: 33.333%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.two:nth-child(2) {
+    left: 66.666%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.three:first-child {
+    left: 25%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.three:nth-child(2) {
+    left: 50%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.three:nth-child(3) {
+    left: 75%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.four:first-child {
+    left: 20%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.four:nth-child(2) {
+    left: 40%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.four:nth-child(3) {
+    left: 60%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.four:nth-child(4) {
+    left: 80%; }
+  .reward-list .month .reward-list-task-right .reward-progress span.active:nth-child(3) {
+    border-color: #fff;
+    background-color: #ff739f; }
+  .reward-list .month .reward-list-task-right ul {
+    width: 100%;
+    padding: 0; }
+    .reward-list .month .reward-list-task-right ul li {
+      position: relative;
+      display: block;
+      height: 0.85rem; }
+      .reward-list .month .reward-list-task-right ul li p {
+        position: absolute; }
+        .reward-list .month .reward-list-task-right ul li p:first-child {
+          top: 0; }
+        .reward-list .month .reward-list-task-right ul li p:nth-child(2) {
+          top: 0.4rem; }
+      .reward-list .month .reward-list-task-right ul li:nth-child(4) p {
+        position: relative;
+        right: 0; }
+        .reward-list .month .reward-list-task-right ul li:nth-child(4) p:nth-child(2) {
+          top: 0; }
+    .reward-list .month .reward-list-task-right ul.one li {
+      width: 100%;
+      text-align: center; }
+      .reward-list .month .reward-list-task-right ul.one li p {
+        right: 8rem; }
+    .reward-list .month .reward-list-task-right ul.two li {
+      width: 50%;
+      text-align: center; }
+      .reward-list .month .reward-list-task-right ul.two li:first-child p {
+        right: 0.533333rem; }
+      .reward-list .month .reward-list-task-right ul.two li:last-child p {
+        right: 1.533333rem; }
+    .reward-list .month .reward-list-task-right ul.three li {
+      width: 33.333%;
+      text-align: right; }
+      .reward-list .month .reward-list-task-right ul.three li:first-child p {
+        right: 0; }
+      .reward-list .month .reward-list-task-right ul.three li:nth-child(2) p {
+        right: 0.45rem; }
+      .reward-list .month .reward-list-task-right ul.three li:last-child p {
+        right: 1rem; }
+  .reward-list .text {
+    height: auto;
+    padding: 0.133333rem 0.266667rem; }
+    .reward-list .text .reward-list-task-left {
+      margin-right: 0;
+      margin-left: 0.266667rem; }
+      .reward-list .text .reward-list-task-left a {
+        position: relative;
+        display: block;
+        width: 2rem;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        text-align: center;
+        color: #ff3574;
+        border: 1px solid #ff3574;
+        border-radius: 0.133333rem;
+        font-size: 15px;
+        margin-top: 0.5rem;
+        overflow: hidden; }
+        [data-dpr="2"] .reward-list .text .reward-list-task-left a {
+          font-size: 30px; }
+        [data-dpr="3"] .reward-list .text .reward-list-task-left a {
+          font-size: 45px; }
+    .reward-list .text .reward-list-task-right p {
+      line-height: 0.45rem;
+      color: #666;
+      font-size: 12px; }
+      [data-dpr="2"] .reward-list .text .reward-list-task-right p {
+        font-size: 24px; }
+      [data-dpr="3"] .reward-list .text .reward-list-task-right p {
+        font-size: 36px; }
+      .reward-list .text .reward-list-task-right p label {
+        color: #ff3574; }
+  .reward-list .new {
+    padding: 0.133333rem 0.8rem;
+    height: 2.666667rem; }
+    .reward-list .new .reward-list-task-right .reward-progress span.one:first-child {
+      left: 50%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.two:first-child {
+      left: 33.333%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.two:nth-child(2) {
+      left: 66.666%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.three:first-child {
+      left: 25%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.three:nth-child(2) {
+      left: 50%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.three:nth-child(3) {
+      left: 75%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.four:first-child {
+      left: 20%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.four:nth-child(2) {
+      left: 40%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.four:nth-child(3) {
+      left: 60%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.four:nth-child(4) {
+      left: 80%; }
+    .reward-list .new .reward-list-task-right .reward-progress span.falg {
+      left: 101%;
+      width: 0.6rem;
+      height: 0.6rem;
+      border: none;
+      margin-top: -0.5rem;
+      color: #d6d6d6;
+      font-size: 20px; }
+      [data-dpr="2"] .reward-list .new .reward-list-task-right .reward-progress span.falg {
+        font-size: 40px; }
+      [data-dpr="3"] .reward-list .new .reward-list-task-right .reward-progress span.falg {
+        font-size: 60px; }
+    .reward-list .new .reward-list-task-right .reward-progress span.active.falg {
+      background-color: #fff;
+      color: #ff3574; }
+    .reward-list .new .reward-list-task-right ul {
+      width: 100%;
+      padding: 0; }
+      .reward-list .new .reward-list-task-right ul li {
+        text-align: right; }
+      .reward-list .new .reward-list-task-right ul.one li {
+        width: 100%; }
+      .reward-list .new .reward-list-task-right ul.two li {
+        width: 50%; }
+      .reward-list .new .reward-list-task-right ul.three li {
+        width: 33.333%; }
+      .reward-list .new .reward-list-task-right ul.four li {
+        width: 20%; }
+
+.new-p {
+  position: relative;
+  width: 100%;
+  height: 0.666667rem;
+  line-height: 0.666667rem;
+  margin: 1.6rem 0 1.066667rem;
+  font-size: 12px;
+  color: #666;
+  text-align: center; }
+  [data-dpr="2"] .new-p {
+    font-size: 24px; }
+  [data-dpr="3"] .new-p {
+    font-size: 36px; }
+
+.list-on {
+  background-color: #e7e5e5; }
+  .list-on span em {
+    background-color: #e7e5e5 !important; }
+
+.list-open {
+  position: absolute;
+  left: 50%;
+  bottom: 0.666667rem;
+  margin-left: -3.333333rem;
+  width: 6.666667rem;
+  height: 2.0rem;
+  border-radius: 0.266667rem;
+  background-color: rgba(255, 255, 255, 0.8); }
+  .list-open h5 {
+    width: 100%;
+    height: 0.666667rem;
+    line-height: 0.666667rem;
+    margin-top: 0.333333rem;
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center;
+    color: #333; }
+    [data-dpr="2"] .list-open h5 {
+      font-size: 30px; }
+    [data-dpr="3"] .list-open h5 {
+      font-size: 45px; }
+  .list-open p {
+    height: 0.666667rem;
+    line-height: 0.666667rem;
+    font-size: 12px;
+    text-align: center;
+    color: #666; }
+    [data-dpr="2"] .list-open p {
+      font-size: 24px; }
+    [data-dpr="3"] .list-open p {
+      font-size: 36px; }
+
+.no-info-p {
+  padding-top: 2.666667rem;
+  text-align: center;
+  font-size: 12px;
+  color: #999; }
+  [data-dpr="2"] .no-info-p {
+    font-size: 24px; }
+  [data-dpr="3"] .no-info-p {
+    font-size: 36px; }
+
+.reward-box {
+  position: fixed;
+  display: block;
+  width: 8.0rem;
+  height: 8.8rem;
+  top: 50%;
+  left: 50%;
+  margin-top: -4.4rem;
+  margin-left: -4.0rem;
+  background: url("/dist/images/img/reward_tk.png") center center no-repeat;
+  background-size: 8.0rem 8.8rem;
+  z-index: 999; }
+  .reward-box i {
+    position: absolute;
+    right: 0.266667rem;
+    top: 0.266667rem;
+    width: 0.533333rem;
+    height: 0.533333rem;
+    background: url("/dist/images/img/close.png") center center no-repeat;
+    background-size: 0.533333rem;
+    z-index: 99; }
+  .reward-box p {
+    margin-top: 4.533333rem;
+    margin-left: 0.266667rem;
+    line-height: 0.933333rem;
+    text-align: center;
+    font-size: 15px; }
+    [data-dpr="2"] .reward-box p {
+      font-size: 30px; }
+    [data-dpr="3"] .reward-box p {
+      font-size: 45px; }
+    .reward-box p span {
+      font-size: 20px;
+      color: #ff3574; }
+      [data-dpr="2"] .reward-box p span {
+        font-size: 40px; }
+      [data-dpr="3"] .reward-box p span {
+        font-size: 60px; }
+  .reward-box a {
+    display: block;
+    margin-top: 1.533333rem;
+    margin-left: 1.026667rem;
+    width: 6.066667rem;
+    height: 0.866667rem; }

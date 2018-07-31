@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>我的红包</title>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no,email=no,address=no" name="format-detection">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<script>!function(){var e="@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}",t=document.createElement("style");if(document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet)t.styleSheet.disabled||(t.styleSheet.cssText=e);else try{t.innerHTML=e}catch(i){t.innerText=e}}(),!function(e,t){function i(){var t=r.getBoundingClientRect().width;t/s>540&&(t=540*s);var i=t/10;r.style.fontSize=i+"px",c.rem=e.rem=i}var n,a=e.document,r=a.documentElement,o=a.querySelector('meta[name="viewport"]'),l=a.querySelector('meta[name="flexible"]'),s=0,d=0,c=t.flexible||(t.flexible={});if(o){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var m=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);m&&(d=parseFloat(m[1]),s=parseInt(1/d))}else if(l){var h=l.getAttribute("content");if(h){var p=h.match(/initial\-dpr=([\d\.]+)/),f=h.match(/maximum\-dpr=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseFloat((1/s).toFixed(2))),f&&(s=parseFloat(f[1]),d=parseFloat((1/s).toFixed(2)))}}if(!s&&!d){var u=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),b=e.devicePixelRatio;s=u?b>=3&&(!s||s>=3)?3:b>=2&&(!s||s>=2)?2:1:1,d=1/s}if(r.setAttribute("data-dpr",s),!o)if(o=a.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(o);else{var g=a.createElement("div");g.appendChild(o),a.write(g.innerHTML)}e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(i,300))},!1),"complete"===a.readyState?a.body.style.fontSize=12*s+"px":a.addEventListener("DOMContentLoaded",function(){a.body.style.fontSize=12*s+"px"},!1),i(),c.dpr=e.dpr=s,c.refreshRem=i,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+	<!-- build:css /dist/css/base.css -->
+	<link rel="stylesheet" href="/dist/css/base.css">
+	<!-- endbuild -->
+<!-- build:css /dist/css/swiper/swiper.min.css -->
+<link href="/dist/css/swiper/swiper.min.css" rel="stylesheet">
+<!-- endbuild -->
+<style>body,html{background-color:#fff}.wechat-coupon{position:relative;width:100%;overflow:hidden}.wechat-coupon .swiper-slide{background:#fff;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center}.wechat-coupon .swiper-container-horizontal>.swiper-pagination-bullets,.wechat-coupon .swiper-pagination-custom,.wechat-coupon .swiper-pagination-fraction{position:absolute;left:0;width:100%;height:1.066667rem;top:0;background:#fff;border-top:1px solid #ddd;z-index:9;overflow:hidden}.wechat-coupon .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{display:block;width:33.3333%;height:1.053333rem;line-height:1.053333rem;float:left;text-align:center;margin:0;background:#fff;border-radius:0;border-bottom:1px solid #ddd;opacity:1;font-size:14px;filter:alpha(opacity=100);z-index:10;overflow:hidden}[data-dpr="2"] .wechat-coupon .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{font-size:28px}[data-dpr="3"] .wechat-coupon .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{font-size:42px}.wechat-coupon .swiper-pagination-bullet-active{border-bottom:2px solid #ff3574!important;background:#fff;opacity:1;filter:alpha(opacity=100);border-radius:0;color:#ff3574}.wechat-coupon .coupon-list{position:relative;display:block;width:100%;overflow:hidden}.wechat-coupon .coupon-list .swiper-container{height:auto}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper{margin-top:1.066667rem}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide{position:relative;width:100%}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul{display:block;width:100%}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul p.coupon-no{line-height:1.333333rem;margin-top:2.666667rem;text-align:center;font-size:14px;color:#999}[data-dpr="2"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul p.coupon-no{font-size:28px}[data-dpr="3"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul p.coupon-no{font-size:42px}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li{position:relative;display:block;width:100%;height:auto;border-top:1px solid #ddd;overflow:hidden}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li:last-child{border-bottom:1px solid #ddd}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a{position:relative;display:block;width:100%;height:auto;padding:.333333rem .4rem;overflow:hidden}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a span{position:relative;display:block;width:1.866667rem;height:.666667rem;line-height:.666667rem;text-align:center;color:#fff;background:#ff3574;font-size:12px}[data-dpr="2"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a span{font-size:24px}[data-dpr="3"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a span{font-size:36px}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a span:after{position:absolute;right:-.133333rem;top:0;display:block;content:'';width:0;height:0;border-bottom:.13333rem solid #ff3574;border-right:.133333rem solid transparent}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a h2{font-size:14px;line-height:.533333rem;margin-top:.2rem}[data-dpr="2"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a h2{font-size:28px}[data-dpr="3"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a h2{font-size:42px}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a h3{font-size:18px;line-height:1.2rem;padding-left:.733333rem;color:#ff3574}[data-dpr="2"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a h3{font-size:36px}[data-dpr="3"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a h3{font-size:54px}.wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a p{font-size:14px;line-height:.466667rem;color:#999}[data-dpr="2"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a p{font-size:28px}[data-dpr="3"] .wechat-coupon .coupon-list .swiper-container .swiper-wrapper .swiper-slide ul li a p{font-size:42px}</style>
+
+</head>
+<body>
+	<section class="list" id="masker-list">
+		<ul>
+			<li>
+				<div class="list-box">
+					<div class="list-img masker"></div>
+					<div class="list-wraps">
+						<div class="list-wrap">
+							<div class="list-cont">
+								<div class="masker masker-list"></div>
+								<span class="masker masker-block"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="list-box">
+					<div class="list-img masker"></div>
+					<div class="list-wraps">
+						<div class="list-wrap">
+							<div class="list-cont">
+								<div class="masker masker-list"></div>
+								<span class="masker masker-block"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="list-box">
+					<div class="list-img masker"></div>
+					<div class="list-wraps">
+						<div class="list-wrap">
+							<div class="list-cont">
+								<div class="masker masker-list"></div>
+								<span class="masker masker-block"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<div class="wechat-coupon root" id="wechat-coupon">
+		<section class="coupon-list">
+			<div class="swiper-container">
+				<div class="swiper-pagination"></div>
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<ul>
+							<li v-for="wei in info.no_use_no_expire">
+								<a href="javascript:;">
+									<span v-if="(wei.useful_time - wei.start_time) <86400">即将过期</span>
+									<h2>{{wei.couponName}}</h2>
+									<h3>￥{{wei.money}}</h3>
+									<p v-if="wei.ordermoney != 0">订单满{{wei.ordermoney}}元（不含运费）使用</p>
+									<p v-else>无门槛限制</p>
+									<p>有效期：{{wei.start_time*1000 | moment}} 至 {{wei.useful_time*1000 | moment}}</p>
+								</a>
+							</li>
+							<p class="coupon-no" v-if="info.no_use_no_expire_num == 0" >没有未使用的红包哦~</p>
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul>
+							<li v-for="yi in info.haved_use">
+								<a href="javascript:;">
+									<h2>{{yi.couponName}}</h2>
+									<h3>￥{{yi.money}}</h3>
+									<p v-if="yi.ordermoney != 0">订单满{{yi.ordermoney}}元（不含运费）使用</p>
+									<p v-else>无门槛限制</p>
+									<p>有效期：{{yi.start_time*1000 | moment}} 至 {{yi.useful_time*1000 | moment}}</p>
+								</a>
+							</li>
+							<p class="coupon-no" v-if="info.haved_use_num == 0">没有已使用的红包哦~</p>
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul>
+							<li v-for="guo in info.haved_expire">
+								<a href="javascript:;">
+									<h2>{{guo.couponName}}</h2>
+									<h3>￥{{guo.money}}</h3>
+									<p v-if="guo.ordermoney != 0">订单满{{guo.ordermoney}}元（不含运费）使用</p>
+									<p v-else>无门槛限制</p>
+									<p>有效期：{{guo.start_time*1000 | moment}} 至 {{guo.useful_time*1000 | moment}}</p>
+								</a>
+							</li>
+							<p class="coupon-no" v-if="info.haved_expire_num == 0" >没有已过期的红包哦~</p>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<section class="right-fixed"><a class="top-fixed" href="javascript:;">顶部</a></section>
+	<!-- build:js /dist/js/combin.js -->
+	<script src="/dist/js/lib/jquery-2.2.3.min.js"></script>
+	<script src="/dist/js/lib/vue.js"></script>
+	<script src="/dist/js/common.chunk.js"></script>
+	<!-- endbuild -->
+    <!-- build:js /dist/js/user/coupon.js -->
+    <script src="/dist/js/user/coupon.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

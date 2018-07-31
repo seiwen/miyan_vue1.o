@@ -1,0 +1,194 @@
+body, html {
+  background-color: #fff; }
+
+.order-detials {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+  .order-detials .order-detial-header {
+    position: relative;
+    width: 100%;
+    padding: 0 0.266667rem;
+    height: 1.6rem;
+    line-height: 1.333333rem;
+    border-bottom: 0.26667rem solid #ddd;
+    overflow: hidden; }
+    .order-detials .order-detial-header .left {
+      float: left;
+      font-size: 16px; }
+      [data-dpr="2"] .order-detials .order-detial-header .left {
+        font-size: 32px; }
+      [data-dpr="3"] .order-detials .order-detial-header .left {
+        font-size: 48px; }
+    .order-detials .order-detial-header .right {
+      float: right;
+      height: 1.333333rem;
+      font-size: 12px;
+      color: #666;
+      overflow: hidden; }
+      [data-dpr="2"] .order-detials .order-detial-header .right {
+        font-size: 24px; }
+      [data-dpr="3"] .order-detials .order-detial-header .right {
+        font-size: 36px; }
+      .order-detials .order-detial-header .right svg {
+        display: block;
+        width: 0.933333rem;
+        height: 0.933333rem;
+        margin-top: 0.2rem;
+        float: left; }
+      .order-detials .order-detial-header .right .right-text {
+        height: 1.333333rem;
+        float: left; }
+      .order-detials .order-detial-header .right span {
+        margin-left: 0.133333rem;
+        color: #ff3574; }
+  .order-detials .order-detial-address {
+    position: relative;
+    width: 100%;
+    padding: 0.266667rem 0.266667rem 0.266667rem 1.2rem;
+    border-bottom: 0.26667rem solid #ddd;
+    overflow: hidden; }
+    .order-detials .order-detial-address i {
+      position: absolute;
+      display: block;
+      left: 0.266667rem;
+      top: 50%;
+      width: 0.8rem;
+      height: 0.8rem;
+      font-size: 28px;
+      margin-top: -0.4rem;
+      overflow: hidden; }
+      [data-dpr="2"] .order-detials .order-detial-address i {
+        font-size: 56px; }
+      [data-dpr="3"] .order-detials .order-detial-address i {
+        font-size: 84px; }
+    .order-detials .order-detial-address p {
+      font-size: 14px;
+      line-height: 0.533333rem;
+      color: #666;
+      margin-bottom: 0.133333rem;
+      overflow: hidden; }
+      [data-dpr="2"] .order-detials .order-detial-address p {
+        font-size: 28px; }
+      [data-dpr="3"] .order-detials .order-detial-address p {
+        font-size: 42px; }
+      .order-detials .order-detial-address p span {
+        font-size: 14px; }
+        [data-dpr="2"] .order-detials .order-detial-address p span {
+          font-size: 28px; }
+        [data-dpr="3"] .order-detials .order-detial-address p span {
+          font-size: 42px; }
+      .order-detials .order-detial-address p:nth-child(2) {
+        color: #333;
+        font-size: 16px; }
+        [data-dpr="2"] .order-detials .order-detial-address p:nth-child(2) {
+          font-size: 32px; }
+        [data-dpr="3"] .order-detials .order-detial-address p:nth-child(2) {
+          font-size: 48px; }
+        .order-detials .order-detial-address p:nth-child(2) span:nth-child(2) {
+          margin-left: 0.533333rem; }
+      .order-detials .order-detial-address p:last-child {
+        margin-bottom: 0; }
+      .order-detials .order-detial-address p span:nth-child(2) {
+        margin-left: 0.133333rem; }
+  .order-detials .order-detial-cont {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+    border-bottom: 0.26667rem solid #ddd; }
+    .order-detials .order-detial-cont li {
+      padding-left: 0;
+      margin-left: 0.266667rem;
+      width: calc(100% - 0.266667rem); }
+    .order-detials .order-detial-cont .order-detial-price {
+      position: relative;
+      padding: 0.266667rem;
+      border-top: 1px solid #ddd;
+      overflow: hidden; }
+      .order-detials .order-detial-cont .order-detial-price p {
+        line-height: 0.666667rem;
+        font-size: 14px;
+        text-align: right; }
+        [data-dpr="2"] .order-detials .order-detial-cont .order-detial-price p {
+          font-size: 28px; }
+        [data-dpr="3"] .order-detials .order-detial-cont .order-detial-price p {
+          font-size: 42px; }
+        .order-detials .order-detial-cont .order-detial-price p:last-child {
+          font-size: 16px; }
+          [data-dpr="2"] .order-detials .order-detial-cont .order-detial-price p:last-child {
+            font-size: 32px; }
+          [data-dpr="3"] .order-detials .order-detial-cont .order-detial-price p:last-child {
+            font-size: 48px; }
+          .order-detials .order-detial-cont .order-detial-price p:last-child span {
+            color: #ff3574; }
+  .order-detials .order-detial-number {
+    position: relative;
+    width: 100%;
+    padding: 0.266667rem;
+    border-bottom: 0.26667rem solid #ddd; }
+    .order-detials .order-detial-number .copy-order {
+      position: absolute;
+      top: 0.266667rem;
+      right: 0.266667rem;
+      width: 1.333333rem;
+      height: 0.666667rem;
+      line-height: 0.666667rem;
+      border: 1px solid #999;
+      font-size: 14px;
+      color: #333;
+      text-align: center;
+      border-radius: 0.066667rem; }
+      [data-dpr="2"] .order-detials .order-detial-number .copy-order {
+        font-size: 28px; }
+      [data-dpr="3"] .order-detials .order-detial-number .copy-order {
+        font-size: 42px; }
+    .order-detials .order-detial-number p {
+      word-wrap: break-word;
+      word-break: break-all;
+      line-height: 0.666667rem;
+      font-size: 14px;
+      color: #666;
+      overflow: hidden; }
+      [data-dpr="2"] .order-detials .order-detial-number p {
+        font-size: 28px; }
+      [data-dpr="3"] .order-detials .order-detial-number p {
+        font-size: 42px; }
+  .order-detials .order-detial-button {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    margin-bottom: 0.666667rem; }
+    .order-detials .order-detial-button a {
+      display: block;
+      width: 2.866667rem;
+      height: 1.066667rem;
+      line-height: 1.066667rem;
+      text-align: center;
+      font-size: 16px;
+      margin: 0.266667rem 0.266667rem 0.266667rem 0;
+      border: 1px solid #ff3574;
+      background: #ff3574;
+      color: #fff;
+      float: right;
+      border-radius: 0.133333rem;
+      text-decoration: none; }
+      [data-dpr="2"] .order-detials .order-detial-button a {
+        font-size: 32px; }
+      [data-dpr="3"] .order-detials .order-detial-button a {
+        font-size: 48px; }
+      .order-detials .order-detial-button a.wuliu, .order-detials .order-detial-button a.cancel {
+        background: #fff;
+        color: #ff3574; }
+
+.wx-detials .left {
+  font-weight: bolder; }
+
+.wx-detials .right-text span {
+  font-size: 16px;
+  margin-left: 0.266667rem; }
+  [data-dpr="2"] .wx-detials .right-text span {
+    font-size: 32px; }
+  [data-dpr="3"] .wx-detials .right-text span {
+    font-size: 48px; }

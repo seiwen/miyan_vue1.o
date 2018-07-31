@@ -1,0 +1,236 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+
+.wallet-cont{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	background: url(../../dist/images/bg20161128.jpg) left top no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	.wallet-cont-top{
+		position: relative;
+		height: 3.733333rem;
+		border-bottom: $border-width solid $border-color;
+		overflow: hidden;
+		p{
+			text-align: center;
+			&:nth-child(1),&:nth-child(3){
+				@include fontsize(16px);
+				line-height: 0.666667rem;
+				color: #333;
+			}
+			&:nth-child(1){
+				margin-top: 0.8rem;
+			}
+			&:nth-child(2){
+				color: $color-3;
+				@include fontsize(28px);
+				margin-bottom: 0.4rem;
+				margin-top: 0.133333rem;
+				line-height: 0.666667rem;
+			}
+			&:nth-child(3){
+				@include fontsize(12px);
+				color: $gray-lighter;
+			}
+			&:nth-child(3) span{
+				color: $gray-black;
+			}
+		}
+		&::before {
+			right: 0.533333rem;
+			border-width: 2px;
+		}
+	}
+	.wallet-cont-center{
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 2.933333rem;
+		border-bottom: $border-width solid $border-color;
+		overflow: hidden;
+		.wallet-cont-center-li{
+			position: relative;
+			float: left;
+			width: 33.33333%;
+			height: 2.933333rem;
+			padding: 0.8rem 0;
+			overflow: hidden;
+			p{
+				position: relative;
+				text-align: center;
+				&:nth-child(1){
+					@include fontsize(16px);
+					line-height: 0.666667rem;
+					color: $gray-black;
+				}
+				&:nth-child(2){
+					@include fontsize(14px);
+					line-height: 0.666667rem;
+					color: #333;
+				}
+				&.next-before:before{
+					width: 0.2rem;
+					height: 0.2rem;
+					margin-top: -0.115rem;
+					right: 0.666667rem;
+				}
+			}
+			.wallet-cont-center-li-span{
+				position: absolute;
+				display: block;
+				bottom: 0.2rem;
+				left: 50%;
+				margin-left: -0.933333rem;
+				padding: 0 0.106667rem 0 0.16rem;
+				line-height: 0.533333rem;
+				background: $color-3;
+				color: $color-f;
+				@include fontsize(12px);
+				text-align: center;
+				border-radius: 0.066667rem;
+				&:after{
+					position: absolute;
+					content: '';
+					display: block;
+					top: -0.2rem;
+					left: 50%;
+					margin-left: -0.1rem;
+					width: 0;
+				    height: 0;
+				    border-left: 0.15rem solid transparent;
+				    border-right: 0.15rem solid transparent;
+				    border-bottom: 0.2rem solid $color-3;
+				}
+			}
+			&:after{
+				position: absolute;
+				right: 0;
+				top: 0;
+				display: block;
+				content: '';
+				width: 1px;
+				height: 2.933333rem;
+				background-color: #ddd;
+			}
+			&:last-child:after{
+				display: none;
+			}
+		}
+	}
+}
+.wallet-list{
+	position: relative;
+	width: 100%;
+	background: $color-f;
+	margin-top: 0.266667rem;
+	overflow: hidden;
+	ul{
+		position: relative;
+		display: block;
+		width: 100%;
+		li{
+			position: relative;
+			display: block;
+			width: 100%;
+			padding: 0 0.266667rem;
+			height: 1.2rem;
+			line-height: 1.2rem;
+			color: #333;
+			@include fontsize(14px);
+			border-bottom: $border-width solid $border-color;
+			overflow: hidden;
+			strong{
+				display: block;
+				float: left;
+				font-weight: normal;
+				line-height: 1.2rem;
+			}
+			label{
+				color: #999;
+				margin-left: 0.2rem;
+				@include fontsize(12px);
+			}
+			span{
+				color: #666;
+				float: right;
+				&.margin{
+					margin-right: 0.4rem;
+				}
+			}
+			&:first-child{
+				height: 2.066667rem;
+			}
+			&:first-child.next-before:before{
+				width: .2rem;
+			    height: .2rem;
+			    margin-top: -.115rem;
+			}
+			&:first-child span.wallet-list-span-one{
+				height: 0.866667rem;
+				line-height: 0.466667rem;
+				float: left;
+				@include fontsize(16px);
+				font-weight: bolder;
+				color: $color-3;
+			}
+			&:first-child span.wallet-list-span-two{
+				margin-right: 0.4rem;
+				line-height: 2.066667rem;
+				@include fontsize(13px);
+			}
+			&:last-child{
+				border-bottom: none;
+			}
+		}
+	}
+}
+.lineH120{
+	line-height: 1.6rem;
+	color: $gray-lighter;
+	@include fontsize(14px);
+	text-align: center;
+	margin-top: 1.6rem;
+}
+.wallet-cont-button{
+	display: block;
+	width: -webkit-calc(100% - 0.866667rem);
+    width: -moz-calc(100% - 0.866667rem);
+    width: -ms-calc(100% - 0.866667rem);
+    width: calc(100% - 0.866667rem);
+	height: 1.333333rem;
+	line-height: 1.333333rem;
+	border-radius: 10px;
+	margin: 0 auto;
+	@include fontsize(18px);
+	color: $color-f;
+	background-color: $color-3;
+	text-align: center;
+	text-decoration: none;
+	overflow: hidden;
+}
+.wallet-cont-bot{
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	i{
+		@include fontsize(15px);
+		margin-right: 0.133333rem;
+		color: #999;
+	}
+	.wallet-cont-a{
+		color: $gray-lighter;
+		text-decoration: underline;
+	}
+}
+.layui-m-layersection{
+	line-height: 1.1 !important;
+	h3{
+		@include fontsize(18px);
+		font-weight: bolder!important;
+	}
+	p{
+		text-align: left;
+	}
+}

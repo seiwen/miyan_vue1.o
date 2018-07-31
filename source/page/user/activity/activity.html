@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>活动</title>
+<!--=include ../../../module/public_header.html -->
+<!-- build:css /dist/css/swiper/swiper.min.css -->
+<link href="/dist/css/swiper/swiper.min.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/user/activity.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-activity" id="masker">
+		<section class="activity-header masker masker-150"></section>
+		<section class="activity-cont video">
+		 	<ul>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript::">
+						<div class="video-img">
+							<img class="img-fluid" src="/dist/images/indexImg/shopBg.jpg" alt="">
+						</div>
+						<span class="video-title"><i class="masker masker-block masker-top-none masker-width-100"></i></span>
+						<div class="video-product-price">
+							<span class="masker masker-block masker-top-f10"></span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		 </section>
+	</div>
+	<div class="user-activity root" id="user-activity">
+		<section class="activity-header">
+			<p><i class="icon-clocks"></i> 仅剩 <span class="settime" endtime='{{nav.endtime*1000}}'></span></p>
+			<a href="javascript:;"><img class="img-fluid lz" src="/dist/images/indexImg/bannerBg.jpg" data-original="{{nav.image}}" alt=""></a>
+			<!-- <a v-for="item in info.main_product" href="/page/goods.html?product_id={{item.product_id}}"><img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{item.img_url}}" alt="{{item.title}}"></a> -->
+		</section>
+		<section class="activity-textarea" v-if="nav.promote_images != ''">{{{nav.promote_images}}}</section>
+		<nav class="activity-nav" v-if="nav.code != 1 && cates_all.length > 3">
+			<div class="activity-nav-left on" v-tap.stop="navAll($event)"><em>全部</em> <i class="icon-arrow"></i></div>
+			<div class="activity-nav-cont swiper-container" id="activity-nav">
+				<div class="swiper-wrapper">
+					<a class="swiper-slide" data-cate="{{cates.id}}" v-for="cates in cates_all" href="javascript:;" ><span v-on:click="brandList($event,$index,cates.id)">{{cates.cate_name}}</span></a>
+				</div>
+			</div>
+			<div class="activity-nav-right" v-tap.stop="classAll($event)"><i class="icon-arrow"></i></div>
+		</nav>
+		<section class="active-nav-list" v-if="tags.length > 0">
+			<ul>
+				<li v-tap.stop="tagsList($event)" class="on">全部</li>
+				<li v-for="tags_list in tags" v-tap.stop="tagsList($event,tags_list.active_id,tags_list.type)" data-idType="{{tags_list.active_id}}_{{tags_list.type}}">{{tags_list.tag}}</li>
+			</ul>
+		</section>
+		<section class="active-nav-lei">
+			<ul>
+				<li data-cate="{{cate.id}}" v-tap.stop="cateList($event,$index,cate.id)" v-for="cate in cates_brands.cates"><span>{{cate.cate_name}}</span></li>
+			</ul>
+		</section>
+		<section class="activity-cont video">
+		 	<ul>
+				<li v-for='items in and_list'>
+					<a href="/page/goods.html?product_id={{items.id}}">
+						<div class="video-img">
+							<img class="img-fluid lz" src="/dist/images/indexImg/shopBg.jpg" data-original="{{items.thumb}}" alt="{{items.product_name}}">
+							<label v-if="items.activity_tag != ''">{{items.activity_tag}}</label>
+							<em v-if="items.special_tag != ''">{{items.special_tag}}</em>
+							<div class="no_cartData" v-if="items.is_sale_out != '0'">
+								<span class="shouqing" v-if="items.is_sale_out == '1'">已售罄</span>
+							</div>
+						</div>
+						<span class="video-title">{{items.product_name}}</span>
+					</a>
+					<div class="video-product-price">
+						<span><i>￥</i>{{items.sales_price}} <em><i>/ 赚</i>{{items.earn_tag}}</em></span>
+						<label v-tap.stop="clickCart(items.id)" class="icon-carts"></label>
+					</div>
+				</li>
+			</ul>
+		 </section>
+		 <div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+		<!-- 70%透明遮盖层 -->
+        <div class="hideBox" v-tap.stop="closeBottom()"></div>
+        <div class="hideBox_ad" v-tap.stop="closeAd()"></div>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/activity.js -->
+    <script src="/dist/js/user/activity.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

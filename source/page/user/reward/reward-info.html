@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>奖励金明细</title>
+<!--=include ../../../module/public_header.html -->
+<link href="/dist/css/user/reward-info.css" rel="stylesheet" inline>
+
+</head>
+<body>
+	<div class="user-reward-info" id="user-reward-info">
+		 <section class="reward-cont">
+		 	<div class="reward-cont-top">
+				<p><span v-cloak>{{info.incentive_amount}}</span></p>
+				<p>累计现金奖励（元）</p>
+			</div>
+			<div class="reward-cont-center">
+				<div class="reward-cont-center-li">
+					<p><span v-cloak>{{info.month_incentive}}</span></p>
+					<p>本月奖励金<span v-cloak>（{{info.month_date}}）</span></p>
+				</div>
+				<div class="reward-cont-center-li" v-tap.stop="click()">
+					<p><span v-cloak>{{info.pending_incentive}}</span></p>
+					<p>待结算奖励金<i class="icon-question"></i></p>
+				</div>
+			</div>
+		 </section>
+		 <section class="reward-info-list">
+		 	<h2>销售奖励明细</h2>
+		 	<div class="reward-info-list-no root" v-if="info.list == ''">
+		 		<p>暂无奖励金收入明细</p>
+		 		<a href="javascript:;" v-tap.stop="goIndex()">我要赚奖励</a>
+		 	</div>
+		 	<ul class="root" v-else>
+		 		<li v-for="reward_info in list" track-by="$index">
+		 			<div class="left">
+		 				<p>{{reward_info.content}}</p>
+		 				<label>{{reward_info.created_at}}</label>
+		 			</div>
+		 			<div class="right" v-if="reward_info.is_color == 1">{{reward_info.money}}</div>
+		 			<div class="right active" v-else>{{reward_info.money}}</div>
+		 		</li>
+		 	</ul>
+		 	<div class="gengduo-ajax"><i></i><span id="loading">上拉加载更多...</span></div>
+		 </section>
+	</div>
+	<!--=include ../../../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/reward-info.js -->
+    <script src="/dist/js/user/reward-info.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

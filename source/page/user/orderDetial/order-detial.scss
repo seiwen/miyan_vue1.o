@@ -1,0 +1,177 @@
+@import "../../../common/sass/mixins";
+@import "../../../common/sass/variables";
+body,html{
+	background-color: #fff;
+}
+.order-detials{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	.order-detial-header{
+		position: relative;
+		width: 100%;
+		padding: 0 0.266667rem;
+		height: 1.6rem;
+		line-height: 1.333333rem;
+		border-bottom: 0.266667rem solid $border-color;
+		overflow: hidden;
+		.left{
+	    	float: left;
+	    	@include fontsize(16px);
+	    }
+	    .right{
+	    	float: right;
+	    	height: 1.333333rem;
+	    	@include fontsize(12px);
+	    	color: $gray-light;
+	    	overflow: hidden;
+	    	svg{
+	    		display: block;
+	    		width: 0.933333rem;
+	    		height: 0.933333rem;
+	    		margin-top: 0.2rem;
+	    		float: left;
+	    	}
+	    	.right-text{
+				height: 1.333333rem;
+				float: left;
+	    	}
+	    	span{
+	    		margin-left: 0.133333rem;
+	    		color: $color-3;
+	    	}
+	    }
+	}
+	.order-detial-address{
+		position: relative;
+		width: 100%;
+		padding: 0.266667rem 0.266667rem 0.266667rem 1.2rem;
+		border-bottom: 0.266667rem solid $border-color;
+		overflow: hidden;
+		i{
+			position: absolute;
+			display: block;
+			left: 0.266667rem;
+			top: 50%;
+			width: 0.8rem;
+			height: 0.8rem;
+			@include fontsize(28px);
+			margin-top: -0.4rem;
+			overflow: hidden;
+		}
+		p{
+			@include fontsize(14px);
+			line-height: 0.533333rem;
+			color: $gray-light;
+			margin-bottom: 0.133333rem;
+			overflow: hidden;
+			span{
+				@include fontsize(14px);
+			}
+			&:nth-child(2){
+				color: $gray-base;
+				@include fontsize(16px);
+				span:nth-child(2){
+					margin-left: 0.533333rem;
+				}
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+			span:nth-child(2){
+				margin-left: 0.133333rem;
+			}
+		}
+	}
+	.order-detial-cont{
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		border-top: $border-width solid $border-color;
+		border-bottom: 0.266667rem solid $border-color;
+		li{
+			padding-left: 0;
+			margin-left: 0.266667rem;
+			width: calc(100% - 0.266667rem);
+		}
+		.order-detial-price{
+			position: relative;
+			padding: 0.266667rem;
+			border-top: $border-width solid $border-color;
+			overflow: hidden;
+			p{
+				line-height: 0.666667rem;
+				@include fontsize(14px);
+				text-align: right;
+				&:last-child{
+					@include fontsize(16px);
+					span{
+						color: $color-3;
+					}
+				}
+			}
+		}
+	}
+	.order-detial-number{
+		position: relative;
+		width: 100%;
+		padding: 0.266667rem;
+		border-bottom: 0.266667rem solid $border-color;
+		.copy-order{
+			position: absolute;
+			top: 0.266667rem;
+			right: 0.266667rem;
+			width: 1.333333rem;
+			height: 0.666667rem;
+			line-height: 0.666667rem;
+			border: 1px solid #999;
+			@include fontsize(14px);
+			color: #333;
+			text-align: center;
+			border-radius: 0.066667rem;
+		}
+		p{
+			word-wrap: break-word;
+    		word-break: break-all;
+			line-height: 0.666667rem;
+			@include fontsize(14px);
+			color: $gray-light;
+			overflow: hidden;
+		}
+	}
+	.order-detial-button{
+		position: relative;
+		width: 100%;
+		border-bottom: $border-width solid $border-color;
+		overflow: hidden;
+		a{
+			display: block;
+			width: 2.866667rem;
+		    height: 1.066667rem;
+		    line-height: 1.066667rem;
+		    text-align: center;
+		    @include fontsize(16px);
+		    margin: 0.266667rem 0.266667rem 0.266667rem 0;
+		    border: $border-width solid $color-3;
+		    background: $color-3;
+		    color: $color-f;
+		    float: right;
+		    border-radius: 0.133333rem;
+		    text-decoration: none;
+		    &.wuliu,&.cancel{
+		    	background: $color-f;
+		    	color: $color-3;
+		    }
+		}
+		margin-bottom: 0.666667rem;
+	}
+}
+.wx-detials{
+	.left{
+		font-weight: bolder;
+	}
+	.right-text span{
+		@include fontsize(16px);
+		margin-left: 0.266667rem;
+	}
+}

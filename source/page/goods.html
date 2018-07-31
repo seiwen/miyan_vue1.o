@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>商品详情</title>
+<!--=include ../module/public_header.html -->
+<!-- build:css /dist/css/swiper/swiper.min.css -->
+<link href="/dist/css/swiper/swiper.min.css" rel="stylesheet">
+<!-- endbuild -->
+<link href="/dist/css/user/goods.css" rel="stylesheet" inline>
+</head>
+<body>
+<div class="goods" id="masker">
+        <section class="goods-banner masker"></section>
+        <div class="nav">
+            <div class="title clamp2 box masker">.........................................................</div>
+            <ul class="box" v-else>
+                <li class="flex"><span class="f16 masker">..............</span></li>
+            </ul>
+        </div>
+        <div class="nav box">
+            <div class="flex masker">..................</div>
+            <div class="flex masker">..................</div>
+        </div>
+        <div class="nav box">
+            <div class="flex masker">......................................</div>
+        </div>
+        <div class="detial">
+            <ul class="detial_nav box">
+                <li class="flex on"><span class="masker masker-center"></span></li>
+                <!-- <li class="flex">商品评价</li> -->
+            </ul>
+            <div class="detial_Text masker masker-150"></div>
+        </div>
+</div>
+<div class="goods root" id="goods">
+        <section class="goods-banner">
+            <div class="swiper-container" id="goods-banner">
+              <div class="swiper-wrapper">
+                <a href="javascript:;" class="swiper-slide" v-for="item in pic_list" track-by="$index">
+                    <img :src=item class="swiper-lazy" alt="">
+                    <div class="swiper-lazy-preloader"></div>
+                </a>
+              </div>
+              <div class="swiper-pagination-bottom" v-if="pic_list.length > 1">
+                <div class="swiper-pagination"></div>
+            </div>
+            </div>
+        </section>
+        <div class="nav">
+            <div class="title clamp2 box">{{info.title}}</div>
+            <!-- 阶梯价 -->
+            <ul v-if="info.is_jieti == 1">
+                <li v-for="nav in info.jieti_price" >
+                    <template v-if="nav.counts_start == 1" >
+                        <b>￥ {{(info.agency_price*info.discount_num).toFixed(2)}}</b>
+                        <i>&nbsp;/&nbsp;赚{{parseFloat((info.sales_price-info.agency_price*info.discount_num).toFixed(2))}}元</i>
+                    </template>
+                    <template v-else>
+                        <template v-if="info.isbsproduct == 1 && jiti_count == 2">
+                            <em v-if="nav.counts_start == jiti_end">{{jiti_end}} 件价格：</em>
+                            <span>￥ {{(nav.price*info.discount_num).toFixed(2)}}</span>
+                            <label>省{{parseFloat(((info.agency_price-nav.price)*nav.counts_start).toFixed(2))}}元</label>
+                        </template>
+                        <template v-else>
+                            <div class="jieti-left">
+                                <em v-if="nav.counts_start == jiti_end">{{nav.counts_start}} 件以上：</em>
+                                <em v-else>{{nav.counts_start}} - {{nav.counts_end}} 件：</em>
+                            </div>
+                            <div class="jieti-right">
+                                <span>￥ {{(nav.price*info.discount_num).toFixed(2)}}</span>&nbsp;&nbsp;
+                                <label>省{{parseFloat(((info.agency_price-nav.price)*nav.counts_start).toFixed(2))}}元起</label>
+                            </div>
+                        </template>
+                    </template>
+                </li>
+            </ul>
+            <ul class="box" v-else>
+                <li class="flex"><b>￥ {{(info.agency_price*info.discount_num).toFixed(2)}}</b>
+                    <i> / 赚{{parseFloat((info.sales_price-info.agency_price*info.discount_num).toFixed(2))}}元</i></li>
+            </ul>
+            <p>店铺价：{{info.sales_price}} 元&nbsp;&nbsp;|&nbsp;&nbsp;已批：{{info.salescount}}件</p>
+           <!--  运费：<span v-if="info.is_post_free == 1">包邮</span><span v-else>{{info.post_price}}元</span>&nbsp;&nbsp;|&nbsp;&nbsp; -->
+        </div>
+        <!-- <div class="nav box">
+            <div class="flex">零售价：{{info.sales_price}}元</div>
+            <div class="flex">奖励积分：{{info.points}} (抵{{(info.points*0.01).toFixed(2)}}元)</div>
+        </div>
+        <div class="nav box">
+            <div class="flex">重量：{{info.kg}}kg</div>
+            <div class="flex" v-if="info.is_post == 1">平台承担关税</div>
+            <div class="flex" v-if="info.is_post == 1">平台包邮</div>
+        </div>
+        <div class="list" v-if="info.is_hunpi == 1 || info.is_post == 1"><span v-if="info.is_hunpi == 1"><i></i>同品牌混批</span><span v-if="info.is_post == 1"><i></i>海外直邮</span></div> -->
+        <section class="goods-active" v-tap.stop="showActive()">
+            <a href="javascript:;" v-if="info.special_offer != ''" class="goods-active-li no">
+                <span>特价</span>
+                <p>{{info.special_offer}}</p>
+            </a>
+            <a href="javascript:;" v-if="info.is_hunpi == 1" class="goods-active-li no">
+                <span>混批</span>
+                <p>支持同品牌混批，量多更便宜！</p>
+            </a>
+            <a v-for="active in info.pro_activity" href="javascript:;" class="goods-active-li" v-if="info.pro_activity != ''" >
+                <span>{{active.activity_type}}</span>
+                <p class="clamp">{{active.desc}}</p>
+            </a>
+            <a href="javascript:;" class="goods-active-li no">
+                <span>积分</span>
+                <p class="clamp">进货即送{{info.points}}积分，或分享给客户并成单得{{info.extra_point}}积分</p>
+            </a>
+            <a href="javascript:;" v-if="info.is_limit == 1" class="goods-active-li no">
+                <span class="is">限制</span>
+                <p class="clamp">该商品不参与订单量达标奖励任务</p>
+            </a>
+            <a href="javascript:;" v-if="info.is_limit == 2" class="goods-active-li no">
+                <span class="is">限制</span>
+                <p class="clamp">该商品不参与单笔拿货奖励任务</p>
+            </a>
+            <a href="javascript:;" v-if="info.is_limit == 3" class="goods-active-li no">
+                <span class="is">限制</span>
+                <p class="clamp">该商品不参与订单量达标和单笔拿货奖励任务</p>
+            </a>
+        </section>
+        <section v-tap.stop="goSucai()" class="goods-sucai" v-if="source.count != 0">
+            <nav :class="{'next-before': version > 209}">素材 ({{source.count}})</nav>
+            <section class="goods-sucai-cont" v-if="source.type == 1">
+                <!-- 专题素材 -->
+                <div class="left">
+                    <img class="lazy" src="/dist/images/indexImg/shopBg.jpg"  data-original="/dist/images/appimg/icon_02.png">
+                </div>
+                <div class="right">
+                    <div class="text clamp3 box">{{source.title}}</div>
+                    <div class="sucai-video">
+                        <img class="lazy" src="/dist/images/indexImg/bannerBg.jpg" data-original="{{source.image}}">
+                    </div>
+                    <div class="bot">{{source.create_time}}  已有{{source.promote_count}}人推广<span v-if="version > 209">去复制</span></div>
+                </div>
+            </section>
+            <section class="goods-sucai-cont" v-if="source.type == 2">
+                <!-- 视频素材 -->
+                <div class="left">
+                    <img class="lazy" src="/dist/images/indexImg/shopBg.jpg"  data-original="/dist/images/appimg/icon_01.png">
+                </div>
+                <div class="right">
+                    <div class="text clamp3 box">{{source.subtitle}}</div>
+                    <div class="sucai-video">
+                        <img class="lazy" src="/dist/images/indexImg/bannerBg.jpg" data-original="{{source.image}}">
+                        <i></i>
+                    </div>
+                    <div class="bot">{{source.create_time}}  已有{{source.promote_count}}人推广<span v-if="version > 209">转发到微信</span></div>
+                </div>
+            </section>
+            <section class="goods-sucai-cont" v-if="source.type == 3">
+                <!-- 图文素材 -->
+                <div class="left">
+                    <img v-if="source.tab_area == 1" class="lazy" src="/dist/images/indexImg/shopBg.jpg"  data-original="/dist/images/appimg/icon_01.png">
+                    <img v-if="source.tab_area == 2" class="lazy" src="/dist/images/indexImg/shopBg.jpg"  data-original="/dist/images/appimg/icon_02.png">
+                </div>
+                <div class="right">
+                    <div class="text clamp3 box">{{source.seeding_content}}</div>
+                    <ul v-if="source_img != ''">
+                        <li v-for="img in source_img"><img class="lazy" src="/dist/images/indexImg/shopBg.jpg" data-original="{{img.image}}"></li>
+                    </ul>
+                    <div class="bot">{{source.create_time}}  已有{{source.promote_count}}人推广<span v-if="version > 209">去复制</span></div>
+                </div>
+            </section>
+        </section>
+        <!-- 相关品牌 -->
+        <section class="goods-brand" v-if="info.brand_products != '' && recommand_products.length > 0">
+            <nav>
+                <img  class="lazy" src="/dist/images/indexImg/shopBg.jpg" data-original="{{brand_info.logo}}">
+                <h3>{{brand_info.typeName}}</h3>
+                <p class="clamp2 box">{{brand_info.description}}</p>
+            </nav>
+            <div class="swiper-container brand-tuijian" id="goods-brand">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide" v-for="brand in recommand_products">
+                        <a href="/page/goods.html?product_id={{brand.id}}">
+                            <div class="brand-img">
+                                <img class="swiper-lazy" :src=brand.thumb alt="{{brand.product_name}}">
+                                <div class="no_cartData" v-if="brand.error != '0'">
+                                    <span class="shouqing" v-if="brand.error == '6'">已售罄</span>
+                                    <span class="xiajia" v-if="brand.error == '3'">已下架</span>
+                                </div>
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <span class="brand-title clamp2 box">{{brand.product_name}}</span>
+                            <div class="brand-price">
+                                <span><em>￥</em>{{parseInt(brand.agency_price)}}</span> <b>/</b> 赚{{parseInt((brand.marketprice-brand.agency_price).toFixed(2))}}元
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="swiper-pagination" v-if="recommand_products.length > 3"></div>
+            </div>
+            <div v-if="version > 209" class="brand-bot"><a href="javascript:;" v-tap.stop="goBrand(brand_info.typeName)">进入品牌</a></div>
+        </section>
+        <!-- 相关推荐 -->
+        <section class="goods-tuijian"  v-if="info.related_products != ''">
+            <nav>相关推荐</nav>
+            <section class="goods-brand">
+                <div class="swiper-container brand-tuijian" id="goods-tuijian">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide" v-for="related in related_products">
+                            <a href="/page/goods.html?product_id={{related.id}}">
+                                <div class="brand-img">
+                                    <img :src=related.thumb alt="{{related.product_name}}">
+                                </div>
+                                <span class="brand-title clamp2 box">{{related.product_name}}</span>
+                                <div class="brand-price">
+                                    <span><em>￥</em>{{parseInt(related.agency_price)}}</span> <b>/</b> 赚{{parseInt((related.marketprice-related.agency_price).toFixed(2))}}元
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination" v-if="related_products.length > 6"></div>
+                </div>
+            </section>
+        </section>
+        <!-- 商品详情 -->
+        <section class="detial">
+            <ul class="detial_nav box">
+                <li class="flex on">商品详情</li>
+                <!-- <li class="flex">商品评价</li> -->
+            </ul>
+            <div class="detial_Text">{{{new_img}}}</div>
+            <template v-if="new_img_length > 1">
+                <div class="more" v-tap.stop="clickImg(info.content)"><span>查看完整图文详情</span></div>
+                <img class=" detial_bot_img" src="/dist/images/indexImg/bannerBg.jpg" data-original="/dist/images/app_xz.jpg" alt="">
+            </template>
+            <template v-else>
+                <div class="detial_Text">{{{info.content}}}</div>
+                <img class="lazy" src="/dist/images/indexImg/bannerBg.jpg" data-original="/dist/images/app_xz.jpg" alt="">
+            </template>
+        </section>
+        <div class="detial_buy box">
+            <span><a href="/page/cart/"><i class="icon-carts"></i><em id="js_cartNum" v-if="cart_num > 0" name="{{info.is_in_cart}}">{{cart_num}}</em></a></span>
+            <button v-tap.stop="goodsShare()" id="js_share" class="flex goods-share" >分享赚钱</button>
+            <button v-if="info.stocks > 0" v-tap.stop="showBottom(info.stocks)" id="js_shopCart" class="flex" >立即进货</button>
+            <button v-else class="flex on" v-tap.stop="showBottom(info.stocks)" id="js_shopCart">商品卖光啦</button>
+        </div>
+        <!-- 活动弹出框 -->
+        <div class="goods-active-box animated bounceInUp">
+            <h2>活动</h2>
+            <i class="goods-active-box-close" v-tap.stop="closeActive()"></i>
+            <section class="goods-active">
+                <a href="javascript:;" v-if="info.special_offer != ''" class="goods-active-li no">
+                    <span>特价</span>
+                    <p>{{info.special_offer}}</p>
+                </a>
+                <a href="javascript:;" v-if="info.is_hunpi == 1" class="goods-active-li no">
+                    <span>批发</span>
+                    <p>支持同品牌混批，批发价节省更多！</p>
+                </a>
+                <a v-for="active in info.pro_activity" href="/page/user/activity.html?activity_id={{active.activity_id}}" class="goods-active-li" v-if="info.pro_activity != ''" >
+                    <span>{{active.activity_type}}</span>
+                    <p>{{active.desc}}</p>
+                </a>
+                <a href="javascript:;" class="goods-active-li no">
+                    <span>积分</span>
+                    <p>进货即送{{info.points}}积分，或分享给客户并成单得{{info.extra_point}}积分</p>
+                </a>
+                <a href="javascript:;" v-if="info.is_limit == 1" class="goods-active-li no">
+                    <span class="is">限制</span>
+                    <p class="clamp">该商品不参与订单量达标奖励任务</p>
+                </a>
+                <a href="javascript:;" v-if="info.is_limit == 2" class="goods-active-li no">
+                    <span class="is">限制</span>
+                    <p class="clamp">该商品不参与单笔拿货奖励任务</p>
+                </a>
+                <a href="javascript:;" v-if="info.is_limit == 3" class="goods-active-li no">
+                    <span class="is">限制</span>
+                    <p class="clamp">该商品不参与订单量达标和单笔拿货奖励任务</p>
+                </a>
+            </section>
+        </div>
+        <!-- 立即购买弹框 -->
+        <div class="detial_buyBox animated bounceInUp">
+            <div class="detial_buyBoxs">
+                <i class="detial_buyBoxs-close" v-tap.stop="closeBuy()"></i>
+                <div class="detial_buyBox-title">
+                    <div class="detial_buyBox-title-img">
+                        <img :src=pic_list[0] >
+                    </div>
+                    <div class="detial_buyBox-title-right">
+                        <h3><em>￥</em> {{(agency_price*info.discount_num).toFixed(2)}}</h3>
+                        <h4>库存：{{info.stocks}}</h4>
+                        <p>已选择：{{number}} 件批发<span v-if="profit_price != 0 && number != 0">已省{{parseFloat((number*profit_price).toFixed(2))}}元</span></p>
+                    </div>
+                </div>
+                <div class="detial_buyBox-list" v-if="jiti_count > 0">
+                    <h3>选择规格</h3>
+                    <ul :class="{'detial_buyBox-three': jiti_count == 3}">
+                        <li v-tap.stop="clickeTab($event,jt_box.counts_end,jt_box.counts_start,jt_box.price)" :class="{'on': jt_box.counts_start == jiti_end}" v-for="jt_box in info.jieti_price">
+                            <div class="detial_buyBox-list-box">
+                                <p  v-if="jt_box.counts_start == 1">{{jt_box.counts_start}} - {{jt_box.counts_end}} 件</p>
+                                <template v-else>
+                                    <p v-if="info.isbsproduct == 1">{{jt_box.counts_start}} 件批发</p>
+                                    <template v-else>
+                                        <p v-if="jiti_count == 3 && jt_box.counts_start != jiti_end">{{jt_box.counts_start}} - {{jt_box.counts_end}} 件批</p>
+                                        <p v-else>{{jt_box.counts_start}} 件起批</p>
+                                    </template>
+                                </template>
+                                <label>{{(jt_box.price*info.discount_num).toFixed(2)}} /件</label>
+                            </div>
+                            <template v-if="jt_box.counts_start != 1">
+                                <i class="dian"><em></em></i>
+                                <i v-if="jiti_count == 2" class="arrowRight"></i>
+                                <i v-if="jiti_count == 3" class="arrowBotton"></i>
+                                <span class="chang" :class="{'one': parseFloat(((info.agency_price-jt_box.price)*jt_box.counts_start).toFixed(2)) < 10}" v-if="info.isbsproduct != 1">省{{parseFloat(((info.agency_price-jt_box.price)*jt_box.counts_start).toFixed(2))}}元起</span>
+                                <span class="duan" :class="{'one': parseFloat(((info.agency_price-jt_box.price)*jt_box.counts_start).toFixed(2)) < 10}" v-else>省{{parseFloat(((info.agency_price-jt_box.price)*jt_box.counts_start).toFixed(2))}}元</span>
+                            </template>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detial_buyBox_num">数量
+                    <div class="num_wrap">
+                        <span class="reduce input-group-addon" v-tap.stop="reduce(number,info.stocks)"></span>
+                        <input type="tel" class="num goods-count" v-model="number" max="{{parseInt(max_stocks - number)}}" :value=number number>
+                        <span class="plus input-group-addon" v-tap.stop="plus(number,info.stocks,info.isbsproduct)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="detial_buyBox_button">
+                <button v-tap.stop="clickCart()" type="submit">加入购物车</button>
+                <button v-tap.stop="goCart()" type="submit">立即进货</button>
+            </div>
+        </div>
+        <!-- 70%透明遮盖层 -->
+        <div class="hideBox" v-tap.stop="closeBottom()"></div>
+        <div class="hideBox_ad" v-tap.stop="closeAd()"></div>
+</div>
+    <!--=include ../module/commonJs.html -->
+
+    <!-- build:js /dist/js/user/goods.js -->
+    <script src="/dist/js/user/goods.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
