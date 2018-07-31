@@ -1,3 +1,6 @@
+"# miyan_vue1.o"
+
+
 #目录规范
 ```
 ├ dep //项目产出目录依赖site(预发布环境以及正式环境)
@@ -42,4 +45,3 @@ css预编译工具使用[sass](http://www.w3cplus.com/sassguide/)，js模块化�
 ##iconfont字体文件生成
 页面icon使用[icomoon](https://icomoon.io/app/#/select)生成
 
-"# miyan_vue1.o"
